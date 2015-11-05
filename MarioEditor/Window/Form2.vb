@@ -70,6 +70,7 @@ Public Class Form2
     Public FPScounter As Integer = 0
 
     Public AlignFactor As Integer = 32
+    Public ResizeFactor As Integer = 1
 
     Public Shared Function GetKeyStates(key As Key) As KeyStates
 
@@ -290,15 +291,15 @@ Public Class Form2
                 Dim OverLap As Boolean
 
                 If MouseIsDown = True And screen.Contains(mouselocX, mouselocY) = True Then
-                    r = New Rectangle((mouseX * AlignFactor), (mouseY * AlignFactor) - (Blocks.TileH - AlignFactor), Blocks.TileW, Blocks.TileH)
+                    r = New Rectangle((mouseX * AlignFactor), (mouseY * AlignFactor) - (Blocks.TileH - AlignFactor), Blocks.TileW * ResizeFactor, Blocks.TileH * ResizeFactor)
 
                     b.rectangle = r
                     b.X = r.X
                     b.Y = r.Y
 
                     b.IMG = TB.Image
-                    b.Width = Blocks.TileW
-                    b.Height = Blocks.TileH
+                    b.Width = Blocks.TileW * ResizeFactor
+                    b.Height = Blocks.TileH * ResizeFactor
                     b.ID = SelectedBlock
                     b.gfxWidth = Blocks.gfxWidth
                     b.gfxHeight = Blocks.gfxHeight
@@ -724,6 +725,19 @@ Public Class Form2
         End If
 
         AddObject()
+
+        'Control block size
+        If ResizeFactor < 12 Then
+            If e.Delta > 0 Then
+                ResizeFactor += 1
+            End If
+        End If
+        If ResizeFactor > 1 Then
+
+            If e.Delta < 0 Then
+                ResizeFactor -= 1
+            End If
+        End If
     End Sub
 
     Private Sub Form2_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
@@ -732,7 +746,7 @@ Public Class Form2
         Draw.CompositingQuality = Drawing2D.CompositingQuality.HighSpeed
         Draw.SmoothingMode = Drawing2D.SmoothingMode.HighSpeed
         Draw.PixelOffsetMode = Drawing2D.PixelOffsetMode.HighSpeed
-        Draw.InterpolationMode = Drawing2D.InterpolationMode.Low
+        Draw.InterpolationMode = Drawing2D.InterpolationMode.NearestNeighbor
 
         'Clear OverDraw
         Draw.Clear(LevelSettings.BGColor)
@@ -1092,10 +1106,10 @@ Public Class Form2
         If MouseIsMoving = True Then
             Select Case EditMode
                 Case 0
-                    r = New Rectangle(mouseX * AlignFactor, (mouseY * AlignFactor) - (Blocks.TileH - AlignFactor), Blocks.TileW, Blocks.TileH)
+                    r = New Rectangle(mouseX * AlignFactor, (mouseY * AlignFactor) - (Blocks.TileH - AlignFactor), Blocks.TileW * ResizeFactor, Blocks.TileH * ResizeFactor)
 
                     If Blocks.Animated = True Then
-                        graphic.DrawImage(TB.Image, r, New Rectangle(0, Blocks.TileH * Anim(Blocks.FrameSpeed, Blocks.TotalFrames), Blocks.gfxWidth, Blocks.TileH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(TB.Image, r, New Rectangle(0, Blocks.TileH * Anim(Blocks.FrameSpeed, Blocks.TotalFrames), Blocks.gfxWidth * ResizeFactor, Blocks.TileH * ResizeFactor), GraphicsUnit.Pixel)
                     Else
                         graphic.DrawImage(TB.Image, r, New Rectangle(0, 0, Blocks.gfxWidth, Blocks.gfxHeight), GraphicsUnit.Pixel)
                     End If
