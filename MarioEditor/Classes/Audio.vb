@@ -24,6 +24,13 @@ Public Class Audio
         End Select
     End Sub
 
+    Public Shared Sub PlayMusic(ID As Integer)
+        Select Case ID
+            Case 0
+
+        End Select
+    End Sub
+
     Public Shared Sub PlayAudio(sound As String)
         PlaySFX.StopPlayback()
         PlaySFX.OpenFile(sound, TStreamFormat.sfAutodetect)

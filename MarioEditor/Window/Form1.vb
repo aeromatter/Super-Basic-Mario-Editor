@@ -47,7 +47,8 @@ Public Class Form1
 
     Private Sub SaveFileDialog1_FileOk(sender As System.Object, e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog1.FileOk
         Level.LevelPath = SaveFileDialog1.FileName
-        Form2.Save()
+        'Form2.Save()
+        Form2.VSMBXSave()
 
         Dim Audio = New Audio
         Audio.PlaySound(5)
@@ -75,7 +76,7 @@ Public Class Form1
 
     Private Sub OpenFileDialog1_FileOk(sender As System.Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         Level.LevelPath = OpenFileDialog1.FileName
-        Form2.LoadLevel()
+        LoadFile.LoadFromVSMBX(Level.LevelPath)
     End Sub
 
     Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click

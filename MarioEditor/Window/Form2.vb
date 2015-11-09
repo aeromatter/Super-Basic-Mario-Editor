@@ -655,7 +655,7 @@ Public Class Form2
                 'Get currently selected NPC and its settings.
                 NPC.GetNPC()
 
-                
+
         End Select
     End Sub
 
@@ -727,17 +727,14 @@ Public Class Form2
         AddObject()
 
         'Control block size
-        If ResizeFactor < 12 Then
-            If e.Delta > 0 Then
-                ResizeFactor += 1
-            End If
-        End If
-        If ResizeFactor > 1 Then
 
-            If e.Delta < 0 Then
-                ResizeFactor -= 1
-            End If
+        If e.Delta > 0 Then
+            ResizeFactor += 1
+        ElseIf e.Delta < 0 Then
+            ResizeFactor -= 1
         End If
+
+        ResizeFactor = Play.Clamp(ResizeFactor, 1, 12)
     End Sub
 
     Private Sub Form2_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
@@ -768,11 +765,11 @@ Public Class Form2
 
         If Level.Brightness < 100 Then
             Dim CM As ColorMatrix = New ColorMatrix(New Single()() _
-            { _
-            New Single() {Level.Brightness / 100, 0.0, 0.0, 0.0, 0.0}, _
-            New Single() {0.0, Level.Brightness / 100, 0.0, 0.0, 0.0}, _
-            New Single() {0.0, 0.0, Level.Brightness / 100, 0.0, 0.0}, _
-            New Single() {0.0, 0.0, 0.0, 1.0, 0.0}, _
+            {
+            New Single() {Level.Brightness / 100, 0.0, 0.0, 0.0, 0.0},
+            New Single() {0.0, Level.Brightness / 100, 0.0, 0.0, 0.0},
+            New Single() {0.0, 0.0, Level.Brightness / 100, 0.0, 0.0},
+            New Single() {0.0, 0.0, 0.0, 1.0, 0.0},
             New Single() {0.0, 0.0, 0.0, 0.0, 1.0}})
 
             ImgA.SetColorMatrix(CM)
@@ -834,7 +831,7 @@ Public Class Form2
                         bg.DrawImage(Level.BG, New Rectangle(x * Level.BG.Width, (Level.BG.Height - Me.Height) / Level.LevelH, Level.BG.Width, Level.BG.Height), 0, 0, Level.BG.Width, Level.BG.Height, GraphicsUnit.Pixel, ImgA)
                     End If
                 Next
-                'Label1.Text = Level.HeightInc * 32
+            'Label1.Text = Level.HeightInc * 32
             Case 7
                 For x = 0 To (Level.LevelW / Level.BG.Width) + (Level.LevelW / Level.BG.Width)
                     If Draw.IsVisible(New Rectangle(x * Level.BG.Width, Level.LevelH - ((Level.BG.Height + Level.BG.Height)), Level.BG.Width, Level.BG.Height)) = True Then
@@ -918,11 +915,11 @@ Public Class Form2
             If graphic.IsVisible(i.rectangle) = True Then
                 Dim ImgB As New ImageAttributes
                 Dim CM2 As ColorMatrix = New ColorMatrix(New Single()() _
-                { _
-                New Single() {i.R / 255, 0.0, 0.0, 0.0, 0.0}, _
-                New Single() {0.0, i.G / 255, 0.0, 0.0, 0.0}, _
-                New Single() {0.0, 0.0, i.B / 255, 0.0, 0.0}, _
-                New Single() {0.0, 0.0, 0.0, i.Glow / 100, 0.0}, _
+                {
+                New Single() {i.R / 255, 0.0, 0.0, 0.0, 0.0},
+                New Single() {0.0, i.G / 255, 0.0, 0.0, 0.0},
+                New Single() {0.0, 0.0, i.B / 255, 0.0, 0.0},
+                New Single() {0.0, 0.0, 0.0, i.Glow / 100, 0.0},
                 New Single() {0.0, 0.0, 0.0, 0.0, 0.2}})
                 ImgB.SetColorMatrix(CM2)
 
@@ -1063,11 +1060,11 @@ Public Class Form2
             If Play.IsStarman = True Then
                 Dim col As New Random
                 Dim CM3 As ColorMatrix = New ColorMatrix(New Single()() _
-                { _
-                New Single() {Math.Abs(col.Next(1, 255) / 80), 0.0, 0.0, 0.0, 0.0}, _
-                New Single() {0.0, Math.Abs(col.Next(1, 255) / 80), 0.0, 0.0, 0.0}, _
-                New Single() {0.0, 0.0, Math.Abs(col.Next(1, 255) / 60), 0.0, 0.0}, _
-                New Single() {0.0, 0.0, 0.0, 1.0, 0.0}, _
+                {
+                New Single() {Math.Abs(col.Next(1, 255) / 80), 0.0, 0.0, 0.0, 0.0},
+                New Single() {0.0, Math.Abs(col.Next(1, 255) / 80), 0.0, 0.0, 0.0},
+                New Single() {0.0, 0.0, Math.Abs(col.Next(1, 255) / 60), 0.0, 0.0},
+                New Single() {0.0, 0.0, 0.0, 1.0, 0.0},
                 New Single() {0.0, 0.0, 0.0, 0.0, 1.0}})
                 ImgC.SetColorMatrix(CM3)
             End If
@@ -1125,15 +1122,15 @@ Public Class Form2
                     If Player.P1.Graphic IsNot Nothing Then
                         graphic.DrawImage(Player.P1.Graphic, New Rectangle((mouseX * 4), (mouseY * 32) - (Player.P1.PlayerH - 32), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
 
-                        Else
-                            Player.SetPlayer()
-                        End If
+                    Else
+                        Player.SetPlayer()
+                    End If
                 Case 4
                     If Player.P2.Graphic IsNot Nothing Then
                         graphic.DrawImage(Player.P2.Graphic, New Rectangle((mouseX * 4), (mouseY * 32) - (Player.P2.PlayerH - 32), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
-                        Else
-                            Player.SetPlayer()
-                        End If
+                    Else
+                        Player.SetPlayer()
+                    End If
                 Case 5
                     r = New Rectangle(((mouseX * AlignFactor)) - (NPC.NPCW - AlignFactor), (mouseY * AlignFactor) - (NPC.NPCH - AlignFactor), NPC.NPCW, NPC.NPCH)
 
@@ -1204,7 +1201,116 @@ Public Class Form2
 
         FPScounter += 1
     End Sub
+    Public Sub VSMBXSave()
+        If Directory.Exists(Form1.FilePath & "\worlds\") = False Then
+            Directory.CreateDirectory(Form1.FilePath & "\worlds\")
+        End If
 
+        Dim RC As RectangleConverter
+        RC = New RectangleConverter
+
+        Dim SavePath As String = Level.LevelPath
+        Dim sw As StreamWriter
+
+        Try
+            sw = New StreamWriter(SavePath, False)
+
+            sw.WriteLine(Level.LevelW.ToString())
+            sw.WriteLine(Level.LevelH.ToString())
+            sw.WriteLine(String.Format("[OE:{0}|LW:{1}|NB:{2}|UW:{3}]", Level.OffscreenExit, Level.LevelWrap, Level.NoTurnBack, Level.Underwater))
+            sw.WriteLine(String.Format("[P1:{0}|P2:{1}]", RC.ConvertToString(Level.P1start), RC.ConvertToString(Level.P2start)))
+            sw.WriteLine(Level.Time)
+            sw.WriteLine(String.Format("[T:{0}|GL:{1}|B:{2}]", Level.Time, Play.GravityLevel, Level.Brightness))
+
+            sw.WriteLine("*BLOCKS*")
+
+            For i = 0 To Blocks.Tiles.Count - 1
+
+                Dim sb As New StringBuilder()
+                Blocks.GetBlock(Blocks.Tiles(i).ID)
+
+                If Blocks.Tiles(i).Slip <> Blocks.Slippery Then
+                    sb.Append(String.Format("S:{0}|", Blocks.Tiles(i).Slip))
+                End If
+
+                If Blocks.Tiles(i).Invisible <> Blocks.Invisible Then
+                    sb.Append(String.Format("I:{0}|", Blocks.Tiles(i).Invisible))
+                End If
+
+                If Blocks.Tiles(i).Width <> Blocks.TileW Then
+                    sb.Append(String.Format("W:{0}|", Blocks.Tiles(i).Width))
+                End If
+
+                If Blocks.Tiles(i).Height <> Blocks.TileH Then
+                    sb.Append(String.Format("H:{0}|", Blocks.Tiles(i).Height))
+                End If
+
+                If Blocks.Tiles(i).Animated <> Blocks.Animated Then
+                    sb.Append(String.Format("A:{0}|", Blocks.Tiles(i).Animated))
+                End If
+
+                If Blocks.Tiles(i).R <> 255 Then
+                    sb.Append(String.Format("R:{0}|", Blocks.Tiles(i).R))
+                End If
+
+                If Blocks.Tiles(i).G <> 255 Then
+                    sb.Append(String.Format("G:{0}|", Blocks.Tiles(i).G))
+                End If
+
+                If Blocks.Tiles(i).B <> 255 Then
+                    sb.Append(String.Format("B:{0}|", Blocks.Tiles(i).B))
+                End If
+
+                If Blocks.Tiles(i).Breakable <> Blocks.Breakable Then
+                    sb.Append(String.Format("BR:{0}|", Blocks.Tiles(i).Breakable))
+                End If
+
+                If Blocks.Tiles(i).FrameSpeed <> Blocks.FrameSpeed Then
+                    sb.Append(String.Format("FS:{0}|", Blocks.Tiles(i).FrameSpeed))
+                End If
+
+                If Blocks.Tiles(i).gfxWidth <> Blocks.gfxWidth Then
+                    sb.Append(String.Format("GW:{0}|", Blocks.Tiles(i).gfxWidth))
+                End If
+
+                If Blocks.Tiles(i).gfxHeight <> Blocks.gfxHeight Then
+                    sb.Append(String.Format("GH:{0}|", Blocks.Tiles(i).gfxHeight))
+                End If
+
+                If Blocks.Tiles(i).Glow <> 100 Then
+                    sb.Append(String.Format("GL:{0}|", Blocks.Tiles(i).Glow))
+                End If
+
+                If Blocks.Tiles(i).Lava <> Blocks.Lava Then
+                    sb.Append(String.Format("LV:{0}|", Blocks.Tiles(i).Lava))
+                End If
+
+                If Blocks.Tiles(i).SizeW <> Blocks.SizeW Then
+                    sb.Append(String.Format("SW:{0}|", Blocks.Tiles(i).SizeW))
+                End If
+
+                If Blocks.Tiles(i).SizeH <> Blocks.SizeH Then
+                    sb.Append(String.Format("SH:{0}|", Blocks.Tiles(i).SizeH))
+                End If
+
+                If Blocks.Tiles(i).TotalFrames <> Blocks.TotalFrames Then
+                    sb.Append(String.Format("TF:{0}|", Blocks.Tiles(i).TotalFrames))
+                End If
+
+                If sb.Length > 0 Then
+                    sb.Remove(sb.Length - 1, 1)
+                    sw.WriteLine(String.Format("[ID:{0}][IT:{1}][X:{2}Y:{3}]({4})", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y, sb.ToString()))
+                Else
+                    sw.WriteLine(String.Format("[ID:{0}][IT:{1}][X:{2}Y:{3}]", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y))
+                End If
+            Next
+
+            sw.Close()
+            sw.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Public Sub Save()
         Dim RC As RectangleConverter
         RC = New RectangleConverter
@@ -1560,188 +1666,6 @@ Public Class Form2
         Me.Update()
     End Sub
 
-    Public Sub LoadLevel()
-
-        Dim RC As RectangleConverter
-        RC = New RectangleConverter
-
-        Blocks.Tiles.Clear()
-        Blocks.TileRects.Clear()
-        Backgrounds.BGOs.Clear()
-        Backgrounds.bgorects.Clear()
-        NPC.NPCsets.Clear()
-        NPC.NPCrects.Clear()
-
-        Dim g As Graphics = Me.CreateGraphics()
-        g.Clear(Color.Black)
-
-        Dim OpenPath As String = Level.LevelPath
-
-        Dim fs As New System.IO.FileStream(OpenPath, FileMode.Open)
-
-        Dim CurTag As String = ""
-
-        Dim sr As New StreamReader(fs)
-
-        Level.Music = sr.ReadLine()
-        Level.BGid = sr.ReadLine()
-
-        LevelSettings.PlayM.StopPlayback()
-        Level.Song = "custom"
-        LevelSettings.SetLevelMusic()
-
-        Level.LevelW = sr.ReadLine()
-        Level.LevelH = sr.ReadLine()
-
-        Level.HeightInc = ((Level.LevelH - (19 * 32)) + 32) / 32
-
-        SetBG()
-
-        Me.AutoScrollMinSize = New Size(Level.LevelW, Level.LevelH)
-
-        Level.LevelWrap = sr.ReadLine()
-        Level.NoTurnBack = sr.ReadLine()
-        Level.OffscreenExit = sr.ReadLine()
-        Level.Underwater = sr.ReadLine()
-
-        If Player.P1.Graphic Is Nothing And Directory.Exists(Form1.FilePath & "\graphics\mario\") Then
-            Player.P1.Graphic = New Bitmap(Form1.FilePath & "\graphics\mario\mario-2.png")
-        ElseIf Player.P2.Graphic Is Nothing And Directory.Exists(Form1.FilePath & "\graphics\luigi") Then
-            Player.P2.Graphic = New Bitmap(Form1.FilePath & "\graphics\luigi\luigi-2.png")
-        End If
-
-        Level.P1start = RC.ConvertFromString(sr.ReadLine())
-
-        Play.DrawX = Level.P1start.X
-        Play.DrawY = Level.P1start.Y
-
-        Level.P2start = RC.ConvertFromString(sr.ReadLine())
-        Level.Time = sr.ReadLine()
-        Play.GravityLevel = sr.ReadLine()
-        Level.Brightness = sr.ReadLine()
-
-        Dim CurLine As String = ""
-
-        Dim b As New Block
-        Dim bg As New BGO
-        Dim n As New NPCsets
-
-        'TODO: Error checking, and section based loading.
-
-        CurLine = sr.ReadLine().ToString()
-        If CurLine = "[BLOCK]" Then
-            CurTag = "[BLOCK]"
-        End If
-
-        If CurTag = "[BLOCK]" Then
-            Do While CurTag = "[BLOCK]"
-
-                Try
-                    b.Animated = sr.ReadLine()
-                    b.ContainItem = sr.ReadLine()
-                    b.FrameSpeed = sr.ReadLine()
-                    b.gfxHeight = sr.ReadLine()
-                    b.gfxWidth = sr.ReadLine()
-                    b.Height = sr.ReadLine()
-                    b.Width = sr.ReadLine()
-                    b.ID = sr.ReadLine()
-                    b.Invisible = sr.ReadLine()
-                    b.Lava = sr.ReadLine()
-                    b.rectangle = RC.ConvertFromString(sr.ReadLine())
-                    b.SizeH = sr.ReadLine()
-                    b.SizeW = sr.ReadLine()
-                    b.Slip = sr.ReadLine()
-                    b.TotalFrames = sr.ReadLine()
-                    b.X = sr.ReadLine()
-                    b.Y = sr.ReadLine()
-                    b.R = sr.ReadLine()
-                    b.G = sr.ReadLine()
-                    b.B = sr.ReadLine()
-                    b.Glow = sr.ReadLine()
-                    b.Breakable = sr.ReadLine()
-
-                    Blocks.GetBlock(b.ID)
-
-                    b.IMG = TB.Image
-
-                    Blocks.Tiles.Add(b)
-                    Blocks.TileRects.Add(b.rectangle)
-                Catch ex As Exception
-                    CurTag = "[BGO]"
-                    Exit Do
-                End Try
-            Loop
-        End If
-
-        If CurTag = "[BGO]" Then
-            Do While CurTag = "[BGO]"
-                Try
-                    bg.Animated = sr.ReadLine()
-                    bg.ForeGround = sr.ReadLine()
-                    bg.FrameSpeed = sr.ReadLine()
-                    bg.gfxHeight = sr.ReadLine()
-                    bg.gfxWidth = sr.ReadLine()
-                    bg.Height = sr.ReadLine()
-                    bg.Width = sr.ReadLine()
-                    bg.ID = sr.ReadLine()
-                    bg.rectangle = RC.ConvertFromString(sr.ReadLine())
-                    bg.TotalFrames = sr.ReadLine()
-                    bg.X = sr.ReadLine()
-                    bg.Y = sr.ReadLine()
-
-                    If bg.ID >= 1 Then
-                        SelectedBGO = bg.ID
-                        Backgrounds.GetBGO()
-
-                        bg.IMG = TB.Image
-
-                        Backgrounds.BGOs.Add(bg)
-                        Backgrounds.bgorects.Add(bg.rectangle)
-                    End If
-                Catch ex As Exception
-                    CurTag = "[NPC]"
-                    Exit Do
-                End Try
-            Loop
-        End If
-
-        Do While sr.Peek() > -1
-            If CurTag = "[NPC]" Then
-                n.AI = sr.ReadLine()
-                n.Animated = sr.ReadLine()
-                n.Direction = sr.ReadLine()
-                n.FrameSpeed = sr.ReadLine()
-                n.FrameStyle = sr.ReadLine()
-                n.gfxHeight = sr.ReadLine()
-                n.gfxWidth = sr.ReadLine()
-                n.HasGravity = sr.ReadLine()
-                n.Height = sr.ReadLine()
-                n.Width = sr.ReadLine()
-                n.ID = sr.ReadLine()
-                n.MSG = sr.ReadLine()
-                n.MetroidGlass = sr.ReadLine()
-                n.MoveSpeed = sr.ReadLine()
-                n.rectangle = RC.ConvertFromString(sr.ReadLine())
-                n.TotalFrames = sr.ReadLine()
-                n.X = sr.ReadLine()
-                n.Y = sr.ReadLine()
-                n.NPCcollide = sr.ReadLine()
-
-                If n.ID >= 1 Then
-                    SelectedNPC = n.ID
-                    NPC.GetNPC()
-
-                    n.IMG = TB.Image
-
-                    NPC.NPCsets.Add(n)
-                    NPC.NPCrects.Add(n.rectangle)
-                End If
-            End If
-        Loop
-
-        sr.Close()
-        sr.Dispose()
-    End Sub
 
     Private Sub Form2_Scroll(sender As Object, e As System.Windows.Forms.ScrollEventArgs) Handles Me.Scroll
         If e.ScrollOrientation = ScrollOrientation.VerticalScroll Then
