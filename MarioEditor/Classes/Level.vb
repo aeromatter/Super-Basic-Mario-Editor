@@ -3,10 +3,12 @@
     Public Shared BG2path As String
     Public Shared BG As Image
     Public Shared BG2 As Image
-    Public Shared BGid As Integer
+    Public Shared BGid As UInteger
+    Public Shared BG2id As UInteger
     Public Shared BGtype As Integer
     Public Shared Music As String = ""
     Public Shared Song As String = ""
+    Public Shared MusicID As Integer = 0
     Public Shared LevelWrap As Boolean = False
     Public Shared OffscreenExit As Boolean = False
     Public Shared NoTurnBack As Boolean = False

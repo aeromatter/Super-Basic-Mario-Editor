@@ -727,14 +727,13 @@ Public Class Form2
         AddObject()
 
         'Control block size
-
         If e.Delta > 0 Then
             ResizeFactor += 1
         ElseIf e.Delta < 0 Then
             ResizeFactor -= 1
         End If
 
-        ResizeFactor = Play.Clamp(ResizeFactor, 1, 12)
+        ResizeFactor = Main.Clamp(ResizeFactor, 1, 12)
     End Sub
 
     Private Sub Form2_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
@@ -1220,7 +1219,7 @@ Public Class Form2
             sw.WriteLine(String.Format("[OE:{0}|LW:{1}|NB:{2}|UW:{3}]", Level.OffscreenExit, Level.LevelWrap, Level.NoTurnBack, Level.Underwater))
             sw.WriteLine(String.Format("[P1:{0}|P2:{1}]", RC.ConvertToString(Level.P1start), RC.ConvertToString(Level.P2start)))
             sw.WriteLine(Level.Time)
-            sw.WriteLine(String.Format("[T:{0}|GL:{1}|B:{2}]", Level.Time, Play.GravityLevel, Level.Brightness))
+            sw.WriteLine(String.Format("[T:{0}|GL:{1}|B:{2}|BG:{3}|MU:{4}]", Level.Time, Play.GravityLevel, Level.Brightness, Level.BGid, Level.MusicID))
 
             sw.WriteLine("*BLOCKS*")
 
@@ -1230,71 +1229,71 @@ Public Class Form2
                 Blocks.GetBlock(Blocks.Tiles(i).ID)
 
                 If Blocks.Tiles(i).Slip <> Blocks.Slippery Then
-                    sb.Append(String.Format("S:{0}|", Blocks.Tiles(i).Slip))
+                    sb.AppendFormat("S:{0}|", Blocks.Tiles(i).Slip)
                 End If
 
                 If Blocks.Tiles(i).Invisible <> Blocks.Invisible Then
-                    sb.Append(String.Format("I:{0}|", Blocks.Tiles(i).Invisible))
+                    sb.AppendFormat("I:{0}|", Blocks.Tiles(i).Invisible)
                 End If
 
                 If Blocks.Tiles(i).Width <> Blocks.TileW Then
-                    sb.Append(String.Format("W:{0}|", Blocks.Tiles(i).Width))
+                    sb.AppendFormat("W:{0}|", Blocks.Tiles(i).Width)
                 End If
 
                 If Blocks.Tiles(i).Height <> Blocks.TileH Then
-                    sb.Append(String.Format("H:{0}|", Blocks.Tiles(i).Height))
+                    sb.AppendFormat("H:{0}|", Blocks.Tiles(i).Height)
                 End If
 
                 If Blocks.Tiles(i).Animated <> Blocks.Animated Then
-                    sb.Append(String.Format("A:{0}|", Blocks.Tiles(i).Animated))
+                    sb.AppendFormat("A:{0}|", Blocks.Tiles(i).Animated)
                 End If
 
                 If Blocks.Tiles(i).R <> 255 Then
-                    sb.Append(String.Format("R:{0}|", Blocks.Tiles(i).R))
+                    sb.AppendFormat("R:{0}|", Blocks.Tiles(i).R)
                 End If
 
                 If Blocks.Tiles(i).G <> 255 Then
-                    sb.Append(String.Format("G:{0}|", Blocks.Tiles(i).G))
+                    sb.AppendFormat("G:{0}|", Blocks.Tiles(i).G)
                 End If
 
                 If Blocks.Tiles(i).B <> 255 Then
-                    sb.Append(String.Format("B:{0}|", Blocks.Tiles(i).B))
+                    sb.AppendFormat("B:{0}|", Blocks.Tiles(i).B)
                 End If
 
                 If Blocks.Tiles(i).Breakable <> Blocks.Breakable Then
-                    sb.Append(String.Format("BR:{0}|", Blocks.Tiles(i).Breakable))
+                    sb.AppendFormat("BR:{0}|", Blocks.Tiles(i).Breakable)
                 End If
 
                 If Blocks.Tiles(i).FrameSpeed <> Blocks.FrameSpeed Then
-                    sb.Append(String.Format("FS:{0}|", Blocks.Tiles(i).FrameSpeed))
+                    sb.AppendFormat("FS:{0}|", Blocks.Tiles(i).FrameSpeed)
                 End If
 
                 If Blocks.Tiles(i).gfxWidth <> Blocks.gfxWidth Then
-                    sb.Append(String.Format("GW:{0}|", Blocks.Tiles(i).gfxWidth))
+                    sb.AppendFormat("GW:{0}|", Blocks.Tiles(i).gfxWidth)
                 End If
 
                 If Blocks.Tiles(i).gfxHeight <> Blocks.gfxHeight Then
-                    sb.Append(String.Format("GH:{0}|", Blocks.Tiles(i).gfxHeight))
+                    sb.AppendFormat("GH:{0}|", Blocks.Tiles(i).gfxHeight)
                 End If
 
                 If Blocks.Tiles(i).Glow <> 100 Then
-                    sb.Append(String.Format("GL:{0}|", Blocks.Tiles(i).Glow))
+                    sb.AppendFormat("GL:{0}|", Blocks.Tiles(i).Glow)
                 End If
 
                 If Blocks.Tiles(i).Lava <> Blocks.Lava Then
-                    sb.Append(String.Format("LV:{0}|", Blocks.Tiles(i).Lava))
+                    sb.AppendFormat("LV:{0}|", Blocks.Tiles(i).Lava)
                 End If
 
                 If Blocks.Tiles(i).SizeW <> Blocks.SizeW Then
-                    sb.Append(String.Format("SW:{0}|", Blocks.Tiles(i).SizeW))
+                    sb.AppendFormat("SW:{0}|", Blocks.Tiles(i).SizeW)
                 End If
 
                 If Blocks.Tiles(i).SizeH <> Blocks.SizeH Then
-                    sb.Append(String.Format("SH:{0}|", Blocks.Tiles(i).SizeH))
+                    sb.AppendFormat("SH:{0}|", Blocks.Tiles(i).SizeH)
                 End If
 
                 If Blocks.Tiles(i).TotalFrames <> Blocks.TotalFrames Then
-                    sb.Append(String.Format("TF:{0}|", Blocks.Tiles(i).TotalFrames))
+                    sb.AppendFormat("TF:{0}|", Blocks.Tiles(i).TotalFrames)
                 End If
 
                 If sb.Length > 0 Then
@@ -1417,255 +1416,6 @@ Public Class Form2
             IsSaved = False
         End Try
     End Sub
-
-    Public Sub SetBG()
-        Dim fs As System.IO.FileStream
-        Dim fs2 As System.IO.FileStream
-        Select Case Level.BGid
-            Case 1
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-1.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-                Level.BGtype = 1
-                LevelSettings.BGColor = Color.FromArgb(255, 104, 152, 248)
-            Case 2
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-3.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-                Level.BGtype = 1
-                LevelSettings.BGColor = Color.FromArgb(255, 104, 152, 248)
-            Case 3
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-4.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 48, 64, 48)
-            Case 4
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-5.png"
-                Level.BGtype = 4
-            Case 5
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-7.png"
-                Level.BGtype = 4
-            Case 6
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-2.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.FromArgb(255, 104, 152, 248)
-            Case 7
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-36.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.FromArgb(255, 152, 144, 248)
-            Case 8
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-14.png"
-                Level.BGtype = 2
-            Case 9
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-15.png"
-                Level.BGtype = 4
-            Case 10
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-17.png"
-                Level.BGtype = 6
-            Case 11
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-20.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.Black
-            Case 12
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-21.png"
-                Level.BGtype = 5
-            Case 13
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-22.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-                Level.BGtype = 3
-                LevelSettings.BGColor = Color.FromArgb(255, 104, 152, 248)
-            Case 14
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-23.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.FromArgb(255, 0, 0, 24)
-            Case 15
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-24.png"
-                Level.BGtype = 4
-            Case 16
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-26.png"
-                Level.BGtype = 5
-            Case 17
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-27.png"
-                Level.BGtype = 6
-            Case 18
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-35.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-36.png"
-                Level.BGtype = 1
-                LevelSettings.BGColor = Color.FromArgb(255, 152, 144, 248)
-            Case 19
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-37.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-36.png"
-                Level.BGtype = 1
-                LevelSettings.BGColor = Color.FromArgb(255, 152, 144, 248)
-            Case 20
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-38.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.FromArgb(255, 216, 240, 248)
-            Case 21
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-39.png"
-                Level.BGtype = 4
-            Case 22
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-56.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 8, 0, 96)
-            Case 23
-                Dim path As String = Form1.FilePath & "\graphics\background2\background2-11.png"
-                Level.BGtype = 2
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 24
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-8.png"
-                Level.BGtype = 4
-            Case 25
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-9.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 26
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-10.png"
-                Level.BG2path = Form1.FilePath & "\graphics\background2\background2-9.png"
-                Level.BGtype = 7
-                LevelSettings.BGColor = Color.FromArgb(255, 104, 152, 248)
-            Case 27
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-41.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 28
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-50.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 29
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-51.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 30
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-6.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 31
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-25.png"
-                Level.BGtype = 4
-            Case 32
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-44.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 33
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-48.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 34
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-49.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 35
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-52.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 36
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-53.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 37
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-54.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 38
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-57.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 39
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-12.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 40
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-32.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 41
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-34.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 42
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-33.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 43
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-31.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 44
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-18.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.Black
-            Case 45
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-19.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 46
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-13.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 47
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-29.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 48
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-30.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 49
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-42.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 50
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-43.png"
-                Level.BGtype = 6
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 51
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-28.png"
-                Level.BGtype = 4
-            Case 52
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-55.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 53
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-58.png"
-                Level.BGtype = 8
-                LevelSettings.BGColor = Color.FromArgb(255, 80, 136, 160)
-            Case 54
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-16.png"
-                Level.BGtype = 4
-            Case 55
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-45.png"
-                Level.BGtype = 4
-            Case 56
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-46.png"
-                Level.BGtype = 4
-            Case 57
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-47.png"
-                Level.BGtype = 4
-            Case 58
-                Level.BGpath = Form1.FilePath & "\graphics\background2\background2-40.png"
-                Level.BGtype = 6
-        End Select
-
-        Try
-            fs = New FileStream(Level.BGpath, FileMode.Open)
-            Level.BG = Image.FromStream(fs)
-
-            fs.Close()
-            fs.Dispose()
-        Catch ex As Exception
-            Me.BackColor = Color.Black
-        End Try
-
-        If Not Level.BG2path = "" Then
-            fs2 = New FileStream(Level.BG2path, FileMode.Open)
-            Level.BG2 = Image.FromStream(fs2)
-
-            fs2.Close()
-            fs2.Dispose()
-        End If
-
-        Me.Refresh()
-        Me.Update()
-    End Sub
-
 
     Private Sub Form2_Scroll(sender As Object, e As System.Windows.Forms.ScrollEventArgs) Handles Me.Scroll
         If e.ScrollOrientation = ScrollOrientation.VerticalScroll Then

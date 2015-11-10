@@ -977,11 +977,11 @@ Public Class Play
         If Level.LevelW > 640 Or (Level.LevelH > 608 And OnGround = False) Then
             ViewPort = New Rectangle(PlayerX - (Form2.Width / 2), Math.Ceiling((PlayerY + Player.PlayerH) - (Form2.Height / 2)), Form2.Width, Form2.Height - 56)
 
-            ViewPort.X = Clamp(ViewPort.X, 0, (Level.LevelW - Form2.Width) + 32)
+            ViewPort.X = Main.Clamp(ViewPort.X, 0, (Level.LevelW - Form2.Width) + 32)
 
-            PlayerX = Clamp(PlayerX, 0, ViewPort.Right - PlayerCollide.Width)
+            PlayerX = Main.Clamp(PlayerX, 0, ViewPort.Right - PlayerCollide.Width)
 
-            ViewPort.Y = Clamp(ViewPort.Y, 0, Level.LevelH - ViewPort.Height)
+            ViewPort.Y = Main.Clamp(ViewPort.Y, 0, Level.LevelH - ViewPort.Height)
         ElseIf Level.LevelW <= 640 Then
             ViewPort.X = 0
         ElseIf Level.LevelH <= 608 Then
@@ -1001,13 +1001,5 @@ Public Class Play
         Form2.AddObject()
     End Sub
 
-    Public Shared Function Clamp(input As Double, min As Double, max As Double)
-        If input >= max Then
-            Return max
-        ElseIf input <= min
-            Return min
-        End If
 
-        Return input
-    End Function
 End Class

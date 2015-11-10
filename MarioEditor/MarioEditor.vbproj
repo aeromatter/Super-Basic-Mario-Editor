@@ -109,6 +109,7 @@
     <Compile Include="Classes\Audio.vb" />
     <Compile Include="Classes\libZPlay.vb" />
     <Compile Include="Classes\LoadFile.vb" />
+    <Compile Include="Classes\Main.vb" />
     <Compile Include="Classes\Player.vb" />
     <Compile Include="Classes\PlayerC.vb" />
     <Compile Include="Classes\NPC.vb" />

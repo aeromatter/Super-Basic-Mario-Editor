@@ -30,7 +30,7 @@ Public Class LoadFile
 
         Level.HeightInc = ((Level.LevelH - (19 * 32)) + 32) / 32
 
-        Form2.SetBG()
+        Main.SetLevelBG(Level.BGid, Level.BG2id)
 
         Form2.AutoScrollMinSize = New Size(Level.LevelW, Level.LevelH)
 

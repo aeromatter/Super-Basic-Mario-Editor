@@ -11,233 +11,127 @@ Public Class LevelSettings
 
     Private Sub Button26_Click(sender As System.Object, e As System.EventArgs) Handles Button26.Click
         'SMB3 Blocks BG
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-1.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-
-        Level.BGtype = 1
-        BGColor = Color.FromArgb(255, 104, 152, 248)
-        Level.BGid = 1
-
+        Main.SetLevelBG(1, 2)
         SetLevelBG()
     End Sub
 
     Private Sub Button27_Click(sender As System.Object, e As System.EventArgs) Handles Button27.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-3.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-
-        Level.BGtype = 1
-        BGColor = Color.FromArgb(255, 104, 152, 248)
-        Level.BGid = 1
-
+        Main.SetLevelBG(3, 2)
         SetLevelBG()
         'REPEATING BOTTOM
     End Sub
 
     Private Sub Button28_Click(sender As System.Object, e As System.EventArgs) Handles Button28.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-4.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 48, 64, 48)
-        Level.BGid = 3
-
+        Main.SetLevelBG(4, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button29_Click(sender As System.Object, e As System.EventArgs) Handles Button29.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-5.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 4
-
-        SetLevelBG() 
+        Main.SetLevelBG(5, 0)
+        SetLevelBG()
     End Sub
 
     Private Sub Button30_Click(sender As System.Object, e As System.EventArgs) Handles Button30.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-7.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 5
-        
+        Main.SetLevelBG(7, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button31_Click(sender As System.Object, e As System.EventArgs) Handles Button31.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-2.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 104, 152, 248)
-        Level.BGid = 6
-
+        Main.SetLevelBG(2, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button32_Click(sender As System.Object, e As System.EventArgs) Handles Button32.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-36.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 152, 144, 248)
-        Level.BGid = 7
-
+        Main.SetLevelBG(36, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button33_Click(sender As System.Object, e As System.EventArgs) Handles Button33.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-14.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 240, 120, 64)
-        Level.BGid = 8
-        
+        Main.SetLevelBG(14, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button34_Click(sender As System.Object, e As System.EventArgs) Handles Button34.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-15.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 9
-        
+        Main.SetLevelBG(15, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button35_Click(sender As System.Object, e As System.EventArgs) Handles Button35.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-17.png"
-        
-        Level.BGtype = 6
-        Level.BGid = 10
-        
+        Main.SetLevelBG(17, 0)
         SetLevelBG()
         'REPEATING BOTTOM
     End Sub
 
     Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-20.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.Black
-        Level.BGid = 11
-        
+        Main.SetLevelBG(20, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button37_Click(sender As System.Object, e As System.EventArgs) Handles Button37.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-21.png"
-        
-        Level.BGtype = 5
-        Level.BGid = 12
-
+        Main.SetLevelBG(21, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button38_Click(sender As System.Object, e As System.EventArgs) Handles Button38.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-22.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-2.png"
-       
-        Level.BGtype = 3
-        BGColor = Color.FromArgb(255, 104, 152, 248)
-        Level.BGid = 13
-        
+        Main.SetLevelBG(22, 2)
         SetLevelBG()
     End Sub
 
     Private Sub Button39_Click(sender As System.Object, e As System.EventArgs) Handles Button39.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-23.png"
-
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 0, 0, 24)
-        Level.BGid = 14
-        
+        Main.SetLevelBG(23, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button40_Click(sender As System.Object, e As System.EventArgs) Handles Button40.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-24.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 15
-        
+        Main.SetLevelBG(24, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button41_Click(sender As System.Object, e As System.EventArgs) Handles Button41.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-26.png"
-        
-        Level.BGtype = 5
-        Level.BGid = 16
-        
+        Main.SetLevelBG(26, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button42_Click(sender As System.Object, e As System.EventArgs) Handles Button42.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-27.png"
-        
-        Level.BGtype = 6
-        Level.BGid = 17
-        
+        Main.SetLevelBG(27, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button43_Click(sender As System.Object, e As System.EventArgs) Handles Button43.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-35.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-36.png"
-        
-        Level.BGtype = 1
-        BGColor = Color.FromArgb(255, 152, 144, 248)
-        Level.BGid = 18
-        
+        Main.SetLevelBG(35, 36)
         SetLevelBG()
     End Sub
 
     Private Sub Button44_Click(sender As System.Object, e As System.EventArgs) Handles Button44.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-37.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-36.png"
-
-        Level.BGtype = 1
-        BGColor = Color.FromArgb(255, 152, 144, 248)
-        Level.BGid = 19
-        
+        Main.SetLevelBG(37, 36)
         SetLevelBG()
     End Sub
 
     Private Sub Button45_Click(sender As System.Object, e As System.EventArgs) Handles Button45.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-38.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 216, 240, 248)
-        Level.BGid = 20
-        
+        Main.SetLevelBG(38, 0)
         SetLevelBG()
         'REPEATING BOTTOM
     End Sub
 
     Private Sub Button46_Click(sender As System.Object, e As System.EventArgs) Handles Button46.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-39.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 21
-        
+        Main.SetLevelBG(39, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button47_Click(sender As System.Object, e As System.EventArgs) Handles Button47.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-56.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 8, 0, 96)
-        Level.BGid = 22
-        
+        Main.SetLevelBG(56, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button19_Click(sender As System.Object, e As System.EventArgs) Handles Button19.Click
         Level.Music = Form1.FilePath & "\music\smb3-overworld.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button20_Click(sender As System.Object, e As System.EventArgs) Handles Button20.Click
         Level.Music = Form1.FilePath & "\music\smb3-sky.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -249,35 +143,30 @@ Public Class LevelSettings
 
     Private Sub Button22_Click(sender As System.Object, e As System.EventArgs) Handles Button22.Click
         Level.Music = Form1.FilePath & "\music\smb3-castle.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button23_Click(sender As System.Object, e As System.EventArgs) Handles Button23.Click
         Level.Music = Form1.FilePath & "\music\smb3-boss.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button24_Click(sender As System.Object, e As System.EventArgs) Handles Button24.Click
         Level.Music = Form1.FilePath & "\music\smb3-water.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button25_Click(sender As System.Object, e As System.EventArgs) Handles Button25.Click
         Level.Music = Form1.FilePath & "\music\smb3-hammer.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button61_Click(sender As System.Object, e As System.EventArgs) Handles Button61.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-11.png"
-        
-        Level.BGtype = 2
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 23
-        
+        Main.SetLevelBG(11, 0)
         SetLevelBG()
     End Sub
 
@@ -307,86 +196,56 @@ Public Class LevelSettings
     End Sub
 
     Private Sub Button62_Click(sender As System.Object, e As System.EventArgs) Handles Button62.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-8.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 24
-        
+        Main.SetLevelBG(8, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button63_Click(sender As System.Object, e As System.EventArgs) Handles Button63.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-9.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 25
-        
+        Main.SetLevelBG(9, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button64_Click(sender As System.Object, e As System.EventArgs) Handles Button64.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-10.png"
-        Level.BG2path = Form1.FilePath & "\graphics\background2\background2-9.png"
-        
-        Level.BGtype = 7
-        BGColor = Color.FromArgb(255, 104, 152, 248)
-        Level.BGid = 26
-        
+        Main.SetLevelBG(10, 9)
         SetLevelBG()
     End Sub
 
     Private Sub Button65_Click(sender As System.Object, e As System.EventArgs) Handles Button65.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-41.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 27
-        
+        Main.SetLevelBG(41, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button66_Click(sender As System.Object, e As System.EventArgs) Handles Button66.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-50.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 28
-        
+        Main.SetLevelBG(50, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button67_Click(sender As System.Object, e As System.EventArgs) Handles Button67.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-51.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 29
-        
+        Main.SetLevelBG(51, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button68_Click(sender As System.Object, e As System.EventArgs) Handles Button68.Click
         Level.Music = Form1.FilePath & "\music\smb-overworld.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button69_Click(sender As System.Object, e As System.EventArgs) Handles Button69.Click
         Level.Music = Form1.FilePath & "\music\smb-underground.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button70_Click(sender As System.Object, e As System.EventArgs) Handles Button70.Click
         Level.Music = Form1.FilePath & "\music\smb-castle.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button71_Click(sender As System.Object, e As System.EventArgs) Handles Button71.Click
         Level.Music = Form1.FilePath & "\music\smb-water.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -411,115 +270,71 @@ Public Class LevelSettings
     End Sub
 
     Private Sub Button48_Click(sender As System.Object, e As System.EventArgs) Handles Button48.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-6.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 30
-        
+        Main.SetLevelBG(6, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button49_Click(sender As System.Object, e As System.EventArgs) Handles Button49.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-25.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 31
-        
+        Main.SetLevelBG(25, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button50_Click(sender As System.Object, e As System.EventArgs) Handles Button50.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-44.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 32
-        
+        Main.SetLevelBG(44, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button51_Click(sender As System.Object, e As System.EventArgs) Handles Button51.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-48.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 33
-
+        Main.SetLevelBG(48, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button52_Click(sender As System.Object, e As System.EventArgs) Handles Button52.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-49.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 34
-        
+        Main.SetLevelBG(49, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button53_Click(sender As System.Object, e As System.EventArgs) Handles Button53.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-52.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 35
-        
+        Main.SetLevelBG(52, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button54_Click(sender As System.Object, e As System.EventArgs) Handles Button54.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-53.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 36
-        
+        Main.SetLevelBG(53, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button55_Click(sender As System.Object, e As System.EventArgs) Handles Button55.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-54.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 37
-        
+        Main.SetLevelBG(54, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button56_Click(sender As System.Object, e As System.EventArgs) Handles Button56.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-57.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 38
-        
+        Main.SetLevelBG(57, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button57_Click(sender As System.Object, e As System.EventArgs) Handles Button57.Click
         Level.Music = Form1.FilePath & "\music\smb2-overworld.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button58_Click(sender As System.Object, e As System.EventArgs) Handles Button58.Click
         Level.Music = Form1.FilePath & "\music\smb2-underground.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button59_Click(sender As System.Object, e As System.EventArgs) Handles Button59.Click
         Level.Music = Form1.FilePath & "\music\smb2-boss.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button60_Click(sender As System.Object, e As System.EventArgs) Handles Button60.Click
         Level.Music = Form1.FilePath & "\music\smb2-wart.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -534,193 +349,119 @@ Public Class LevelSettings
     End Sub
 
     Private Sub Button72_Click(sender As System.Object, e As System.EventArgs) Handles Button72.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-12.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 39
-        
+        Main.SetLevelBG(12, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button73_Click(sender As System.Object, e As System.EventArgs) Handles Button73.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-32.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 40
-        
+        Main.SetLevelBG(32, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button74_Click(sender As System.Object, e As System.EventArgs) Handles Button74.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-34.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 41
-        
+        Main.SetLevelBG(34, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button75_Click(sender As System.Object, e As System.EventArgs) Handles Button75.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-33.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 42
-        
+        Main.SetLevelBG(33, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button76_Click(sender As System.Object, e As System.EventArgs) Handles Button76.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-31.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 43
-        
+        Main.SetLevelBG(31, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button77_Click(sender As System.Object, e As System.EventArgs) Handles Button77.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-18.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 44
-        
+        Main.SetLevelBG(18, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button78_Click(sender As System.Object, e As System.EventArgs) Handles Button78.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-19.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 45
-        
+        Main.SetLevelBG(19, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button79_Click(sender As System.Object, e As System.EventArgs) Handles Button79.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-13.png"
-
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 46
-        
+        Main.SetLevelBG(13, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button80_Click(sender As System.Object, e As System.EventArgs) Handles Button80.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-29.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 47
-        
+        Main.SetLevelBG(29, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button81_Click(sender As System.Object, e As System.EventArgs) Handles Button81.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-30.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 48
-        
+        Main.SetLevelBG(30, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button82_Click(sender As System.Object, e As System.EventArgs) Handles Button82.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-42.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 49
-        
+        Main.SetLevelBG(42, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button83_Click(sender As System.Object, e As System.EventArgs) Handles Button83.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-43.png"
-        
-        Level.BGtype = 6
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 50
-        
+        Main.SetLevelBG(43, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button84_Click(sender As System.Object, e As System.EventArgs) Handles Button84.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-28.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 51
-        
+        Main.SetLevelBG(28, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button85_Click(sender As System.Object, e As System.EventArgs) Handles Button85.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-55.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 52
-        
+        Main.SetLevelBG(55, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button86_Click(sender As System.Object, e As System.EventArgs) Handles Button86.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-58.png"
-        
-        Level.BGtype = 8
-        BGColor = Color.FromArgb(255, 80, 136, 160)
-        Level.BGid = 53
-        
+        Main.SetLevelBG(58, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button87_Click(sender As System.Object, e As System.EventArgs) Handles Button87.Click
         Level.Music = Form1.FilePath & "\music\smw-overworld.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button88_Click(sender As System.Object, e As System.EventArgs) Handles Button88.Click
         Level.Music = Form1.FilePath & "\music\smw-sky.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button89_Click(sender As System.Object, e As System.EventArgs) Handles Button89.Click
         Level.Music = Form1.FilePath & "\music\smw-cave.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button90_Click(sender As System.Object, e As System.EventArgs) Handles Button90.Click
         Level.Music = Form1.FilePath & "\music\smw-ghosthouse.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button91_Click(sender As System.Object, e As System.EventArgs) Handles Button91.Click
         Level.Music = Form1.FilePath & "\music\smw-castle.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button92_Click(sender As System.Object, e As System.EventArgs) Handles Button92.Click
         Level.Music = Form1.FilePath & "\music\smw-water.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button93_Click(sender As System.Object, e As System.EventArgs) Handles Button93.Click
         Level.Music = Form1.FilePath & "\music\smw-boss.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -736,43 +477,43 @@ Public Class LevelSettings
 
     Private Sub Button94_Click(sender As System.Object, e As System.EventArgs) Handles Button94.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-forestmaze.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button95_Click(sender As System.Object, e As System.EventArgs) Handles Button95.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-mariospad.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button96_Click(sender As System.Object, e As System.EventArgs) Handles Button96.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-seasidetown.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button97_Click(sender As System.Object, e As System.EventArgs) Handles Button97.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-bowser.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button98_Click(sender As System.Object, e As System.EventArgs) Handles Button98.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-rosetown.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button99_Click(sender As System.Object, e As System.EventArgs) Handles Button99.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-nimbusland.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button100_Click(sender As System.Object, e As System.EventArgs) Handles Button100.Click
         Level.Music = Form1.FilePath & "\music\mariorpg-tadpolepond.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -788,49 +529,49 @@ Public Class LevelSettings
 
     Private Sub Button101_Click(sender As System.Object, e As System.EventArgs) Handles Button101.Click
         Level.Music = Form1.FilePath & "\music\mario64-maintheme.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button102_Click(sender As System.Object, e As System.EventArgs) Handles Button102.Click
         Level.Music = Form1.FilePath & "\music\mario64-castle.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button103_Click(sender As System.Object, e As System.EventArgs) Handles Button103.Click
         Level.Music = Form1.FilePath & "\music\sm64-desert.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button104_Click(sender As System.Object, e As System.EventArgs) Handles Button104.Click
         Level.Music = Form1.FilePath & "\music\mario64-snowmountain.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button105_Click(sender As System.Object, e As System.EventArgs) Handles Button105.Click
         Level.Music = Form1.FilePath & "\music\mario64-boss.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button106_Click(sender As System.Object, e As System.EventArgs) Handles Button106.Click
         Level.Music = Form1.FilePath & "\music\mario64-water.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button107_Click(sender As System.Object, e As System.EventArgs) Handles Button107.Click
         Level.Music = Form1.FilePath & "\music\mario64-cave.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button108_Click(sender As System.Object, e As System.EventArgs) Handles Button108.Click
         Level.Music = Form1.FilePath & "\music\smg-star-reactor.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -852,47 +593,27 @@ Public Class LevelSettings
     End Sub
 
     Private Sub Button110_Click(sender As System.Object, e As System.EventArgs) Handles Button110.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-16.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 54
-        
+        Main.SetLevelBG(16, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button111_Click(sender As System.Object, e As System.EventArgs) Handles Button111.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-45.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 55
-        
+        Main.SetLevelBG(45, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button112_Click(sender As System.Object, e As System.EventArgs) Handles Button112.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-46.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 56
-        
+        Main.SetLevelBG(46, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button113_Click(sender As System.Object, e As System.EventArgs) Handles Button113.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-47.png"
-        
-        Level.BGtype = 4
-        Level.BGid = 57
-        
+        Main.SetLevelBG(47, 0)
         SetLevelBG()
     End Sub
 
     Private Sub Button114_Click(sender As System.Object, e As System.EventArgs) Handles Button114.Click
-        Level.BGpath = Form1.FilePath & "\graphics\background2\background2-40.png"
-        
-        Level.BGtype = 6
-        Level.BGid = 58
-        
+        Main.SetLevelBG(40, 0)
         SetLevelBG()
     End Sub
 
@@ -902,25 +623,25 @@ Public Class LevelSettings
 
     Private Sub Button116_Click(sender As System.Object, e As System.EventArgs) Handles Button116.Click
         Level.Music = Form1.FilePath & "\music\sm-crateria.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button117_Click(sender As System.Object, e As System.EventArgs) Handles Button117.Click
         Level.Music = Form1.FilePath & "\music\sm-brinstar.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button118_Click(sender As System.Object, e As System.EventArgs) Handles Button118.Click
         Level.Music = Form1.FilePath & "\music\tds-metroid-charge.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
     Private Sub Button119_Click(sender As System.Object, e As System.EventArgs) Handles Button119.Click
         Level.Music = Form1.FilePath & "\music\sm-itemroom.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
@@ -945,7 +666,7 @@ Public Class LevelSettings
 
     Private Sub Button122_Click(sender As System.Object, e As System.EventArgs) Handles Button122.Click
         Level.Music = Form1.FilePath & "\music\nsmb-overworld.ogg"
-        
+
         SetLevelMusic()
     End Sub
 
