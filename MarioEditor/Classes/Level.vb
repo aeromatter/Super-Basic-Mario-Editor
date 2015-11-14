@@ -16,7 +16,7 @@
     Public Shared LevelW As Integer = 25 * 32
     Public Shared LevelH As Integer = 19 * 32
     Public Shared HeightInc As Integer = 1
-    Public Shared Time As Integer
+    Public Shared Time As UInteger = 300
     Public Shared TimeLeft As Integer
     Public Shared LevelPath As String = Form1.FilePath & "\worlds\"
     Public Shared P1start As Rectangle

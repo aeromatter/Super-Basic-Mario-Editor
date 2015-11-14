@@ -916,10 +916,10 @@ Public Class Play
                     'Check for collision on left side of block.
                     If ((PlayerCollide.Right = r.Left) Or PlayerCollide.IntersectsWith(New Rectangle(Math.Ceiling(r.X - MoveVel), r.Y, r.Width, r.Height))) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
                         CollideDir = 1
-                        MoveVel = 0.0
+                        'MoveVel = 0.0
                     ElseIf (PlayerCollide.Right >= ViewPort.Right - 32) Then
                         CollideDir = 1
-                        MoveVel = 0.0
+                        'MoveVel = 0.0
                     End If
                 Case 2
                     'Check for collision on right side of block.
@@ -933,12 +933,21 @@ Public Class Play
             End Select
 
             'Check if player hit block from below.
-            If PlayerCollide.IntersectsWith(New Rectangle(r.X, r.Y + JumpSpeed, r.Width, r.Height)) = True And IsJumping = True Then
+            If (PlayerCollide.IntersectsWith(New Rectangle(r.X, r.Y + JumpSpeed, r.Width, r.Height)) = True And PlayerY > r.Y) And IsJumping = True Then
                 IsJumping = False
 
-                PlayerCollide.Y = (r.Bottom + 2)
-                PlayerY = (r.Bottom + 2)
-                DrawY = (r.Bottom + 2)
+                If CollideDir = 0 Then
+                    PlayerCollide.Y = (r.Bottom + 2)
+                    PlayerY = (r.Bottom + 2)
+                    DrawY = (r.Bottom + 2)
+                Else
+                    Select Case CollideDir
+                        Case 1
+                            PlayerX -= 2
+                        Case 2
+                            PlayerX += 2
+                    End Select
+                End If
 
                 If CurState > 0 And Blocks.Tiles.Item(Blocks.TileRects.IndexOf(r)).Breakable = True Then
                     Blocks.Tiles.RemoveAt(Blocks.TileRects.IndexOf(r))
@@ -959,6 +968,11 @@ Public Class Play
 
         If MoveVel < MoveSpeed Then
             MoveVel += Math.Ceiling(MoveSpeed / 10)
+        End If
+
+        If IsMoving = False Then
+            MoveVel -= Math.Ceiling(MoveSpeed / 10)
+            MoveVel = Main.Clamp(MoveVel, 0, MoveSpeed)
         End If
     End Sub
 

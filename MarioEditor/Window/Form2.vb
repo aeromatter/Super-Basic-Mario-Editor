@@ -1214,14 +1214,14 @@ Public Class Form2
         Try
             sw = New StreamWriter(SavePath, False)
 
-            sw.WriteLine(Level.LevelW.ToString())
-            sw.WriteLine(Level.LevelH.ToString())
-            sw.WriteLine(String.Format("[OE:{0}|LW:{1}|NB:{2}|UW:{3}]", Level.OffscreenExit, Level.LevelWrap, Level.NoTurnBack, Level.Underwater))
-            sw.WriteLine(String.Format("[P1:{0}|P2:{1}]", RC.ConvertToString(Level.P1start), RC.ConvertToString(Level.P2start)))
-            sw.WriteLine(Level.Time)
-            sw.WriteLine(String.Format("[T:{0}|GL:{1}|B:{2}|BG:{3}|MU:{4}]", Level.Time, Play.GravityLevel, Level.Brightness, Level.BGid, Level.MusicID))
+            sw.WriteLine(String.Format("LW:{0}|LH:{1}", Level.LevelW, Level.LevelH))
+            sw.WriteLine(String.Format("OE:{0}|WR:{1}|NB:{2}|UW:{3}", Level.OffscreenExit, Level.LevelWrap, Level.NoTurnBack, Level.Underwater))
+            sw.WriteLine(String.Format("P1:{0}|P2:{1}", RC.ConvertToString(Level.P1start), RC.ConvertToString(Level.P2start)))
+            sw.WriteLine(String.Format("T:{0}|GL:{1}|B:{2}|BG:{3},{4}|MU:{5}", Level.Time, Play.GravityLevel, Level.Brightness, Level.BGid, Level.BG2id, Level.MusicID))
 
             sw.WriteLine("*BLOCKS*")
+
+
 
             For i = 0 To Blocks.Tiles.Count - 1
 
@@ -1298,9 +1298,9 @@ Public Class Form2
 
                 If sb.Length > 0 Then
                     sb.Remove(sb.Length - 1, 1)
-                    sw.WriteLine(String.Format("[ID:{0}][IT:{1}][X:{2}Y:{3}]({4})", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y, sb.ToString()))
+                    sw.WriteLine(String.Format("ID:{0}|IT:{1}|X:{2}|Y:{3}|{4}", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y, sb.ToString()))
                 Else
-                    sw.WriteLine(String.Format("[ID:{0}][IT:{1}][X:{2}Y:{3}]", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y))
+                    sw.WriteLine(String.Format("ID:{0}|IT:{1}|X:{2}|Y:{3}", Blocks.Tiles(i).ID, Blocks.Tiles(i).ContainItem, Blocks.Tiles(i).X, Blocks.Tiles(i).Y))
                 End If
             Next
 
@@ -1310,6 +1310,7 @@ Public Class Form2
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Public Sub Save()
         Dim RC As RectangleConverter
         RC = New RectangleConverter

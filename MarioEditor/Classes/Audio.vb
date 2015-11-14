@@ -4,7 +4,7 @@ Public Class Audio
 
     Public Shared PlaySFX As New ZPlay()
 
-    Public Shared Sub PlaySound(ID As Integer)
+    Public Shared Sub PlaySound(ID As UInteger)
         Select Case ID
             Case 0
                 PlayAudio(Form1.FilePath & "\sound\block-smash.ogg")
@@ -24,7 +24,7 @@ Public Class Audio
         End Select
     End Sub
 
-    Public Shared Sub PlayMusic(ID As Integer)
+    Public Shared Sub PlayMusic(ID As UInteger)
         Select Case ID
             Case 0
 

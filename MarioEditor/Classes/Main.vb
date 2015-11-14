@@ -88,4 +88,8 @@ Public Class Main
         Return input
     End Function
 
+    Public Shared Function IntChanged(input As Integer, original As Integer) As Boolean
+        Return input <> original
+    End Function
+
 End Class
