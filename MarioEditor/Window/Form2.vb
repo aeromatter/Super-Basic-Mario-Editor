@@ -924,18 +924,10 @@ Public Class Form2
 
                 Select Case i.Invisible
                     Case False
-                        If AdvancedBlocks.GraphicChanged = False Then
-                            If i.Animated = True Then
-                                graphic.DrawImage(i.IMG, i.rectangle, New Rectangle(0, i.Height * Anim(i.FrameSpeed, i.TotalFrames), i.gfxWidth, i.Height), GraphicsUnit.Pixel)
-                            Else
-                                graphic.DrawImage(i.IMG, i.rectangle, New Rectangle(0, 0, i.gfxWidth, i.gfxHeight), GraphicsUnit.Pixel)
-                            End If
+                        If i.Animated = True Then
+                            graphic.DrawImage(i.IMG, i.rectangle, 0, Convert.ToInt32(i.Height * Anim(i.FrameSpeed, i.TotalFrames)), i.gfxWidth, i.Height, GraphicsUnit.Pixel, ImgB)
                         Else
-                            If i.Animated = True Then
-                                graphic.DrawImage(i.IMG, i.rectangle, 0, Convert.ToInt32(i.Height * Anim(i.FrameSpeed, i.TotalFrames)), i.gfxWidth, i.Height, GraphicsUnit.Pixel, ImgB)
-                            Else
-                                graphic.DrawImage(i.IMG, i.rectangle, 0, 0, i.gfxWidth, i.gfxHeight, GraphicsUnit.Pixel, ImgB)
-                            End If
+                            graphic.DrawImage(i.IMG, i.rectangle, 0, 0, i.gfxWidth, i.gfxHeight, GraphicsUnit.Pixel, ImgB)
                         End If
                     Case True
                         If Play.IsTesting = False Then

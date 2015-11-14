@@ -115,8 +115,16 @@ Public Class LoadFile
                         CurTag = ParseInput
                     End If
 
-                    For i = 0 To ParseOutput.Count - 1
+                    b.R = 255
+                    b.G = 255
+                    b.B = 255
+                    b.Glow = 100
+                    b.Width = 32
+                    b.Height = 32
+                    b.gfxWidth = 32
+                    b.gfxHeight = 32
 
+                    For i = 0 To ParseOutput.Count - 1
                         Select Case True
                             Case ParseOutput(i).StartsWith("ID:")
                                 b.ID = ParseOutput(i).Substring(3)
@@ -162,28 +170,13 @@ Public Class LoadFile
                                 b.TotalFrames = ParseOutput(i).Substring(3)
                         End Select
 
-                        If b.Width < 32 Then
-                            b.Width = 32
-                        ElseIf b.Height < 32
-                            b.Height = 32
-                        End If
-
-                        If b.gfxWidth < 32 Then
-                            b.gfxWidth = 32
-                        ElseIf b.gfxHeight < 32
-                            b.gfxHeight = 32
-                        End If
-
                         b.IMG = Form2.TB.Image
 
                         b.rectangle = New Rectangle(b.X, b.Y, b.Width, b.Height)
                     Next
 
-
                     Blocks.Tiles.Add(b)
                     Blocks.TileRects.Add(b.rectangle)
-
-                'MsgBox(ParseInput)
                 Case "*BGOS*"
 
                 Case "*NPCS*"
