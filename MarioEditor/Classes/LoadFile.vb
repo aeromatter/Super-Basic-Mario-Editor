@@ -89,6 +89,8 @@ Public Class LoadFile
                     Dim bg As String() = ParseOutput(x).Substring(3).Split(",")
                     Level.BGid = bg(0)
                     Level.BG2id = bg(1)
+
+                    Main.SetLevelBG(Level.BGid, Level.BG2id)
                 Case ParseOutput(x).StartsWith("MU")
                     Level.MusicID = ParseOutput(x).Substring(3)
             End Select
@@ -98,10 +100,6 @@ Public Class LoadFile
         Dim CurTag As String = ""
         CurTag = sr.ReadLine()
 
-        'Dim BlockTags As String() = {"ID", "IT", "X", "Y", "S", "I", "W", "H", "A", "R", "G", "B", "BR", "FS", "GW", "GH", "GL", "LV", "SW", "SH", "TF"}
-
-
-
         While sr.Peek() > -1
             Select Case CurTag
                 Case "*BLOCKS*"
@@ -109,25 +107,29 @@ Public Class LoadFile
 
                     Dim b As New Block
 
-                    If ParseInput IsNot String.Format("*{0}*", "BGOS", "NPCS") Then
+                    If Not ParseInput = "*BGOS*" Then
                         ParseOutput = ParseInput.Split("|")
                     Else
-                        CurTag = ParseInput
+                        CurTag = "*BGOS*"
+                        Exit Select
                     End If
 
                     b.R = 255
                     b.G = 255
                     b.B = 255
                     b.Glow = 100
-                    b.Width = 32
-                    b.Height = 32
-                    b.gfxWidth = 32
-                    b.gfxHeight = 32
 
                     For i = 0 To ParseOutput.Count - 1
                         Select Case True
                             Case ParseOutput(i).StartsWith("ID:")
                                 b.ID = ParseOutput(i).Substring(3)
+
+                                Blocks.GetBlock(b.ID)
+
+                                b.Width = Blocks.TileW
+                                b.Height = Blocks.TileH
+                                b.gfxWidth = Blocks.gfxWidth
+                                b.gfxHeight = Blocks.gfxHeight
                             Case ParseOutput(i).StartsWith("IT:")
                                 b.ContainItem = ParseOutput(i).Substring(3)
                             Case ParseOutput(i).StartsWith("X:")
@@ -178,18 +180,129 @@ Public Class LoadFile
                     Blocks.Tiles.Add(b)
                     Blocks.TileRects.Add(b.rectangle)
                 Case "*BGOS*"
+                    ParseInput = sr.ReadLine()
 
+                    If Not ParseInput = "*NPCS*" Then
+                        ParseOutput = ParseInput.Split("|")
+                    Else
+                        CurTag = ParseInput
+                        Exit Select
+                    End If
+
+                    Dim bgo As New BGO
+
+                    For i = 0 To ParseOutput.Count - 1
+
+                        Select Case True
+                            Case ParseOutput(i).StartsWith("ID:")
+                                bgo.ID = ParseOutput(i).Substring(3)
+
+                                Backgrounds.GetBGO(bgo.ID)
+
+                                bgo.gfxWidth = Backgrounds.gfxWidth
+                                bgo.gfxHeight = Backgrounds.gfxHeight
+                                bgo.Width = Backgrounds.BGOW
+                                bgo.Height = Backgrounds.BGOH
+                                bgo.ForeGround = Backgrounds.ForeGround
+
+                            Case ParseOutput(i).StartsWith("X:")
+                                bgo.X = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("Y:")
+                                bgo.Y = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("A:")
+                                bgo.Animated = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("FG:")
+                                bgo.ForeGround = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("FS:")
+                                bgo.FrameSpeed = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("GW:")
+                                bgo.gfxWidth = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("GH:")
+                                bgo.gfxHeight = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("W:")
+                                bgo.Width = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("H:")
+                                bgo.Height = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("TF:")
+                                bgo.TotalFrames = ParseOutput(i).Substring(3)
+                        End Select
+
+                        bgo.IMG = Form2.TB.Image
+
+                        bgo.rectangle = New Rectangle(bgo.X, bgo.Y, bgo.Width, bgo.Height)
+                    Next
+
+                    Backgrounds.BGOs.Add(bgo)
+                    Backgrounds.bgorects.Add(bgo.rectangle)
                 Case "*NPCS*"
+                    ParseInput = sr.ReadLine()
 
+                    ParseOutput = ParseInput.Split("|")
+
+                    Dim npcs As New NPCsets
+
+                    For i = 0 To ParseOutput.Count - 1
+                        Select Case True
+                            Case ParseOutput(i).StartsWith("ID:")
+                                npcs.ID = ParseOutput(i).Substring(3)
+
+                                NPC.GetNPC(npcs.ID)
+
+                                npcs.gfxWidth = NPC.gfxWidth
+                                npcs.Width = NPC.NPCW
+                                npcs.gfxHeight = NPC.gfxHeight
+                                npcs.Height = NPC.NPCH
+                                npcs.FrameSpeed = NPC.FrameSpeed
+                                npcs.TotalFrames = NPC.TotalFrames
+                                npcs.Animated = NPC.Animated
+
+                            Case ParseOutput(i).StartsWith("X:")
+                                npcs.X = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("Y:")
+                                npcs.Y = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("AI:")
+                                npcs.AI = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("A:")
+                                npcs.Animated = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("D:")
+                                npcs.Direction = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("FS:")
+                                npcs.FrameSpeed = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("ST:")
+                                npcs.FrameStyle = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("HG:")
+                                npcs.HasGravity = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("W:")
+                                npcs.Width = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("H:")
+                                npcs.Height = ParseOutput(i).Substring(2)
+                            Case ParseOutput(i).StartsWith("GW:")
+                                npcs.gfxWidth = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("GH:")
+                                npcs.gfxHeight = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("MG:")
+                                npcs.MetroidGlass = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("MS:")
+                                npcs.MoveSpeed = ParseOutput(i).Substring(3)
+                            Case ParseOutput(i).StartsWith("MSG:")
+                                npcs.MSG = ParseOutput(i).Substring(4)
+                            Case ParseOutput(i).StartsWith("TF:")
+                                npcs.TotalFrames = ParseOutput(i).Substring(3)
+                        End Select
+
+                        npcs.IMG = Form2.TB.Image
+
+                        npcs.rectangle = New Rectangle(npcs.X, npcs.Y, npcs.Width, npcs.Height)
+                    Next
+
+                    NPC.NPCsets.Add(npcs)
+                    NPC.NPCrects.Add(npcs.rectangle)
             End Select
         End While
 
-        sr.Close()
-        sr.Dispose()
 
-        For Each n As Block In Blocks.Tiles
-            MsgBox(String.Format("R: {0} G: {1} B: {2}", n.R, n.G, n.B))
-        Next
+            sr.Close()
+        sr.Dispose()
 
         'Level.Music = sr.ReadLine()
         'Level.BGid = sr.ReadLine()

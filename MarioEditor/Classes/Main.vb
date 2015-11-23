@@ -7,7 +7,7 @@ Public Class Main
         Dim fs As System.IO.FileStream
         Dim fs2 As System.IO.FileStream
 
-        If ID > 0 And ID2 > 0 Then
+        If ID > 0 AndAlso ID2 > 0 Then
             Level.BGpath = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID)
             Level.BG2path = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID2)
         ElseIf ID2 = 0
@@ -35,6 +35,7 @@ Public Class Main
         End Select
 
         Level.BGid = ID
+        Level.BG2id = ID2
 
         'Set Color
         Select Case ID

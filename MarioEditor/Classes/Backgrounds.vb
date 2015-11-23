@@ -33,7 +33,7 @@ Public Class Backgrounds
 
     Public Shared bmp As Bitmap
 
-    Public Shared Sub GetBGO()
+    Public Shared Sub GetBGO(ID As UInteger)
         bmp = Nothing
 
         BGOW = 32
@@ -43,7 +43,7 @@ Public Class Backgrounds
         Animated = False
         FrameSpeed = 8
 
-        Select Case Form2.SelectedBGO
+        Select Case ID
             Case 1
                 path = Form1.FilePath & "\graphics\background\background-1.png"
             Case 2

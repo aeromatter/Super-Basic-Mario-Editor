@@ -70,8 +70,8 @@ Public Class NPC
     Public Shared path As String
     Public Shared path2 As String
 
-    Public Shared Sub GetNPC()
-        
+    Public Shared Sub GetNPC(ID As UInteger)
+
         bmp = Nothing
 
         NPCW = 32
@@ -98,7 +98,7 @@ Public Class NPC
         HasGravity = True
         MoveSpeed = 1
 
-        Select Case Form2.SelectedNPC
+        Select Case ID
             Case 1
                 path = Form1.FilePath & "\graphics\npc\npc-1.png"
 
@@ -959,7 +959,7 @@ Public Class NPC
                 gfxWidth = 80
                 NPCW = 80
                 FrameStyle = 1
-                'Animated = True
+            'Animated = True
             Case 128
                 path = Form1.FilePath & "\graphics\npc\npc-262.png"
 
@@ -969,7 +969,7 @@ Public Class NPC
                 gfxWidth = 48
                 NPCW = 48
                 FrameStyle = 1
-                'Animated = True
+            'Animated = True
             Case 129
                 path = Form1.FilePath & "\graphics\npc\npc-288.png"
 

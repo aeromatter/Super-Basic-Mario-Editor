@@ -572,7 +572,7 @@ Public Class Form2
                     For Each bg As BGO In Backgrounds.BGOs.ToList
                         If bg.rectangle.Contains(r) Then
                             SelectedBGO = bg.ID
-                            Backgrounds.GetBGO()
+                            Backgrounds.GetBGO(SelectedBGO)
                             Backgrounds.BGOs.Remove(bg)
                             Backgrounds.bgorects.Remove(bg.rectangle)
                             Audio.PlaySound(4)
@@ -587,7 +587,7 @@ Public Class Form2
                         If i.rectangle.Contains(r) Then
 
                             SelectedNPC = i.ID
-                            NPC.GetNPC()
+                            NPC.GetNPC(SelectedNPC)
                             NPC.NPCsets.Remove(i)
                             NPC.NPCrects.Remove(i.rectangle)
                             Audio.PlaySound(4)
@@ -650,10 +650,10 @@ Public Class Form2
                 End Try
             Case 2
                 'Get currently selected BGO and its settings.
-                Backgrounds.GetBGO()
+                Backgrounds.GetBGO(SelectedBGO)
             Case 5
                 'Get currently selected NPC and its settings.
-                NPC.GetNPC()
+                NPC.GetNPC(SelectedNPC)
 
 
         End Select
@@ -1213,8 +1213,6 @@ Public Class Form2
 
             sw.WriteLine("*BLOCKS*")
 
-
-
             For i = 0 To Blocks.Tiles.Count - 1
 
                 Dim sb As New StringBuilder()
@@ -1296,6 +1294,121 @@ Public Class Form2
                 End If
             Next
 
+            sw.WriteLine("*BGOS*")
+
+            For i = 0 To Backgrounds.BGOs.Count - 1
+                Dim sb As New StringBuilder()
+                Backgrounds.GetBGO(Backgrounds.BGOs(i).ID)
+
+                If Backgrounds.BGOs(i).Animated <> Backgrounds.Animated Then
+                    sb.AppendFormat("A:{0}|", Backgrounds.BGOs(i).Animated)
+                End If
+
+                If Backgrounds.BGOs(i).ForeGround <> Backgrounds.ForeGround Then
+                    sb.AppendFormat("FG:{0}|", Backgrounds.BGOs(i).ForeGround)
+                End If
+
+                If Backgrounds.BGOs(i).FrameSpeed <> Backgrounds.FrameSpeed Then
+                    sb.AppendFormat("FS:{0}|", Backgrounds.BGOs(i).FrameSpeed)
+                End If
+
+                If Backgrounds.BGOs(i).gfxWidth <> Backgrounds.gfxWidth Then
+                    sb.AppendFormat("GW:{0}|", Backgrounds.BGOs(i).gfxWidth)
+                End If
+
+                If Backgrounds.BGOs(i).gfxHeight <> Backgrounds.gfxHeight Then
+                    sb.AppendFormat("GH:{0}|", Backgrounds.BGOs(i).gfxHeight)
+                End If
+
+                If Backgrounds.BGOs(i).Width <> Backgrounds.BGOW Then
+                    sb.AppendFormat("W:{0}|", Backgrounds.BGOs(i).Width)
+                End If
+
+                If Backgrounds.BGOs(i).Height <> Backgrounds.BGOH Then
+                    sb.AppendFormat("H:{0}|", Backgrounds.BGOs(i).Height)
+                End If
+
+                If Backgrounds.BGOs(i).TotalFrames <> Backgrounds.TotalFrames Then
+                    sb.AppendFormat("TF:{0}|", Backgrounds.BGOs(i).TotalFrames)
+                End If
+
+                If sb.Length > 0 Then
+                    sb.Remove(sb.Length - 1, 1)
+                    sw.WriteLine(String.Format("ID:{0}|X:{1}|Y:{2}|{3}", Backgrounds.BGOs(i).ID, Backgrounds.BGOs(i).X, Backgrounds.BGOs(i).Y, sb.ToString()))
+                Else
+                    sw.WriteLine(String.Format("ID:{0}|X:{1}|Y:{2}", Backgrounds.BGOs(i).ID, Backgrounds.BGOs(i).X, Backgrounds.BGOs(i).Y))
+                End If
+            Next
+
+            sw.WriteLine("*NPCS*")
+
+            For i = 0 To NPC.NPCsets.Count - 1
+                Dim sb As New StringBuilder()
+                NPC.GetNPC(NPC.NPCsets(i).ID)
+
+                If NPC.NPCsets(i).AI <> NPC.AI Then
+                    sb.AppendFormat("AI:{0}|", NPC.NPCsets(i).AI)
+                End If
+
+                If NPC.NPCsets(i).Animated <> NPC.Animated Then
+                    sb.AppendFormat("A:{0}|", NPC.NPCsets(i).Animated)
+                End If
+
+                If NPC.NPCsets(i).Direction <> NPC.Direction Then
+                    sb.AppendFormat("D:{0}|", NPC.NPCsets(i).Direction)
+                End If
+
+                If NPC.NPCsets(i).FrameSpeed <> NPC.FrameSpeed Then
+                    sb.AppendFormat("FS:{0}|", NPC.NPCsets(i).FrameSpeed)
+                End If
+
+                If NPC.NPCsets(i).FrameStyle <> NPC.FrameStyle Then
+                    sb.AppendFormat("ST:{0}|", NPC.NPCsets(i).FrameStyle)
+                End If
+
+                If NPC.NPCsets(i).gfxWidth <> NPC.gfxWidth Then
+                    sb.AppendFormat("GW:{0}|", NPC.NPCsets(i).gfxWidth)
+                End If
+
+                If NPC.NPCsets(i).gfxHeight <> NPC.gfxHeight Then
+                    sb.AppendFormat("GH:{0}|", NPC.NPCsets(i).gfxHeight)
+                End If
+
+                If NPC.NPCsets(i).HasGravity <> NPC.HasGravity Then
+                    sb.AppendFormat("HG:{0}|", NPC.NPCsets(i).HasGravity)
+                End If
+
+                If NPC.NPCsets(i).Width <> NPC.NPCW Then
+                    sb.AppendFormat("W:{0}|", NPC.NPCsets(i).Width)
+                End If
+
+                If NPC.NPCsets(i).Height <> NPC.NPCH Then
+                    sb.AppendFormat("H:{0}|", NPC.NPCsets(i).Height)
+                End If
+
+                If NPC.NPCsets(i).MetroidGlass <> NPC.MetroidGlass Then
+                    sb.AppendFormat("MG:{0}|", NPC.NPCsets(i).MetroidGlass)
+                End If
+
+                If NPC.NPCsets(i).MoveSpeed <> NPC.MoveSpeed Then
+                    sb.AppendFormat("MS:{0}|", NPC.NPCsets(i).MoveSpeed)
+                End If
+
+                If NPC.NPCsets(i).MSG <> NPC.Message Then
+                    sb.AppendFormat("MSG:{0}|", NPC.NPCsets(i).MSG)
+                End If
+
+                If NPC.NPCsets(i).TotalFrames <> NPC.TotalFrames Then
+                    sb.AppendFormat("TF:{0}|", NPC.NPCsets(i).TotalFrames)
+                End If
+
+                If sb.Length > 0 Then
+                    sb.Remove(sb.Length - 1, 1)
+                    sw.WriteLine(String.Format("ID:{0}|X:{1}|Y:{2}|{3}", NPC.NPCsets(i).ID, NPC.NPCsets(i).X, NPC.NPCsets(i).Y, sb.ToString()))
+                Else
+                    sw.WriteLine(String.Format("ID:{0}|X:{1}|Y:{2}", NPC.NPCsets(i).ID, NPC.NPCsets(i).X, NPC.NPCsets(i).Y))
+                End If
+            Next
             sw.Close()
             sw.Dispose()
         Catch ex As Exception
