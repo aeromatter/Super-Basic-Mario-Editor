@@ -4,8 +4,8 @@ Imports System.Text
 Public Class Main
 
     Public Shared Sub SetLevelBG(ByVal ID As UInteger, ByVal ID2 As UInteger)
-        Dim fs As System.IO.FileStream
-        Dim fs2 As System.IO.FileStream
+        Dim fs As FileStream
+        Dim fs2 As FileStream
 
         If ID > 0 AndAlso ID2 > 0 Then
             Level.BGpath = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID)
@@ -88,9 +88,4 @@ Public Class Main
 
         Return input
     End Function
-
-    Public Shared Function IntChanged(input As Integer, original As Integer) As Boolean
-        Return input <> original
-    End Function
-
 End Class

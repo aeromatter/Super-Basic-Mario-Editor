@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Drawing
 Imports System.Drawing.Graphics
+Imports System.Timers
 
 Public Class Play
     Public Shared Score As Integer = 0
@@ -29,8 +30,8 @@ Public Class Play
 
     Public Shared DrawW As Integer
     Public Shared DrawH As Integer
-    Public Shared DrawX As Integer
-    Public Shared DrawY As Integer
+    Public Shared DrawX As Double
+    Public Shared DrawY As Double
 
     Public Shared PlayerBox As Rectangle
     Public Shared OnYoshi As Boolean
@@ -47,11 +48,11 @@ Public Class Play
     Public Shared Collide As Boolean = False
     Public Shared CollideDir As Integer
     Public Shared OnGround As Boolean = False
-    Public Shared PlayerCollide As Rectangle
+    Public Shared PlayerCollide As RectangleF
     Public Shared IsDucking As Boolean = False
     Public Shared IsStarman As Boolean = False
 
-    Public Shared MoveSpeed As Integer = 6
+    Public Shared MoveSpeed As Double = 4
     Public Shared JumpSpeed As Integer = 12
     Public Shared IsRunning As Boolean = False
     Public Shared IsJumping As Boolean = False
@@ -79,6 +80,7 @@ Public Class Play
         ScoreLoc = New Point((HoldBoxLoc.X + HoldBoxLoc.Width) + 128, 48)
         CoinsLoc = New Point((HoldBoxLoc.X + HoldBoxLoc.Width) + 128, 24)
         LivesLoc = New Point((HoldBoxLoc.X - HoldBoxLoc.Width) - 64, 24)
+
     End Sub
 
     Public Shared Sub UsePowerup()
@@ -117,6 +119,7 @@ Public Class Play
             NPC.NPCsets(n) = tempnpc
 
         Next
+
     End Sub
 
     Public Shared Sub AI()
@@ -792,21 +795,35 @@ Public Class Play
     End Sub
 
     Public Shared Sub Gravity()
-        PlayerCollide = New Rectangle(PlayerX, PlayerY, Player.P1.PlayerW, Player.P1.PlayerH)
+        PlayerCollide = New RectangleF(PlayerX, PlayerY, Player.P1.PlayerW, Player.P1.PlayerH)
 
         OnGround = False
 
-        For Each r As Rectangle In Blocks.TileRects.Where(Function(s) Play.ViewPort.Contains(s))
-            If PlayerCollide.IntersectsWith(New Rectangle(r.X, r.Y - (GravityLevel + FallVel), r.Width, r.Height)) And IsJumping = False Then
+        Coins = MoveVel
 
+        For i = 0 To Blocks.TileRects.Count - 1
+            If PlayerCollide.IntersectsWith(New RectangleF(Blocks.TileRects(i).X, Blocks.TileRects(i).Y - (GravityLevel), Blocks.TileRects(i).Width, Blocks.TileRects(i).Height)) And IsJumping = False Then
                 OnGround = True
                 FallVel = 0.0
                 CheckCollision()
 
                 If CollideDir = 0 Then
-                    PlayerCollide.Y = (r.Top - Player.P1.PlayerH)
-                    PlayerY = (r.Top - Player.P1.PlayerH)
-                    DrawY = (r.Top - Player.P1.PlayerH)
+                    PlayerCollide.Y = Blocks.TileRects(i).Top - Player.P1.PlayerH
+                    PlayerY = Blocks.TileRects(i).Top - Player.P1.PlayerH
+                    DrawY = Blocks.TileRects(i).Top - Player.P1.PlayerH
+
+                    MoveSpeed = 4
+                Else
+                    Select Case CollideDir
+                        Case 1
+                            PlayerCollide.X -= MoveVel
+                            PlayerX -= MoveVel
+                            DrawX -= MoveVel
+                        Case 2
+                            PlayerCollide.X += MoveVel
+                            PlayerX += MoveVel
+                            DrawX += MoveVel
+                    End Select
                 End If
             End If
         Next
@@ -906,7 +923,7 @@ Public Class Play
     End Sub
 
     Public Shared Sub CheckCollision()
-        PlayerCollide = New Rectangle(PlayerX, PlayerY, Player.P1.PlayerW, Player.P1.PlayerH)
+        PlayerCollide = New RectangleF(PlayerX, PlayerY, Player.P1.PlayerW, Player.P1.PlayerH)
 
         CollideDir = 0
 
@@ -914,16 +931,16 @@ Public Class Play
             Select Case MoveDir
                 Case 1
                     'Check for collision on left side of block.
-                    If ((PlayerCollide.Right = r.Left) Or PlayerCollide.IntersectsWith(New Rectangle(Math.Ceiling(r.X - MoveVel), r.Y, r.Width, r.Height))) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
+                    If ((PlayerCollide.Right = r.Left) Or Math.Abs(r.X - PlayerCollide.Right) <= MoveSpeed) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
                         CollideDir = 1
-                        'MoveVel = 0.0
+                        MoveVel = 0.0
                     ElseIf (PlayerCollide.Right >= ViewPort.Right - 32) Then
                         CollideDir = 1
-                        'MoveVel = 0.0
+                        MoveVel = 0.0
                     End If
                 Case 2
                     'Check for collision on right side of block.
-                    If ((PlayerCollide.Left = r.Right) Or PlayerCollide.IntersectsWith(New Rectangle(Math.Ceiling(r.X + MoveVel), r.Y, r.Width, r.Height))) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
+                    If ((PlayerCollide.Left = r.Right) Or Math.Abs(r.Right - PlayerCollide.X) <= MoveSpeed) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
                         CollideDir = 2
                         MoveVel = 0.0
                     ElseIf (PlayerCollide.Left <= ViewPort.Left) Then
@@ -932,21 +949,14 @@ Public Class Play
                     End If
             End Select
 
-            'Check if player hit block from below.
-            If (PlayerCollide.IntersectsWith(New Rectangle(r.X, r.Y + JumpSpeed, r.Width, r.Height)) = True And PlayerY > r.Y) And IsJumping = True Then
+            'Check If player hit block from below.
+            If (PlayerCollide.IntersectsWith(New RectangleF(r.X, r.Y + JumpSpeed, r.Width, r.Height)) = True And PlayerY > r.Y) And IsJumping = True Then
                 IsJumping = False
 
                 If CollideDir = 0 Then
                     PlayerCollide.Y = (r.Bottom + 2)
                     PlayerY = (r.Bottom + 2)
                     DrawY = (r.Bottom + 2)
-                Else
-                    Select Case CollideDir
-                        Case 1
-                            PlayerX -= 2
-                        Case 2
-                            PlayerX += 2
-                    End Select
                 End If
 
                 If CurState > 0 And Blocks.Tiles.Item(Blocks.TileRects.IndexOf(r)).Breakable = True Then
@@ -955,12 +965,6 @@ Public Class Play
                 End If
             End If
         Next
-
-        If IsRunning = False Then
-            MoveSpeed = 4
-        Else
-            MoveSpeed = 8
-        End If
 
         If IsStarman = True Then
             MoveSpeed += 4

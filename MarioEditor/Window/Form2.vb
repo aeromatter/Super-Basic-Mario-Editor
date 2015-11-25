@@ -99,7 +99,8 @@ Public Class Form2
         If (Keyboard.GetKeyStates(Key.F5) And KeyStates.Down) > 0 Then
             Select Case MsgBox("Do you want to save the level first? Any unsaved changes will be lost.", MsgBoxStyle.YesNoCancel)
                 Case MsgBoxResult.Yes
-                    Save()
+                    VSMBXSave()
+                    IsSaved = True
                     'New Rectangle(Level.P1start.X - (Play.MarioW - 28), Level.P1start.Y - (Play.MarioH - Level.P1start.Height), Play.MarioW, Play.MarioH)
                     If IsSaved = True Then
                         Play.IsTesting = True
@@ -1416,113 +1417,6 @@ Public Class Form2
         End Try
     End Sub
 
-    Public Sub Save()
-        Dim RC As RectangleConverter
-        RC = New RectangleConverter
-
-        If Directory.Exists(Form1.FilePath & "\worlds\") = False Then
-            Directory.CreateDirectory(Form1.FilePath & "\worlds\")
-        End If
-
-        Dim SavePath As String = Level.LevelPath
-        Dim sw As StreamWriter
-
-        Try
-            sw = New StreamWriter(SavePath, False)
-
-            sw.WriteLine(Level.Music)
-            sw.WriteLine(Level.BGid)
-            sw.WriteLine(Level.LevelW)
-            sw.WriteLine(Level.LevelH)
-            sw.WriteLine(Level.LevelWrap.ToString())
-            sw.WriteLine(Level.NoTurnBack.ToString())
-            sw.WriteLine(Level.OffscreenExit.ToString())
-            sw.WriteLine(Level.Underwater.ToString())
-            sw.WriteLine(RC.ConvertToString(Level.P1start))
-            sw.WriteLine(RC.ConvertToString(Level.P2start))
-            sw.WriteLine(Level.Time)
-            sw.WriteLine(Play.GravityLevel)
-            sw.WriteLine(Level.Brightness)
-
-            sw.WriteLine("[BLOCK]")
-
-            For Each i As Block In Blocks.Tiles.ToList
-                sw.WriteLine(i.Animated.ToString())
-                sw.WriteLine(i.ContainItem)
-                sw.WriteLine(i.FrameSpeed)
-                sw.WriteLine(i.gfxHeight)
-                sw.WriteLine(i.gfxWidth)
-                sw.WriteLine(i.Height)
-                sw.WriteLine(i.Width)
-                sw.WriteLine(i.ID)
-                sw.WriteLine(i.Invisible.ToString())
-                sw.WriteLine(i.Lava.ToString())
-                sw.WriteLine(RC.ConvertToString(i.rectangle))
-                sw.WriteLine(i.SizeH)
-                sw.WriteLine(i.SizeW)
-                sw.WriteLine(i.Slip.ToString())
-                sw.WriteLine(i.TotalFrames)
-                sw.WriteLine(i.X)
-                sw.WriteLine(i.Y)
-                sw.WriteLine(i.R)
-                sw.WriteLine(i.G)
-                sw.WriteLine(i.B)
-                sw.WriteLine(i.Glow)
-                sw.WriteLine(i.Breakable)
-            Next
-
-            sw.WriteLine("[BGO]")
-
-            For Each i As BGO In Backgrounds.BGOs.ToList
-                sw.WriteLine(i.Animated.ToString())
-                sw.WriteLine(i.ForeGround.ToString())
-                sw.WriteLine(i.FrameSpeed)
-                sw.WriteLine(i.gfxHeight)
-                sw.WriteLine(i.gfxWidth)
-                sw.WriteLine(i.Height)
-                sw.WriteLine(i.Width)
-                sw.WriteLine(i.ID)
-                sw.WriteLine(RC.ConvertToString(i.rectangle))
-                sw.WriteLine(i.TotalFrames)
-                sw.WriteLine(i.X)
-                sw.WriteLine(i.Y)
-            Next
-
-            sw.WriteLine("[NPC]")
-
-            For Each i As NPCsets In NPC.NPCsets.ToList
-                sw.WriteLine(i.AI)
-                sw.WriteLine(i.Animated.ToString())
-                sw.WriteLine(i.Direction)
-                sw.WriteLine(i.FrameSpeed)
-                sw.WriteLine(i.FrameStyle)
-                sw.WriteLine(i.gfxHeight)
-                sw.WriteLine(i.gfxWidth)
-                sw.WriteLine(i.HasGravity.ToString())
-                sw.WriteLine(i.Height)
-                sw.WriteLine(i.Width)
-                sw.WriteLine(i.ID)
-                sw.WriteLine(i.MSG)
-                sw.WriteLine(i.MetroidGlass.ToString())
-                sw.WriteLine(i.MoveSpeed)
-                sw.WriteLine(RC.ConvertToString(i.rectangle))
-                sw.WriteLine(i.TotalFrames)
-                sw.WriteLine(i.X)
-                sw.WriteLine(i.Y)
-                sw.WriteLine(i.NPCcollide)
-            Next
-
-            sw.Close()
-            sw.Dispose()
-
-            IsSaved = True
-        Catch ex As Exception
-            MsgBox("You must save or load your level before testing!", MsgBoxStyle.Information)
-
-            IsSaved = False
-        End Try
-    End Sub
-
     Private Sub Form2_Scroll(sender As Object, e As System.Windows.Forms.ScrollEventArgs) Handles Me.Scroll
         If e.ScrollOrientation = ScrollOrientation.VerticalScroll Then
             Parallax += (e.OldValue - e.NewValue)
@@ -1800,5 +1694,4 @@ Public Class Form2
             Me.Height = Level.LevelH + 32
         End If
     End Sub
-
 End Class

@@ -36,6 +36,8 @@ Public Class LoadFile
             End Select
         Next
 
+        Form2.AutoScrollMinSize = New Size(Level.LevelW, Level.LevelH)
+
         ParseInput = sr.ReadLine()
         'ParseInput = Mid(ParseInput, 2, ParseInput.Length - 2)
         ParseOutput = ParseInput.Split("|")
