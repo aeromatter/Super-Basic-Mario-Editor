@@ -159,6 +159,7 @@ Partial Class LevelSettings
         Me.Button101 = New System.Windows.Forms.Button()
         Me.misc_settings = New System.Windows.Forms.GroupBox()
         Me.GroupBox27 = New System.Windows.Forms.GroupBox()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.Button134 = New System.Windows.Forms.Button()
         Me.Button133 = New System.Windows.Forms.Button()
         Me.Button132 = New System.Windows.Forms.Button()
@@ -193,7 +194,6 @@ Partial Class LevelSettings
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.BrowseMusic = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -348,18 +348,18 @@ Partial Class LevelSettings
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(6, 48)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(17, 13)
+        Me.Label2.Size = New System.Drawing.Size(18, 13)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Y:"
+        Me.Label2.Text = "H:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(6, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 13)
+        Me.Label1.Size = New System.Drawing.Size(21, 13)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "X:"
+        Me.Label1.Text = "W:"
         '
         'GroupBox3
         '
@@ -1601,6 +1601,15 @@ Partial Class LevelSettings
         Me.GroupBox27.TabStop = False
         Me.GroupBox27.Text = "Music"
         '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(393, 19)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(24, 23)
+        Me.Button11.TabIndex = 21
+        Me.Button11.Text = "..."
+        Me.Button11.UseVisualStyleBackColor = True
+        '
         'Button134
         '
         Me.Button134.Location = New System.Drawing.Point(319, 135)
@@ -1912,15 +1921,6 @@ Partial Class LevelSettings
         Me.TrackBar1.Size = New System.Drawing.Size(93, 45)
         Me.TrackBar1.TabIndex = 19
         Me.TrackBar1.Value = 10
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(393, 19)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(24, 23)
-        Me.Button11.TabIndex = 21
-        Me.Button11.Text = "..."
-        Me.Button11.UseVisualStyleBackColor = True
         '
         'BrowseMusic
         '

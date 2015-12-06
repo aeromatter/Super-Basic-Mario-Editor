@@ -25,12 +25,18 @@ Partial Class Form2
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.Animation = New System.Windows.Forms.Timer(Me.components)
+        Me.Updater = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Animation
         '
         Me.Animation.Enabled = True
         Me.Animation.Interval = 10
+        '
+        'Updater
+        '
+        Me.Updater.Enabled = True
+        Me.Updater.Interval = 500
         '
         'Form2
         '
@@ -47,4 +53,5 @@ Partial Class Form2
 
     End Sub
     Friend WithEvents Animation As System.Windows.Forms.Timer
+    Friend WithEvents Updater As Timer
 End Class

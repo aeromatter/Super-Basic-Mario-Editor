@@ -776,12 +776,14 @@ Public Class LevelSettings
     Public Shared Sub SetLevelMusic()
         PlayM.StopPlayback()
 
+        PlayM.OpenFile(Level.Music, TStreamFormat.sfOgg)
+
         PlayM.GetPosition(startpos)
+
         PlayM.GetStreamInfo(endtime)
 
         endpos.sec = endtime.Length.sec
 
-        PlayM.OpenFile(Level.Music, TStreamFormat.sfOgg)
         PlayM.PlayLoop(TTimeFormat.tfSecond, startpos, TTimeFormat.tfSecond, endpos, 1000, True)
     End Sub
 

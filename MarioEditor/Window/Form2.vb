@@ -72,6 +72,9 @@ Public Class Form2
     Public AlignFactor As Integer = 32
     Public ResizeFactor As Integer = 1
 
+    Private TransformX As Single
+    Private TransformY As Single
+
     Public Shared Function GetKeyStates(key As Key) As KeyStates
 
     End Function
@@ -750,16 +753,8 @@ Public Class Form2
 
         'BG Orientation
         Dim bg As Graphics = Draw
-
-        If Play.IsTesting = True Then
-            bg.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
-        Else
-            If Not Level.BGtype = 6 Then
-                bg.TranslateTransform(Me.AutoScrollPosition.X, Me.AutoScrollPosition.Y)
-            Else
-                bg.TranslateTransform(0, Me.AutoScrollPosition.Y)
-            End If
-        End If
+        bg.TranslateTransform(TransformX, TransformY)
+        '''''''''''''''''''''''''''''''
 
         Dim ImgA As New ImageAttributes
 
@@ -867,11 +862,13 @@ Public Class Form2
 
         Dim graphic As Graphics = Draw
 
-        If Play.IsTesting = True Then
-            graphic.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
-        Else
-            graphic.TranslateTransform(Me.AutoScrollPosition.X, Me.AutoScrollPosition.Y, Drawing2D.MatrixOrder.Prepend)
-        End If
+        'If Play.IsTesting = True Then
+        '    graphic.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
+        'Else
+        '    graphic.TranslateTransform(Me.AutoScrollPosition.X, Me.AutoScrollPosition.Y, Drawing2D.MatrixOrder.Prepend)
+        'End If
+
+        graphic.TranslateTransform(TransformX, TransformY)
 
         'BG BGOs
         For Each i As BGO In Backgrounds.BGOs.ToList
@@ -1422,6 +1419,19 @@ Public Class Form2
             Parallax += (e.OldValue - e.NewValue)
             Me.Refresh()
         End If
+
+        If Play.IsTesting = True Then
+            TransformX = Play.ViewPort.X * -1
+            TransformY = Play.ViewPort.Y * -1
+        Else
+            TransformY = AutoScrollPosition.Y
+
+            If Not Level.BGtype = 6 Then
+                TransformX = AutoScrollPosition.X
+            Else
+                TransformX = 0
+            End If
+        End If
     End Sub
 
     Private Sub Animation_Tick(sender As System.Object, e As System.EventArgs) Handles Animation.Tick
@@ -1693,5 +1703,9 @@ Public Class Form2
         ElseIf Me.Height > Level.LevelH + 32 Then
             Me.Height = Level.LevelH + 32
         End If
+    End Sub
+
+    Private Sub Updater_Tick(sender As Object, e As EventArgs) Handles Updater.Tick
+
     End Sub
 End Class

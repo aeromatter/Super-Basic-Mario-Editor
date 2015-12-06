@@ -1,48 +1,48 @@
 ﻿Public Structure Block
     Dim rectangle As Rectangle
-    Dim X As Integer
-    Dim Y As Integer
-    Dim Width As Integer
-    Dim Height As Integer
+    Dim X As UInteger
+    Dim Y As UInteger
+    Dim Width As UInteger
+    Dim Height As UInteger
     Dim Slip As Boolean
     Dim Invisible As Boolean
-    Dim ContainItem As Integer
-    Dim ID As Integer
+    Dim ContainItem As UInteger
+    Dim ID As UInteger
     Dim IMG As Image
     Dim Animated As Boolean
     Dim SourceRect As Rectangle
-    Dim gfxWidth As Integer
-    Dim gfxHeight As Integer
-    Dim TotalFrames As Integer
-    Dim FrameSpeed As Integer
-    Dim SizeW As Integer
-    Dim SizeH As Integer
+    Dim gfxWidth As UInteger
+    Dim gfxHeight As UInteger
+    Dim TotalFrames As UInteger
+    Dim FrameSpeed As UInteger
+    Dim SizeW As UInteger
+    Dim SizeH As UInteger
     Dim Lava As Boolean
-    Dim R As Integer
-    Dim G As Integer
-    Dim B As Integer
-    Dim Glow As Integer
+    Dim R As UInteger
+    Dim G As UInteger
+    Dim B As UInteger
+    Dim Glow As UInteger
     Dim Breakable As Boolean
 End Structure
 
 Public Class Blocks
     Public Shared Invisible As Boolean = False
     Public Shared Slippery As Boolean = False
-    Public Shared TileW As Integer
-    Public Shared TileH As Integer
-    Public Shared SizeW As Integer
-    Public Shared SizeH As Integer
-    Public Shared gfxWidth As Integer
-    Public Shared gfxHeight As Integer
-    Public Shared TotalFrames As Integer
-    Public Shared TileSize As Integer = 32
+    Public Shared TileW As UInteger
+    Public Shared TileH As UInteger
+    Public Shared SizeW As UInteger
+    Public Shared SizeH As UInteger
+    Public Shared gfxWidth As UInteger
+    Public Shared gfxHeight As UInteger
+    Public Shared TotalFrames As UInteger
+    Public Shared TileSize As UInteger = 32
     Public Shared Tiles As New List(Of Block)
     Public Shared Animated As Boolean
     Public Shared Lava As Boolean
     Public Shared Hurts As Boolean
     Public Shared Sizable As Boolean
-    Public Shared FrameSpeed As Integer
-    Public Shared ContainItem As Integer = 100
+    Public Shared FrameSpeed As UInteger
+    Public Shared ContainItem As UInteger = 100
     Public Shared TileRects As New List(Of Rectangle)
     Public Shared FillRect As Rectangle
     Public Shared FillBlocks As New List(Of Block)
@@ -63,7 +63,7 @@ Public Class Blocks
 
     Public Shared fillq As New List(Of Rectangle)
 
-    Public Shared Sub FillBlock(X As Integer, Y As Integer, Width As Integer, Height As Integer)
+    Public Shared Sub FillBlock(X As UInteger, Y As UInteger, Width As UInteger, Height As UInteger)
         Dim fill As New Block
 
         Dim frect As New Rectangle(X, Y, Width, Height)
@@ -76,49 +76,49 @@ Public Class Blocks
         Dim CheckRect As Rectangle
 
         Dim safem As Boolean = False
-        Dim timer As Integer = 1
+        Dim timer As UInteger = 1
 
         Dim Filled As Boolean = False
 
         If Form1.CheckBox2.CheckState = CheckState.Checked Then
             While Filled = False
                 For Each i As Rectangle In fillq.ToList
-                        If (i.X >= 0 And i.X <= ((Form2.AutoScrollPosition.X * -1) + Form2.Width)) And (i.Y >= 0 And i.Y <= ((Form2.AutoScrollPosition.Y * -1) + Form2.Height)) Then
-                            CheckRect = New Rectangle(i.X - i.Width, i.Y, i.Width, i.Height)
+                    If (i.X >= 0 And i.X <= ((Form2.AutoScrollPosition.X * -1) + Form2.Width)) And (i.Y >= 0 And i.Y <= ((Form2.AutoScrollPosition.Y * -1) + Form2.Height)) Then
+                        CheckRect = New Rectangle(i.X - i.Width, i.Y, i.Width, i.Height)
 
                         If fillq.Contains(CheckRect) = False And CheckRect.Contains(i) = False And TileRects.Contains(CheckRect) = False Then
                             fillq.Add(CheckRect)
                             timer += 1
                         End If
 
-                            CheckRect = New Rectangle(i.X, i.Y - i.Height, i.Width, i.Height)
+                        CheckRect = New Rectangle(i.X, i.Y - i.Height, i.Width, i.Height)
 
                         If fillq.Contains(CheckRect) = False And CheckRect.Contains(i) = False And TileRects.Contains(CheckRect) = False Then
                             fillq.Add(CheckRect)
                             timer += 1
                         End If
 
-                            CheckRect = New Rectangle(i.X + i.Width, i.Y, i.Width, i.Height)
+                        CheckRect = New Rectangle(i.X + i.Width, i.Y, i.Width, i.Height)
 
                         If fillq.Contains(CheckRect) = False And CheckRect.Contains(i) = False And TileRects.Contains(CheckRect) = False Then
                             fillq.Add(CheckRect)
                             timer += 1
                         End If
 
-                            CheckRect = New Rectangle(i.X, i.Y + i.Height, i.Width, i.Height)
+                        CheckRect = New Rectangle(i.X, i.Y + i.Height, i.Width, i.Height)
 
                         If fillq.Contains(CheckRect) = False And CheckRect.Contains(i) = False And TileRects.Contains(CheckRect) = False Then
                             fillq.Add(New Rectangle(i.X, i.Y + i.Height, i.Width, i.Height))
                             timer += 1
                         End If
-                        Else
-                            safem = True
-                        End If
+                    Else
+                        safem = True
+                    End If
                 Next
 
                 timer -= 1
 
-                If (timer <= 0) Or safem = True Then
+                If (timer = 0) Or safem = True Then
                     Filled = True
                     timer = 1
                 End If
@@ -159,7 +159,7 @@ Public Class Blocks
                     End If
                 Next
 
-                If timer <= 0 Then
+                If timer = 0 Then
                     Filled = True
                     timer = 10
                 End If
@@ -202,7 +202,7 @@ Public Class Blocks
         End If
     End Sub
 
-    Public Shared Sub GetBlock(ByVal bID As Integer)
+    Public Shared Sub GetBlock(ByVal bID As UInteger)
         bmp = Nothing
 
         'Set Defaults
@@ -2524,7 +2524,7 @@ Public Class Blocks
                 Animated = True
             Case 635
                 path = Form1.FilePath & "\graphics\block\block-626.png"
-                'Animated = True
+            'Animated = True
             Case 636
                 path = Form1.FilePath & "\graphics\block\block-627.png"
             Case 637
@@ -2555,16 +2555,16 @@ Public Class Blocks
 
             graphic = Image.FromStream(fs)
 
-            Dim SizeBMP As New Bitmap((SizeW * 32) + 32, (SizeH * 32) + 32)
+            Dim SizeBMP As New Bitmap((CInt(SizeW) * 32) + 32, (CInt(SizeH) * 32) + 32)
 
             Dim g As Graphics = Graphics.FromImage(SizeBMP)
 
             g.DrawImage(graphic, New Rectangle(0, 0, 32, 32), New Rectangle(0, 0, 32, 32), GraphicsUnit.Pixel)
-            For X = 1 To SizeW
+            For X = CUInt(1) To SizeW
                 g.DrawImage(graphic, New Rectangle(X * 32, 0, 32, 32), New Rectangle(32, 0, 32, 32), GraphicsUnit.Pixel)
                 g.DrawImage(graphic, New Rectangle(X * 32, SizeH * 32, 32, 32), New Rectangle(32, 64, 32, 32), GraphicsUnit.Pixel)
             Next
-            For Y = 1 To SizeH
+            For Y = CUInt(1) To SizeH
                 g.DrawImage(graphic, New Rectangle(0, Y * 32, 32, 32), New Rectangle(0, 32, 32, 32), GraphicsUnit.Pixel)
                 g.DrawImage(graphic, New Rectangle(SizeW * 32, Y * 32, 32, 32), New Rectangle(64, 32, 32, 32), GraphicsUnit.Pixel)
             Next
