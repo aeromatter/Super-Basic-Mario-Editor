@@ -190,11 +190,10 @@ Partial Class LevelSettings
         Me.Button109 = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.BrowseMusic = New System.Windows.Forms.OpenFileDialog()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -225,6 +224,7 @@ Partial Class LevelSettings
         Me.GroupBox9.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -318,7 +318,7 @@ Partial Class LevelSettings
         Me.GroupBox2.Size = New System.Drawing.Size(100, 100)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Level Boundry"
+        Me.GroupBox2.Text = "Level Size"
         '
         'Button8
         '
@@ -1868,46 +1868,28 @@ Partial Class LevelSettings
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.NumericUpDown1)
         Me.GroupBox9.Controls.Add(Me.Button10)
-        Me.GroupBox9.Controls.Add(Me.Button9)
-        Me.GroupBox9.Controls.Add(Me.TextBox4)
         Me.GroupBox9.Location = New System.Drawing.Point(118, 115)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(105, 100)
+        Me.GroupBox9.Size = New System.Drawing.Size(105, 77)
         Me.GroupBox9.TabIndex = 16
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Gravity"
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(6, 70)
+        Me.Button10.Location = New System.Drawing.Point(6, 45)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(93, 23)
         Me.Button10.TabIndex = 17
         Me.Button10.Text = "Default"
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(6, 48)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(93, 23)
-        Me.Button9.TabIndex = 17
-        Me.Button9.Text = "Confirm"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(6, 22)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox4.TabIndex = 8
-        Me.TextBox4.Text = "12"
-        '
         'GroupBox12
         '
         Me.GroupBox12.Controls.Add(Me.TrackBar1)
-        Me.GroupBox12.Location = New System.Drawing.Point(118, 221)
+        Me.GroupBox12.Location = New System.Drawing.Point(118, 198)
         Me.GroupBox12.Name = "GroupBox12"
         Me.GroupBox12.Size = New System.Drawing.Size(105, 60)
         Me.GroupBox12.TabIndex = 17
@@ -1926,11 +1908,21 @@ Partial Class LevelSettings
         '
         Me.BrowseMusic.FileName = "OpenFileDialog1"
         '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(6, 19)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(93, 20)
+        Me.NumericUpDown1.TabIndex = 18
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        '
         'LevelSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(900, 341)
+        Me.ClientSize = New System.Drawing.Size(900, 291)
         Me.Controls.Add(Me.GroupBox12)
         Me.Controls.Add(Me.GroupBox9)
         Me.Controls.Add(Me.misc_settings)
@@ -1983,10 +1975,10 @@ Partial Class LevelSettings
         Me.GroupBox27.PerformLayout()
         Me.GroupBox26.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox12.PerformLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2154,12 +2146,11 @@ Partial Class LevelSettings
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
     Friend WithEvents TrackBar1 As System.Windows.Forms.TrackBar
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents BrowseMusic As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents NumericUpDown1 As NumericUpDown
 End Class

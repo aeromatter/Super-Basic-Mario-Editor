@@ -174,7 +174,7 @@ Public Class LevelSettings
         TextBox2.Text = Level.LevelW / 32
         TextBox3.Text = Level.LevelH / 32
 
-        TextBox4.Text = Play.GravityLevel.ToString
+        NumericUpDown1.Value = Play.GravityLevel
 
         TrackBar1.Value = Level.Brightness / 10
     End Sub
@@ -760,17 +760,9 @@ Public Class LevelSettings
         Form2.EditMode = 4
     End Sub
 
-    Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
-        If Convert.ToInt32(TextBox4.Text) > -1 Then
-            Play.GravityLevel = CInt(TextBox4.Text)
-        Else
-            TextBox4.Text = 12
-            MsgBox("The minimum gravity level is 0. Gravity has been reset to its default value.", MsgBoxStyle.Information)
-        End If
-    End Sub
-
     Private Sub Button10_Click(sender As System.Object, e As System.EventArgs) Handles Button10.Click
-        TextBox4.Text = 12
+
+        NumericUpDown1.Value = 12
     End Sub
 
     Public Shared Sub SetLevelMusic()
@@ -842,5 +834,13 @@ Public Class LevelSettings
         Else
             TextBox1.ForeColor = Color.Red
         End If
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        Play.GravityLevel = NumericUpDown1.Value
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+
     End Sub
 End Class
