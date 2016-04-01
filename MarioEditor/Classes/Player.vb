@@ -56,14 +56,14 @@ Public Class Player
             Case 1
                 'Small
                 If PlayerID = 0 Then
-                    PlayerW = 26
+                    PlayerW = 24
                     PlayerH = 30
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 30
-                    PlayerH = 32
+                    PlayerW = 24
+                    PlayerH = 30
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 28
-                    PlayerH = 44
+                    PlayerW = 24
+                    PlayerH = 38
                 ElseIf PlayerID = 3 Then
                     PlayerW = 30
                     PlayerH = 38
@@ -73,14 +73,14 @@ Public Class Player
             Case 2
                 'Super
                 If PlayerID = 0 Then
-                    PlayerW = 32
+                    PlayerW = 24
                     PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 32
-                    PlayerH = 62
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 34
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 34
                     PlayerH = 54
@@ -90,14 +90,14 @@ Public Class Player
             Case 3
                 'Fire
                 If PlayerID = 0 Then
-                    PlayerW = 32
+                    PlayerW = 24
                     PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 32
-                    PlayerH = 62
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 34
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 34
                     PlayerH = 54
@@ -107,14 +107,14 @@ Public Class Player
             Case 4
                 'Leaf
                 If PlayerID = 0 Then
-                    PlayerW = 46
-                    PlayerH = 56
+                    PlayerW = 24
+                    PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 46
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 46
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 46
                     PlayerH = 54
@@ -124,14 +124,14 @@ Public Class Player
             Case 5
                 'Tanooki
                 If PlayerID = 0 Then
-                    PlayerW = 46
-                    PlayerH = 56
+                    PlayerW = 24
+                    PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 46
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 46
-                    PlayerH = 68
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 46
                     PlayerH = 54
@@ -141,14 +141,14 @@ Public Class Player
             Case 6
                 'Hammer
                 If PlayerID = 0 Then
-                    PlayerW = 46
-                    PlayerH = 56
+                    PlayerW = 24
+                    PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 32
-                    PlayerH = 62
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 40
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 36
                     PlayerH = 52
@@ -158,14 +158,14 @@ Public Class Player
             Case 7
                 'Ice
                 If PlayerID = 0 Then
-                    PlayerW = 32
+                    PlayerW = 24
                     PlayerH = 54
                 ElseIf PlayerID = 1 Then
-                    PlayerW = 32
-                    PlayerH = 62
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 2 Then
-                    PlayerW = 34
-                    PlayerH = 64
+                    PlayerW = 24
+                    PlayerH = 60
                 ElseIf PlayerID = 3 Then
                     PlayerW = 34
                     PlayerH = 54

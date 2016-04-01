@@ -52,8 +52,8 @@ Public Class Play
     Public Shared IsDucking As Boolean = False
     Public Shared IsStarman As Boolean = False
 
-    Public Shared MoveSpeed As Double = 4
-    Public Shared JumpSpeed As Integer = 12
+    Public Shared MoveSpeed As Double = 3 '3 max walk, 6 max run
+    Public Shared JumpSpeed As Integer = 12 '6, 7 for Luigi
     Public Shared IsRunning As Boolean = False
     Public Shared IsJumping As Boolean = False
     Public Shared JumpHeight As Integer
@@ -74,6 +74,8 @@ Public Class Play
     Public Shared SMB3Pan As Boolean = True
     Public Shared PanSpeed As Double = 2.5
     Public Shared LastView As Rectangle
+
+
 
     Public Shared Sub ShowHUD()
         HoldBoxLoc = New Rectangle((Form2.Width / 2) - My.Resources.HoldBox.Width, 16, My.Resources.HoldBox.Width, My.Resources.HoldBox.Height)
@@ -122,6 +124,86 @@ Public Class Play
 
     End Sub
 
+    Public Shared Sub GetAI()
+        Dim NPCtimer As Stopwatch
+        NPCtimer = New Stopwatch()
+
+        For i = 0 To NPC.NPCsets.Count - 1
+            Dim ActiveNPC = NPC.NPCsets(i)
+
+            'Defaults
+            ActiveNPC.gfxoffsetX = 0
+            ActiveNPC.gfxoffsetY = 0
+            ActiveNPC.NPCScore = 2
+            ActiveNPC.PlayerBlock = False
+            ActiveNPC.PlayerBlockTop = False
+            ActiveNPC.NPCBlock = False
+            ActiveNPC.NPCBlockTop = False
+            ActiveNPC.GrabSide = False
+            ActiveNPC.GrabTop = False
+            ActiveNPC.JumpHurt = False
+            ActiveNPC.Friendly = False
+            ActiveNPC.BlockCollision = True
+            ActiveNPC.CliffTurn = False
+            ActiveNPC.NoYoshi = False
+            ActiveNPC.ForeGround = False
+            ActiveNPC.Speed = 1
+            ActiveNPC.NoFireball = False
+            ActiveNPC.NoGravity = False
+
+            Select Case NPC.NPCsets(i).AI
+                Case 0
+                    'Goomba
+
+                Case 1
+                    'WALK
+                    ActiveNPC.isMoving = True
+
+                    If ActiveNPC.Delay < 65 Then
+                        ActiveNPC.Delay += 1
+                    Else
+                        If ActiveNPC.OnGround = True Then
+                            ActiveNPC.isJumping = True
+                        End If
+
+                        If ActiveNPC.isJumping = True Then
+                            If ActiveNPC.totalJumps <= 3 Then
+                                If ActiveNPC.hopHeight < 16 Then
+                                    ActiveNPC.Y -= 2
+                                    ActiveNPC.hopHeight += 2
+                                Else
+                                    ActiveNPC.totalJumps += 1
+                                    ActiveNPC.isJumping = False
+                                End If
+                            Else
+                                If ActiveNPC.hopHeight < 96 Then
+                                    ActiveNPC.Y -= 2
+                                    ActiveNPC.hopHeight += 2
+                                Else
+                                    ActiveNPC.totalJumps = 0
+                                    ActiveNPC.Delay = 0
+                                    ActiveNPC.isJumping = False
+                                End If
+                            End If
+                        End If
+                    End If
+            End Select
+
+            If ActiveNPC.isMoving = True Then
+                Select Case ActiveNPC.Direction
+                    Case 1
+                        'Left
+                        ActiveNPC.X -= ActiveNPC.MoveSpeed
+                    Case 2
+                        'Right
+                        ActiveNPC.X += ActiveNPC.MoveSpeed
+                End Select
+            End If
+
+
+        Next
+    End Sub
+
     Public Shared Sub AI()
         For i = 0 To NPC.NPCsets.Count - 1
             Dim tempnpc = NPC.NPCsets(i)
@@ -147,20 +229,34 @@ Public Class Play
                 Next
             End If
 
+            'If NPC.NPCsets(i).isJumping = True Then
+            '    If NPC.NPCsets(i).hopHeight < NPC.NPCsets(i).MaxJumpHeight Then
+            '        tempnpc.Y -= NPC.NPCsets(i).JumpSpeed
+            '        tempnpc.hopHeight += NPC.NPCsets(i).JumpSpeed
+            '    Else
+            '        If tempnpc.OnGround = True Then
+            '            tempnpc.totalJumps += 1
+            '        End If
+
+            '        tempnpc.isJumping = False
+            '    End If
+            'End If
+
             Select Case NPC.NPCsets(i).AI
                 Case 0
                     tempnpc.isMoving = True
                 Case 1
+                    tempnpc.isMoving = True
                     tempnpc.Delay += 1
 
-                    tempnpc.isMoving = True
-
-                    If tempnpc.Delay >= 64 Then
+                    If tempnpc.Delay >= 65 Then
                         If NPC.NPCsets(i).totalJumps <= 3 Then
                             If tempnpc.OnGround = True Then
                                 tempnpc.TotalFrames = 4
 
                                 tempnpc.isJumping = True
+                                'tempnpc.JumpSpeed = 1
+                                'tempnpc.MaxJumpHeight = 16
                             End If
 
                             If tempnpc.isJumping = True Then
@@ -168,7 +264,7 @@ Public Class Play
                                 tempnpc.hopHeight += 1
                             End If
 
-                            If tempnpc.hopHeight >= 12 Then
+                            If tempnpc.hopHeight < 14 Then
                                 tempnpc.isJumping = False
                                 tempnpc.hopHeight = 0
 
@@ -179,8 +275,10 @@ Public Class Play
 
                             tempnpc.Y -= 2
                             tempnpc.hopHeight += 2
+                            'tempnpc.JumpSpeed = 1
+                            'tempnpc.MaxJumpHeight = 96
 
-                            If tempnpc.hopHeight >= 64 Then
+                            If tempnpc.hopHeight >= 96 Then
                                 tempnpc.isJumping = False
                                 tempnpc.hopHeight = 0
 
@@ -192,16 +290,24 @@ Public Class Play
                         End If
                     End If
                 Case 2
-                    If ((PlayerCollide.X >= tempnpc.X) And (PlayerCollide.Right <= tempnpc.rectangle.Right) And ((PlayerCollide.Top - (tempnpc.Y + tempnpc.Height)) <= 320)) And tempnpc.thwompRise = False Then
-                        tempnpc.HasGravity = True
-                        'tempnpc.thwompFall = True
-                    Else
-                        If (New Rectangle(tempnpc.X, tempnpc.Y, tempnpc.Width, tempnpc.Height).Top > tempnpc.rectangle.Top) And tempnpc.thwompRise = True Then
-                            tempnpc.HasGravity = False
-                        ElseIf (New Rectangle(tempnpc.X, tempnpc.Y, tempnpc.Width, tempnpc.Height).Top = tempnpc.rectangle.Top) Then
-                            tempnpc.thwompRise = False
-                            tempnpc.playedSound = False
+                    'If ((PlayerCollide.X >= tempnpc.X) And (PlayerCollide.Right <= tempnpc.rectangle.Right) And ((PlayerCollide.Top - (tempnpc.Y + tempnpc.Height)) <= 320)) And tempnpc.thwompRise = False Then
+                    '    tempnpc.HasGravity = True
+                    '    'tempnpc.thwompFall = True
+                    'Else
+                    '    If (New Rectangle(tempnpc.X, tempnpc.Y, tempnpc.Width, tempnpc.Height).Top > tempnpc.rectangle.Top) And tempnpc.thwompRise = True Then
+                    '        tempnpc.HasGravity = False
+                    '    ElseIf (New Rectangle(tempnpc.X, tempnpc.Y, tempnpc.Width, tempnpc.Height).Top = tempnpc.rectangle.Top) Then
+                    '        tempnpc.thwompRise = False
+                    '        tempnpc.playedSound = False
+                    '    End If
+                    'End If
+
+                    If (PlayerX >= tempnpc.X) And ((PlayerX + Player.PlayerW) <= tempnpc.rectangle.Right) Then
+                        If PlayerY - tempnpc.rectangle.Bottom <= 320 Then
+                            tempnpc.HasGravity = True
                         End If
+                    Else
+
                     End If
 
                     If tempnpc.thwompRise = True Then
@@ -634,14 +740,16 @@ Public Class Play
             DrawH = Player.P1.PlayerH
         Else
             If CurPlayer = 1 Then
-                Select Case Player.P1.PlayerState
-                    Case 0
-                        DrawH = 30
-                    Case 1, 2, 3, 6
-                        DrawH = 36
-                    Case 4, 5
-                        DrawH = 36
-                End Select
+                'Select Case Player.P1.PlayerState
+                '    Case 0
+                '        DrawH = 30
+                '    Case 1, 2, 3, 6
+                '        DrawH = 36
+                '    Case 4, 5
+                '        DrawH = 36
+                'End Select
+
+                DrawH = 30
             ElseIf CurPlayer = 2 Then
                 Select Case Player.P1.PlayerState
                     Case 0
@@ -796,23 +904,18 @@ Public Class Play
 
     Public Shared Sub Gravity()
         PlayerCollide = New RectangleF(PlayerX, PlayerY, Player.P1.PlayerW, Player.P1.PlayerH)
-
         OnGround = False
-
-        Coins = MoveVel
 
         For i = 0 To Blocks.TileRects.Count - 1
             If PlayerCollide.IntersectsWith(New RectangleF(Blocks.TileRects(i).X, Blocks.TileRects(i).Y - (GravityLevel), Blocks.TileRects(i).Width, Blocks.TileRects(i).Height)) And IsJumping = False Then
                 OnGround = True
                 FallVel = 0.0
-                CheckCollision()
+                'CheckCollision()
 
                 If CollideDir = 0 Then
                     PlayerCollide.Y = Blocks.TileRects(i).Top - Player.P1.PlayerH
                     PlayerY = Blocks.TileRects(i).Top - Player.P1.PlayerH
                     DrawY = Blocks.TileRects(i).Top - Player.P1.PlayerH
-
-                    MoveSpeed = 4
                 Else
                     Select Case CollideDir
                         Case 1
@@ -827,6 +930,9 @@ Public Class Play
                 End If
             End If
         Next
+
+        CollideDir = 0
+        CheckCollision()
 
         If OnGround = False And IsJumping = False Then
             If FallVel < GravityLevel Then
@@ -849,7 +955,7 @@ Public Class Play
                 JumpVel = 0.0
             End If
 
-            CheckCollision()
+            'CheckCollision()
 
             Select Case MoveDir
                 Case 1
@@ -869,7 +975,7 @@ Public Class Play
             JumpHeight += JumpVel
 
             Jump()
-            CheckCollision()
+            'CheckCollision()
 
             Select Case MoveDir
                 Case 1
@@ -899,7 +1005,7 @@ Public Class Play
             EndTesting()
         End If
 
-        CheckCollision()
+        'CheckCollision()
 
         MaintainLevelBounds()
     End Sub
@@ -931,7 +1037,7 @@ Public Class Play
             Select Case MoveDir
                 Case 1
                     'Check for collision on left side of block.
-                    If ((PlayerCollide.Right = r.Left) Or Math.Abs(r.X - PlayerCollide.Right) <= MoveSpeed) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
+                    If (PlayerCollide.Right = r.Left Or Math.Abs(r.X - Math.Ceiling(PlayerCollide.Right)) <= MoveSpeed) And ((r.Y < Math.Ceiling(PlayerCollide.Bottom - GravityLevel)) And (r.Bottom > Math.Ceiling(PlayerCollide.Y + GravityLevel))) Then
                         CollideDir = 1
                         MoveVel = 0.0
                     ElseIf (PlayerCollide.Right >= ViewPort.Right - 32) Then
@@ -940,7 +1046,7 @@ Public Class Play
                     End If
                 Case 2
                     'Check for collision on right side of block.
-                    If ((PlayerCollide.Left = r.Right) Or Math.Abs(r.Right - PlayerCollide.X) <= MoveSpeed) And (r.Y < PlayerCollide.Bottom) And (r.Bottom > PlayerCollide.Top) Then
+                    If (PlayerCollide.Left = r.Right Or Math.Abs(r.Right - Math.Ceiling(PlayerCollide.X)) <= MoveSpeed) And ((r.Y < Math.Ceiling(PlayerCollide.Bottom - GravityLevel)) And (r.Bottom > Math.Ceiling(PlayerCollide.Y + GravityLevel))) Then
                         CollideDir = 2
                         MoveVel = 0.0
                     ElseIf (PlayerCollide.Left <= ViewPort.Left) Then

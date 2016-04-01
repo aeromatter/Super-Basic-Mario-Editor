@@ -862,11 +862,11 @@ Public Class Form2
 
         Dim graphic As Graphics = Draw
 
-        'If Play.IsTesting = True Then
-        '    graphic.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
-        'Else
-        '    graphic.TranslateTransform(Me.AutoScrollPosition.X, Me.AutoScrollPosition.Y, Drawing2D.MatrixOrder.Prepend)
-        'End If
+        If Play.IsTesting = True Then
+            graphic.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
+        Else
+            graphic.TranslateTransform(Me.AutoScrollPosition.X, Me.AutoScrollPosition.Y, Drawing2D.MatrixOrder.Prepend)
+        End If
 
         graphic.TranslateTransform(TransformX, TransformY)
 
@@ -889,18 +889,18 @@ Public Class Form2
             If Player.P1.Graphic IsNot Nothing And Level.P1start.IsEmpty = False Then
                 Select Case Player.PlayerID
                     Case 0, 1
-                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 28), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
                     Case 2, 3
-                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 32), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
                 End Select
             End If
 
             If Player.P2.Graphic IsNot Nothing And Level.P2start.IsEmpty = False Then
                 Select Case Player.Player2ID
                     Case 0, 1
-                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 28), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
                     Case 2, 3
-                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 32), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
                 End Select
             End If
 
@@ -1062,7 +1062,7 @@ Public Class Form2
             Draw.TranslateTransform(Play.ViewPort.X * -1, Play.ViewPort.Y * -1, Drawing2D.MatrixOrder.Prepend)
 
             If Player.P1.Graphic IsNot Nothing Then
-                Draw.DrawImage(Player.P1.Graphic, New Rectangle(Play.DrawX, Play.DrawY + (Player.P1.PlayerH - Play.DrawH), Player.P1.PlayerW, Play.DrawH), PlayerFX, PlayerFY, Player.P1.PlayerW, Play.DrawH, GraphicsUnit.Pixel, ImgC)
+                Draw.DrawImage(Player.P1.Graphic, New Rectangle(Play.DrawX, Play.DrawY + (Player.P1.PlayerH - Play.DrawH), 32, Play.DrawH), PlayerFX, PlayerFY, 32, Play.DrawH, GraphicsUnit.Pixel, ImgC)
             Else
                 Player.SetPlayer()
             End If
@@ -1420,21 +1420,11 @@ Public Class Form2
             Me.Refresh()
         End If
 
-        If Play.IsTesting = True Then
-            TransformX = Play.ViewPort.X * -1
-            TransformY = Play.ViewPort.Y * -1
-        Else
-            TransformY = AutoScrollPosition.Y
 
-            If Not Level.BGtype = 6 Then
-                TransformX = AutoScrollPosition.X
-            Else
-                TransformX = 0
-            End If
-        End If
     End Sub
 
     Private Sub Animation_Tick(sender As System.Object, e As System.EventArgs) Handles Animation.Tick
+
         stopw.Start()
 
         Dim elapsed As TimeSpan = Me.stopw.Elapsed
@@ -1680,6 +1670,7 @@ Public Class Form2
         If Play.IsTesting = True Then
             Play.Gravity()
             Play.AI()
+            'Play.GetAI()
             KeyboardControl()
         End If
 

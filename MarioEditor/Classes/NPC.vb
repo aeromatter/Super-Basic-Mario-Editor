@@ -27,6 +27,8 @@
     Dim Testing As Boolean
     Dim isMoving As Boolean
     Dim hopHeight As Integer
+    Dim MaxJumpHeight As Integer
+    Dim JumpSpeed As UInteger
     Dim totalJumps As Integer
     Dim isJumping As Boolean
     Dim Delay As Integer
@@ -39,6 +41,33 @@
     Dim Flutter As Double
     Dim playedSound As Boolean
     Dim totalFire As Integer
+
+    ''NPC AI SETTINGS
+    Dim gfxoffsetX As Integer
+    Dim gfxoffsetY As Integer
+    Dim NPCW As UInteger
+    Dim NPCH As UInteger
+    Dim NPCScore As UInteger
+    Dim PlayerBlock As Boolean
+    Dim PlayerBlockTop As Boolean
+    Dim NPCBlock As Boolean
+    Dim NPCBlockTop As Boolean
+    Dim GrabSide As Boolean
+    Dim GrabTop As Boolean
+    Dim JumpHurt As Boolean
+    Dim Friendly As Boolean
+    Dim BlockCollision As Boolean
+    Dim CliffTurn As Boolean
+    Dim NoYoshi As Boolean
+    Dim ForeGround As Boolean
+    Dim Speed As Integer
+    Dim NoFireball As Boolean
+    Dim NoGravity As Boolean
+    Dim NoIceBall As Boolean
+
+    ''NPC STATES
+    Dim isFrozen As Boolean
+    '...
 End Structure
 
 Public Class NPC
