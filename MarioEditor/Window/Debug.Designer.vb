@@ -61,6 +61,17 @@ Partial Class Debug
         Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.Label27 = New System.Windows.Forms.Label()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -69,6 +80,7 @@ Partial Class Debug
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -425,11 +437,121 @@ Partial Class Debug
         Me.Label27.TabIndex = 0
         Me.Label27.Text = "0"
         '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.Label37)
+        Me.GroupBox9.Controls.Add(Me.Label36)
+        Me.GroupBox9.Controls.Add(Me.Label35)
+        Me.GroupBox9.Controls.Add(Me.Label34)
+        Me.GroupBox9.Controls.Add(Me.Label33)
+        Me.GroupBox9.Controls.Add(Me.Label32)
+        Me.GroupBox9.Controls.Add(Me.Label31)
+        Me.GroupBox9.Controls.Add(Me.Label30)
+        Me.GroupBox9.Controls.Add(Me.Label29)
+        Me.GroupBox9.Controls.Add(Me.Label28)
+        Me.GroupBox9.Location = New System.Drawing.Point(352, 12)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(140, 154)
+        Me.GroupBox9.TabIndex = 7
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Beta Info"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(6, 107)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(68, 13)
+        Me.Label35.TabIndex = 7
+        Me.Label35.Text = "Player Y, B ()"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(6, 94)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(66, 13)
+        Me.Label34.TabIndex = 6
+        Me.Label34.Text = "Player X,R ()"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(6, 81)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(50, 13)
+        Me.Label33.TabIndex = 5
+        Me.Label33.Text = "PlayerH: "
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(6, 68)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(53, 13)
+        Me.Label32.TabIndex = 4
+        Me.Label32.Text = "PlayerW: "
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(6, 55)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(71, 13)
+        Me.Label31.TabIndex = 3
+        Me.Label31.Text = "MoveSpeed: "
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(6, 42)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(49, 13)
+        Me.Label30.TabIndex = 2
+        Me.Label30.Text = "speedY: "
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(6, 29)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(49, 13)
+        Me.Label29.TabIndex = 1
+        Me.Label29.Text = "speedX: "
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(6, 16)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(72, 13)
+        Me.Label28.TabIndex = 0
+        Me.Label28.Text = "Jump Height: "
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(6, 120)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(72, 13)
+        Me.Label36.TabIndex = 8
+        Me.Label36.Text = "GravityLevel: "
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(6, 133)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(69, 13)
+        Me.Label37.TabIndex = 9
+        Me.Label37.Text = "JumpSpeed: "
+        '
         'Debug
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(358, 304)
+        Me.ClientSize = New System.Drawing.Size(502, 304)
+        Me.Controls.Add(Me.GroupBox9)
         Me.Controls.Add(Me.GroupBox8)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox6)
@@ -455,6 +577,8 @@ Partial Class Debug
         Me.GroupBox7.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -495,4 +619,15 @@ Partial Class Debug
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox9 As GroupBox
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label33 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label36 As Label
 End Class

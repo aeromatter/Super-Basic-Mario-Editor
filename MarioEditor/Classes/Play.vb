@@ -907,27 +907,24 @@ Public Class Play
         OnGround = False
 
         For i = 0 To Blocks.TileRects.Count - 1
-            If PlayerCollide.IntersectsWith(New RectangleF(Blocks.TileRects(i).X, Blocks.TileRects(i).Y - (GravityLevel), Blocks.TileRects(i).Width, Blocks.TileRects(i).Height)) And IsJumping = False Then
+            If (PlayerCollide.Bottom = Blocks.TileRects(i).Top Or Math.Abs(PlayerCollide.Bottom - Blocks.TileRects(i).Top) < GravityLevel) And (Blocks.TileRects(i).Right >= PlayerCollide.X And Blocks.TileRects(i).X <= PlayerCollide.Right) And IsJumping = False Then
                 OnGround = True
                 FallVel = 0.0
-                'CheckCollision()
 
-                If CollideDir = 0 Then
-                    PlayerCollide.Y = Blocks.TileRects(i).Top - Player.P1.PlayerH
-                    PlayerY = Blocks.TileRects(i).Top - Player.P1.PlayerH
-                    DrawY = Blocks.TileRects(i).Top - Player.P1.PlayerH
-                Else
-                    Select Case CollideDir
-                        Case 1
-                            PlayerCollide.X -= MoveVel
-                            PlayerX -= MoveVel
-                            DrawX -= MoveVel
-                        Case 2
-                            PlayerCollide.X += MoveVel
-                            PlayerX += MoveVel
-                            DrawX += MoveVel
-                    End Select
-                End If
+                PlayerCollide.Y = Blocks.TileRects(i).Top - Player.P1.PlayerH
+                PlayerY = Blocks.TileRects(i).Top - Player.P1.PlayerH
+                DrawY = Blocks.TileRects(i).Top - Player.P1.PlayerH
+
+                Select Case CollideDir
+                    Case 1
+                        PlayerCollide.X -= MoveVel
+                        PlayerX -= MoveVel
+                        DrawX -= MoveVel
+                    Case 2
+                        PlayerCollide.X += MoveVel
+                        PlayerX += MoveVel
+                        DrawX += MoveVel
+                End Select
             End If
         Next
 
@@ -941,7 +938,6 @@ Public Class Play
             PlayerCollide.Y += FallVel
             PlayerY += FallVel
             DrawY += FallVel
-
         End If
 
         If IsJumping = False And IsMoving = False Then
@@ -954,8 +950,6 @@ Public Class Play
                 JumpHeight = 0
                 JumpVel = 0.0
             End If
-
-            'CheckCollision()
 
             Select Case MoveDir
                 Case 1
@@ -975,7 +969,6 @@ Public Class Play
             JumpHeight += JumpVel
 
             Jump()
-            'CheckCollision()
 
             Select Case MoveDir
                 Case 1
@@ -1004,8 +997,6 @@ Public Class Play
         If IsTesting = False Then
             EndTesting()
         End If
-
-        'CheckCollision()
 
         MaintainLevelBounds()
     End Sub
@@ -1040,7 +1031,7 @@ Public Class Play
                     If (PlayerCollide.Right = r.Left Or Math.Abs(r.X - Math.Ceiling(PlayerCollide.Right)) <= MoveSpeed) And ((r.Y < Math.Ceiling(PlayerCollide.Bottom - GravityLevel)) And (r.Bottom > Math.Ceiling(PlayerCollide.Y + GravityLevel))) Then
                         CollideDir = 1
                         MoveVel = 0.0
-                    ElseIf (PlayerCollide.Right >= ViewPort.Right - 32) Then
+                    ElseIf (PlayerCollide.Right >= ViewPort.Right - 32 Or Math.Abs(ViewPort.X - Math.Ceiling(PlayerCollide.Right)) <= MoveSpeed) Then
                         CollideDir = 1
                         MoveVel = 0.0
                     End If
@@ -1049,7 +1040,7 @@ Public Class Play
                     If (PlayerCollide.Left = r.Right Or Math.Abs(r.Right - Math.Ceiling(PlayerCollide.X)) <= MoveSpeed) And ((r.Y < Math.Ceiling(PlayerCollide.Bottom - GravityLevel)) And (r.Bottom > Math.Ceiling(PlayerCollide.Y + GravityLevel))) Then
                         CollideDir = 2
                         MoveVel = 0.0
-                    ElseIf (PlayerCollide.Left <= ViewPort.Left) Then
+                    ElseIf (PlayerCollide.Left <= ViewPort.Left Or Math.Abs(ViewPort.X - Math.Ceiling(PlayerCollide.X)) <= MoveSpeed) Then
                         CollideDir = 2
                         MoveVel = 0.0
                     End If

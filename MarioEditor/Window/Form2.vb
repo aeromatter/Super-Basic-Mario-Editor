@@ -826,7 +826,6 @@ Public Class Form2
                         bg.DrawImage(Level.BG, New Rectangle(x * Level.BG.Width, (Level.BG.Height - Me.Height) / Level.LevelH, Level.BG.Width, Level.BG.Height), 0, 0, Level.BG.Width, Level.BG.Height, GraphicsUnit.Pixel, ImgA)
                     End If
                 Next
-            'Label1.Text = Level.HeightInc * 32
             Case 7
                 For x = 0 To (Level.LevelW / Level.BG.Width) + (Level.LevelW / Level.BG.Width)
                     If Draw.IsVisible(New Rectangle(x * Level.BG.Width, Level.LevelH - ((Level.BG.Height + Level.BG.Height)), Level.BG.Width, Level.BG.Height)) = True Then
@@ -885,22 +884,21 @@ Public Class Form2
 
         'Draw Player Spawn
         If Play.IsTesting = False Then
-
             If Player.P1.Graphic IsNot Nothing And Level.P1start.IsEmpty = False Then
                 Select Case Player.PlayerID
                     Case 0, 1
-                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), 32, Player.P1.PlayerH), New Rectangle(500, 0, 32, Player.P1.PlayerH), GraphicsUnit.Pixel)
                     Case 2, 3
-                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), Player.P1.PlayerW, Player.P1.PlayerH), New Rectangle(500, 0, Player.P1.PlayerW, Player.P1.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P1.Graphic, New Rectangle(Level.P1start.X - (Player.P1.PlayerW - 24), Level.P1start.Y - (Player.P1.PlayerH - Level.P1start.Height), 32, Player.P1.PlayerH), New Rectangle(500, 0, 32, Player.P1.PlayerH), GraphicsUnit.Pixel)
                 End Select
             End If
 
             If Player.P2.Graphic IsNot Nothing And Level.P2start.IsEmpty = False Then
                 Select Case Player.Player2ID
                     Case 0, 1
-                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), 32, Player.P2.PlayerH), New Rectangle(500, 0, 32, Player.P2.PlayerH), GraphicsUnit.Pixel)
                     Case 2, 3
-                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), Player.P2.PlayerW, Player.P2.PlayerH), New Rectangle(500, 0, Player.P2.PlayerW, Player.P2.PlayerH), GraphicsUnit.Pixel)
+                        graphic.DrawImage(Player.P2.Graphic, New Rectangle(Level.P2start.X - (Player.P2.PlayerW - 24), Level.P2start.Y - (Player.P2.PlayerH - Level.P2start.Height), 32, Player.P2.PlayerH), New Rectangle(500, 0, 32, Player.P2.PlayerH), GraphicsUnit.Pixel)
                 End Select
             End If
 

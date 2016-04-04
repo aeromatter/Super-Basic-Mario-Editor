@@ -80,5 +80,16 @@ Public Class Debug
         Label18.Text = "OS Blocks: " & TotalObjBlocks
         Label19.Text = "OS BGOs: " & TotalObjBGOs
         Label20.Text = "OS NPCs: " & TotalObjNPCs
+
+        Label28.Text = String.Format("Jump Height: {0}", Play.JumpHeight)
+        Label29.Text = String.Format("speedX: {0}", Play.MoveVel)
+        Label30.Text = String.Format("speedY: {0}", Play.FallVel)
+        Label31.Text = String.Format("MoveSpeed: {0}", Play.MoveSpeed)
+        Label32.Text = String.Format("PlayerW: {0}", Play.PlayerCollide.Width)
+        Label33.Text = String.Format("PlayerH: {0}", Play.PlayerCollide.Height)
+        Label34.Text = String.Format("Player X,R ({0},{1})", Play.PlayerCollide.X, Play.PlayerCollide.Right)
+        Label35.Text = String.Format("Player Y,B ({0},{1})", Play.PlayerCollide.Y, Play.PlayerCollide.Bottom)
+        Label36.Text = String.Format("GravityLevel: {0}", Play.GravityLevel)
+        Label37.Text = String.Format("Jump Speed: {0}", Play.JumpSpeed)
     End Sub
 End Class
