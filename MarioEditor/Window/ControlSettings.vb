@@ -45,8 +45,8 @@ Public Class ControlSettings
             PlayerC.JumpC = kc.ConvertFrom(TextBox5.Text)
             PlayerC.RunC = kc.ConvertFrom(TextBox6.Text)
             PlayerC.SpinJumpC = kc.ConvertFrom(TextBox7.Text)
-            
-            WriteControls(Form1.FilePath & "\main.dat")
+
+            WriteControls(Main.GetGamePath() & "\main.dat")
 
             Me.Close()
         Catch ex As Exception

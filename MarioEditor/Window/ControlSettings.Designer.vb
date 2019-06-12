@@ -210,6 +210,8 @@ Partial Class ControlSettings
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "ControlSettings"
         Me.Text = "Control Settings"
         Me.GroupBox1.ResumeLayout(False)

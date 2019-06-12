@@ -1357,7 +1357,6 @@ Private Structure TWaveInInfo_Internal
             End If
         End Function
 
-     
         Public Function LoadFileID3(ByVal FileName As String, ByVal Format As TStreamFormat, ByVal Id3Version As TID3Version, ByRef Info As TID3Info) As Boolean
             Dim tmp As TID3Info_Internal
             If zplay_LoadFileID3W(objptr, FileName, CInt(Format), CInt(Fix(Id3Version)), tmp) = 1 Then

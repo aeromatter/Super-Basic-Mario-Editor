@@ -5,7 +5,7 @@
     Public FStream As System.IO.FileStream
     Public NPCimg As Image
     Public Cimg As Bitmap
-    Public Prefix As String = Form1.FilePath & "\graphics\npc\npc-"
+    Public Prefix As String = Main.GetGamePath() & "\graphics\npc\npc-"
     Public NPCid As Integer
     Public SMB3ids As String = "1,2,3,244,71,37,38,6,4,76,161,72,48,47,12,23,17,136,137,53,54,36,259,15,267,86,73,5,7,24,21,84,58,69,70,81,80,82,67,68,160,83,79,78,45,8,74,52,51,245,261,229,230,231,75,198,94,101,9,14,34,169,170,264,90,10,103,35,191,193,22,49,248,238,273,287,226,213,225,214,11,16,97,46,212,104,57"
     Public SMB2ids As String = "20,25,131,132,206,272,19,129,130,135,247,147,92,140,142,139,145,144,141,143,146,217,215,216,220,218,219,221,154,155,156,157,138,134,241,240,249,41,39,201,262,288,289"
@@ -13,6 +13,23 @@
     Public SMWids As String = "165,162,43,18,181,270,286,271,166,163,42,164,179,207,285,167,77,44,180,189,199,275,109,110,111,112,194,113,114,115,116,121,123,117,118,119,120,122,124,60,64,62,66,105,190,31,197,196,227,224,234,232,236,280,151,192,95,98,99,100,148,149,150,228,185,183,187,188,33,258,96,26,56,195,32,239,274,277,278,279"
     Public MiscIds As String = "127,126,128,125,211,242,243,203,204,205,168,256,257,152,250,252,254,158,251,253,255,102,107,208,209,59,61,63,65"
     Public sr As System.IO.StringReader
+
+    <Flags()> Enum GameVisibility
+        None = 0
+        SuperMarioBros = 1
+        SuperMarioBros2 = 2
+        SuperMarioBros3 = 4
+        SuperMarioWorld = 8
+        Misc = 16
+    End Enum
+
+    Private Sub ToggleGameVisibility(visibility As GameVisibility)
+        smb_npcs.Visible = visibility.HasFlag(GameVisibility.SuperMarioBros)
+        smb2_npcs.Visible = visibility.HasFlag(GameVisibility.SuperMarioBros2)
+        smb3_npcs.Visible = visibility.HasFlag(GameVisibility.SuperMarioBros3)
+        smw_npcs.Visible = visibility.HasFlag(GameVisibility.SuperMarioWorld)
+        misc_npcs.Visible = visibility.HasFlag(GameVisibility.Misc)
+    End Sub
 
     Private Sub NPCs_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         g = Me.CreateGraphics()
@@ -1167,1099 +1184,1074 @@
     End Sub
 
     Private Sub Button19_Click(sender As System.Object, e As System.EventArgs) Handles Button19.Click
-        Form2.SelectedNPC = 1
+        ObjectPlacement.SelectedNPC = 1
     End Sub
 
     Private Sub Button20_Click(sender As System.Object, e As System.EventArgs) Handles Button20.Click
-        Form2.SelectedNPC = 2
+        ObjectPlacement.SelectedNPC = 2
     End Sub
 
     Private Sub Button21_Click(sender As System.Object, e As System.EventArgs) Handles Button21.Click
-        Form2.SelectedNPC = 3
+        ObjectPlacement.SelectedNPC = 3
     End Sub
 
     Private Sub Button22_Click(sender As System.Object, e As System.EventArgs) Handles Button22.Click
-        Form2.SelectedNPC = 4
+        ObjectPlacement.SelectedNPC = 244
     End Sub
 
     Private Sub Button41_Click(sender As System.Object, e As System.EventArgs) Handles Button41.Click
-        Form2.SelectedNPC = 5
+        ObjectPlacement.SelectedNPC = 71
     End Sub
 
     Private Sub Button23_Click(sender As System.Object, e As System.EventArgs) Handles Button23.Click
-        Form2.SelectedNPC = 6
+        ObjectPlacement.SelectedNPC = 37
     End Sub
 
     Private Sub Button24_Click(sender As System.Object, e As System.EventArgs) Handles Button24.Click
-        Form2.SelectedNPC = 7
+        ObjectPlacement.SelectedNPC = 38
     End Sub
 
     Private Sub Button25_Click(sender As System.Object, e As System.EventArgs) Handles Button25.Click
-        Form2.SelectedNPC = 8
+        ObjectPlacement.SelectedNPC = 6
     End Sub
 
     Private Sub Button26_Click(sender As System.Object, e As System.EventArgs) Handles Button26.Click
-        Form2.SelectedNPC = 9
+        ObjectPlacement.SelectedNPC = 4
     End Sub
 
     Private Sub Button27_Click(sender As System.Object, e As System.EventArgs) Handles Button27.Click
-        Form2.SelectedNPC = 10
+        ObjectPlacement.SelectedNPC = 76
     End Sub
 
     Private Sub Button28_Click(sender As System.Object, e As System.EventArgs) Handles Button28.Click
-        Form2.SelectedNPC = 11
+        ObjectPlacement.SelectedNPC = 161
     End Sub
 
     Private Sub Button29_Click(sender As System.Object, e As System.EventArgs) Handles Button29.Click
-        Form2.SelectedNPC = 12
+        ObjectPlacement.SelectedNPC = 72
     End Sub
 
     Private Sub Button30_Click(sender As System.Object, e As System.EventArgs) Handles Button30.Click
-        Form2.SelectedNPC = 13
+        ObjectPlacement.SelectedNPC = 48
     End Sub
 
     Private Sub Button31_Click(sender As System.Object, e As System.EventArgs) Handles Button31.Click
-        Form2.SelectedNPC = 14
+        ObjectPlacement.SelectedNPC = 47
     End Sub
 
     Private Sub Button32_Click(sender As System.Object, e As System.EventArgs) Handles Button32.Click
-        Form2.SelectedNPC = 15
+        ObjectPlacement.SelectedNPC = 12
     End Sub
 
     Private Sub Button33_Click(sender As System.Object, e As System.EventArgs) Handles Button33.Click
-        Form2.SelectedNPC = 16
+        ObjectPlacement.SelectedNPC = 23
     End Sub
 
     Private Sub Button34_Click(sender As System.Object, e As System.EventArgs) Handles Button34.Click
-        Form2.SelectedNPC = 17
+        ObjectPlacement.SelectedNPC = 17
     End Sub
 
     Private Sub Button35_Click(sender As System.Object, e As System.EventArgs) Handles Button35.Click
-        Form2.SelectedNPC = 18
+        ObjectPlacement.SelectedNPC = 136
     End Sub
 
     Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click
-        Form2.SelectedNPC = 19
+        ObjectPlacement.SelectedNPC = 137
     End Sub
 
     Private Sub Button37_Click(sender As System.Object, e As System.EventArgs) Handles Button37.Click
-        Form2.SelectedNPC = 20
+        ObjectPlacement.SelectedNPC = 53
     End Sub
 
     Private Sub Button38_Click(sender As System.Object, e As System.EventArgs) Handles Button38.Click
-        Form2.SelectedNPC = 21
+        ObjectPlacement.SelectedNPC = 54
     End Sub
 
     Private Sub Button39_Click(sender As System.Object, e As System.EventArgs) Handles Button39.Click
-        Form2.SelectedNPC = 22
+        ObjectPlacement.SelectedNPC = 36
     End Sub
 
     Private Sub Button40_Click(sender As System.Object, e As System.EventArgs) Handles Button40.Click
-        Form2.SelectedNPC = 23
+        ObjectPlacement.SelectedNPC = 259
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        Form2.SelectedNPC = 24
+        ObjectPlacement.SelectedNPC = 15
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
-        Form2.SelectedNPC = 25
+        ObjectPlacement.SelectedNPC = 267
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
-        Form2.SelectedNPC = 26
+        ObjectPlacement.SelectedNPC = 86
     End Sub
 
     Private Sub Button42_Click(sender As System.Object, e As System.EventArgs) Handles Button42.Click
-        Form2.SelectedNPC = 27
+        ObjectPlacement.SelectedNPC = 73
     End Sub
 
     Private Sub Button43_Click(sender As System.Object, e As System.EventArgs) Handles Button43.Click
-        Form2.SelectedNPC = 28
+        ObjectPlacement.SelectedNPC = 5
     End Sub
 
     Private Sub Button44_Click(sender As System.Object, e As System.EventArgs) Handles Button44.Click
-        Form2.SelectedNPC = 29
+        ObjectPlacement.SelectedNPC = 7
     End Sub
 
     Private Sub Button45_Click(sender As System.Object, e As System.EventArgs) Handles Button45.Click
-        Form2.SelectedNPC = 30
+        ObjectPlacement.SelectedNPC = 24
     End Sub
 
     Private Sub Button46_Click(sender As System.Object, e As System.EventArgs) Handles Button46.Click
-        Form2.SelectedNPC = 31
+        ObjectPlacement.SelectedNPC = 21
     End Sub
 
     Private Sub Button47_Click(sender As System.Object, e As System.EventArgs) Handles Button47.Click
-        Form2.SelectedNPC = 32
+        ObjectPlacement.SelectedNPC = 84
     End Sub
 
     Private Sub Button48_Click(sender As System.Object, e As System.EventArgs) Handles Button48.Click
-        Form2.SelectedNPC = 33
+        ObjectPlacement.SelectedNPC = 58
     End Sub
 
     Private Sub Button49_Click(sender As System.Object, e As System.EventArgs) Handles Button49.Click
-        Form2.SelectedNPC = 34
+        ObjectPlacement.SelectedNPC = 69
     End Sub
 
     Private Sub Button50_Click(sender As System.Object, e As System.EventArgs) Handles Button50.Click
-        Form2.SelectedNPC = 35
+        ObjectPlacement.SelectedNPC = 70
     End Sub
 
     Private Sub Button51_Click(sender As System.Object, e As System.EventArgs) Handles Button51.Click
-        Form2.SelectedNPC = 36
+        ObjectPlacement.SelectedNPC = 81
     End Sub
 
     Private Sub Button52_Click(sender As System.Object, e As System.EventArgs) Handles Button52.Click
-        Form2.SelectedNPC = 37
+        ObjectPlacement.SelectedNPC = 80
     End Sub
 
     Private Sub Button53_Click(sender As System.Object, e As System.EventArgs) Handles Button53.Click
-        Form2.SelectedNPC = 38
+        ObjectPlacement.SelectedNPC = 82
     End Sub
 
     Private Sub Button54_Click(sender As System.Object, e As System.EventArgs) Handles Button54.Click
-        Form2.SelectedNPC = 39
+        ObjectPlacement.SelectedNPC = 67
     End Sub
 
     Private Sub Button55_Click(sender As System.Object, e As System.EventArgs) Handles Button55.Click
-        Form2.SelectedNPC = 40
+        ObjectPlacement.SelectedNPC = 68
     End Sub
 
     Private Sub Button56_Click(sender As System.Object, e As System.EventArgs) Handles Button56.Click
-        Form2.SelectedNPC = 41
+        ObjectPlacement.SelectedNPC = 160
     End Sub
 
     Private Sub Button57_Click(sender As System.Object, e As System.EventArgs) Handles Button57.Click
-        Form2.SelectedNPC = 42
+        ObjectPlacement.SelectedNPC = 83
     End Sub
 
     Private Sub Button58_Click(sender As System.Object, e As System.EventArgs) Handles Button58.Click
-        Form2.SelectedNPC = 43
+        ObjectPlacement.SelectedNPC = 79
     End Sub
 
     Private Sub Button59_Click(sender As System.Object, e As System.EventArgs) Handles Button59.Click
-        Form2.SelectedNPC = 44
+        ObjectPlacement.SelectedNPC = 78
     End Sub
 
     Private Sub Button60_Click(sender As System.Object, e As System.EventArgs) Handles Button60.Click
-        Form2.SelectedNPC = 45
+        ObjectPlacement.SelectedNPC = 45
     End Sub
 
     Private Sub Button61_Click(sender As System.Object, e As System.EventArgs) Handles Button61.Click
-        Form2.SelectedNPC = 46
+        ObjectPlacement.SelectedNPC = 8
     End Sub
 
     Private Sub Button62_Click(sender As System.Object, e As System.EventArgs) Handles Button62.Click
-        Form2.SelectedNPC = 47
+        ObjectPlacement.SelectedNPC = 74
     End Sub
 
     Private Sub Button63_Click(sender As System.Object, e As System.EventArgs) Handles Button63.Click
-        Form2.SelectedNPC = 48
+        ObjectPlacement.SelectedNPC = 52
     End Sub
 
     Private Sub Button64_Click(sender As System.Object, e As System.EventArgs) Handles Button64.Click
-        Form2.SelectedNPC = 49
+        ObjectPlacement.SelectedNPC = 51
     End Sub
 
     Private Sub Button65_Click(sender As System.Object, e As System.EventArgs) Handles Button65.Click
-        Form2.SelectedNPC = 50
+        ObjectPlacement.SelectedNPC = 245
     End Sub
 
     Private Sub Button66_Click(sender As System.Object, e As System.EventArgs) Handles Button66.Click
-        Form2.SelectedNPC = 51
+        ObjectPlacement.SelectedNPC = 261
     End Sub
 
     Private Sub Button67_Click(sender As System.Object, e As System.EventArgs) Handles Button67.Click
-        Form2.SelectedNPC = 52
+        ObjectPlacement.SelectedNPC = 229
     End Sub
 
     Private Sub Button68_Click(sender As System.Object, e As System.EventArgs) Handles Button68.Click
-        Form2.SelectedNPC = 53
+        ObjectPlacement.SelectedNPC = 230
     End Sub
 
     Private Sub Button69_Click(sender As System.Object, e As System.EventArgs) Handles Button69.Click
-        Form2.SelectedNPC = 54
+        ObjectPlacement.SelectedNPC = 231
     End Sub
 
     Private Sub Button70_Click(sender As System.Object, e As System.EventArgs) Handles Button70.Click
-        Form2.SelectedNPC = 55
+        ObjectPlacement.SelectedNPC = 75
     End Sub
 
     Private Sub Button71_Click(sender As System.Object, e As System.EventArgs) Handles Button71.Click
-        Form2.SelectedNPC = 56
+        ObjectPlacement.SelectedNPC = 198
     End Sub
 
     Private Sub Button72_Click(sender As System.Object, e As System.EventArgs) Handles Button72.Click
-        Form2.SelectedNPC = 57
+        ObjectPlacement.SelectedNPC = 94
     End Sub
 
     Private Sub Button73_Click(sender As System.Object, e As System.EventArgs) Handles Button73.Click
-        Form2.SelectedNPC = 58
+        ObjectPlacement.SelectedNPC = 101
     End Sub
 
     Private Sub Button74_Click(sender As System.Object, e As System.EventArgs) Handles Button74.Click
-        Form2.SelectedNPC = 59
+        ObjectPlacement.SelectedNPC = 9
     End Sub
 
     Private Sub Button75_Click(sender As System.Object, e As System.EventArgs) Handles Button75.Click
-        Form2.SelectedNPC = 60
+        ObjectPlacement.SelectedNPC = 14
     End Sub
 
     Private Sub Button76_Click(sender As System.Object, e As System.EventArgs) Handles Button76.Click
-        Form2.SelectedNPC = 61
+        ObjectPlacement.SelectedNPC = 34
     End Sub
 
     Private Sub Button77_Click(sender As System.Object, e As System.EventArgs) Handles Button77.Click
-        Form2.SelectedNPC = 62
+        ObjectPlacement.SelectedNPC = 169
     End Sub
 
     Private Sub Button78_Click(sender As System.Object, e As System.EventArgs) Handles Button78.Click
-        Form2.SelectedNPC = 63
+        ObjectPlacement.SelectedNPC = 170
     End Sub
 
     Private Sub Button79_Click(sender As System.Object, e As System.EventArgs) Handles Button79.Click
-        Form2.SelectedNPC = 64
+        ObjectPlacement.SelectedNPC = 264
     End Sub
 
     Private Sub Button80_Click(sender As System.Object, e As System.EventArgs) Handles Button80.Click
-        Form2.SelectedNPC = 65
+        ObjectPlacement.SelectedNPC = 90
     End Sub
 
     Private Sub Button81_Click(sender As System.Object, e As System.EventArgs) Handles Button81.Click
-        Form2.SelectedNPC = 66
+        ObjectPlacement.SelectedNPC = 10
     End Sub
 
     Private Sub Button82_Click(sender As System.Object, e As System.EventArgs) Handles Button82.Click
-        Form2.SelectedNPC = 67
+        ObjectPlacement.SelectedNPC = 103
     End Sub
 
     Private Sub Button83_Click(sender As System.Object, e As System.EventArgs) Handles Button83.Click
-        Form2.SelectedNPC = 68
+        ObjectPlacement.SelectedNPC = 35
     End Sub
 
     Private Sub Button84_Click(sender As System.Object, e As System.EventArgs) Handles Button84.Click
-        Form2.SelectedNPC = 69
+        ObjectPlacement.SelectedNPC = 191
     End Sub
 
     Private Sub Button85_Click(sender As System.Object, e As System.EventArgs) Handles Button85.Click
-        Form2.SelectedNPC = 70
+        ObjectPlacement.SelectedNPC = 193
     End Sub
 
     Private Sub Button86_Click(sender As System.Object, e As System.EventArgs) Handles Button86.Click
-        Form2.SelectedNPC = 71
+        ObjectPlacement.SelectedNPC = 22
     End Sub
 
     Private Sub Button87_Click(sender As System.Object, e As System.EventArgs) Handles Button87.Click
-        Form2.SelectedNPC = 72
+        ObjectPlacement.SelectedNPC = 49
     End Sub
 
     Private Sub Button88_Click(sender As System.Object, e As System.EventArgs) Handles Button88.Click
-        Form2.SelectedNPC = 73
+        ObjectPlacement.SelectedNPC = 248
     End Sub
 
     Private Sub Button89_Click(sender As System.Object, e As System.EventArgs) Handles Button89.Click
-        Form2.SelectedNPC = 74
+        ObjectPlacement.SelectedNPC = 238
     End Sub
 
     Private Sub Button90_Click(sender As System.Object, e As System.EventArgs) Handles Button90.Click
-        Form2.SelectedNPC = 75
+        ObjectPlacement.SelectedNPC = 273
     End Sub
 
     Private Sub Button91_Click(sender As System.Object, e As System.EventArgs) Handles Button91.Click
-        Form2.SelectedNPC = 76
+        ObjectPlacement.SelectedNPC = 287
     End Sub
 
     Private Sub Button92_Click(sender As System.Object, e As System.EventArgs) Handles Button92.Click
-        Form2.SelectedNPC = 77
+        ObjectPlacement.SelectedNPC = 226
     End Sub
 
     Private Sub Button93_Click(sender As System.Object, e As System.EventArgs) Handles Button93.Click
-        Form2.SelectedNPC = 78
+        ObjectPlacement.SelectedNPC = 213
     End Sub
 
     Private Sub Button94_Click(sender As System.Object, e As System.EventArgs) Handles Button94.Click
-        Form2.SelectedNPC = 79
+        ObjectPlacement.SelectedNPC = 225
     End Sub
 
     Private Sub Button95_Click(sender As System.Object, e As System.EventArgs) Handles Button95.Click
-        Form2.SelectedNPC = 80
+        ObjectPlacement.SelectedNPC = 214
     End Sub
 
     Private Sub Button96_Click(sender As System.Object, e As System.EventArgs) Handles Button96.Click
-        Form2.SelectedNPC = 81
+        ObjectPlacement.SelectedNPC = 11
     End Sub
 
     Private Sub Button97_Click(sender As System.Object, e As System.EventArgs) Handles Button97.Click
-        Form2.SelectedNPC = 82
+        ObjectPlacement.SelectedNPC = 16
     End Sub
 
     Private Sub Button98_Click(sender As System.Object, e As System.EventArgs) Handles Button98.Click
-        Form2.SelectedNPC = 83
+        ObjectPlacement.SelectedNPC = 97
     End Sub
 
     Private Sub Button99_Click(sender As System.Object, e As System.EventArgs) Handles Button99.Click
-        Form2.SelectedNPC = 84
+        ObjectPlacement.SelectedNPC = 46
     End Sub
 
     Private Sub Button100_Click(sender As System.Object, e As System.EventArgs) Handles Button100.Click
-        Form2.SelectedNPC = 85
+        ObjectPlacement.SelectedNPC = 212
     End Sub
 
     Private Sub Button101_Click(sender As System.Object, e As System.EventArgs) Handles Button101.Click
-        Form2.SelectedNPC = 86
+        ObjectPlacement.SelectedNPC = 104
     End Sub
 
     Private Sub Button102_Click(sender As System.Object, e As System.EventArgs) Handles Button102.Click
-        Form2.SelectedNPC = 87
+        ObjectPlacement.SelectedNPC = 57
     End Sub
 
     Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
-        smb_npcs.Visible = False
-        smb2_npcs.Visible = True
-        smb3_npcs.Visible = False
-        smw_npcs.Visible = False
-        misc_npcs.Visible = False
-        'LoadSMB2NPCs()
+        ToggleGameVisibility(GameVisibility.SuperMarioBros2)
     End Sub
 
     Private Sub Button103_Click(sender As System.Object, e As System.EventArgs) Handles Button103.Click
-        Form2.SelectedNPC = 88
+        ObjectPlacement.SelectedNPC = 20
     End Sub
 
     Private Sub Button104_Click(sender As System.Object, e As System.EventArgs) Handles Button104.Click
-        Form2.SelectedNPC = 89
+        ObjectPlacement.SelectedNPC = 25
     End Sub
 
     Private Sub Button105_Click(sender As System.Object, e As System.EventArgs) Handles Button105.Click
-        Form2.SelectedNPC = 90
+        ObjectPlacement.SelectedNPC = 131
     End Sub
 
     Private Sub Button106_Click(sender As System.Object, e As System.EventArgs) Handles Button106.Click
-        Form2.SelectedNPC = 91
+        ObjectPlacement.SelectedNPC = 132
     End Sub
 
     Private Sub Button107_Click(sender As System.Object, e As System.EventArgs) Handles Button107.Click
-        Form2.SelectedNPC = 92
+        ObjectPlacement.SelectedNPC = 206
     End Sub
 
     Private Sub Button108_Click(sender As System.Object, e As System.EventArgs) Handles Button108.Click
-        Form2.SelectedNPC = 93
+        ObjectPlacement.SelectedNPC = 272
     End Sub
 
     Private Sub Button109_Click(sender As System.Object, e As System.EventArgs) Handles Button109.Click
-        Form2.SelectedNPC = 94
+        ObjectPlacement.SelectedNPC = 19
     End Sub
 
     Private Sub Button110_Click(sender As System.Object, e As System.EventArgs) Handles Button110.Click
-        Form2.SelectedNPC = 95
+        ObjectPlacement.SelectedNPC = 129
     End Sub
 
     Private Sub Button111_Click(sender As System.Object, e As System.EventArgs) Handles Button111.Click
-        Form2.SelectedNPC = 96
+        ObjectPlacement.SelectedNPC = 130
     End Sub
 
     Private Sub Button112_Click(sender As System.Object, e As System.EventArgs) Handles Button112.Click
-        Form2.SelectedNPC = 97
+        ObjectPlacement.SelectedNPC = 135
     End Sub
 
     Private Sub Button113_Click(sender As System.Object, e As System.EventArgs) Handles Button113.Click
-        Form2.SelectedNPC = 98
+        ObjectPlacement.SelectedNPC = 247
     End Sub
 
     Private Sub Button114_Click(sender As System.Object, e As System.EventArgs) Handles Button114.Click
-        Form2.SelectedNPC = 99
+        ObjectPlacement.SelectedNPC = 147
     End Sub
 
     Private Sub Button115_Click(sender As System.Object, e As System.EventArgs) Handles Button115.Click
-        Form2.SelectedNPC = 100
+        ObjectPlacement.SelectedNPC = 92
     End Sub
 
     Private Sub Button116_Click(sender As System.Object, e As System.EventArgs) Handles Button116.Click
-        Form2.SelectedNPC = 101
+        ObjectPlacement.SelectedNPC = 140
     End Sub
 
     Private Sub Button117_Click(sender As System.Object, e As System.EventArgs) Handles Button117.Click
-        Form2.SelectedNPC = 102
+        ObjectPlacement.SelectedNPC = 142
     End Sub
 
     Private Sub Button118_Click(sender As System.Object, e As System.EventArgs) Handles Button118.Click
-        Form2.SelectedNPC = 103
+        ObjectPlacement.SelectedNPC = 139
     End Sub
 
     Private Sub Button119_Click(sender As System.Object, e As System.EventArgs) Handles Button119.Click
-        Form2.SelectedNPC = 104
+        ObjectPlacement.SelectedNPC = 145
     End Sub
 
     Private Sub Button120_Click(sender As System.Object, e As System.EventArgs) Handles Button120.Click
-        Form2.SelectedNPC = 105
+        ObjectPlacement.SelectedNPC = 144
     End Sub
 
     Private Sub Button121_Click(sender As System.Object, e As System.EventArgs) Handles Button121.Click
-        Form2.SelectedNPC = 106
+        ObjectPlacement.SelectedNPC = 141
     End Sub
 
     Private Sub Button122_Click(sender As System.Object, e As System.EventArgs) Handles Button122.Click
-        Form2.SelectedNPC = 107
+        ObjectPlacement.SelectedNPC = 143
     End Sub
 
     Private Sub Button123_Click(sender As System.Object, e As System.EventArgs) Handles Button123.Click
-        Form2.SelectedNPC = 108
+        ObjectPlacement.SelectedNPC = 146
     End Sub
 
     Private Sub Button124_Click(sender As System.Object, e As System.EventArgs) Handles Button124.Click
-        Form2.SelectedNPC = 109
+        ObjectPlacement.SelectedNPC = 217
     End Sub
 
     Private Sub Button125_Click(sender As System.Object, e As System.EventArgs) Handles Button125.Click
-        Form2.SelectedNPC = 110
+        ObjectPlacement.SelectedNPC = 215
     End Sub
 
     Private Sub Button126_Click(sender As System.Object, e As System.EventArgs) Handles Button126.Click
-        Form2.SelectedNPC = 111
+        ObjectPlacement.SelectedNPC = 216
     End Sub
 
     Private Sub Button127_Click(sender As System.Object, e As System.EventArgs) Handles Button127.Click
-        Form2.SelectedNPC = 112
+        ObjectPlacement.SelectedNPC = 220
     End Sub
 
     Private Sub Button128_Click(sender As System.Object, e As System.EventArgs) Handles Button128.Click
-        Form2.SelectedNPC = 113
+        ObjectPlacement.SelectedNPC = 218
     End Sub
 
     Private Sub Button129_Click(sender As System.Object, e As System.EventArgs) Handles Button129.Click
-        Form2.SelectedNPC = 114
+        ObjectPlacement.SelectedNPC = 219
     End Sub
 
     Private Sub Button130_Click(sender As System.Object, e As System.EventArgs) Handles Button130.Click
-        Form2.SelectedNPC = 115
+        ObjectPlacement.SelectedNPC = 221
     End Sub
 
     Private Sub Button131_Click(sender As System.Object, e As System.EventArgs) Handles Button131.Click
-        Form2.SelectedNPC = 116
+        ObjectPlacement.SelectedNPC = 154
     End Sub
 
     Private Sub Button132_Click(sender As System.Object, e As System.EventArgs) Handles Button132.Click
-        Form2.SelectedNPC = 117
+        ObjectPlacement.SelectedNPC = 155
     End Sub
 
     Private Sub Button133_Click(sender As System.Object, e As System.EventArgs) Handles Button133.Click
-        Form2.SelectedNPC = 118
+        ObjectPlacement.SelectedNPC = 156
     End Sub
 
     Private Sub Button134_Click(sender As System.Object, e As System.EventArgs) Handles Button134.Click
-        Form2.SelectedNPC = 119
+        ObjectPlacement.SelectedNPC = 157
     End Sub
 
     Private Sub Button135_Click(sender As System.Object, e As System.EventArgs) Handles Button135.Click
-        Form2.SelectedNPC = 120
+        ObjectPlacement.SelectedNPC = 138
     End Sub
 
     Private Sub Button136_Click(sender As System.Object, e As System.EventArgs) Handles Button136.Click
-        Form2.SelectedNPC = 121
+        ObjectPlacement.SelectedNPC = 134
     End Sub
 
     Private Sub Button137_Click(sender As System.Object, e As System.EventArgs) Handles Button137.Click
-        Form2.SelectedNPC = 122
+        ObjectPlacement.SelectedNPC = 241
     End Sub
 
     Private Sub Button138_Click(sender As System.Object, e As System.EventArgs) Handles Button138.Click
-        Form2.SelectedNPC = 123
+        ObjectPlacement.SelectedNPC = 240
     End Sub
 
     Private Sub Button139_Click(sender As System.Object, e As System.EventArgs) Handles Button139.Click
-        Form2.SelectedNPC = 124
+        ObjectPlacement.SelectedNPC = 249
     End Sub
 
     Private Sub Button140_Click(sender As System.Object, e As System.EventArgs) Handles Button140.Click
-        Form2.SelectedNPC = 125
+        ObjectPlacement.SelectedNPC = 41
     End Sub
 
     Private Sub Button141_Click(sender As System.Object, e As System.EventArgs) Handles Button141.Click
-        Form2.SelectedNPC = 126
+        ObjectPlacement.SelectedNPC = 39
     End Sub
 
     Private Sub Button142_Click(sender As System.Object, e As System.EventArgs) Handles Button142.Click
-        Form2.SelectedNPC = 127
+        ObjectPlacement.SelectedNPC = 201
     End Sub
 
     Private Sub Button143_Click(sender As System.Object, e As System.EventArgs) Handles Button143.Click
-        Form2.SelectedNPC = 128
+        ObjectPlacement.SelectedNPC = 262
     End Sub
 
     Private Sub Button144_Click(sender As System.Object, e As System.EventArgs) Handles Button144.Click
-        Form2.SelectedNPC = 129
+        ObjectPlacement.SelectedNPC = 288
     End Sub
 
     Private Sub Button145_Click(sender As System.Object, e As System.EventArgs) Handles Button145.Click
-        Form2.SelectedNPC = 130
+        ObjectPlacement.SelectedNPC = 289
     End Sub
 
     Private Sub Button6_Click(sender As System.Object, e As System.EventArgs) Handles Button6.Click
-        smb3_npcs.Visible = True
-        smb2_npcs.Visible = False
-        smb_npcs.Visible = False
-        smw_npcs.Visible = False
-        misc_npcs.Visible = False
-        'LoadSMB3NPCs()
+        ToggleGameVisibility(GameVisibility.SuperMarioBros3)
     End Sub
 
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
-        smb_npcs.Visible = True
-        smb2_npcs.Visible = False
-        smb3_npcs.Visible = False
-        smw_npcs.Visible = False
-        misc_npcs.Visible = False
-        'LoadSMBNPCs()
+        ToggleGameVisibility(GameVisibility.SuperMarioBros)
     End Sub
 
     Private Sub Button146_Click(sender As System.Object, e As System.EventArgs) Handles Button146.Click
-        Form2.SelectedNPC = 131
+        ObjectPlacement.SelectedNPC = 89
     End Sub
 
     Private Sub Button147_Click(sender As System.Object, e As System.EventArgs) Handles Button147.Click
-        Form2.SelectedNPC = 132
+        ObjectPlacement.SelectedNPC = 27
     End Sub
 
     Private Sub Button148_Click(sender As System.Object, e As System.EventArgs) Handles Button148.Click
-        Form2.SelectedNPC = 133
+        ObjectPlacement.SelectedNPC = 29
     End Sub
 
     Private Sub Button149_Click(sender As System.Object, e As System.EventArgs) Handles Button149.Click
-        Form2.SelectedNPC = 134
+        ObjectPlacement.SelectedNPC = 153
     End Sub
 
     Private Sub Button150_Click(sender As System.Object, e As System.EventArgs) Handles Button150.Click
-        Form2.SelectedNPC = 135
+        ObjectPlacement.SelectedNPC = 93
     End Sub
 
     Private Sub Button151_Click(sender As System.Object, e As System.EventArgs) Handles Button151.Click
-        Form2.SelectedNPC = 136
+        ObjectPlacement.SelectedNPC = 175
     End Sub
 
     Private Sub Button152_Click(sender As System.Object, e As System.EventArgs) Handles Button152.Click
-        Form2.SelectedNPC = 137
+        ObjectPlacement.SelectedNPC = 177
     End Sub
 
     Private Sub Button153_Click(sender As System.Object, e As System.EventArgs) Handles Button153.Click
-        Form2.SelectedNPC = 138
+        ObjectPlacement.SelectedNPC = 173
     End Sub
 
     Private Sub Button154_Click(sender As System.Object, e As System.EventArgs) Handles Button154.Click
-        Form2.SelectedNPC = 139
+        ObjectPlacement.SelectedNPC = 176
     End Sub
 
     Private Sub Button155_Click(sender As System.Object, e As System.EventArgs) Handles Button155.Click
-        Form2.SelectedNPC = 140
+        ObjectPlacement.SelectedNPC = 260
     End Sub
 
     Private Sub Button156_Click(sender As System.Object, e As System.EventArgs) Handles Button156.Click
-        Form2.SelectedNPC = 141
+        ObjectPlacement.SelectedNPC = 106
     End Sub
 
     Private Sub Button157_Click(sender As System.Object, e As System.EventArgs) Handles Button157.Click
-        Form2.SelectedNPC = 142
+        ObjectPlacement.SelectedNPC = 200
     End Sub
 
     Private Sub Button158_Click(sender As System.Object, e As System.EventArgs) Handles Button158.Click
-        Form2.SelectedNPC = 143
+        ObjectPlacement.SelectedNPC = 235
     End Sub
 
     Private Sub Button159_Click(sender As System.Object, e As System.EventArgs) Handles Button159.Click
-        Form2.SelectedNPC = 144
+        ObjectPlacement.SelectedNPC = 233
     End Sub
 
     Private Sub Button160_Click(sender As System.Object, e As System.EventArgs) Handles Button160.Click
-        Form2.SelectedNPC = 145
+        ObjectPlacement.SelectedNPC = 28
     End Sub
 
     Private Sub Button161_Click(sender As System.Object, e As System.EventArgs) Handles Button161.Click
-        Form2.SelectedNPC = 146
+        ObjectPlacement.SelectedNPC = 184
     End Sub
 
     Private Sub Button162_Click(sender As System.Object, e As System.EventArgs) Handles Button162.Click
-        Form2.SelectedNPC = 147
+        ObjectPlacement.SelectedNPC = 182
     End Sub
 
     Private Sub Button163_Click(sender As System.Object, e As System.EventArgs) Handles Button163.Click
-        Form2.SelectedNPC = 148
+        ObjectPlacement.SelectedNPC = 88
     End Sub
 
     Private Sub Button164_Click(sender As System.Object, e As System.EventArgs) Handles Button164.Click
-        Form2.SelectedNPC = 149
+        ObjectPlacement.SelectedNPC = 178
     End Sub
 
     Private Sub Button165_Click(sender As System.Object, e As System.EventArgs) Handles Button165.Click
-        Form2.SelectedNPC = 150
+        ObjectPlacement.SelectedNPC = 186
     End Sub
 
     Private Sub Button166_Click(sender As System.Object, e As System.EventArgs) Handles Button166.Click
-        Form2.SelectedNPC = 151
+        ObjectPlacement.SelectedNPC = 172
     End Sub
 
     Private Sub Button167_Click(sender As System.Object, e As System.EventArgs) Handles Button167.Click
-        Form2.SelectedNPC = 152
+        ObjectPlacement.SelectedNPC = 174
     End Sub
 
     Private Sub Button168_Click(sender As System.Object, e As System.EventArgs) Handles Button168.Click
-        Form2.SelectedNPC = 153
+        ObjectPlacement.SelectedNPC = 223
     End Sub
 
     Private Sub Button169_Click(sender As System.Object, e As System.EventArgs) Handles Button169.Click
-        Form2.SelectedNPC = 154
+        ObjectPlacement.SelectedNPC = 222
     End Sub
 
     Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
-        smb_npcs.Visible = False
-        smb2_npcs.Visible = False
-        smb3_npcs.Visible = False
-        misc_npcs.Visible = False
-        smw_npcs.Visible = True
-        'LoadSMWNPCs()
+        ToggleGameVisibility(GameVisibility.SuperMarioWorld)
     End Sub
 
     Private Sub Button170_Click(sender As System.Object, e As System.EventArgs) Handles Button170.Click
-        Form2.SelectedNPC = 155
+        ObjectPlacement.SelectedNPC = 165
     End Sub
 
     Private Sub Button171_Click(sender As System.Object, e As System.EventArgs) Handles Button171.Click
-        Form2.SelectedNPC = 156
+        ObjectPlacement.SelectedNPC = 162
     End Sub
 
     Private Sub Button172_Click(sender As System.Object, e As System.EventArgs) Handles Button172.Click
-        Form2.SelectedNPC = 157
+        ObjectPlacement.SelectedNPC = 43
     End Sub
 
     Private Sub Button173_Click(sender As System.Object, e As System.EventArgs) Handles Button173.Click
-        Form2.SelectedNPC = 158
+        ObjectPlacement.SelectedNPC = 18
     End Sub
 
     Private Sub Button174_Click(sender As System.Object, e As System.EventArgs) Handles Button174.Click
-        Form2.SelectedNPC = 159
+        ObjectPlacement.SelectedNPC = 181
     End Sub
 
     Private Sub Button175_Click(sender As System.Object, e As System.EventArgs) Handles Button175.Click
-        Form2.SelectedNPC = 160
+        ObjectPlacement.SelectedNPC = 270
     End Sub
 
     Private Sub Button176_Click(sender As System.Object, e As System.EventArgs) Handles Button176.Click
-        Form2.SelectedNPC = 161
+        ObjectPlacement.SelectedNPC = 286
     End Sub
 
     Private Sub Button177_Click(sender As System.Object, e As System.EventArgs) Handles Button177.Click
-        Form2.SelectedNPC = 162
+        ObjectPlacement.SelectedNPC = 271
     End Sub
 
     Private Sub Button178_Click(sender As System.Object, e As System.EventArgs) Handles Button178.Click
-        Form2.SelectedNPC = 163
+        ObjectPlacement.SelectedNPC = 166
     End Sub
 
     Private Sub Button179_Click(sender As System.Object, e As System.EventArgs) Handles Button179.Click
-        Form2.SelectedNPC = 164
+        ObjectPlacement.SelectedNPC = 163
     End Sub
 
     Private Sub Button180_Click(sender As System.Object, e As System.EventArgs) Handles Button180.Click
-        Form2.SelectedNPC = 165
+        ObjectPlacement.SelectedNPC = 42
     End Sub
 
     Private Sub Button181_Click(sender As System.Object, e As System.EventArgs) Handles Button181.Click
-        Form2.SelectedNPC = 166
+        ObjectPlacement.SelectedNPC = 164
     End Sub
 
     Private Sub Button182_Click(sender As System.Object, e As System.EventArgs) Handles Button182.Click
-        Form2.SelectedNPC = 167
+        ObjectPlacement.SelectedNPC = 179
     End Sub
 
     Private Sub Button183_Click(sender As System.Object, e As System.EventArgs) Handles Button183.Click
-        Form2.SelectedNPC = 168
+        ObjectPlacement.SelectedNPC = 207
     End Sub
 
     Private Sub Button184_Click(sender As System.Object, e As System.EventArgs) Handles Button184.Click
-        Form2.SelectedNPC = 169
+        ObjectPlacement.SelectedNPC = 285
     End Sub
 
     Private Sub Button185_Click(sender As System.Object, e As System.EventArgs) Handles Button185.Click
-        Form2.SelectedNPC = 170
+        ObjectPlacement.SelectedNPC = 167
     End Sub
 
     Private Sub Button186_Click(sender As System.Object, e As System.EventArgs) Handles Button186.Click
-        Form2.SelectedNPC = 171
+        ObjectPlacement.SelectedNPC = 77
     End Sub
 
     Private Sub Button187_Click(sender As System.Object, e As System.EventArgs) Handles Button187.Click
-        Form2.SelectedNPC = 172
+        ObjectPlacement.SelectedNPC = 44
     End Sub
 
     Private Sub Button188_Click(sender As System.Object, e As System.EventArgs) Handles Button188.Click
-        Form2.SelectedNPC = 173
+        ObjectPlacement.SelectedNPC = 180
     End Sub
 
     Private Sub Button189_Click(sender As System.Object, e As System.EventArgs) Handles Button189.Click
-        Form2.SelectedNPC = 174
+        ObjectPlacement.SelectedNPC = 189
     End Sub
 
     Private Sub Button190_Click(sender As System.Object, e As System.EventArgs) Handles Button190.Click
-        Form2.SelectedNPC = 175
+        ObjectPlacement.SelectedNPC = 199
     End Sub
 
     Private Sub Button191_Click(sender As System.Object, e As System.EventArgs) Handles Button191.Click
-        Form2.SelectedNPC = 176
+        ObjectPlacement.SelectedNPC = 275
     End Sub
 
     Private Sub Button192_Click(sender As System.Object, e As System.EventArgs) Handles Button192.Click
-        Form2.SelectedNPC = 177
+        ObjectPlacement.SelectedNPC = 109
     End Sub
 
     Private Sub Button193_Click(sender As System.Object, e As System.EventArgs) Handles Button193.Click
-        Form2.SelectedNPC = 178
+        ObjectPlacement.SelectedNPC = 110
     End Sub
 
     Private Sub Button194_Click(sender As System.Object, e As System.EventArgs) Handles Button194.Click
-        Form2.SelectedNPC = 179
+        ObjectPlacement.SelectedNPC = 111
     End Sub
 
     Private Sub Button195_Click(sender As System.Object, e As System.EventArgs) Handles Button195.Click
-        Form2.SelectedNPC = 180
+        ObjectPlacement.SelectedNPC = 112
     End Sub
 
     Private Sub Button196_Click(sender As System.Object, e As System.EventArgs) Handles Button196.Click
-        Form2.SelectedNPC = 181
+        ObjectPlacement.SelectedNPC = 194
     End Sub
 
     Private Sub Button197_Click(sender As System.Object, e As System.EventArgs) Handles Button197.Click
-        Form2.SelectedNPC = 182
+        ObjectPlacement.SelectedNPC = 113
     End Sub
 
     Private Sub Button198_Click(sender As System.Object, e As System.EventArgs) Handles Button198.Click
-        Form2.SelectedNPC = 183
+        ObjectPlacement.SelectedNPC = 114
     End Sub
 
     Private Sub Button199_Click(sender As System.Object, e As System.EventArgs) Handles Button199.Click
-        Form2.SelectedNPC = 184
+        ObjectPlacement.SelectedNPC = 115
     End Sub
 
     Private Sub Button200_Click(sender As System.Object, e As System.EventArgs) Handles Button200.Click
-        Form2.SelectedNPC = 185
+        ObjectPlacement.SelectedNPC = 116
     End Sub
 
     Private Sub Button201_Click(sender As System.Object, e As System.EventArgs) Handles Button201.Click
-        Form2.SelectedNPC = 186
+        ObjectPlacement.SelectedNPC = 121
     End Sub
 
     Private Sub Button202_Click(sender As System.Object, e As System.EventArgs) Handles Button202.Click
-        Form2.SelectedNPC = 187
+        ObjectPlacement.SelectedNPC = 123
     End Sub
 
     Private Sub Button203_Click(sender As System.Object, e As System.EventArgs) Handles Button203.Click
-        Form2.SelectedNPC = 188
+        ObjectPlacement.SelectedNPC = 117
     End Sub
 
     Private Sub Button204_Click(sender As System.Object, e As System.EventArgs) Handles Button204.Click
-        Form2.SelectedNPC = 189
+        ObjectPlacement.SelectedNPC = 118
     End Sub
 
     Private Sub Button205_Click(sender As System.Object, e As System.EventArgs) Handles Button205.Click
-        Form2.SelectedNPC = 190
+        ObjectPlacement.SelectedNPC = 119
     End Sub
 
     Private Sub Button206_Click(sender As System.Object, e As System.EventArgs) Handles Button206.Click
-        Form2.SelectedNPC = 191
+        ObjectPlacement.SelectedNPC = 120
     End Sub
 
     Private Sub Button207_Click(sender As System.Object, e As System.EventArgs) Handles Button207.Click
-        Form2.SelectedNPC = 192
+        ObjectPlacement.SelectedNPC = 122
     End Sub
 
     Private Sub Button208_Click(sender As System.Object, e As System.EventArgs) Handles Button208.Click
-        Form2.SelectedNPC = 193
+        ObjectPlacement.SelectedNPC = 124
     End Sub
 
     Private Sub Button209_Click(sender As System.Object, e As System.EventArgs) Handles Button209.Click
-        Form2.SelectedNPC = 194
+        ObjectPlacement.SelectedNPC = 60
     End Sub
 
     Private Sub Button210_Click(sender As System.Object, e As System.EventArgs) Handles Button210.Click
-        Form2.SelectedNPC = 195
+        ObjectPlacement.SelectedNPC = 64
     End Sub
 
     Private Sub Button211_Click(sender As System.Object, e As System.EventArgs) Handles Button211.Click
-        Form2.SelectedNPC = 196
+        ObjectPlacement.SelectedNPC = 62
     End Sub
 
     Private Sub Button212_Click(sender As System.Object, e As System.EventArgs) Handles Button212.Click
-        Form2.SelectedNPC = 197
+        ObjectPlacement.SelectedNPC = 66
     End Sub
 
     Private Sub Button213_Click(sender As System.Object, e As System.EventArgs) Handles Button213.Click
-        Form2.SelectedNPC = 198
+        ObjectPlacement.SelectedNPC = 105
     End Sub
 
     Private Sub Button214_Click(sender As System.Object, e As System.EventArgs) Handles Button214.Click
-        Form2.SelectedNPC = 199
+        ObjectPlacement.SelectedNPC = 190
     End Sub
 
     Private Sub Button215_Click(sender As System.Object, e As System.EventArgs) Handles Button215.Click
-        Form2.SelectedNPC = 200
+        ObjectPlacement.SelectedNPC = 31
     End Sub
 
     Private Sub Button216_Click(sender As System.Object, e As System.EventArgs) Handles Button216.Click
-        Form2.SelectedNPC = 201
+        ObjectPlacement.SelectedNPC = 197
     End Sub
 
     Private Sub Button217_Click(sender As System.Object, e As System.EventArgs) Handles Button217.Click
-        Form2.SelectedNPC = 202
+        ObjectPlacement.SelectedNPC = 196
     End Sub
 
     Private Sub Button218_Click(sender As System.Object, e As System.EventArgs) Handles Button218.Click
-        Form2.SelectedNPC = 203
+        ObjectPlacement.SelectedNPC = 227
     End Sub
 
     Private Sub Button219_Click(sender As System.Object, e As System.EventArgs) Handles Button219.Click
-        Form2.SelectedNPC = 204
+        ObjectPlacement.SelectedNPC = 224
     End Sub
 
     Private Sub Button220_Click(sender As System.Object, e As System.EventArgs) Handles Button220.Click
-        Form2.SelectedNPC = 205
+        ObjectPlacement.SelectedNPC = 234
     End Sub
 
     Private Sub Button221_Click(sender As System.Object, e As System.EventArgs) Handles Button221.Click
-        Form2.SelectedNPC = 206
+        ObjectPlacement.SelectedNPC = 232
     End Sub
 
     Private Sub Button222_Click(sender As System.Object, e As System.EventArgs) Handles Button222.Click
-        Form2.SelectedNPC = 207
+        ObjectPlacement.SelectedNPC = 236
     End Sub
 
     Private Sub Button223_Click(sender As System.Object, e As System.EventArgs) Handles Button223.Click
-        Form2.SelectedNPC = 208
+        ObjectPlacement.SelectedNPC = 280
     End Sub
 
     Private Sub Button224_Click(sender As System.Object, e As System.EventArgs) Handles Button224.Click
-        Form2.SelectedNPC = 209
+        ObjectPlacement.SelectedNPC = 151
     End Sub
 
     Private Sub Button225_Click(sender As System.Object, e As System.EventArgs) Handles Button225.Click
-        Form2.SelectedNPC = 210
+        ObjectPlacement.SelectedNPC = 192
     End Sub
 
     Private Sub Button226_Click(sender As System.Object, e As System.EventArgs) Handles Button226.Click
-        Form2.SelectedNPC = 211
+        ObjectPlacement.SelectedNPC = 95
     End Sub
 
     Private Sub Button227_Click(sender As System.Object, e As System.EventArgs) Handles Button227.Click
-        Form2.SelectedNPC = 212
+        ObjectPlacement.SelectedNPC = 98
     End Sub
 
     Private Sub Button228_Click(sender As System.Object, e As System.EventArgs) Handles Button228.Click
-        Form2.SelectedNPC = 213
+        ObjectPlacement.SelectedNPC = 99
     End Sub
 
     Private Sub Button229_Click(sender As System.Object, e As System.EventArgs) Handles Button229.Click
-        Form2.SelectedNPC = 214
+        ObjectPlacement.SelectedNPC = 100
     End Sub
 
     Private Sub Button230_Click(sender As System.Object, e As System.EventArgs) Handles Button230.Click
-        Form2.SelectedNPC = 215
+        ObjectPlacement.SelectedNPC = 148
     End Sub
 
     Private Sub Button231_Click(sender As System.Object, e As System.EventArgs) Handles Button231.Click
-        Form2.SelectedNPC = 216
+        ObjectPlacement.SelectedNPC = 149
     End Sub
 
     Private Sub Button232_Click(sender As System.Object, e As System.EventArgs) Handles Button232.Click
-        Form2.SelectedNPC = 217
+        ObjectPlacement.SelectedNPC = 150
     End Sub
 
     Private Sub Button233_Click(sender As System.Object, e As System.EventArgs) Handles Button233.Click
-        Form2.SelectedNPC = 218
+        ObjectPlacement.SelectedNPC = 228
     End Sub
 
     Private Sub Button234_Click(sender As System.Object, e As System.EventArgs) Handles Button234.Click
-        Form2.SelectedNPC = 219
+        ObjectPlacement.SelectedNPC = 185
     End Sub
 
     Private Sub Button235_Click(sender As System.Object, e As System.EventArgs) Handles Button235.Click
-        Form2.SelectedNPC = 220
+        ObjectPlacement.SelectedNPC = 183
     End Sub
 
     Private Sub Button236_Click(sender As System.Object, e As System.EventArgs) Handles Button236.Click
-        Form2.SelectedNPC = 221
+        ObjectPlacement.SelectedNPC = 187
     End Sub
 
     Private Sub Button237_Click(sender As System.Object, e As System.EventArgs) Handles Button237.Click
-        Form2.SelectedNPC = 222
+        ObjectPlacement.SelectedNPC = 188
     End Sub
 
     Private Sub Button238_Click(sender As System.Object, e As System.EventArgs) Handles Button238.Click
-        Form2.SelectedNPC = 223
+        ObjectPlacement.SelectedNPC = 33
     End Sub
 
     Private Sub Button239_Click(sender As System.Object, e As System.EventArgs) Handles Button239.Click
-        Form2.SelectedNPC = 224
+        ObjectPlacement.SelectedNPC = 258
     End Sub
 
     Private Sub Button240_Click(sender As System.Object, e As System.EventArgs) Handles Button240.Click
-        Form2.SelectedNPC = 225
+        ObjectPlacement.SelectedNPC = 96
     End Sub
 
     Private Sub Button241_Click(sender As System.Object, e As System.EventArgs) Handles Button241.Click
-        Form2.SelectedNPC = 226
+        ObjectPlacement.SelectedNPC = 26
     End Sub
 
     Private Sub Button242_Click(sender As System.Object, e As System.EventArgs) Handles Button242.Click
-        Form2.SelectedNPC = 227
+        ObjectPlacement.SelectedNPC = 56
     End Sub
 
     Private Sub Button243_Click(sender As System.Object, e As System.EventArgs) Handles Button243.Click
-        Form2.SelectedNPC = 228
+        ObjectPlacement.SelectedNPC = 195
     End Sub
 
     Private Sub Button244_Click(sender As System.Object, e As System.EventArgs) Handles Button244.Click
-        Form2.SelectedNPC = 229
+        ObjectPlacement.SelectedNPC = 32
     End Sub
 
     Private Sub Button245_Click(sender As System.Object, e As System.EventArgs) Handles Button245.Click
-        Form2.SelectedNPC = 230
+        ObjectPlacement.SelectedNPC = 239
     End Sub
 
     Private Sub Button246_Click(sender As System.Object, e As System.EventArgs) Handles Button246.Click
-        Form2.SelectedNPC = 231
+        ObjectPlacement.SelectedNPC = 274
     End Sub
 
     Private Sub Button247_Click(sender As System.Object, e As System.EventArgs) Handles Button247.Click
-        Form2.SelectedNPC = 232
+        ObjectPlacement.SelectedNPC = 277
     End Sub
 
     Private Sub Button248_Click(sender As System.Object, e As System.EventArgs) Handles Button248.Click
-        Form2.SelectedNPC = 233
+        ObjectPlacement.SelectedNPC = 278
     End Sub
 
     Private Sub Button249_Click(sender As System.Object, e As System.EventArgs) Handles Button249.Click
-        Form2.SelectedNPC = 234
+        ObjectPlacement.SelectedNPC = 279
     End Sub
 
     Private Sub Button8_Click(sender As System.Object, e As System.EventArgs) Handles Button8.Click
-        'LoadMiscNPCs()
-        smb_npcs.Visible = False
-        smb2_npcs.Visible = False
-        smb3_npcs.Visible = False
-        smw_npcs.Visible = False
-        misc_npcs.Visible = True
+        ToggleGameVisibility(GameVisibility.Misc)
     End Sub
 
     Private Sub Button250_Click(sender As System.Object, e As System.EventArgs) Handles Button250.Click
-        Form2.SelectedNPC = 235
+        ObjectPlacement.SelectedNPC = 127
     End Sub
 
     Private Sub Button251_Click(sender As System.Object, e As System.EventArgs) Handles Button251.Click
-        Form2.SelectedNPC = 236
+        ObjectPlacement.SelectedNPC = 126
     End Sub
 
     Private Sub Button252_Click(sender As System.Object, e As System.EventArgs) Handles Button252.Click
-        Form2.SelectedNPC = 237
+        ObjectPlacement.SelectedNPC = 128
     End Sub
 
     Private Sub Button253_Click(sender As System.Object, e As System.EventArgs) Handles Button253.Click
-        Form2.SelectedNPC = 238
+        ObjectPlacement.SelectedNPC = 125
     End Sub
 
     Private Sub Button254_Click(sender As System.Object, e As System.EventArgs) Handles Button254.Click
-        Form2.SelectedNPC = 239
+        ObjectPlacement.SelectedNPC = 211
     End Sub
 
     Private Sub Button255_Click(sender As System.Object, e As System.EventArgs) Handles Button255.Click
-        Form2.SelectedNPC = 240
+        ObjectPlacement.SelectedNPC = 242
     End Sub
 
     Private Sub Button256_Click(sender As System.Object, e As System.EventArgs) Handles Button256.Click
-        Form2.SelectedNPC = 241
+        ObjectPlacement.SelectedNPC = 243
     End Sub
 
     Private Sub Button257_Click(sender As System.Object, e As System.EventArgs) Handles Button257.Click
-        Form2.SelectedNPC = 242
+        ObjectPlacement.SelectedNPC = 203
     End Sub
 
     Private Sub Button258_Click(sender As System.Object, e As System.EventArgs) Handles Button258.Click
-        Form2.SelectedNPC = 243
+        ObjectPlacement.SelectedNPC = 204
     End Sub
 
     Private Sub Button259_Click(sender As System.Object, e As System.EventArgs) Handles Button259.Click
-        Form2.SelectedNPC = 244
+        ObjectPlacement.SelectedNPC = 205
     End Sub
 
     Private Sub Button260_Click(sender As System.Object, e As System.EventArgs) Handles Button260.Click
-        Form2.SelectedNPC = 245
+        ObjectPlacement.SelectedNPC = 168
     End Sub
 
     Private Sub Button261_Click(sender As System.Object, e As System.EventArgs) Handles Button261.Click
-        Form2.SelectedNPC = 246
+        ObjectPlacement.SelectedNPC = 256
     End Sub
 
     Private Sub Button262_Click(sender As System.Object, e As System.EventArgs) Handles Button262.Click
-        Form2.SelectedNPC = 247
+        ObjectPlacement.SelectedNPC = 257
     End Sub
 
     Private Sub Button263_Click(sender As System.Object, e As System.EventArgs) Handles Button263.Click
-        Form2.SelectedNPC = 248
+        ObjectPlacement.SelectedNPC = 152
     End Sub
 
     Private Sub Button264_Click(sender As System.Object, e As System.EventArgs) Handles Button264.Click
-        Form2.SelectedNPC = 249
+        ObjectPlacement.SelectedNPC = 250
     End Sub
 
     Private Sub Button265_Click(sender As System.Object, e As System.EventArgs) Handles Button265.Click
-        Form2.SelectedNPC = 250
+        ObjectPlacement.SelectedNPC = 252
     End Sub
 
     Private Sub Button266_Click(sender As System.Object, e As System.EventArgs) Handles Button266.Click
-        Form2.SelectedNPC = 251
+        ObjectPlacement.SelectedNPC = 254
     End Sub
 
     Private Sub Button267_Click(sender As System.Object, e As System.EventArgs) Handles Button267.Click
-        Form2.SelectedNPC = 252
+        ObjectPlacement.SelectedNPC = 158
     End Sub
 
     Private Sub Button268_Click(sender As System.Object, e As System.EventArgs) Handles Button268.Click
-        Form2.SelectedNPC = 253
+        ObjectPlacement.SelectedNPC = 251
     End Sub
 
     Private Sub Button269_Click(sender As System.Object, e As System.EventArgs) Handles Button269.Click
-        Form2.SelectedNPC = 254
+        ObjectPlacement.SelectedNPC = 253
     End Sub
 
     Private Sub Button270_Click(sender As System.Object, e As System.EventArgs) Handles Button270.Click
-        Form2.SelectedNPC = 255
+        ObjectPlacement.SelectedNPC = 255
     End Sub
 
     Private Sub Button271_Click(sender As System.Object, e As System.EventArgs) Handles Button271.Click
-        Form2.SelectedNPC = 256
+        ObjectPlacement.SelectedNPC = 102
     End Sub
 
     Private Sub Button272_Click(sender As System.Object, e As System.EventArgs) Handles Button272.Click
-        Form2.SelectedNPC = 257
+        ObjectPlacement.SelectedNPC = 107
     End Sub
 
     Private Sub Button273_Click(sender As System.Object, e As System.EventArgs) Handles Button273.Click
-        Form2.SelectedNPC = 258
+        ObjectPlacement.SelectedNPC = 208
     End Sub
 
     Private Sub Button274_Click(sender As System.Object, e As System.EventArgs) Handles Button274.Click
-        Form2.SelectedNPC = 259
+        ObjectPlacement.SelectedNPC = 209
     End Sub
 
     Private Sub Button275_Click(sender As System.Object, e As System.EventArgs) Handles Button275.Click
-        Form2.SelectedNPC = 260
+        ObjectPlacement.SelectedNPC = 59
     End Sub
 
     Private Sub Button276_Click(sender As System.Object, e As System.EventArgs) Handles Button276.Click
-        Form2.SelectedNPC = 261
+        ObjectPlacement.SelectedNPC = 61
     End Sub
 
     Private Sub Button277_Click(sender As System.Object, e As System.EventArgs) Handles Button277.Click
-        Form2.SelectedNPC = 262
+        ObjectPlacement.SelectedNPC = 63
     End Sub
 
     Private Sub Button278_Click(sender As System.Object, e As System.EventArgs) Handles Button278.Click
-        Form2.SelectedNPC = 263
+        ObjectPlacement.SelectedNPC = 65
     End Sub
 End Class

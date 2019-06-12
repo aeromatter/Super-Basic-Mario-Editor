@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class MainWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
+        Me.MainMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,9 +43,6 @@ Partial Class Form1
         Me.EventsCtrlEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DebuggerCtrlDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridCtrlGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OnlineToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JoinServerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JoinIRCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditorHelpF1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameplayManualF2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,18 +69,18 @@ Partial Class Form1
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditorHelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameplayManuelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.LevelEditorPanel = New System.Windows.Forms.Panel()
+        Me.safemodeCheckBox = New System.Windows.Forms.CheckBox()
+        Me.autoalignCheckBox = New System.Windows.Forms.CheckBox()
+        Me.waterButton = New System.Windows.Forms.Button()
+        Me.SelectionButton = New System.Windows.Forms.Button()
+        Me.warpsButton = New System.Windows.Forms.Button()
+        Me.EraserButton = New System.Windows.Forms.Button()
+        Me.levelSettingsButton = New System.Windows.Forms.Button()
+        Me.BlocksButton = New System.Windows.Forms.Button()
+        Me.NPCsButton = New System.Windows.Forms.Button()
+        Me.BGOsButton = New System.Windows.Forms.Button()
+        Me.SaveLevelFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -93,19 +90,19 @@ Partial Class Form1
         Me.OpenToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.MenuStrip1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.OpenLevelFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.MainMenuStrip.SuspendLayout()
+        Me.LevelEditorPanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'MainMenuStrip
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem2, Me.DanceOffToolStripMenuItem, Me.TestLevelToolStripMenuItem1, Me.ViewToolStripMenuItem1, Me.OnlineToolStripMenuItem1, Me.HelpToolStripMenuItem1})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1627, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MainMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem2, Me.DanceOffToolStripMenuItem, Me.TestLevelToolStripMenuItem1, Me.ViewToolStripMenuItem1, Me.HelpToolStripMenuItem1})
+        Me.MainMenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MainMenuStrip.Name = "MainMenuStrip"
+        Me.MainMenuStrip.Size = New System.Drawing.Size(1627, 24)
+        Me.MainMenuStrip.TabIndex = 1
+        Me.MainMenuStrip.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem2
         '
@@ -161,37 +158,37 @@ Partial Class Form1
         '
         Me.TestLevelToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TestLevel1upF5ToolStripMenuItem, Me.TestLevel2upF6ToolStripMenuItem, Me.TestLevelBattleGameF7ToolStripMenuItem, Me.TestSettingsCtrlTToolStripMenuItem, Me.ResetGameF8ToolStripMenuItem})
         Me.TestLevelToolStripMenuItem1.Name = "TestLevelToolStripMenuItem1"
-        Me.TestLevelToolStripMenuItem1.Size = New System.Drawing.Size(71, 20)
+        Me.TestLevelToolStripMenuItem1.Size = New System.Drawing.Size(70, 20)
         Me.TestLevelToolStripMenuItem1.Text = "Test Level"
         '
         'TestLevel1upF5ToolStripMenuItem
         '
         Me.TestLevel1upF5ToolStripMenuItem.Name = "TestLevel1upF5ToolStripMenuItem"
-        Me.TestLevel1upF5ToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.TestLevel1upF5ToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.TestLevel1upF5ToolStripMenuItem.Text = "Test Level 1up                         F5"
         '
         'TestLevel2upF6ToolStripMenuItem
         '
         Me.TestLevel2upF6ToolStripMenuItem.Name = "TestLevel2upF6ToolStripMenuItem"
-        Me.TestLevel2upF6ToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.TestLevel2upF6ToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.TestLevel2upF6ToolStripMenuItem.Text = "Test Level 2up                         F6"
         '
         'TestLevelBattleGameF7ToolStripMenuItem
         '
         Me.TestLevelBattleGameF7ToolStripMenuItem.Name = "TestLevelBattleGameF7ToolStripMenuItem"
-        Me.TestLevelBattleGameF7ToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.TestLevelBattleGameF7ToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.TestLevelBattleGameF7ToolStripMenuItem.Text = "Test Level Battle Game          F7"
         '
         'TestSettingsCtrlTToolStripMenuItem
         '
         Me.TestSettingsCtrlTToolStripMenuItem.Name = "TestSettingsCtrlTToolStripMenuItem"
-        Me.TestSettingsCtrlTToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.TestSettingsCtrlTToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.TestSettingsCtrlTToolStripMenuItem.Text = "Test Settings                    (Ctrl + T)"
         '
         'ResetGameF8ToolStripMenuItem
         '
         Me.ResetGameF8ToolStripMenuItem.Name = "ResetGameF8ToolStripMenuItem"
-        Me.ResetGameF8ToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.ResetGameF8ToolStripMenuItem.Size = New System.Drawing.Size(248, 22)
         Me.ResetGameF8ToolStripMenuItem.Text = "Reset Game                             F8"
         '
         'ViewToolStripMenuItem1
@@ -224,25 +221,6 @@ Partial Class Form1
         Me.GridCtrlGToolStripMenuItem.Name = "GridCtrlGToolStripMenuItem"
         Me.GridCtrlGToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.GridCtrlGToolStripMenuItem.Text = "Grid        (Ctrl + G)"
-        '
-        'OnlineToolStripMenuItem1
-        '
-        Me.OnlineToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JoinServerToolStripMenuItem, Me.JoinIRCToolStripMenuItem})
-        Me.OnlineToolStripMenuItem1.Name = "OnlineToolStripMenuItem1"
-        Me.OnlineToolStripMenuItem1.Size = New System.Drawing.Size(54, 20)
-        Me.OnlineToolStripMenuItem1.Text = "Online"
-        '
-        'JoinServerToolStripMenuItem
-        '
-        Me.JoinServerToolStripMenuItem.Name = "JoinServerToolStripMenuItem"
-        Me.JoinServerToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
-        Me.JoinServerToolStripMenuItem.Text = "Join Server"
-        '
-        'JoinIRCToolStripMenuItem
-        '
-        Me.JoinIRCToolStripMenuItem.Name = "JoinIRCToolStripMenuItem"
-        Me.JoinIRCToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
-        Me.JoinIRCToolStripMenuItem.Text = "Join IRC"
         '
         'HelpToolStripMenuItem1
         '
@@ -323,25 +301,25 @@ Partial Class Form1
         'PlayerToolStripMenuItem
         '
         Me.PlayerToolStripMenuItem.Name = "PlayerToolStripMenuItem"
-        Me.PlayerToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.PlayerToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.PlayerToolStripMenuItem.Text = "1 Player"
         '
         'PlayersToolStripMenuItem
         '
         Me.PlayersToolStripMenuItem.Name = "PlayersToolStripMenuItem"
-        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.PlayersToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.PlayersToolStripMenuItem.Text = "2 Players"
         '
         'BattleModeToolStripMenuItem
         '
         Me.BattleModeToolStripMenuItem.Name = "BattleModeToolStripMenuItem"
-        Me.BattleModeToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.BattleModeToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.BattleModeToolStripMenuItem.Text = "Battle Mode"
         '
         'TestSettingsToolStripMenuItem
         '
         Me.TestSettingsToolStripMenuItem.Name = "TestSettingsToolStripMenuItem"
-        Me.TestSettingsToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.TestSettingsToolStripMenuItem.Size = New System.Drawing.Size(140, 22)
         Me.TestSettingsToolStripMenuItem.Text = "Test Settings"
         '
         'ViewToolStripMenuItem
@@ -407,123 +385,123 @@ Partial Class Form1
         Me.GameplayManuelToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
         Me.GameplayManuelToolStripMenuItem.Text = "Gameplay Manuel"
         '
-        'Panel1
+        'LevelEditorPanel
         '
-        Me.Panel1.Controls.Add(Me.CheckBox2)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.Button8)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button7)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 794)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1627, 39)
-        Me.Panel1.TabIndex = 2
+        Me.LevelEditorPanel.Controls.Add(Me.safemodeCheckBox)
+        Me.LevelEditorPanel.Controls.Add(Me.autoalignCheckBox)
+        Me.LevelEditorPanel.Controls.Add(Me.waterButton)
+        Me.LevelEditorPanel.Controls.Add(Me.SelectionButton)
+        Me.LevelEditorPanel.Controls.Add(Me.warpsButton)
+        Me.LevelEditorPanel.Controls.Add(Me.EraserButton)
+        Me.LevelEditorPanel.Controls.Add(Me.levelSettingsButton)
+        Me.LevelEditorPanel.Controls.Add(Me.BlocksButton)
+        Me.LevelEditorPanel.Controls.Add(Me.NPCsButton)
+        Me.LevelEditorPanel.Controls.Add(Me.BGOsButton)
+        Me.LevelEditorPanel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LevelEditorPanel.Location = New System.Drawing.Point(0, 794)
+        Me.LevelEditorPanel.Name = "LevelEditorPanel"
+        Me.LevelEditorPanel.Size = New System.Drawing.Size(1627, 39)
+        Me.LevelEditorPanel.TabIndex = 2
         '
-        'CheckBox2
+        'safemodeCheckBox
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Checked = True
-        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.Location = New System.Drawing.Point(972, 12)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(78, 17)
-        Me.CheckBox2.TabIndex = 9
-        Me.CheckBox2.Text = "Safe Mode"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.safemodeCheckBox.AutoSize = True
+        Me.safemodeCheckBox.Checked = True
+        Me.safemodeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.safemodeCheckBox.Location = New System.Drawing.Point(972, 12)
+        Me.safemodeCheckBox.Name = "safemodeCheckBox"
+        Me.safemodeCheckBox.Size = New System.Drawing.Size(78, 17)
+        Me.safemodeCheckBox.TabIndex = 9
+        Me.safemodeCheckBox.Text = "Safe Mode"
+        Me.safemodeCheckBox.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'autoalignCheckBox
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(892, 12)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(74, 17)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "Auto-Align"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.autoalignCheckBox.AutoSize = True
+        Me.autoalignCheckBox.Checked = True
+        Me.autoalignCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.autoalignCheckBox.Location = New System.Drawing.Point(892, 12)
+        Me.autoalignCheckBox.Name = "autoalignCheckBox"
+        Me.autoalignCheckBox.Size = New System.Drawing.Size(74, 17)
+        Me.autoalignCheckBox.TabIndex = 8
+        Me.autoalignCheckBox.Text = "Auto-Align"
+        Me.autoalignCheckBox.UseVisualStyleBackColor = True
         '
-        'Button8
+        'waterButton
         '
-        Me.Button8.Enabled = False
-        Me.Button8.Location = New System.Drawing.Point(782, 3)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(104, 33)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Water"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.waterButton.Enabled = False
+        Me.waterButton.Location = New System.Drawing.Point(782, 3)
+        Me.waterButton.Name = "waterButton"
+        Me.waterButton.Size = New System.Drawing.Size(104, 33)
+        Me.waterButton.TabIndex = 7
+        Me.waterButton.Text = "Water"
+        Me.waterButton.UseVisualStyleBackColor = True
         '
-        'Button1
+        'SelectionButton
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(104, 33)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Selection"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.SelectionButton.Location = New System.Drawing.Point(12, 3)
+        Me.SelectionButton.Name = "SelectionButton"
+        Me.SelectionButton.Size = New System.Drawing.Size(104, 33)
+        Me.SelectionButton.TabIndex = 0
+        Me.SelectionButton.Text = "Selection"
+        Me.SelectionButton.UseVisualStyleBackColor = True
         '
-        'Button7
+        'warpsButton
         '
-        Me.Button7.Enabled = False
-        Me.Button7.Location = New System.Drawing.Point(672, 3)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(104, 33)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Warps and Doors"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.warpsButton.Enabled = False
+        Me.warpsButton.Location = New System.Drawing.Point(672, 3)
+        Me.warpsButton.Name = "warpsButton"
+        Me.warpsButton.Size = New System.Drawing.Size(104, 33)
+        Me.warpsButton.TabIndex = 6
+        Me.warpsButton.Text = "Warps and Doors"
+        Me.warpsButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'EraserButton
         '
-        Me.Button2.Location = New System.Drawing.Point(122, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(104, 33)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Eraser"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.EraserButton.Location = New System.Drawing.Point(122, 3)
+        Me.EraserButton.Name = "EraserButton"
+        Me.EraserButton.Size = New System.Drawing.Size(104, 33)
+        Me.EraserButton.TabIndex = 1
+        Me.EraserButton.Text = "Eraser"
+        Me.EraserButton.UseVisualStyleBackColor = True
         '
-        'Button6
+        'levelSettingsButton
         '
-        Me.Button6.Location = New System.Drawing.Point(562, 3)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(104, 33)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Level Settings"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.levelSettingsButton.Location = New System.Drawing.Point(562, 3)
+        Me.levelSettingsButton.Name = "levelSettingsButton"
+        Me.levelSettingsButton.Size = New System.Drawing.Size(104, 33)
+        Me.levelSettingsButton.TabIndex = 5
+        Me.levelSettingsButton.Text = "Level Settings"
+        Me.levelSettingsButton.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BlocksButton
         '
-        Me.Button3.Location = New System.Drawing.Point(232, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(104, 33)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Blocks and Tiles"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BlocksButton.Location = New System.Drawing.Point(232, 3)
+        Me.BlocksButton.Name = "BlocksButton"
+        Me.BlocksButton.Size = New System.Drawing.Size(104, 33)
+        Me.BlocksButton.TabIndex = 2
+        Me.BlocksButton.Text = "Blocks and Tiles"
+        Me.BlocksButton.UseVisualStyleBackColor = True
         '
-        'Button5
+        'NPCsButton
         '
-        Me.Button5.Location = New System.Drawing.Point(452, 3)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(104, 33)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "NPCs"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.NPCsButton.Location = New System.Drawing.Point(452, 3)
+        Me.NPCsButton.Name = "NPCsButton"
+        Me.NPCsButton.Size = New System.Drawing.Size(104, 33)
+        Me.NPCsButton.TabIndex = 4
+        Me.NPCsButton.Text = "NPCs"
+        Me.NPCsButton.UseVisualStyleBackColor = True
         '
-        'Button4
+        'BGOsButton
         '
-        Me.Button4.Location = New System.Drawing.Point(342, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(104, 33)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Backgrounds"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BGOsButton.Location = New System.Drawing.Point(342, 3)
+        Me.BGOsButton.Name = "BGOsButton"
+        Me.BGOsButton.Size = New System.Drawing.Size(104, 33)
+        Me.BGOsButton.TabIndex = 3
+        Me.BGOsButton.Text = "Backgrounds"
+        Me.BGOsButton.UseVisualStyleBackColor = True
         '
-        'SaveFileDialog1
+        'SaveLevelFileDialog
         '
         '
         'FileToolStripMenuItem1
@@ -580,33 +558,31 @@ Partial Class Form1
         Me.ExitToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem2.Text = "Exit"
         '
-        'OpenFileDialog1
+        'OpenLevelFileDialog
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Form1
+        'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1627, 833)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.LevelEditorPanel)
+        Me.Controls.Add(Me.MainMenuStrip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Form1"
-        Me.Text = "Visual Super Mario Bros. X  - Level Editor - Beta Version 1.0.2.1 - www.SuperMari" & _
-    "oBrothersX.org"
+        Me.MainMenuStrip = Me.MainMenuStrip
+        Me.Name = "MainWindow"
+        Me.Text = "Super Mario Basics  - Level Editor - Beta 1.0 - www.SuperMarioBrothersX.org"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.MainMenuStrip.ResumeLayout(False)
+        Me.MainMenuStrip.PerformLayout()
+        Me.LevelEditorPanel.ResumeLayout(False)
+        Me.LevelEditorPanel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents MainMenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SaveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -630,17 +606,17 @@ Partial Class Form1
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditorHelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GameplayManuelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents LevelEditorPanel As System.Windows.Forms.Panel
+    Friend WithEvents autoalignCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents waterButton As System.Windows.Forms.Button
+    Friend WithEvents SelectionButton As System.Windows.Forms.Button
+    Friend WithEvents warpsButton As System.Windows.Forms.Button
+    Friend WithEvents EraserButton As System.Windows.Forms.Button
+    Friend WithEvents levelSettingsButton As System.Windows.Forms.Button
+    Friend WithEvents BlocksButton As System.Windows.Forms.Button
+    Friend WithEvents NPCsButton As System.Windows.Forms.Button
+    Friend WithEvents BGOsButton As System.Windows.Forms.Button
+    Friend WithEvents SaveLevelFileDialog As System.Windows.Forms.SaveFileDialog
     Friend WithEvents FileToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SaveToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
@@ -655,7 +631,7 @@ Partial Class Form1
     Friend WithEvents OpenToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SaveToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents OpenLevelFileDialog As System.Windows.Forms.OpenFileDialog
     Friend WithEvents DanceOffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LevelEditorCtrlVToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WorldEditorCtrlWToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -669,13 +645,10 @@ Partial Class Form1
     Friend WithEvents LayersCtrlLToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EventsCtrlEToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DebuggerCtrlDToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OnlineToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents JoinServerToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditorHelpF1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GameplayManualF2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents JoinIRCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GridCtrlGToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents safemodeCheckBox As System.Windows.Forms.CheckBox
 
 End Class

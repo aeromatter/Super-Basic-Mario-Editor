@@ -14,7 +14,7 @@ Public Class PlayerC
         Try
             Dim sr As StreamReader
 
-            sr = New StreamReader(Form1.FilePath & "\main.dat")
+            sr = New StreamReader(Main.GetGamePath() & "\main.dat")
 
             LeftC = sr.ReadLine()
             RightC = sr.ReadLine()

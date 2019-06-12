@@ -23,12 +23,12 @@ Partial Class Grid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.numericB = New System.Windows.Forms.NumericUpDown()
+        Me.numericG = New System.Windows.Forms.NumericUpDown()
+        Me.numericR = New System.Windows.Forms.NumericUpDown()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -41,16 +41,19 @@ Partial Class Grid
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.numericB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numericG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.numericR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.numericB)
+        Me.GroupBox1.Controls.Add(Me.numericG)
+        Me.GroupBox1.Controls.Add(Me.numericR)
         Me.GroupBox1.Controls.Add(Me.Button9)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Button8)
         Me.GroupBox1.Controls.Add(Me.Button7)
@@ -67,6 +70,33 @@ Partial Class Grid
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Color"
         '
+        'numericB
+        '
+        Me.numericB.Location = New System.Drawing.Point(167, 51)
+        Me.numericB.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
+        Me.numericB.Name = "numericB"
+        Me.numericB.Size = New System.Drawing.Size(39, 20)
+        Me.numericB.TabIndex = 15
+        Me.numericB.Value = New Decimal(New Integer() {255, 0, 0, 0})
+        '
+        'numericG
+        '
+        Me.numericG.Location = New System.Drawing.Point(99, 51)
+        Me.numericG.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
+        Me.numericG.Name = "numericG"
+        Me.numericG.Size = New System.Drawing.Size(39, 20)
+        Me.numericG.TabIndex = 14
+        Me.numericG.Value = New Decimal(New Integer() {255, 0, 0, 0})
+        '
+        'numericR
+        '
+        Me.numericR.Location = New System.Drawing.Point(30, 51)
+        Me.numericR.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
+        Me.numericR.Name = "numericR"
+        Me.numericR.Size = New System.Drawing.Size(39, 20)
+        Me.numericR.TabIndex = 13
+        Me.numericR.Value = New Decimal(New Integer() {255, 0, 0, 0})
+        '
         'Button9
         '
         Me.Button9.BackColor = System.Drawing.Color.DimGray
@@ -75,14 +105,6 @@ Partial Class Grid
         Me.Button9.Size = New System.Drawing.Size(24, 24)
         Me.Button9.TabIndex = 12
         Me.Button9.UseVisualStyleBackColor = False
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(167, 50)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(39, 20)
-        Me.TextBox3.TabIndex = 11
-        Me.TextBox3.Text = "255"
         '
         'Label3
         '
@@ -93,14 +115,6 @@ Partial Class Grid
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "B:"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(99, 50)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(39, 20)
-        Me.TextBox2.TabIndex = 9
-        Me.TextBox2.Text = "255"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -109,14 +123,6 @@ Partial Class Grid
         Me.Label2.Size = New System.Drawing.Size(18, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "G:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(30, 50)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(39, 20)
-        Me.TextBox1.TabIndex = 1
-        Me.TextBox1.Text = "255"
         '
         'Label1
         '
@@ -229,10 +235,15 @@ Partial Class Grid
         Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Grid"
         Me.Text = "Grid"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.numericB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numericG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.numericR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,11 +254,8 @@ Partial Class Grid
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
@@ -255,4 +263,7 @@ Partial Class Grid
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
+    Friend WithEvents numericB As NumericUpDown
+    Friend WithEvents numericG As NumericUpDown
+    Friend WithEvents numericR As NumericUpDown
 End Class

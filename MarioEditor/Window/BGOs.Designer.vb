@@ -252,10 +252,10 @@ Partial Class BGOs_Form
         Me.Button177 = New System.Windows.Forms.Button()
         Me.Button176 = New System.Windows.Forms.Button()
         Me.Button175 = New System.Windows.Forms.Button()
-        Me.GroupBox32 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.DisplayGroup = New System.Windows.Forms.GroupBox()
+        Me.ForegroundRadio = New System.Windows.Forms.RadioButton()
+        Me.DefaultRadio = New System.Windows.Forms.RadioButton()
+        Me.BackgroundRadio = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.smb3_bgos.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
@@ -292,7 +292,7 @@ Partial Class BGOs_Form
         Me.misc_bgos.SuspendLayout()
         Me.GroupBox31.SuspendLayout()
         Me.GroupBox30.SuspendLayout()
-        Me.GroupBox32.SuspendLayout()
+        Me.DisplayGroup.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -2771,49 +2771,49 @@ Partial Class BGOs_Form
         Me.Button175.TabIndex = 5
         Me.Button175.UseVisualStyleBackColor = False
         '
-        'GroupBox32
+        'DisplayGroup
         '
-        Me.GroupBox32.Controls.Add(Me.RadioButton3)
-        Me.GroupBox32.Controls.Add(Me.RadioButton2)
-        Me.GroupBox32.Controls.Add(Me.RadioButton1)
-        Me.GroupBox32.Location = New System.Drawing.Point(827, 12)
-        Me.GroupBox32.Name = "GroupBox32"
-        Me.GroupBox32.Size = New System.Drawing.Size(258, 48)
-        Me.GroupBox32.TabIndex = 7
-        Me.GroupBox32.TabStop = False
-        Me.GroupBox32.Text = "Display"
+        Me.DisplayGroup.Controls.Add(Me.ForegroundRadio)
+        Me.DisplayGroup.Controls.Add(Me.DefaultRadio)
+        Me.DisplayGroup.Controls.Add(Me.BackgroundRadio)
+        Me.DisplayGroup.Location = New System.Drawing.Point(827, 12)
+        Me.DisplayGroup.Name = "DisplayGroup"
+        Me.DisplayGroup.Size = New System.Drawing.Size(258, 48)
+        Me.DisplayGroup.TabIndex = 7
+        Me.DisplayGroup.TabStop = False
+        Me.DisplayGroup.Text = "Display"
         '
-        'RadioButton3
+        'ForegroundRadio
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(160, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(79, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.Text = "Foreground"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.ForegroundRadio.AutoSize = True
+        Me.ForegroundRadio.Location = New System.Drawing.Point(160, 19)
+        Me.ForegroundRadio.Name = "ForegroundRadio"
+        Me.ForegroundRadio.Size = New System.Drawing.Size(79, 17)
+        Me.ForegroundRadio.TabIndex = 2
+        Me.ForegroundRadio.Text = "Foreground"
+        Me.ForegroundRadio.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'DefaultRadio
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Checked = True
-        Me.RadioButton2.Location = New System.Drawing.Point(95, 19)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(59, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Default"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.DefaultRadio.AutoSize = True
+        Me.DefaultRadio.Checked = True
+        Me.DefaultRadio.Location = New System.Drawing.Point(95, 19)
+        Me.DefaultRadio.Name = "DefaultRadio"
+        Me.DefaultRadio.Size = New System.Drawing.Size(59, 17)
+        Me.DefaultRadio.TabIndex = 1
+        Me.DefaultRadio.TabStop = True
+        Me.DefaultRadio.Text = "Default"
+        Me.DefaultRadio.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'BackgroundRadio
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(83, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.Text = "Background"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.BackgroundRadio.AutoSize = True
+        Me.BackgroundRadio.Location = New System.Drawing.Point(6, 19)
+        Me.BackgroundRadio.Name = "BackgroundRadio"
+        Me.BackgroundRadio.Size = New System.Drawing.Size(83, 17)
+        Me.BackgroundRadio.TabIndex = 0
+        Me.BackgroundRadio.Text = "Background"
+        Me.BackgroundRadio.UseVisualStyleBackColor = True
         '
         'BGOs_Form
         '
@@ -2821,13 +2821,15 @@ Partial Class BGOs_Form
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1097, 345)
         Me.Controls.Add(Me.smb3_bgos)
-        Me.Controls.Add(Me.GroupBox32)
+        Me.Controls.Add(Me.DisplayGroup)
         Me.Controls.Add(Me.misc_bgos)
         Me.Controls.Add(Me.smw_bgos)
         Me.Controls.Add(Me.smb_bgos)
         Me.Controls.Add(Me.smb2_bgos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "BGOs_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Background Objects"
@@ -2867,8 +2869,8 @@ Partial Class BGOs_Form
         Me.misc_bgos.ResumeLayout(False)
         Me.GroupBox31.ResumeLayout(False)
         Me.GroupBox30.ResumeLayout(False)
-        Me.GroupBox32.ResumeLayout(False)
-        Me.GroupBox32.PerformLayout()
+        Me.DisplayGroup.ResumeLayout(False)
+        Me.DisplayGroup.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3101,8 +3103,8 @@ Partial Class BGOs_Form
     Friend WithEvents Button189 As System.Windows.Forms.Button
     Friend WithEvents Button188 As System.Windows.Forms.Button
     Friend WithEvents Button187 As System.Windows.Forms.Button
-    Friend WithEvents GroupBox32 As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents DisplayGroup As System.Windows.Forms.GroupBox
+    Friend WithEvents ForegroundRadio As System.Windows.Forms.RadioButton
+    Friend WithEvents DefaultRadio As System.Windows.Forms.RadioButton
+    Friend WithEvents BackgroundRadio As System.Windows.Forms.RadioButton
 End Class

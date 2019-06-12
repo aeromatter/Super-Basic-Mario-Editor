@@ -40,11 +40,6 @@ Partial Class BlocksAndTiles
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -793,11 +788,9 @@ Partial Class BlocksAndTiles
         Me.Button627 = New System.Windows.Forms.Button()
         Me.Button699 = New System.Windows.Forms.Button()
         Me.Button700 = New System.Windows.Forms.Button()
-        Me.Button701 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.GroupBox2.SuspendLayout
-        Me.GroupBox3.SuspendLayout
         Me.GroupBox4.SuspendLayout
         Me.GroupBox5.SuspendLayout
         Me.smb3_tileset.SuspendLayout
@@ -874,7 +867,7 @@ Partial Class BlocksAndTiles
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(112, 292)
         Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = false
+        Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Block Contents"
         '
         'TextBox1
@@ -886,77 +879,77 @@ Partial Class BlocksAndTiles
         '
         'Button7
         '
-        Me.Button7.Enabled = false
+        Me.Button7.Enabled = False
         Me.Button7.Location = New System.Drawing.Point(6, 263)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(100, 23)
         Me.Button7.TabIndex = 7
         Me.Button7.Text = "Yoshi"
-        Me.Button7.UseVisualStyleBackColor = true
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Enabled = false
+        Me.Button6.Enabled = False
         Me.Button6.Location = New System.Drawing.Point(6, 241)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(100, 23)
         Me.Button6.TabIndex = 6
         Me.Button6.Text = "1-Up"
-        Me.Button6.UseVisualStyleBackColor = true
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Enabled = false
+        Me.Button5.Enabled = False
         Me.Button5.Location = New System.Drawing.Point(6, 219)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(100, 23)
         Me.Button5.TabIndex = 5
         Me.Button5.Text = "Tanooki Suit"
-        Me.Button5.UseVisualStyleBackColor = true
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Enabled = false
+        Me.Button4.Enabled = False
         Me.Button4.Location = New System.Drawing.Point(6, 197)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(100, 23)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Leaf"
-        Me.Button4.UseVisualStyleBackColor = true
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Enabled = false
+        Me.Button3.Enabled = False
         Me.Button3.Location = New System.Drawing.Point(6, 175)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 23)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Fire Flower"
-        Me.Button3.UseVisualStyleBackColor = true
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Enabled = false
+        Me.Button2.Enabled = False
         Me.Button2.Location = New System.Drawing.Point(6, 153)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 23)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Mushroom"
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Enabled = false
+        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(6, 131)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "None"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'HScrollBar1
         '
-        Me.HScrollBar1.Enabled = false
+        Me.HScrollBar1.Enabled = False
         Me.HScrollBar1.Location = New System.Drawing.Point(6, 111)
         Me.HScrollBar1.Maximum = 600
         Me.HScrollBar1.Name = "HScrollBar1"
@@ -972,7 +965,7 @@ Partial Class BlocksAndTiles
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 92)
         Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = false
+        Me.PictureBox1.TabStop = False
         '
         'GroupBox2
         '
@@ -985,7 +978,7 @@ Partial Class BlocksAndTiles
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(584, 50)
         Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = false
+        Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Game Selection"
         '
         'Button12
@@ -995,7 +988,7 @@ Partial Class BlocksAndTiles
         Me.Button12.Size = New System.Drawing.Size(110, 23)
         Me.Button12.TabIndex = 6
         Me.Button12.Text = "Misc."
-        Me.Button12.UseVisualStyleBackColor = true
+        Me.Button12.UseVisualStyleBackColor = True
         '
         'Button8
         '
@@ -1004,7 +997,7 @@ Partial Class BlocksAndTiles
         Me.Button8.Size = New System.Drawing.Size(110, 23)
         Me.Button8.TabIndex = 2
         Me.Button8.Text = "Super Mario Bros."
-        Me.Button8.UseVisualStyleBackColor = true
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Button11
         '
@@ -1013,7 +1006,7 @@ Partial Class BlocksAndTiles
         Me.Button11.Size = New System.Drawing.Size(110, 23)
         Me.Button11.TabIndex = 5
         Me.Button11.Text = "Super Mario World"
-        Me.Button11.UseVisualStyleBackColor = true
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'Button9
         '
@@ -1022,7 +1015,7 @@ Partial Class BlocksAndTiles
         Me.Button9.Size = New System.Drawing.Size(110, 23)
         Me.Button9.TabIndex = 3
         Me.Button9.Text = "Super Mario Bros. 2"
-        Me.Button9.UseVisualStyleBackColor = true
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Button10
         '
@@ -1031,104 +1024,57 @@ Partial Class BlocksAndTiles
         Me.Button10.Size = New System.Drawing.Size(110, 23)
         Me.Button10.TabIndex = 4
         Me.Button10.Text = "Super Mario Bros. 3"
-        Me.Button10.UseVisualStyleBackColor = true
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.TextBox3)
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Location = New System.Drawing.Point(130, 68)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(74, 72)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = false
-        Me.GroupBox3.Text = "Block Size"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(20, 39)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox3.TabIndex = 11
-        Me.TextBox3.Text = "1"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = true
-        Me.Label2.Location = New System.Drawing.Point(6, 42)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(17, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Y:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(20, 13)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox2.TabIndex = 9
-        Me.TextBox2.Text = "1"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "X:"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.CheckBox2)
-        Me.GroupBox4.Location = New System.Drawing.Point(130, 146)
+        Me.GroupBox4.Location = New System.Drawing.Point(130, 68)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(74, 64)
         Me.GroupBox4.TabIndex = 3
-        Me.GroupBox4.TabStop = false
+        Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Properties"
         '
         'CheckBox2
         '
-        Me.CheckBox2.AutoSize = true
+        Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(63, 17)
         Me.CheckBox2.TabIndex = 5
         Me.CheckBox2.Text = "Slippery"
-        Me.CheckBox2.UseVisualStyleBackColor = true
+        Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'CheckBox1
         '
-        Me.CheckBox1.AutoSize = true
-        Me.CheckBox1.Location = New System.Drawing.Point(136, 165)
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(136, 87)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(64, 17)
         Me.CheckBox1.TabIndex = 4
         Me.CheckBox1.Text = "Invisible"
-        Me.CheckBox1.UseVisualStyleBackColor = true
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.Button13)
-        Me.GroupBox5.Location = New System.Drawing.Point(130, 216)
+        Me.GroupBox5.Location = New System.Drawing.Point(130, 138)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(74, 48)
         Me.GroupBox5.TabIndex = 5
-        Me.GroupBox5.TabStop = false
+        Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Events"
         '
         'Button13
         '
-        Me.Button13.Enabled = false
+        Me.Button13.Enabled = False
         Me.Button13.Location = New System.Drawing.Point(6, 19)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(62, 23)
         Me.Button13.TabIndex = 6
         Me.Button13.Text = "Show"
-        Me.Button13.UseVisualStyleBackColor = true
+        Me.Button13.UseVisualStyleBackColor = True
         '
         'smb3_tileset
         '
@@ -1152,7 +1098,7 @@ Partial Class BlocksAndTiles
         Me.smb3_tileset.Name = "smb3_tileset"
         Me.smb3_tileset.Size = New System.Drawing.Size(622, 236)
         Me.smb3_tileset.TabIndex = 6
-        Me.smb3_tileset.TabStop = false
+        Me.smb3_tileset.TabStop = False
         Me.smb3_tileset.Text = "Super Mario Bros. 3"
         '
         'smb3_special
@@ -1172,9 +1118,9 @@ Partial Class BlocksAndTiles
         Me.smb3_special.Name = "smb3_special"
         Me.smb3_special.Size = New System.Drawing.Size(182, 151)
         Me.smb3_special.TabIndex = 8
-        Me.smb3_special.TabStop = false
+        Me.smb3_special.TabStop = False
         Me.smb3_special.Text = "Special Blocks"
-        Me.smb3_special.Visible = false
+        Me.smb3_special.Visible = False
         '
         'Button245
         '
@@ -1184,7 +1130,7 @@ Partial Class BlocksAndTiles
         Me.Button245.Name = "Button245"
         Me.Button245.Size = New System.Drawing.Size(38, 38)
         Me.Button245.TabIndex = 10
-        Me.Button245.UseVisualStyleBackColor = false
+        Me.Button245.UseVisualStyleBackColor = False
         '
         'Button244
         '
@@ -1194,7 +1140,7 @@ Partial Class BlocksAndTiles
         Me.Button244.Name = "Button244"
         Me.Button244.Size = New System.Drawing.Size(38, 38)
         Me.Button244.TabIndex = 9
-        Me.Button244.UseVisualStyleBackColor = false
+        Me.Button244.UseVisualStyleBackColor = False
         '
         'Button243
         '
@@ -1204,7 +1150,7 @@ Partial Class BlocksAndTiles
         Me.Button243.Name = "Button243"
         Me.Button243.Size = New System.Drawing.Size(38, 38)
         Me.Button243.TabIndex = 8
-        Me.Button243.UseVisualStyleBackColor = false
+        Me.Button243.UseVisualStyleBackColor = False
         '
         'Button242
         '
@@ -1214,7 +1160,7 @@ Partial Class BlocksAndTiles
         Me.Button242.Name = "Button242"
         Me.Button242.Size = New System.Drawing.Size(38, 38)
         Me.Button242.TabIndex = 7
-        Me.Button242.UseVisualStyleBackColor = false
+        Me.Button242.UseVisualStyleBackColor = False
         '
         'Button241
         '
@@ -1224,7 +1170,7 @@ Partial Class BlocksAndTiles
         Me.Button241.Name = "Button241"
         Me.Button241.Size = New System.Drawing.Size(38, 38)
         Me.Button241.TabIndex = 6
-        Me.Button241.UseVisualStyleBackColor = false
+        Me.Button241.UseVisualStyleBackColor = False
         '
         'Button240
         '
@@ -1234,7 +1180,7 @@ Partial Class BlocksAndTiles
         Me.Button240.Name = "Button240"
         Me.Button240.Size = New System.Drawing.Size(38, 38)
         Me.Button240.TabIndex = 5
-        Me.Button240.UseVisualStyleBackColor = false
+        Me.Button240.UseVisualStyleBackColor = False
         '
         'Button239
         '
@@ -1244,7 +1190,7 @@ Partial Class BlocksAndTiles
         Me.Button239.Name = "Button239"
         Me.Button239.Size = New System.Drawing.Size(38, 38)
         Me.Button239.TabIndex = 4
-        Me.Button239.UseVisualStyleBackColor = false
+        Me.Button239.UseVisualStyleBackColor = False
         '
         'Button238
         '
@@ -1254,7 +1200,7 @@ Partial Class BlocksAndTiles
         Me.Button238.Name = "Button238"
         Me.Button238.Size = New System.Drawing.Size(38, 38)
         Me.Button238.TabIndex = 3
-        Me.Button238.UseVisualStyleBackColor = false
+        Me.Button238.UseVisualStyleBackColor = False
         '
         'Button237
         '
@@ -1264,7 +1210,7 @@ Partial Class BlocksAndTiles
         Me.Button237.Name = "Button237"
         Me.Button237.Size = New System.Drawing.Size(38, 38)
         Me.Button237.TabIndex = 2
-        Me.Button237.UseVisualStyleBackColor = false
+        Me.Button237.UseVisualStyleBackColor = False
         '
         'Button236
         '
@@ -1274,7 +1220,7 @@ Partial Class BlocksAndTiles
         Me.Button236.Name = "Button236"
         Me.Button236.Size = New System.Drawing.Size(38, 38)
         Me.Button236.TabIndex = 1
-        Me.Button236.UseVisualStyleBackColor = false
+        Me.Button236.UseVisualStyleBackColor = False
         '
         'Button235
         '
@@ -1284,7 +1230,7 @@ Partial Class BlocksAndTiles
         Me.Button235.Name = "Button235"
         Me.Button235.Size = New System.Drawing.Size(38, 38)
         Me.Button235.TabIndex = 0
-        Me.Button235.UseVisualStyleBackColor = false
+        Me.Button235.UseVisualStyleBackColor = False
         '
         'smb3_misc
         '
@@ -1310,9 +1256,9 @@ Partial Class BlocksAndTiles
         Me.smb3_misc.Name = "smb3_misc"
         Me.smb3_misc.Size = New System.Drawing.Size(270, 151)
         Me.smb3_misc.TabIndex = 8
-        Me.smb3_misc.TabStop = false
+        Me.smb3_misc.TabStop = False
         Me.smb3_misc.Text = "Misc."
-        Me.smb3_misc.Visible = false
+        Me.smb3_misc.Visible = False
         '
         'Button234
         '
@@ -1322,7 +1268,7 @@ Partial Class BlocksAndTiles
         Me.Button234.Name = "Button234"
         Me.Button234.Size = New System.Drawing.Size(38, 38)
         Me.Button234.TabIndex = 17
-        Me.Button234.UseVisualStyleBackColor = false
+        Me.Button234.UseVisualStyleBackColor = False
         '
         'Button233
         '
@@ -1332,7 +1278,7 @@ Partial Class BlocksAndTiles
         Me.Button233.Name = "Button233"
         Me.Button233.Size = New System.Drawing.Size(38, 38)
         Me.Button233.TabIndex = 16
-        Me.Button233.UseVisualStyleBackColor = false
+        Me.Button233.UseVisualStyleBackColor = False
         '
         'Button232
         '
@@ -1342,7 +1288,7 @@ Partial Class BlocksAndTiles
         Me.Button232.Name = "Button232"
         Me.Button232.Size = New System.Drawing.Size(38, 38)
         Me.Button232.TabIndex = 15
-        Me.Button232.UseVisualStyleBackColor = false
+        Me.Button232.UseVisualStyleBackColor = False
         '
         'Button231
         '
@@ -1352,7 +1298,7 @@ Partial Class BlocksAndTiles
         Me.Button231.Name = "Button231"
         Me.Button231.Size = New System.Drawing.Size(38, 38)
         Me.Button231.TabIndex = 14
-        Me.Button231.UseVisualStyleBackColor = false
+        Me.Button231.UseVisualStyleBackColor = False
         '
         'Button230
         '
@@ -1362,7 +1308,7 @@ Partial Class BlocksAndTiles
         Me.Button230.Name = "Button230"
         Me.Button230.Size = New System.Drawing.Size(38, 38)
         Me.Button230.TabIndex = 13
-        Me.Button230.UseVisualStyleBackColor = false
+        Me.Button230.UseVisualStyleBackColor = False
         '
         'Button229
         '
@@ -1372,7 +1318,7 @@ Partial Class BlocksAndTiles
         Me.Button229.Name = "Button229"
         Me.Button229.Size = New System.Drawing.Size(38, 38)
         Me.Button229.TabIndex = 12
-        Me.Button229.UseVisualStyleBackColor = false
+        Me.Button229.UseVisualStyleBackColor = False
         '
         'Button228
         '
@@ -1382,7 +1328,7 @@ Partial Class BlocksAndTiles
         Me.Button228.Name = "Button228"
         Me.Button228.Size = New System.Drawing.Size(38, 38)
         Me.Button228.TabIndex = 11
-        Me.Button228.UseVisualStyleBackColor = false
+        Me.Button228.UseVisualStyleBackColor = False
         '
         'Button227
         '
@@ -1392,7 +1338,7 @@ Partial Class BlocksAndTiles
         Me.Button227.Name = "Button227"
         Me.Button227.Size = New System.Drawing.Size(38, 38)
         Me.Button227.TabIndex = 10
-        Me.Button227.UseVisualStyleBackColor = false
+        Me.Button227.UseVisualStyleBackColor = False
         '
         'Button226
         '
@@ -1402,7 +1348,7 @@ Partial Class BlocksAndTiles
         Me.Button226.Name = "Button226"
         Me.Button226.Size = New System.Drawing.Size(38, 38)
         Me.Button226.TabIndex = 9
-        Me.Button226.UseVisualStyleBackColor = false
+        Me.Button226.UseVisualStyleBackColor = False
         '
         'Button225
         '
@@ -1412,7 +1358,7 @@ Partial Class BlocksAndTiles
         Me.Button225.Name = "Button225"
         Me.Button225.Size = New System.Drawing.Size(38, 38)
         Me.Button225.TabIndex = 8
-        Me.Button225.UseVisualStyleBackColor = false
+        Me.Button225.UseVisualStyleBackColor = False
         '
         'Button224
         '
@@ -1422,7 +1368,7 @@ Partial Class BlocksAndTiles
         Me.Button224.Name = "Button224"
         Me.Button224.Size = New System.Drawing.Size(38, 38)
         Me.Button224.TabIndex = 7
-        Me.Button224.UseVisualStyleBackColor = false
+        Me.Button224.UseVisualStyleBackColor = False
         '
         'Button223
         '
@@ -1432,7 +1378,7 @@ Partial Class BlocksAndTiles
         Me.Button223.Name = "Button223"
         Me.Button223.Size = New System.Drawing.Size(38, 38)
         Me.Button223.TabIndex = 6
-        Me.Button223.UseVisualStyleBackColor = false
+        Me.Button223.UseVisualStyleBackColor = False
         '
         'Button222
         '
@@ -1442,7 +1388,7 @@ Partial Class BlocksAndTiles
         Me.Button222.Name = "Button222"
         Me.Button222.Size = New System.Drawing.Size(38, 38)
         Me.Button222.TabIndex = 5
-        Me.Button222.UseVisualStyleBackColor = false
+        Me.Button222.UseVisualStyleBackColor = False
         '
         'Button221
         '
@@ -1452,7 +1398,7 @@ Partial Class BlocksAndTiles
         Me.Button221.Name = "Button221"
         Me.Button221.Size = New System.Drawing.Size(38, 38)
         Me.Button221.TabIndex = 4
-        Me.Button221.UseVisualStyleBackColor = false
+        Me.Button221.UseVisualStyleBackColor = False
         '
         'Button220
         '
@@ -1462,7 +1408,7 @@ Partial Class BlocksAndTiles
         Me.Button220.Name = "Button220"
         Me.Button220.Size = New System.Drawing.Size(38, 38)
         Me.Button220.TabIndex = 3
-        Me.Button220.UseVisualStyleBackColor = false
+        Me.Button220.UseVisualStyleBackColor = False
         '
         'Button219
         '
@@ -1472,7 +1418,7 @@ Partial Class BlocksAndTiles
         Me.Button219.Name = "Button219"
         Me.Button219.Size = New System.Drawing.Size(38, 38)
         Me.Button219.TabIndex = 2
-        Me.Button219.UseVisualStyleBackColor = false
+        Me.Button219.UseVisualStyleBackColor = False
         '
         'Button218
         '
@@ -1482,7 +1428,7 @@ Partial Class BlocksAndTiles
         Me.Button218.Name = "Button218"
         Me.Button218.Size = New System.Drawing.Size(38, 38)
         Me.Button218.TabIndex = 1
-        Me.Button218.UseVisualStyleBackColor = false
+        Me.Button218.UseVisualStyleBackColor = False
         '
         'Button217
         '
@@ -1492,7 +1438,7 @@ Partial Class BlocksAndTiles
         Me.Button217.Name = "Button217"
         Me.Button217.Size = New System.Drawing.Size(38, 38)
         Me.Button217.TabIndex = 0
-        Me.Button217.UseVisualStyleBackColor = false
+        Me.Button217.UseVisualStyleBackColor = False
         '
         'smb3_sizable
         '
@@ -1513,9 +1459,9 @@ Partial Class BlocksAndTiles
         Me.smb3_sizable.Name = "smb3_sizable"
         Me.smb3_sizable.Size = New System.Drawing.Size(183, 152)
         Me.smb3_sizable.TabIndex = 8
-        Me.smb3_sizable.TabStop = false
+        Me.smb3_sizable.TabStop = False
         Me.smb3_sizable.Text = "Sizable Blocks"
-        Me.smb3_sizable.Visible = false
+        Me.smb3_sizable.Visible = False
         '
         'Button216
         '
@@ -1525,7 +1471,7 @@ Partial Class BlocksAndTiles
         Me.Button216.Name = "Button216"
         Me.Button216.Size = New System.Drawing.Size(38, 38)
         Me.Button216.TabIndex = 11
-        Me.Button216.UseVisualStyleBackColor = false
+        Me.Button216.UseVisualStyleBackColor = False
         '
         'Button215
         '
@@ -1535,7 +1481,7 @@ Partial Class BlocksAndTiles
         Me.Button215.Name = "Button215"
         Me.Button215.Size = New System.Drawing.Size(38, 38)
         Me.Button215.TabIndex = 10
-        Me.Button215.UseVisualStyleBackColor = false
+        Me.Button215.UseVisualStyleBackColor = False
         '
         'Button214
         '
@@ -1545,7 +1491,7 @@ Partial Class BlocksAndTiles
         Me.Button214.Name = "Button214"
         Me.Button214.Size = New System.Drawing.Size(38, 38)
         Me.Button214.TabIndex = 9
-        Me.Button214.UseVisualStyleBackColor = false
+        Me.Button214.UseVisualStyleBackColor = False
         '
         'Button213
         '
@@ -1555,7 +1501,7 @@ Partial Class BlocksAndTiles
         Me.Button213.Name = "Button213"
         Me.Button213.Size = New System.Drawing.Size(38, 38)
         Me.Button213.TabIndex = 8
-        Me.Button213.UseVisualStyleBackColor = false
+        Me.Button213.UseVisualStyleBackColor = False
         '
         'Button212
         '
@@ -1565,7 +1511,7 @@ Partial Class BlocksAndTiles
         Me.Button212.Name = "Button212"
         Me.Button212.Size = New System.Drawing.Size(38, 38)
         Me.Button212.TabIndex = 7
-        Me.Button212.UseVisualStyleBackColor = false
+        Me.Button212.UseVisualStyleBackColor = False
         '
         'Button211
         '
@@ -1575,7 +1521,7 @@ Partial Class BlocksAndTiles
         Me.Button211.Name = "Button211"
         Me.Button211.Size = New System.Drawing.Size(38, 38)
         Me.Button211.TabIndex = 6
-        Me.Button211.UseVisualStyleBackColor = false
+        Me.Button211.UseVisualStyleBackColor = False
         '
         'Button210
         '
@@ -1585,7 +1531,7 @@ Partial Class BlocksAndTiles
         Me.Button210.Name = "Button210"
         Me.Button210.Size = New System.Drawing.Size(38, 38)
         Me.Button210.TabIndex = 5
-        Me.Button210.UseVisualStyleBackColor = false
+        Me.Button210.UseVisualStyleBackColor = False
         '
         'Button209
         '
@@ -1595,7 +1541,7 @@ Partial Class BlocksAndTiles
         Me.Button209.Name = "Button209"
         Me.Button209.Size = New System.Drawing.Size(38, 38)
         Me.Button209.TabIndex = 4
-        Me.Button209.UseVisualStyleBackColor = false
+        Me.Button209.UseVisualStyleBackColor = False
         '
         'Button208
         '
@@ -1605,7 +1551,7 @@ Partial Class BlocksAndTiles
         Me.Button208.Name = "Button208"
         Me.Button208.Size = New System.Drawing.Size(38, 38)
         Me.Button208.TabIndex = 3
-        Me.Button208.UseVisualStyleBackColor = false
+        Me.Button208.UseVisualStyleBackColor = False
         '
         'Button207
         '
@@ -1615,7 +1561,7 @@ Partial Class BlocksAndTiles
         Me.Button207.Name = "Button207"
         Me.Button207.Size = New System.Drawing.Size(38, 38)
         Me.Button207.TabIndex = 2
-        Me.Button207.UseVisualStyleBackColor = false
+        Me.Button207.UseVisualStyleBackColor = False
         '
         'Button206
         '
@@ -1625,7 +1571,7 @@ Partial Class BlocksAndTiles
         Me.Button206.Name = "Button206"
         Me.Button206.Size = New System.Drawing.Size(38, 38)
         Me.Button206.TabIndex = 1
-        Me.Button206.UseVisualStyleBackColor = false
+        Me.Button206.UseVisualStyleBackColor = False
         '
         'Button205
         '
@@ -1635,7 +1581,7 @@ Partial Class BlocksAndTiles
         Me.Button205.Name = "Button205"
         Me.Button205.Size = New System.Drawing.Size(38, 38)
         Me.Button205.TabIndex = 0
-        Me.Button205.UseVisualStyleBackColor = false
+        Me.Button205.UseVisualStyleBackColor = False
         '
         'smb3_pipes
         '
@@ -1663,9 +1609,9 @@ Partial Class BlocksAndTiles
         Me.smb3_pipes.Name = "smb3_pipes"
         Me.smb3_pipes.Size = New System.Drawing.Size(314, 153)
         Me.smb3_pipes.TabIndex = 8
-        Me.smb3_pipes.TabStop = false
+        Me.smb3_pipes.TabStop = False
         Me.smb3_pipes.Text = "Pipes"
-        Me.smb3_pipes.Visible = false
+        Me.smb3_pipes.Visible = False
         '
         'Button204
         '
@@ -1675,7 +1621,7 @@ Partial Class BlocksAndTiles
         Me.Button204.Name = "Button204"
         Me.Button204.Size = New System.Drawing.Size(38, 38)
         Me.Button204.TabIndex = 19
-        Me.Button204.UseVisualStyleBackColor = false
+        Me.Button204.UseVisualStyleBackColor = False
         '
         'Button203
         '
@@ -1685,7 +1631,7 @@ Partial Class BlocksAndTiles
         Me.Button203.Name = "Button203"
         Me.Button203.Size = New System.Drawing.Size(38, 38)
         Me.Button203.TabIndex = 18
-        Me.Button203.UseVisualStyleBackColor = false
+        Me.Button203.UseVisualStyleBackColor = False
         '
         'Button202
         '
@@ -1695,7 +1641,7 @@ Partial Class BlocksAndTiles
         Me.Button202.Name = "Button202"
         Me.Button202.Size = New System.Drawing.Size(38, 38)
         Me.Button202.TabIndex = 17
-        Me.Button202.UseVisualStyleBackColor = false
+        Me.Button202.UseVisualStyleBackColor = False
         '
         'Button201
         '
@@ -1705,7 +1651,7 @@ Partial Class BlocksAndTiles
         Me.Button201.Name = "Button201"
         Me.Button201.Size = New System.Drawing.Size(38, 38)
         Me.Button201.TabIndex = 16
-        Me.Button201.UseVisualStyleBackColor = false
+        Me.Button201.UseVisualStyleBackColor = False
         '
         'Button200
         '
@@ -1715,7 +1661,7 @@ Partial Class BlocksAndTiles
         Me.Button200.Name = "Button200"
         Me.Button200.Size = New System.Drawing.Size(38, 38)
         Me.Button200.TabIndex = 15
-        Me.Button200.UseVisualStyleBackColor = false
+        Me.Button200.UseVisualStyleBackColor = False
         '
         'Button199
         '
@@ -1725,7 +1671,7 @@ Partial Class BlocksAndTiles
         Me.Button199.Name = "Button199"
         Me.Button199.Size = New System.Drawing.Size(38, 38)
         Me.Button199.TabIndex = 14
-        Me.Button199.UseVisualStyleBackColor = false
+        Me.Button199.UseVisualStyleBackColor = False
         '
         'Button198
         '
@@ -1735,7 +1681,7 @@ Partial Class BlocksAndTiles
         Me.Button198.Name = "Button198"
         Me.Button198.Size = New System.Drawing.Size(38, 38)
         Me.Button198.TabIndex = 13
-        Me.Button198.UseVisualStyleBackColor = false
+        Me.Button198.UseVisualStyleBackColor = False
         '
         'Button197
         '
@@ -1745,7 +1691,7 @@ Partial Class BlocksAndTiles
         Me.Button197.Name = "Button197"
         Me.Button197.Size = New System.Drawing.Size(38, 38)
         Me.Button197.TabIndex = 12
-        Me.Button197.UseVisualStyleBackColor = false
+        Me.Button197.UseVisualStyleBackColor = False
         '
         'Button196
         '
@@ -1755,7 +1701,7 @@ Partial Class BlocksAndTiles
         Me.Button196.Name = "Button196"
         Me.Button196.Size = New System.Drawing.Size(38, 38)
         Me.Button196.TabIndex = 11
-        Me.Button196.UseVisualStyleBackColor = false
+        Me.Button196.UseVisualStyleBackColor = False
         '
         'Button195
         '
@@ -1765,7 +1711,7 @@ Partial Class BlocksAndTiles
         Me.Button195.Name = "Button195"
         Me.Button195.Size = New System.Drawing.Size(38, 38)
         Me.Button195.TabIndex = 10
-        Me.Button195.UseVisualStyleBackColor = false
+        Me.Button195.UseVisualStyleBackColor = False
         '
         'Button194
         '
@@ -1775,7 +1721,7 @@ Partial Class BlocksAndTiles
         Me.Button194.Name = "Button194"
         Me.Button194.Size = New System.Drawing.Size(38, 38)
         Me.Button194.TabIndex = 9
-        Me.Button194.UseVisualStyleBackColor = false
+        Me.Button194.UseVisualStyleBackColor = False
         '
         'Button193
         '
@@ -1785,7 +1731,7 @@ Partial Class BlocksAndTiles
         Me.Button193.Name = "Button193"
         Me.Button193.Size = New System.Drawing.Size(38, 38)
         Me.Button193.TabIndex = 8
-        Me.Button193.UseVisualStyleBackColor = false
+        Me.Button193.UseVisualStyleBackColor = False
         '
         'Button192
         '
@@ -1795,7 +1741,7 @@ Partial Class BlocksAndTiles
         Me.Button192.Name = "Button192"
         Me.Button192.Size = New System.Drawing.Size(38, 38)
         Me.Button192.TabIndex = 7
-        Me.Button192.UseVisualStyleBackColor = false
+        Me.Button192.UseVisualStyleBackColor = False
         '
         'Button191
         '
@@ -1805,7 +1751,7 @@ Partial Class BlocksAndTiles
         Me.Button191.Name = "Button191"
         Me.Button191.Size = New System.Drawing.Size(38, 38)
         Me.Button191.TabIndex = 6
-        Me.Button191.UseVisualStyleBackColor = false
+        Me.Button191.UseVisualStyleBackColor = False
         '
         'Button190
         '
@@ -1815,7 +1761,7 @@ Partial Class BlocksAndTiles
         Me.Button190.Name = "Button190"
         Me.Button190.Size = New System.Drawing.Size(38, 38)
         Me.Button190.TabIndex = 5
-        Me.Button190.UseVisualStyleBackColor = false
+        Me.Button190.UseVisualStyleBackColor = False
         '
         'Button189
         '
@@ -1825,7 +1771,7 @@ Partial Class BlocksAndTiles
         Me.Button189.Name = "Button189"
         Me.Button189.Size = New System.Drawing.Size(38, 38)
         Me.Button189.TabIndex = 4
-        Me.Button189.UseVisualStyleBackColor = false
+        Me.Button189.UseVisualStyleBackColor = False
         '
         'Button188
         '
@@ -1835,7 +1781,7 @@ Partial Class BlocksAndTiles
         Me.Button188.Name = "Button188"
         Me.Button188.Size = New System.Drawing.Size(38, 38)
         Me.Button188.TabIndex = 3
-        Me.Button188.UseVisualStyleBackColor = false
+        Me.Button188.UseVisualStyleBackColor = False
         '
         'Button187
         '
@@ -1845,7 +1791,7 @@ Partial Class BlocksAndTiles
         Me.Button187.Name = "Button187"
         Me.Button187.Size = New System.Drawing.Size(38, 38)
         Me.Button187.TabIndex = 2
-        Me.Button187.UseVisualStyleBackColor = false
+        Me.Button187.UseVisualStyleBackColor = False
         '
         'Button186
         '
@@ -1855,7 +1801,7 @@ Partial Class BlocksAndTiles
         Me.Button186.Name = "Button186"
         Me.Button186.Size = New System.Drawing.Size(38, 38)
         Me.Button186.TabIndex = 1
-        Me.Button186.UseVisualStyleBackColor = false
+        Me.Button186.UseVisualStyleBackColor = False
         '
         'Button185
         '
@@ -1865,7 +1811,7 @@ Partial Class BlocksAndTiles
         Me.Button185.Name = "Button185"
         Me.Button185.Size = New System.Drawing.Size(38, 38)
         Me.Button185.TabIndex = 0
-        Me.Button185.UseVisualStyleBackColor = false
+        Me.Button185.UseVisualStyleBackColor = False
         '
         'smb3_hurts
         '
@@ -1880,9 +1826,9 @@ Partial Class BlocksAndTiles
         Me.smb3_hurts.Name = "smb3_hurts"
         Me.smb3_hurts.Size = New System.Drawing.Size(133, 145)
         Me.smb3_hurts.TabIndex = 8
-        Me.smb3_hurts.TabStop = false
+        Me.smb3_hurts.TabStop = False
         Me.smb3_hurts.Text = "Hurts"
-        Me.smb3_hurts.Visible = false
+        Me.smb3_hurts.Visible = False
         '
         'Button184
         '
@@ -1892,7 +1838,7 @@ Partial Class BlocksAndTiles
         Me.Button184.Name = "Button184"
         Me.Button184.Size = New System.Drawing.Size(36, 36)
         Me.Button184.TabIndex = 33
-        Me.Button184.UseVisualStyleBackColor = false
+        Me.Button184.UseVisualStyleBackColor = False
         '
         'Button183
         '
@@ -1902,7 +1848,7 @@ Partial Class BlocksAndTiles
         Me.Button183.Name = "Button183"
         Me.Button183.Size = New System.Drawing.Size(36, 36)
         Me.Button183.TabIndex = 32
-        Me.Button183.UseVisualStyleBackColor = false
+        Me.Button183.UseVisualStyleBackColor = False
         '
         'Button182
         '
@@ -1912,7 +1858,7 @@ Partial Class BlocksAndTiles
         Me.Button182.Name = "Button182"
         Me.Button182.Size = New System.Drawing.Size(36, 36)
         Me.Button182.TabIndex = 31
-        Me.Button182.UseVisualStyleBackColor = false
+        Me.Button182.UseVisualStyleBackColor = False
         '
         'Button181
         '
@@ -1922,7 +1868,7 @@ Partial Class BlocksAndTiles
         Me.Button181.Name = "Button181"
         Me.Button181.Size = New System.Drawing.Size(36, 36)
         Me.Button181.TabIndex = 30
-        Me.Button181.UseVisualStyleBackColor = false
+        Me.Button181.UseVisualStyleBackColor = False
         '
         'Button180
         '
@@ -1932,7 +1878,7 @@ Partial Class BlocksAndTiles
         Me.Button180.Name = "Button180"
         Me.Button180.Size = New System.Drawing.Size(36, 36)
         Me.Button180.TabIndex = 29
-        Me.Button180.UseVisualStyleBackColor = false
+        Me.Button180.UseVisualStyleBackColor = False
         '
         'Button179
         '
@@ -1942,7 +1888,7 @@ Partial Class BlocksAndTiles
         Me.Button179.Name = "Button179"
         Me.Button179.Size = New System.Drawing.Size(36, 36)
         Me.Button179.TabIndex = 28
-        Me.Button179.UseVisualStyleBackColor = false
+        Me.Button179.UseVisualStyleBackColor = False
         '
         'Button178
         '
@@ -1952,7 +1898,7 @@ Partial Class BlocksAndTiles
         Me.Button178.Name = "Button178"
         Me.Button178.Size = New System.Drawing.Size(36, 36)
         Me.Button178.TabIndex = 27
-        Me.Button178.UseVisualStyleBackColor = false
+        Me.Button178.UseVisualStyleBackColor = False
         '
         'smb3_airship
         '
@@ -1972,9 +1918,9 @@ Partial Class BlocksAndTiles
         Me.smb3_airship.Name = "smb3_airship"
         Me.smb3_airship.Size = New System.Drawing.Size(182, 152)
         Me.smb3_airship.TabIndex = 8
-        Me.smb3_airship.TabStop = false
+        Me.smb3_airship.TabStop = False
         Me.smb3_airship.Text = "Airship / Tank"
-        Me.smb3_airship.Visible = false
+        Me.smb3_airship.Visible = False
         '
         'Button177
         '
@@ -1984,7 +1930,7 @@ Partial Class BlocksAndTiles
         Me.Button177.Name = "Button177"
         Me.Button177.Size = New System.Drawing.Size(38, 38)
         Me.Button177.TabIndex = 37
-        Me.Button177.UseVisualStyleBackColor = false
+        Me.Button177.UseVisualStyleBackColor = False
         '
         'Button176
         '
@@ -1994,7 +1940,7 @@ Partial Class BlocksAndTiles
         Me.Button176.Name = "Button176"
         Me.Button176.Size = New System.Drawing.Size(38, 38)
         Me.Button176.TabIndex = 36
-        Me.Button176.UseVisualStyleBackColor = false
+        Me.Button176.UseVisualStyleBackColor = False
         '
         'Button175
         '
@@ -2004,7 +1950,7 @@ Partial Class BlocksAndTiles
         Me.Button175.Name = "Button175"
         Me.Button175.Size = New System.Drawing.Size(38, 38)
         Me.Button175.TabIndex = 35
-        Me.Button175.UseVisualStyleBackColor = false
+        Me.Button175.UseVisualStyleBackColor = False
         '
         'Button174
         '
@@ -2014,7 +1960,7 @@ Partial Class BlocksAndTiles
         Me.Button174.Name = "Button174"
         Me.Button174.Size = New System.Drawing.Size(38, 38)
         Me.Button174.TabIndex = 34
-        Me.Button174.UseVisualStyleBackColor = false
+        Me.Button174.UseVisualStyleBackColor = False
         '
         'Button173
         '
@@ -2024,7 +1970,7 @@ Partial Class BlocksAndTiles
         Me.Button173.Name = "Button173"
         Me.Button173.Size = New System.Drawing.Size(38, 38)
         Me.Button173.TabIndex = 33
-        Me.Button173.UseVisualStyleBackColor = false
+        Me.Button173.UseVisualStyleBackColor = False
         '
         'Button172
         '
@@ -2034,7 +1980,7 @@ Partial Class BlocksAndTiles
         Me.Button172.Name = "Button172"
         Me.Button172.Size = New System.Drawing.Size(38, 38)
         Me.Button172.TabIndex = 32
-        Me.Button172.UseVisualStyleBackColor = false
+        Me.Button172.UseVisualStyleBackColor = False
         '
         'Button171
         '
@@ -2044,7 +1990,7 @@ Partial Class BlocksAndTiles
         Me.Button171.Name = "Button171"
         Me.Button171.Size = New System.Drawing.Size(38, 38)
         Me.Button171.TabIndex = 31
-        Me.Button171.UseVisualStyleBackColor = false
+        Me.Button171.UseVisualStyleBackColor = False
         '
         'Button170
         '
@@ -2054,7 +2000,7 @@ Partial Class BlocksAndTiles
         Me.Button170.Name = "Button170"
         Me.Button170.Size = New System.Drawing.Size(38, 38)
         Me.Button170.TabIndex = 30
-        Me.Button170.UseVisualStyleBackColor = false
+        Me.Button170.UseVisualStyleBackColor = False
         '
         'Button169
         '
@@ -2064,7 +2010,7 @@ Partial Class BlocksAndTiles
         Me.Button169.Name = "Button169"
         Me.Button169.Size = New System.Drawing.Size(38, 38)
         Me.Button169.TabIndex = 29
-        Me.Button169.UseVisualStyleBackColor = false
+        Me.Button169.UseVisualStyleBackColor = False
         '
         'Button168
         '
@@ -2074,7 +2020,7 @@ Partial Class BlocksAndTiles
         Me.Button168.Name = "Button168"
         Me.Button168.Size = New System.Drawing.Size(38, 38)
         Me.Button168.TabIndex = 28
-        Me.Button168.UseVisualStyleBackColor = false
+        Me.Button168.UseVisualStyleBackColor = False
         '
         'Button167
         '
@@ -2084,7 +2030,7 @@ Partial Class BlocksAndTiles
         Me.Button167.Name = "Button167"
         Me.Button167.Size = New System.Drawing.Size(38, 38)
         Me.Button167.TabIndex = 27
-        Me.Button167.UseVisualStyleBackColor = false
+        Me.Button167.UseVisualStyleBackColor = False
         '
         'Button166
         '
@@ -2094,7 +2040,7 @@ Partial Class BlocksAndTiles
         Me.Button166.Name = "Button166"
         Me.Button166.Size = New System.Drawing.Size(38, 38)
         Me.Button166.TabIndex = 26
-        Me.Button166.UseVisualStyleBackColor = false
+        Me.Button166.UseVisualStyleBackColor = False
         '
         'smb3_snow
         '
@@ -2107,9 +2053,9 @@ Partial Class BlocksAndTiles
         Me.smb3_snow.Name = "smb3_snow"
         Me.smb3_snow.Size = New System.Drawing.Size(227, 63)
         Me.smb3_snow.TabIndex = 8
-        Me.smb3_snow.TabStop = false
+        Me.smb3_snow.TabStop = False
         Me.smb3_snow.Text = "Snow"
-        Me.smb3_snow.Visible = false
+        Me.smb3_snow.Visible = False
         '
         'Button165
         '
@@ -2119,7 +2065,7 @@ Partial Class BlocksAndTiles
         Me.Button165.Name = "Button165"
         Me.Button165.Size = New System.Drawing.Size(38, 38)
         Me.Button165.TabIndex = 29
-        Me.Button165.UseVisualStyleBackColor = false
+        Me.Button165.UseVisualStyleBackColor = False
         '
         'Button164
         '
@@ -2129,7 +2075,7 @@ Partial Class BlocksAndTiles
         Me.Button164.Name = "Button164"
         Me.Button164.Size = New System.Drawing.Size(38, 38)
         Me.Button164.TabIndex = 28
-        Me.Button164.UseVisualStyleBackColor = false
+        Me.Button164.UseVisualStyleBackColor = False
         '
         'Button163
         '
@@ -2139,7 +2085,7 @@ Partial Class BlocksAndTiles
         Me.Button163.Name = "Button163"
         Me.Button163.Size = New System.Drawing.Size(38, 38)
         Me.Button163.TabIndex = 27
-        Me.Button163.UseVisualStyleBackColor = false
+        Me.Button163.UseVisualStyleBackColor = False
         '
         'Button162
         '
@@ -2149,7 +2095,7 @@ Partial Class BlocksAndTiles
         Me.Button162.Name = "Button162"
         Me.Button162.Size = New System.Drawing.Size(38, 38)
         Me.Button162.TabIndex = 26
-        Me.Button162.UseVisualStyleBackColor = false
+        Me.Button162.UseVisualStyleBackColor = False
         '
         'Button161
         '
@@ -2159,7 +2105,7 @@ Partial Class BlocksAndTiles
         Me.Button161.Name = "Button161"
         Me.Button161.Size = New System.Drawing.Size(38, 38)
         Me.Button161.TabIndex = 25
-        Me.Button161.UseVisualStyleBackColor = false
+        Me.Button161.UseVisualStyleBackColor = False
         '
         'smb3_water
         '
@@ -2185,9 +2131,9 @@ Partial Class BlocksAndTiles
         Me.smb3_water.Name = "smb3_water"
         Me.smb3_water.Size = New System.Drawing.Size(270, 153)
         Me.smb3_water.TabIndex = 8
-        Me.smb3_water.TabStop = false
+        Me.smb3_water.TabStop = False
         Me.smb3_water.Text = "Water"
-        Me.smb3_water.Visible = false
+        Me.smb3_water.Visible = False
         '
         'Button160
         '
@@ -2197,7 +2143,7 @@ Partial Class BlocksAndTiles
         Me.Button160.Name = "Button160"
         Me.Button160.Size = New System.Drawing.Size(38, 38)
         Me.Button160.TabIndex = 23
-        Me.Button160.UseVisualStyleBackColor = false
+        Me.Button160.UseVisualStyleBackColor = False
         '
         'Button159
         '
@@ -2207,7 +2153,7 @@ Partial Class BlocksAndTiles
         Me.Button159.Name = "Button159"
         Me.Button159.Size = New System.Drawing.Size(38, 38)
         Me.Button159.TabIndex = 22
-        Me.Button159.UseVisualStyleBackColor = false
+        Me.Button159.UseVisualStyleBackColor = False
         '
         'Button158
         '
@@ -2217,7 +2163,7 @@ Partial Class BlocksAndTiles
         Me.Button158.Name = "Button158"
         Me.Button158.Size = New System.Drawing.Size(38, 38)
         Me.Button158.TabIndex = 21
-        Me.Button158.UseVisualStyleBackColor = false
+        Me.Button158.UseVisualStyleBackColor = False
         '
         'Button157
         '
@@ -2227,7 +2173,7 @@ Partial Class BlocksAndTiles
         Me.Button157.Name = "Button157"
         Me.Button157.Size = New System.Drawing.Size(38, 38)
         Me.Button157.TabIndex = 20
-        Me.Button157.UseVisualStyleBackColor = false
+        Me.Button157.UseVisualStyleBackColor = False
         '
         'Button156
         '
@@ -2237,7 +2183,7 @@ Partial Class BlocksAndTiles
         Me.Button156.Name = "Button156"
         Me.Button156.Size = New System.Drawing.Size(38, 38)
         Me.Button156.TabIndex = 19
-        Me.Button156.UseVisualStyleBackColor = false
+        Me.Button156.UseVisualStyleBackColor = False
         '
         'Button155
         '
@@ -2247,7 +2193,7 @@ Partial Class BlocksAndTiles
         Me.Button155.Name = "Button155"
         Me.Button155.Size = New System.Drawing.Size(38, 38)
         Me.Button155.TabIndex = 18
-        Me.Button155.UseVisualStyleBackColor = false
+        Me.Button155.UseVisualStyleBackColor = False
         '
         'Button154
         '
@@ -2257,7 +2203,7 @@ Partial Class BlocksAndTiles
         Me.Button154.Name = "Button154"
         Me.Button154.Size = New System.Drawing.Size(38, 38)
         Me.Button154.TabIndex = 17
-        Me.Button154.UseVisualStyleBackColor = false
+        Me.Button154.UseVisualStyleBackColor = False
         '
         'Button153
         '
@@ -2267,7 +2213,7 @@ Partial Class BlocksAndTiles
         Me.Button153.Name = "Button153"
         Me.Button153.Size = New System.Drawing.Size(38, 38)
         Me.Button153.TabIndex = 16
-        Me.Button153.UseVisualStyleBackColor = false
+        Me.Button153.UseVisualStyleBackColor = False
         '
         'Button152
         '
@@ -2277,7 +2223,7 @@ Partial Class BlocksAndTiles
         Me.Button152.Name = "Button152"
         Me.Button152.Size = New System.Drawing.Size(38, 38)
         Me.Button152.TabIndex = 15
-        Me.Button152.UseVisualStyleBackColor = false
+        Me.Button152.UseVisualStyleBackColor = False
         '
         'Button151
         '
@@ -2287,7 +2233,7 @@ Partial Class BlocksAndTiles
         Me.Button151.Name = "Button151"
         Me.Button151.Size = New System.Drawing.Size(38, 38)
         Me.Button151.TabIndex = 14
-        Me.Button151.UseVisualStyleBackColor = false
+        Me.Button151.UseVisualStyleBackColor = False
         '
         'Button150
         '
@@ -2297,7 +2243,7 @@ Partial Class BlocksAndTiles
         Me.Button150.Name = "Button150"
         Me.Button150.Size = New System.Drawing.Size(38, 38)
         Me.Button150.TabIndex = 13
-        Me.Button150.UseVisualStyleBackColor = false
+        Me.Button150.UseVisualStyleBackColor = False
         '
         'Button149
         '
@@ -2307,7 +2253,7 @@ Partial Class BlocksAndTiles
         Me.Button149.Name = "Button149"
         Me.Button149.Size = New System.Drawing.Size(38, 38)
         Me.Button149.TabIndex = 12
-        Me.Button149.UseVisualStyleBackColor = false
+        Me.Button149.UseVisualStyleBackColor = False
         '
         'Button148
         '
@@ -2317,7 +2263,7 @@ Partial Class BlocksAndTiles
         Me.Button148.Name = "Button148"
         Me.Button148.Size = New System.Drawing.Size(38, 38)
         Me.Button148.TabIndex = 11
-        Me.Button148.UseVisualStyleBackColor = false
+        Me.Button148.UseVisualStyleBackColor = False
         '
         'Button147
         '
@@ -2327,7 +2273,7 @@ Partial Class BlocksAndTiles
         Me.Button147.Name = "Button147"
         Me.Button147.Size = New System.Drawing.Size(38, 38)
         Me.Button147.TabIndex = 10
-        Me.Button147.UseVisualStyleBackColor = false
+        Me.Button147.UseVisualStyleBackColor = False
         '
         'Button146
         '
@@ -2337,7 +2283,7 @@ Partial Class BlocksAndTiles
         Me.Button146.Name = "Button146"
         Me.Button146.Size = New System.Drawing.Size(38, 38)
         Me.Button146.TabIndex = 9
-        Me.Button146.UseVisualStyleBackColor = false
+        Me.Button146.UseVisualStyleBackColor = False
         '
         'Button145
         '
@@ -2347,7 +2293,7 @@ Partial Class BlocksAndTiles
         Me.Button145.Name = "Button145"
         Me.Button145.Size = New System.Drawing.Size(38, 38)
         Me.Button145.TabIndex = 8
-        Me.Button145.UseVisualStyleBackColor = false
+        Me.Button145.UseVisualStyleBackColor = False
         '
         'Button144
         '
@@ -2357,7 +2303,7 @@ Partial Class BlocksAndTiles
         Me.Button144.Name = "Button144"
         Me.Button144.Size = New System.Drawing.Size(38, 38)
         Me.Button144.TabIndex = 7
-        Me.Button144.UseVisualStyleBackColor = false
+        Me.Button144.UseVisualStyleBackColor = False
         '
         'Button143
         '
@@ -2367,7 +2313,7 @@ Partial Class BlocksAndTiles
         Me.Button143.Name = "Button143"
         Me.Button143.Size = New System.Drawing.Size(38, 38)
         Me.Button143.TabIndex = 6
-        Me.Button143.UseVisualStyleBackColor = false
+        Me.Button143.UseVisualStyleBackColor = False
         '
         'smb3_dungeon
         '
@@ -2380,9 +2326,9 @@ Partial Class BlocksAndTiles
         Me.smb3_dungeon.Name = "smb3_dungeon"
         Me.smb3_dungeon.Size = New System.Drawing.Size(94, 154)
         Me.smb3_dungeon.TabIndex = 8
-        Me.smb3_dungeon.TabStop = false
+        Me.smb3_dungeon.TabStop = False
         Me.smb3_dungeon.Text = "Dungeon"
-        Me.smb3_dungeon.Visible = false
+        Me.smb3_dungeon.Visible = False
         '
         'Button142
         '
@@ -2392,7 +2338,7 @@ Partial Class BlocksAndTiles
         Me.Button142.Name = "Button142"
         Me.Button142.Size = New System.Drawing.Size(38, 38)
         Me.Button142.TabIndex = 9
-        Me.Button142.UseVisualStyleBackColor = false
+        Me.Button142.UseVisualStyleBackColor = False
         '
         'Button141
         '
@@ -2402,7 +2348,7 @@ Partial Class BlocksAndTiles
         Me.Button141.Name = "Button141"
         Me.Button141.Size = New System.Drawing.Size(38, 38)
         Me.Button141.TabIndex = 8
-        Me.Button141.UseVisualStyleBackColor = false
+        Me.Button141.UseVisualStyleBackColor = False
         '
         'Button140
         '
@@ -2412,7 +2358,7 @@ Partial Class BlocksAndTiles
         Me.Button140.Name = "Button140"
         Me.Button140.Size = New System.Drawing.Size(38, 38)
         Me.Button140.TabIndex = 7
-        Me.Button140.UseVisualStyleBackColor = false
+        Me.Button140.UseVisualStyleBackColor = False
         '
         'Button139
         '
@@ -2422,7 +2368,7 @@ Partial Class BlocksAndTiles
         Me.Button139.Name = "Button139"
         Me.Button139.Size = New System.Drawing.Size(38, 38)
         Me.Button139.TabIndex = 6
-        Me.Button139.UseVisualStyleBackColor = false
+        Me.Button139.UseVisualStyleBackColor = False
         '
         'Button138
         '
@@ -2432,7 +2378,7 @@ Partial Class BlocksAndTiles
         Me.Button138.Name = "Button138"
         Me.Button138.Size = New System.Drawing.Size(38, 38)
         Me.Button138.TabIndex = 5
-        Me.Button138.UseVisualStyleBackColor = false
+        Me.Button138.UseVisualStyleBackColor = False
         '
         'smb3_house
         '
@@ -2446,9 +2392,9 @@ Partial Class BlocksAndTiles
         Me.smb3_house.Name = "smb3_house"
         Me.smb3_house.Size = New System.Drawing.Size(94, 154)
         Me.smb3_house.TabIndex = 8
-        Me.smb3_house.TabStop = false
+        Me.smb3_house.TabStop = False
         Me.smb3_house.Text = "House"
-        Me.smb3_house.Visible = false
+        Me.smb3_house.Visible = False
         '
         'Button137
         '
@@ -2458,7 +2404,7 @@ Partial Class BlocksAndTiles
         Me.Button137.Name = "Button137"
         Me.Button137.Size = New System.Drawing.Size(38, 38)
         Me.Button137.TabIndex = 9
-        Me.Button137.UseVisualStyleBackColor = false
+        Me.Button137.UseVisualStyleBackColor = False
         '
         'Button136
         '
@@ -2468,7 +2414,7 @@ Partial Class BlocksAndTiles
         Me.Button136.Name = "Button136"
         Me.Button136.Size = New System.Drawing.Size(38, 38)
         Me.Button136.TabIndex = 8
-        Me.Button136.UseVisualStyleBackColor = false
+        Me.Button136.UseVisualStyleBackColor = False
         '
         'Button135
         '
@@ -2478,7 +2424,7 @@ Partial Class BlocksAndTiles
         Me.Button135.Name = "Button135"
         Me.Button135.Size = New System.Drawing.Size(38, 38)
         Me.Button135.TabIndex = 7
-        Me.Button135.UseVisualStyleBackColor = false
+        Me.Button135.UseVisualStyleBackColor = False
         '
         'Button134
         '
@@ -2488,7 +2434,7 @@ Partial Class BlocksAndTiles
         Me.Button134.Name = "Button134"
         Me.Button134.Size = New System.Drawing.Size(38, 38)
         Me.Button134.TabIndex = 6
-        Me.Button134.UseVisualStyleBackColor = false
+        Me.Button134.UseVisualStyleBackColor = False
         '
         'Button133
         '
@@ -2498,7 +2444,7 @@ Partial Class BlocksAndTiles
         Me.Button133.Name = "Button133"
         Me.Button133.Size = New System.Drawing.Size(38, 38)
         Me.Button133.TabIndex = 5
-        Me.Button133.UseVisualStyleBackColor = false
+        Me.Button133.UseVisualStyleBackColor = False
         '
         'Button132
         '
@@ -2508,7 +2454,7 @@ Partial Class BlocksAndTiles
         Me.Button132.Name = "Button132"
         Me.Button132.Size = New System.Drawing.Size(38, 38)
         Me.Button132.TabIndex = 4
-        Me.Button132.UseVisualStyleBackColor = false
+        Me.Button132.UseVisualStyleBackColor = False
         '
         'smb3_bonus
         '
@@ -2529,9 +2475,9 @@ Partial Class BlocksAndTiles
         Me.smb3_bonus.Name = "smb3_bonus"
         Me.smb3_bonus.Size = New System.Drawing.Size(227, 161)
         Me.smb3_bonus.TabIndex = 8
-        Me.smb3_bonus.TabStop = false
+        Me.smb3_bonus.TabStop = False
         Me.smb3_bonus.Text = "Bonus"
-        Me.smb3_bonus.Visible = false
+        Me.smb3_bonus.Visible = False
         '
         'Button131
         '
@@ -2541,7 +2487,7 @@ Partial Class BlocksAndTiles
         Me.Button131.Name = "Button131"
         Me.Button131.Size = New System.Drawing.Size(38, 38)
         Me.Button131.TabIndex = 15
-        Me.Button131.UseVisualStyleBackColor = false
+        Me.Button131.UseVisualStyleBackColor = False
         '
         'Button130
         '
@@ -2551,7 +2497,7 @@ Partial Class BlocksAndTiles
         Me.Button130.Name = "Button130"
         Me.Button130.Size = New System.Drawing.Size(38, 38)
         Me.Button130.TabIndex = 14
-        Me.Button130.UseVisualStyleBackColor = false
+        Me.Button130.UseVisualStyleBackColor = False
         '
         'Button129
         '
@@ -2561,7 +2507,7 @@ Partial Class BlocksAndTiles
         Me.Button129.Name = "Button129"
         Me.Button129.Size = New System.Drawing.Size(38, 38)
         Me.Button129.TabIndex = 13
-        Me.Button129.UseVisualStyleBackColor = false
+        Me.Button129.UseVisualStyleBackColor = False
         '
         'Button128
         '
@@ -2571,7 +2517,7 @@ Partial Class BlocksAndTiles
         Me.Button128.Name = "Button128"
         Me.Button128.Size = New System.Drawing.Size(38, 38)
         Me.Button128.TabIndex = 12
-        Me.Button128.UseVisualStyleBackColor = false
+        Me.Button128.UseVisualStyleBackColor = False
         '
         'Button127
         '
@@ -2581,7 +2527,7 @@ Partial Class BlocksAndTiles
         Me.Button127.Name = "Button127"
         Me.Button127.Size = New System.Drawing.Size(38, 38)
         Me.Button127.TabIndex = 11
-        Me.Button127.UseVisualStyleBackColor = false
+        Me.Button127.UseVisualStyleBackColor = False
         '
         'Button126
         '
@@ -2591,7 +2537,7 @@ Partial Class BlocksAndTiles
         Me.Button126.Name = "Button126"
         Me.Button126.Size = New System.Drawing.Size(38, 38)
         Me.Button126.TabIndex = 10
-        Me.Button126.UseVisualStyleBackColor = false
+        Me.Button126.UseVisualStyleBackColor = False
         '
         'Button125
         '
@@ -2601,7 +2547,7 @@ Partial Class BlocksAndTiles
         Me.Button125.Name = "Button125"
         Me.Button125.Size = New System.Drawing.Size(38, 38)
         Me.Button125.TabIndex = 9
-        Me.Button125.UseVisualStyleBackColor = false
+        Me.Button125.UseVisualStyleBackColor = False
         '
         'Button124
         '
@@ -2611,7 +2557,7 @@ Partial Class BlocksAndTiles
         Me.Button124.Name = "Button124"
         Me.Button124.Size = New System.Drawing.Size(38, 38)
         Me.Button124.TabIndex = 8
-        Me.Button124.UseVisualStyleBackColor = false
+        Me.Button124.UseVisualStyleBackColor = False
         '
         'Button123
         '
@@ -2621,7 +2567,7 @@ Partial Class BlocksAndTiles
         Me.Button123.Name = "Button123"
         Me.Button123.Size = New System.Drawing.Size(38, 38)
         Me.Button123.TabIndex = 7
-        Me.Button123.UseVisualStyleBackColor = false
+        Me.Button123.UseVisualStyleBackColor = False
         '
         'Button122
         '
@@ -2631,7 +2577,7 @@ Partial Class BlocksAndTiles
         Me.Button122.Name = "Button122"
         Me.Button122.Size = New System.Drawing.Size(38, 38)
         Me.Button122.TabIndex = 6
-        Me.Button122.UseVisualStyleBackColor = false
+        Me.Button122.UseVisualStyleBackColor = False
         '
         'Button121
         '
@@ -2641,7 +2587,7 @@ Partial Class BlocksAndTiles
         Me.Button121.Name = "Button121"
         Me.Button121.Size = New System.Drawing.Size(38, 38)
         Me.Button121.TabIndex = 5
-        Me.Button121.UseVisualStyleBackColor = false
+        Me.Button121.UseVisualStyleBackColor = False
         '
         'Button120
         '
@@ -2651,7 +2597,7 @@ Partial Class BlocksAndTiles
         Me.Button120.Name = "Button120"
         Me.Button120.Size = New System.Drawing.Size(38, 38)
         Me.Button120.TabIndex = 4
-        Me.Button120.UseVisualStyleBackColor = false
+        Me.Button120.UseVisualStyleBackColor = False
         '
         'Button119
         '
@@ -2661,7 +2607,7 @@ Partial Class BlocksAndTiles
         Me.Button119.Name = "Button119"
         Me.Button119.Size = New System.Drawing.Size(38, 38)
         Me.Button119.TabIndex = 3
-        Me.Button119.UseVisualStyleBackColor = false
+        Me.Button119.UseVisualStyleBackColor = False
         '
         'smb3_desert
         '
@@ -2692,9 +2638,9 @@ Partial Class BlocksAndTiles
         Me.smb3_desert.Name = "smb3_desert"
         Me.smb3_desert.Size = New System.Drawing.Size(358, 153)
         Me.smb3_desert.TabIndex = 8
-        Me.smb3_desert.TabStop = false
+        Me.smb3_desert.TabStop = False
         Me.smb3_desert.Text = "Desert"
-        Me.smb3_desert.Visible = false
+        Me.smb3_desert.Visible = False
         '
         'Button118
         '
@@ -2704,7 +2650,7 @@ Partial Class BlocksAndTiles
         Me.Button118.Name = "Button118"
         Me.Button118.Size = New System.Drawing.Size(38, 38)
         Me.Button118.TabIndex = 24
-        Me.Button118.UseVisualStyleBackColor = false
+        Me.Button118.UseVisualStyleBackColor = False
         '
         'Button117
         '
@@ -2714,7 +2660,7 @@ Partial Class BlocksAndTiles
         Me.Button117.Name = "Button117"
         Me.Button117.Size = New System.Drawing.Size(38, 38)
         Me.Button117.TabIndex = 23
-        Me.Button117.UseVisualStyleBackColor = false
+        Me.Button117.UseVisualStyleBackColor = False
         '
         'Button116
         '
@@ -2724,7 +2670,7 @@ Partial Class BlocksAndTiles
         Me.Button116.Name = "Button116"
         Me.Button116.Size = New System.Drawing.Size(38, 38)
         Me.Button116.TabIndex = 22
-        Me.Button116.UseVisualStyleBackColor = false
+        Me.Button116.UseVisualStyleBackColor = False
         '
         'Button115
         '
@@ -2734,7 +2680,7 @@ Partial Class BlocksAndTiles
         Me.Button115.Name = "Button115"
         Me.Button115.Size = New System.Drawing.Size(38, 38)
         Me.Button115.TabIndex = 21
-        Me.Button115.UseVisualStyleBackColor = false
+        Me.Button115.UseVisualStyleBackColor = False
         '
         'Button114
         '
@@ -2744,7 +2690,7 @@ Partial Class BlocksAndTiles
         Me.Button114.Name = "Button114"
         Me.Button114.Size = New System.Drawing.Size(38, 38)
         Me.Button114.TabIndex = 20
-        Me.Button114.UseVisualStyleBackColor = false
+        Me.Button114.UseVisualStyleBackColor = False
         '
         'Button113
         '
@@ -2754,7 +2700,7 @@ Partial Class BlocksAndTiles
         Me.Button113.Name = "Button113"
         Me.Button113.Size = New System.Drawing.Size(38, 38)
         Me.Button113.TabIndex = 19
-        Me.Button113.UseVisualStyleBackColor = false
+        Me.Button113.UseVisualStyleBackColor = False
         '
         'Button112
         '
@@ -2764,7 +2710,7 @@ Partial Class BlocksAndTiles
         Me.Button112.Name = "Button112"
         Me.Button112.Size = New System.Drawing.Size(38, 38)
         Me.Button112.TabIndex = 18
-        Me.Button112.UseVisualStyleBackColor = false
+        Me.Button112.UseVisualStyleBackColor = False
         '
         'Button111
         '
@@ -2774,7 +2720,7 @@ Partial Class BlocksAndTiles
         Me.Button111.Name = "Button111"
         Me.Button111.Size = New System.Drawing.Size(38, 38)
         Me.Button111.TabIndex = 17
-        Me.Button111.UseVisualStyleBackColor = false
+        Me.Button111.UseVisualStyleBackColor = False
         '
         'Button110
         '
@@ -2784,7 +2730,7 @@ Partial Class BlocksAndTiles
         Me.Button110.Name = "Button110"
         Me.Button110.Size = New System.Drawing.Size(38, 38)
         Me.Button110.TabIndex = 16
-        Me.Button110.UseVisualStyleBackColor = false
+        Me.Button110.UseVisualStyleBackColor = False
         '
         'Button109
         '
@@ -2794,7 +2740,7 @@ Partial Class BlocksAndTiles
         Me.Button109.Name = "Button109"
         Me.Button109.Size = New System.Drawing.Size(38, 38)
         Me.Button109.TabIndex = 15
-        Me.Button109.UseVisualStyleBackColor = false
+        Me.Button109.UseVisualStyleBackColor = False
         '
         'Button108
         '
@@ -2804,7 +2750,7 @@ Partial Class BlocksAndTiles
         Me.Button108.Name = "Button108"
         Me.Button108.Size = New System.Drawing.Size(38, 38)
         Me.Button108.TabIndex = 14
-        Me.Button108.UseVisualStyleBackColor = false
+        Me.Button108.UseVisualStyleBackColor = False
         '
         'Button107
         '
@@ -2814,7 +2760,7 @@ Partial Class BlocksAndTiles
         Me.Button107.Name = "Button107"
         Me.Button107.Size = New System.Drawing.Size(38, 38)
         Me.Button107.TabIndex = 13
-        Me.Button107.UseVisualStyleBackColor = false
+        Me.Button107.UseVisualStyleBackColor = False
         '
         'Button106
         '
@@ -2824,7 +2770,7 @@ Partial Class BlocksAndTiles
         Me.Button106.Name = "Button106"
         Me.Button106.Size = New System.Drawing.Size(38, 38)
         Me.Button106.TabIndex = 12
-        Me.Button106.UseVisualStyleBackColor = false
+        Me.Button106.UseVisualStyleBackColor = False
         '
         'Button105
         '
@@ -2834,7 +2780,7 @@ Partial Class BlocksAndTiles
         Me.Button105.Name = "Button105"
         Me.Button105.Size = New System.Drawing.Size(38, 38)
         Me.Button105.TabIndex = 11
-        Me.Button105.UseVisualStyleBackColor = false
+        Me.Button105.UseVisualStyleBackColor = False
         '
         'Button104
         '
@@ -2844,7 +2790,7 @@ Partial Class BlocksAndTiles
         Me.Button104.Name = "Button104"
         Me.Button104.Size = New System.Drawing.Size(38, 38)
         Me.Button104.TabIndex = 10
-        Me.Button104.UseVisualStyleBackColor = false
+        Me.Button104.UseVisualStyleBackColor = False
         '
         'Button103
         '
@@ -2854,7 +2800,7 @@ Partial Class BlocksAndTiles
         Me.Button103.Name = "Button103"
         Me.Button103.Size = New System.Drawing.Size(38, 38)
         Me.Button103.TabIndex = 9
-        Me.Button103.UseVisualStyleBackColor = false
+        Me.Button103.UseVisualStyleBackColor = False
         '
         'Button102
         '
@@ -2864,7 +2810,7 @@ Partial Class BlocksAndTiles
         Me.Button102.Name = "Button102"
         Me.Button102.Size = New System.Drawing.Size(38, 38)
         Me.Button102.TabIndex = 8
-        Me.Button102.UseVisualStyleBackColor = false
+        Me.Button102.UseVisualStyleBackColor = False
         '
         'Button101
         '
@@ -2874,7 +2820,7 @@ Partial Class BlocksAndTiles
         Me.Button101.Name = "Button101"
         Me.Button101.Size = New System.Drawing.Size(38, 38)
         Me.Button101.TabIndex = 7
-        Me.Button101.UseVisualStyleBackColor = false
+        Me.Button101.UseVisualStyleBackColor = False
         '
         'Button100
         '
@@ -2884,7 +2830,7 @@ Partial Class BlocksAndTiles
         Me.Button100.Name = "Button100"
         Me.Button100.Size = New System.Drawing.Size(38, 38)
         Me.Button100.TabIndex = 6
-        Me.Button100.UseVisualStyleBackColor = false
+        Me.Button100.UseVisualStyleBackColor = False
         '
         'Button99
         '
@@ -2894,7 +2840,7 @@ Partial Class BlocksAndTiles
         Me.Button99.Name = "Button99"
         Me.Button99.Size = New System.Drawing.Size(38, 38)
         Me.Button99.TabIndex = 5
-        Me.Button99.UseVisualStyleBackColor = false
+        Me.Button99.UseVisualStyleBackColor = False
         '
         'Button98
         '
@@ -2904,7 +2850,7 @@ Partial Class BlocksAndTiles
         Me.Button98.Name = "Button98"
         Me.Button98.Size = New System.Drawing.Size(38, 38)
         Me.Button98.TabIndex = 4
-        Me.Button98.UseVisualStyleBackColor = false
+        Me.Button98.UseVisualStyleBackColor = False
         '
         'Button97
         '
@@ -2914,7 +2860,7 @@ Partial Class BlocksAndTiles
         Me.Button97.Name = "Button97"
         Me.Button97.Size = New System.Drawing.Size(38, 38)
         Me.Button97.TabIndex = 3
-        Me.Button97.UseVisualStyleBackColor = false
+        Me.Button97.UseVisualStyleBackColor = False
         '
         'Button96
         '
@@ -2924,7 +2870,7 @@ Partial Class BlocksAndTiles
         Me.Button96.Name = "Button96"
         Me.Button96.Size = New System.Drawing.Size(38, 38)
         Me.Button96.TabIndex = 2
-        Me.Button96.UseVisualStyleBackColor = false
+        Me.Button96.UseVisualStyleBackColor = False
         '
         'smb3_cave
         '
@@ -2953,9 +2899,9 @@ Partial Class BlocksAndTiles
         Me.smb3_cave.Name = "smb3_cave"
         Me.smb3_cave.Size = New System.Drawing.Size(403, 151)
         Me.smb3_cave.TabIndex = 8
-        Me.smb3_cave.TabStop = false
+        Me.smb3_cave.TabStop = False
         Me.smb3_cave.Text = "Cave"
-        Me.smb3_cave.Visible = false
+        Me.smb3_cave.Visible = False
         '
         'Button95
         '
@@ -2965,7 +2911,7 @@ Partial Class BlocksAndTiles
         Me.Button95.Name = "Button95"
         Me.Button95.Size = New System.Drawing.Size(38, 38)
         Me.Button95.TabIndex = 21
-        Me.Button95.UseVisualStyleBackColor = false
+        Me.Button95.UseVisualStyleBackColor = False
         '
         'Button94
         '
@@ -2975,7 +2921,7 @@ Partial Class BlocksAndTiles
         Me.Button94.Name = "Button94"
         Me.Button94.Size = New System.Drawing.Size(38, 38)
         Me.Button94.TabIndex = 20
-        Me.Button94.UseVisualStyleBackColor = false
+        Me.Button94.UseVisualStyleBackColor = False
         '
         'Button93
         '
@@ -2985,7 +2931,7 @@ Partial Class BlocksAndTiles
         Me.Button93.Name = "Button93"
         Me.Button93.Size = New System.Drawing.Size(38, 38)
         Me.Button93.TabIndex = 19
-        Me.Button93.UseVisualStyleBackColor = false
+        Me.Button93.UseVisualStyleBackColor = False
         '
         'Button92
         '
@@ -2995,7 +2941,7 @@ Partial Class BlocksAndTiles
         Me.Button92.Name = "Button92"
         Me.Button92.Size = New System.Drawing.Size(38, 38)
         Me.Button92.TabIndex = 18
-        Me.Button92.UseVisualStyleBackColor = false
+        Me.Button92.UseVisualStyleBackColor = False
         '
         'Button91
         '
@@ -3005,7 +2951,7 @@ Partial Class BlocksAndTiles
         Me.Button91.Name = "Button91"
         Me.Button91.Size = New System.Drawing.Size(38, 38)
         Me.Button91.TabIndex = 17
-        Me.Button91.UseVisualStyleBackColor = false
+        Me.Button91.UseVisualStyleBackColor = False
         '
         'Button90
         '
@@ -3015,7 +2961,7 @@ Partial Class BlocksAndTiles
         Me.Button90.Name = "Button90"
         Me.Button90.Size = New System.Drawing.Size(38, 38)
         Me.Button90.TabIndex = 16
-        Me.Button90.UseVisualStyleBackColor = false
+        Me.Button90.UseVisualStyleBackColor = False
         '
         'Button89
         '
@@ -3025,7 +2971,7 @@ Partial Class BlocksAndTiles
         Me.Button89.Name = "Button89"
         Me.Button89.Size = New System.Drawing.Size(38, 38)
         Me.Button89.TabIndex = 15
-        Me.Button89.UseVisualStyleBackColor = false
+        Me.Button89.UseVisualStyleBackColor = False
         '
         'Button88
         '
@@ -3035,7 +2981,7 @@ Partial Class BlocksAndTiles
         Me.Button88.Name = "Button88"
         Me.Button88.Size = New System.Drawing.Size(38, 38)
         Me.Button88.TabIndex = 14
-        Me.Button88.UseVisualStyleBackColor = false
+        Me.Button88.UseVisualStyleBackColor = False
         '
         'Button87
         '
@@ -3045,7 +2991,7 @@ Partial Class BlocksAndTiles
         Me.Button87.Name = "Button87"
         Me.Button87.Size = New System.Drawing.Size(38, 38)
         Me.Button87.TabIndex = 13
-        Me.Button87.UseVisualStyleBackColor = false
+        Me.Button87.UseVisualStyleBackColor = False
         '
         'Button86
         '
@@ -3055,7 +3001,7 @@ Partial Class BlocksAndTiles
         Me.Button86.Name = "Button86"
         Me.Button86.Size = New System.Drawing.Size(38, 38)
         Me.Button86.TabIndex = 12
-        Me.Button86.UseVisualStyleBackColor = false
+        Me.Button86.UseVisualStyleBackColor = False
         '
         'Button85
         '
@@ -3065,7 +3011,7 @@ Partial Class BlocksAndTiles
         Me.Button85.Name = "Button85"
         Me.Button85.Size = New System.Drawing.Size(38, 38)
         Me.Button85.TabIndex = 11
-        Me.Button85.UseVisualStyleBackColor = false
+        Me.Button85.UseVisualStyleBackColor = False
         '
         'Button84
         '
@@ -3075,7 +3021,7 @@ Partial Class BlocksAndTiles
         Me.Button84.Name = "Button84"
         Me.Button84.Size = New System.Drawing.Size(38, 38)
         Me.Button84.TabIndex = 10
-        Me.Button84.UseVisualStyleBackColor = false
+        Me.Button84.UseVisualStyleBackColor = False
         '
         'Button83
         '
@@ -3085,7 +3031,7 @@ Partial Class BlocksAndTiles
         Me.Button83.Name = "Button83"
         Me.Button83.Size = New System.Drawing.Size(38, 38)
         Me.Button83.TabIndex = 9
-        Me.Button83.UseVisualStyleBackColor = false
+        Me.Button83.UseVisualStyleBackColor = False
         '
         'Button82
         '
@@ -3095,7 +3041,7 @@ Partial Class BlocksAndTiles
         Me.Button82.Name = "Button82"
         Me.Button82.Size = New System.Drawing.Size(38, 38)
         Me.Button82.TabIndex = 8
-        Me.Button82.UseVisualStyleBackColor = false
+        Me.Button82.UseVisualStyleBackColor = False
         '
         'Button81
         '
@@ -3105,7 +3051,7 @@ Partial Class BlocksAndTiles
         Me.Button81.Name = "Button81"
         Me.Button81.Size = New System.Drawing.Size(38, 38)
         Me.Button81.TabIndex = 7
-        Me.Button81.UseVisualStyleBackColor = false
+        Me.Button81.UseVisualStyleBackColor = False
         '
         'Button80
         '
@@ -3115,7 +3061,7 @@ Partial Class BlocksAndTiles
         Me.Button80.Name = "Button80"
         Me.Button80.Size = New System.Drawing.Size(38, 38)
         Me.Button80.TabIndex = 6
-        Me.Button80.UseVisualStyleBackColor = false
+        Me.Button80.UseVisualStyleBackColor = False
         '
         'Button79
         '
@@ -3125,7 +3071,7 @@ Partial Class BlocksAndTiles
         Me.Button79.Name = "Button79"
         Me.Button79.Size = New System.Drawing.Size(38, 38)
         Me.Button79.TabIndex = 5
-        Me.Button79.UseVisualStyleBackColor = false
+        Me.Button79.UseVisualStyleBackColor = False
         '
         'Button78
         '
@@ -3135,7 +3081,7 @@ Partial Class BlocksAndTiles
         Me.Button78.Name = "Button78"
         Me.Button78.Size = New System.Drawing.Size(38, 38)
         Me.Button78.TabIndex = 4
-        Me.Button78.UseVisualStyleBackColor = false
+        Me.Button78.UseVisualStyleBackColor = False
         '
         'Button77
         '
@@ -3145,7 +3091,7 @@ Partial Class BlocksAndTiles
         Me.Button77.Name = "Button77"
         Me.Button77.Size = New System.Drawing.Size(38, 38)
         Me.Button77.TabIndex = 3
-        Me.Button77.UseVisualStyleBackColor = false
+        Me.Button77.UseVisualStyleBackColor = False
         '
         'Button76
         '
@@ -3155,7 +3101,7 @@ Partial Class BlocksAndTiles
         Me.Button76.Name = "Button76"
         Me.Button76.Size = New System.Drawing.Size(38, 38)
         Me.Button76.TabIndex = 2
-        Me.Button76.UseVisualStyleBackColor = false
+        Me.Button76.UseVisualStyleBackColor = False
         '
         'Button75
         '
@@ -3165,7 +3111,7 @@ Partial Class BlocksAndTiles
         Me.Button75.Name = "Button75"
         Me.Button75.Size = New System.Drawing.Size(38, 38)
         Me.Button75.TabIndex = 1
-        Me.Button75.UseVisualStyleBackColor = false
+        Me.Button75.UseVisualStyleBackColor = False
         '
         'smb3_grass
         '
@@ -3193,9 +3139,9 @@ Partial Class BlocksAndTiles
         Me.smb3_grass.Name = "smb3_grass"
         Me.smb3_grass.Size = New System.Drawing.Size(314, 151)
         Me.smb3_grass.TabIndex = 8
-        Me.smb3_grass.TabStop = false
+        Me.smb3_grass.TabStop = False
         Me.smb3_grass.Text = "Grass"
-        Me.smb3_grass.Visible = false
+        Me.smb3_grass.Visible = False
         '
         'Button74
         '
@@ -3205,7 +3151,7 @@ Partial Class BlocksAndTiles
         Me.Button74.Name = "Button74"
         Me.Button74.Size = New System.Drawing.Size(38, 38)
         Me.Button74.TabIndex = 19
-        Me.Button74.UseVisualStyleBackColor = false
+        Me.Button74.UseVisualStyleBackColor = False
         '
         'Button73
         '
@@ -3215,7 +3161,7 @@ Partial Class BlocksAndTiles
         Me.Button73.Name = "Button73"
         Me.Button73.Size = New System.Drawing.Size(38, 38)
         Me.Button73.TabIndex = 18
-        Me.Button73.UseVisualStyleBackColor = false
+        Me.Button73.UseVisualStyleBackColor = False
         '
         'Button72
         '
@@ -3225,7 +3171,7 @@ Partial Class BlocksAndTiles
         Me.Button72.Name = "Button72"
         Me.Button72.Size = New System.Drawing.Size(38, 38)
         Me.Button72.TabIndex = 17
-        Me.Button72.UseVisualStyleBackColor = false
+        Me.Button72.UseVisualStyleBackColor = False
         '
         'Button71
         '
@@ -3235,7 +3181,7 @@ Partial Class BlocksAndTiles
         Me.Button71.Name = "Button71"
         Me.Button71.Size = New System.Drawing.Size(38, 38)
         Me.Button71.TabIndex = 16
-        Me.Button71.UseVisualStyleBackColor = false
+        Me.Button71.UseVisualStyleBackColor = False
         '
         'Button70
         '
@@ -3245,7 +3191,7 @@ Partial Class BlocksAndTiles
         Me.Button70.Name = "Button70"
         Me.Button70.Size = New System.Drawing.Size(38, 38)
         Me.Button70.TabIndex = 15
-        Me.Button70.UseVisualStyleBackColor = false
+        Me.Button70.UseVisualStyleBackColor = False
         '
         'Button69
         '
@@ -3255,7 +3201,7 @@ Partial Class BlocksAndTiles
         Me.Button69.Name = "Button69"
         Me.Button69.Size = New System.Drawing.Size(38, 38)
         Me.Button69.TabIndex = 14
-        Me.Button69.UseVisualStyleBackColor = false
+        Me.Button69.UseVisualStyleBackColor = False
         '
         'Button68
         '
@@ -3265,7 +3211,7 @@ Partial Class BlocksAndTiles
         Me.Button68.Name = "Button68"
         Me.Button68.Size = New System.Drawing.Size(38, 38)
         Me.Button68.TabIndex = 13
-        Me.Button68.UseVisualStyleBackColor = false
+        Me.Button68.UseVisualStyleBackColor = False
         '
         'Button67
         '
@@ -3275,7 +3221,7 @@ Partial Class BlocksAndTiles
         Me.Button67.Name = "Button67"
         Me.Button67.Size = New System.Drawing.Size(38, 38)
         Me.Button67.TabIndex = 12
-        Me.Button67.UseVisualStyleBackColor = false
+        Me.Button67.UseVisualStyleBackColor = False
         '
         'Button66
         '
@@ -3285,7 +3231,7 @@ Partial Class BlocksAndTiles
         Me.Button66.Name = "Button66"
         Me.Button66.Size = New System.Drawing.Size(38, 38)
         Me.Button66.TabIndex = 11
-        Me.Button66.UseVisualStyleBackColor = false
+        Me.Button66.UseVisualStyleBackColor = False
         '
         'Button65
         '
@@ -3295,7 +3241,7 @@ Partial Class BlocksAndTiles
         Me.Button65.Name = "Button65"
         Me.Button65.Size = New System.Drawing.Size(38, 38)
         Me.Button65.TabIndex = 10
-        Me.Button65.UseVisualStyleBackColor = false
+        Me.Button65.UseVisualStyleBackColor = False
         '
         'Button64
         '
@@ -3305,7 +3251,7 @@ Partial Class BlocksAndTiles
         Me.Button64.Name = "Button64"
         Me.Button64.Size = New System.Drawing.Size(38, 38)
         Me.Button64.TabIndex = 9
-        Me.Button64.UseVisualStyleBackColor = false
+        Me.Button64.UseVisualStyleBackColor = False
         '
         'Button63
         '
@@ -3315,7 +3261,7 @@ Partial Class BlocksAndTiles
         Me.Button63.Name = "Button63"
         Me.Button63.Size = New System.Drawing.Size(38, 38)
         Me.Button63.TabIndex = 8
-        Me.Button63.UseVisualStyleBackColor = false
+        Me.Button63.UseVisualStyleBackColor = False
         '
         'Button62
         '
@@ -3325,7 +3271,7 @@ Partial Class BlocksAndTiles
         Me.Button62.Name = "Button62"
         Me.Button62.Size = New System.Drawing.Size(38, 38)
         Me.Button62.TabIndex = 7
-        Me.Button62.UseVisualStyleBackColor = false
+        Me.Button62.UseVisualStyleBackColor = False
         '
         'Button61
         '
@@ -3335,7 +3281,7 @@ Partial Class BlocksAndTiles
         Me.Button61.Name = "Button61"
         Me.Button61.Size = New System.Drawing.Size(38, 38)
         Me.Button61.TabIndex = 6
-        Me.Button61.UseVisualStyleBackColor = false
+        Me.Button61.UseVisualStyleBackColor = False
         '
         'Button60
         '
@@ -3345,7 +3291,7 @@ Partial Class BlocksAndTiles
         Me.Button60.Name = "Button60"
         Me.Button60.Size = New System.Drawing.Size(38, 38)
         Me.Button60.TabIndex = 5
-        Me.Button60.UseVisualStyleBackColor = false
+        Me.Button60.UseVisualStyleBackColor = False
         '
         'Button59
         '
@@ -3355,7 +3301,7 @@ Partial Class BlocksAndTiles
         Me.Button59.Name = "Button59"
         Me.Button59.Size = New System.Drawing.Size(38, 38)
         Me.Button59.TabIndex = 4
-        Me.Button59.UseVisualStyleBackColor = false
+        Me.Button59.UseVisualStyleBackColor = False
         '
         'Button58
         '
@@ -3365,7 +3311,7 @@ Partial Class BlocksAndTiles
         Me.Button58.Name = "Button58"
         Me.Button58.Size = New System.Drawing.Size(38, 38)
         Me.Button58.TabIndex = 3
-        Me.Button58.UseVisualStyleBackColor = false
+        Me.Button58.UseVisualStyleBackColor = False
         '
         'Button57
         '
@@ -3375,7 +3321,7 @@ Partial Class BlocksAndTiles
         Me.Button57.Name = "Button57"
         Me.Button57.Size = New System.Drawing.Size(38, 38)
         Me.Button57.TabIndex = 2
-        Me.Button57.UseVisualStyleBackColor = false
+        Me.Button57.UseVisualStyleBackColor = False
         '
         'Button56
         '
@@ -3385,7 +3331,7 @@ Partial Class BlocksAndTiles
         Me.Button56.Name = "Button56"
         Me.Button56.Size = New System.Drawing.Size(38, 38)
         Me.Button56.TabIndex = 1
-        Me.Button56.UseVisualStyleBackColor = false
+        Me.Button56.UseVisualStyleBackColor = False
         '
         'Button55
         '
@@ -3395,7 +3341,7 @@ Partial Class BlocksAndTiles
         Me.Button55.Name = "Button55"
         Me.Button55.Size = New System.Drawing.Size(38, 38)
         Me.Button55.TabIndex = 0
-        Me.Button55.UseVisualStyleBackColor = false
+        Me.Button55.UseVisualStyleBackColor = False
         '
         'smb3_wood
         '
@@ -3428,7 +3374,7 @@ Partial Class BlocksAndTiles
         Me.smb3_wood.Name = "smb3_wood"
         Me.smb3_wood.Size = New System.Drawing.Size(448, 211)
         Me.smb3_wood.TabIndex = 1
-        Me.smb3_wood.TabStop = false
+        Me.smb3_wood.TabStop = False
         Me.smb3_wood.Text = "Wood"
         '
         'Button54
@@ -3439,7 +3385,7 @@ Partial Class BlocksAndTiles
         Me.Button54.Name = "Button54"
         Me.Button54.Size = New System.Drawing.Size(36, 36)
         Me.Button54.TabIndex = 24
-        Me.Button54.UseVisualStyleBackColor = false
+        Me.Button54.UseVisualStyleBackColor = False
         '
         'Button53
         '
@@ -3449,7 +3395,7 @@ Partial Class BlocksAndTiles
         Me.Button53.Name = "Button53"
         Me.Button53.Size = New System.Drawing.Size(36, 36)
         Me.Button53.TabIndex = 23
-        Me.Button53.UseVisualStyleBackColor = false
+        Me.Button53.UseVisualStyleBackColor = False
         '
         'Button52
         '
@@ -3459,7 +3405,7 @@ Partial Class BlocksAndTiles
         Me.Button52.Name = "Button52"
         Me.Button52.Size = New System.Drawing.Size(36, 36)
         Me.Button52.TabIndex = 22
-        Me.Button52.UseVisualStyleBackColor = false
+        Me.Button52.UseVisualStyleBackColor = False
         '
         'Button51
         '
@@ -3469,7 +3415,7 @@ Partial Class BlocksAndTiles
         Me.Button51.Name = "Button51"
         Me.Button51.Size = New System.Drawing.Size(36, 36)
         Me.Button51.TabIndex = 21
-        Me.Button51.UseVisualStyleBackColor = false
+        Me.Button51.UseVisualStyleBackColor = False
         '
         'Button50
         '
@@ -3479,7 +3425,7 @@ Partial Class BlocksAndTiles
         Me.Button50.Name = "Button50"
         Me.Button50.Size = New System.Drawing.Size(36, 36)
         Me.Button50.TabIndex = 20
-        Me.Button50.UseVisualStyleBackColor = false
+        Me.Button50.UseVisualStyleBackColor = False
         '
         'Button49
         '
@@ -3489,7 +3435,7 @@ Partial Class BlocksAndTiles
         Me.Button49.Name = "Button49"
         Me.Button49.Size = New System.Drawing.Size(36, 36)
         Me.Button49.TabIndex = 19
-        Me.Button49.UseVisualStyleBackColor = false
+        Me.Button49.UseVisualStyleBackColor = False
         '
         'Button48
         '
@@ -3499,7 +3445,7 @@ Partial Class BlocksAndTiles
         Me.Button48.Name = "Button48"
         Me.Button48.Size = New System.Drawing.Size(36, 36)
         Me.Button48.TabIndex = 18
-        Me.Button48.UseVisualStyleBackColor = false
+        Me.Button48.UseVisualStyleBackColor = False
         '
         'Button47
         '
@@ -3509,7 +3455,7 @@ Partial Class BlocksAndTiles
         Me.Button47.Name = "Button47"
         Me.Button47.Size = New System.Drawing.Size(36, 36)
         Me.Button47.TabIndex = 17
-        Me.Button47.UseVisualStyleBackColor = false
+        Me.Button47.UseVisualStyleBackColor = False
         '
         'Button46
         '
@@ -3519,7 +3465,7 @@ Partial Class BlocksAndTiles
         Me.Button46.Name = "Button46"
         Me.Button46.Size = New System.Drawing.Size(36, 36)
         Me.Button46.TabIndex = 16
-        Me.Button46.UseVisualStyleBackColor = false
+        Me.Button46.UseVisualStyleBackColor = False
         '
         'Button45
         '
@@ -3529,7 +3475,7 @@ Partial Class BlocksAndTiles
         Me.Button45.Name = "Button45"
         Me.Button45.Size = New System.Drawing.Size(36, 36)
         Me.Button45.TabIndex = 15
-        Me.Button45.UseVisualStyleBackColor = false
+        Me.Button45.UseVisualStyleBackColor = False
         '
         'Button44
         '
@@ -3539,7 +3485,7 @@ Partial Class BlocksAndTiles
         Me.Button44.Name = "Button44"
         Me.Button44.Size = New System.Drawing.Size(36, 36)
         Me.Button44.TabIndex = 14
-        Me.Button44.UseVisualStyleBackColor = false
+        Me.Button44.UseVisualStyleBackColor = False
         '
         'Button43
         '
@@ -3549,7 +3495,7 @@ Partial Class BlocksAndTiles
         Me.Button43.Name = "Button43"
         Me.Button43.Size = New System.Drawing.Size(36, 36)
         Me.Button43.TabIndex = 13
-        Me.Button43.UseVisualStyleBackColor = false
+        Me.Button43.UseVisualStyleBackColor = False
         '
         'Button42
         '
@@ -3559,7 +3505,7 @@ Partial Class BlocksAndTiles
         Me.Button42.Name = "Button42"
         Me.Button42.Size = New System.Drawing.Size(36, 36)
         Me.Button42.TabIndex = 12
-        Me.Button42.UseVisualStyleBackColor = false
+        Me.Button42.UseVisualStyleBackColor = False
         '
         'Button41
         '
@@ -3569,7 +3515,7 @@ Partial Class BlocksAndTiles
         Me.Button41.Name = "Button41"
         Me.Button41.Size = New System.Drawing.Size(36, 36)
         Me.Button41.TabIndex = 11
-        Me.Button41.UseVisualStyleBackColor = false
+        Me.Button41.UseVisualStyleBackColor = False
         '
         'Button40
         '
@@ -3579,7 +3525,7 @@ Partial Class BlocksAndTiles
         Me.Button40.Name = "Button40"
         Me.Button40.Size = New System.Drawing.Size(36, 36)
         Me.Button40.TabIndex = 10
-        Me.Button40.UseVisualStyleBackColor = false
+        Me.Button40.UseVisualStyleBackColor = False
         '
         'Button38
         '
@@ -3589,7 +3535,7 @@ Partial Class BlocksAndTiles
         Me.Button38.Name = "Button38"
         Me.Button38.Size = New System.Drawing.Size(36, 36)
         Me.Button38.TabIndex = 9
-        Me.Button38.UseVisualStyleBackColor = false
+        Me.Button38.UseVisualStyleBackColor = False
         '
         'Button37
         '
@@ -3599,7 +3545,7 @@ Partial Class BlocksAndTiles
         Me.Button37.Name = "Button37"
         Me.Button37.Size = New System.Drawing.Size(36, 36)
         Me.Button37.TabIndex = 8
-        Me.Button37.UseVisualStyleBackColor = false
+        Me.Button37.UseVisualStyleBackColor = False
         '
         'Button36
         '
@@ -3609,7 +3555,7 @@ Partial Class BlocksAndTiles
         Me.Button36.Name = "Button36"
         Me.Button36.Size = New System.Drawing.Size(36, 36)
         Me.Button36.TabIndex = 7
-        Me.Button36.UseVisualStyleBackColor = false
+        Me.Button36.UseVisualStyleBackColor = False
         '
         'Button35
         '
@@ -3619,7 +3565,7 @@ Partial Class BlocksAndTiles
         Me.Button35.Name = "Button35"
         Me.Button35.Size = New System.Drawing.Size(36, 36)
         Me.Button35.TabIndex = 6
-        Me.Button35.UseVisualStyleBackColor = false
+        Me.Button35.UseVisualStyleBackColor = False
         '
         'Button34
         '
@@ -3629,7 +3575,7 @@ Partial Class BlocksAndTiles
         Me.Button34.Name = "Button34"
         Me.Button34.Size = New System.Drawing.Size(36, 36)
         Me.Button34.TabIndex = 5
-        Me.Button34.UseVisualStyleBackColor = false
+        Me.Button34.UseVisualStyleBackColor = False
         '
         'Button33
         '
@@ -3639,7 +3585,7 @@ Partial Class BlocksAndTiles
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(36, 36)
         Me.Button33.TabIndex = 4
-        Me.Button33.UseVisualStyleBackColor = false
+        Me.Button33.UseVisualStyleBackColor = False
         '
         'Button32
         '
@@ -3649,7 +3595,7 @@ Partial Class BlocksAndTiles
         Me.Button32.Name = "Button32"
         Me.Button32.Size = New System.Drawing.Size(36, 36)
         Me.Button32.TabIndex = 3
-        Me.Button32.UseVisualStyleBackColor = false
+        Me.Button32.UseVisualStyleBackColor = False
         '
         'Button31
         '
@@ -3659,7 +3605,7 @@ Partial Class BlocksAndTiles
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(36, 36)
         Me.Button31.TabIndex = 2
-        Me.Button31.UseVisualStyleBackColor = false
+        Me.Button31.UseVisualStyleBackColor = False
         '
         'Button30
         '
@@ -3669,7 +3615,7 @@ Partial Class BlocksAndTiles
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(36, 36)
         Me.Button30.TabIndex = 1
-        Me.Button30.UseVisualStyleBackColor = false
+        Me.Button30.UseVisualStyleBackColor = False
         '
         'Button29
         '
@@ -3679,7 +3625,7 @@ Partial Class BlocksAndTiles
         Me.Button29.Name = "Button29"
         Me.Button29.Size = New System.Drawing.Size(36, 36)
         Me.Button29.TabIndex = 0
-        Me.Button29.UseVisualStyleBackColor = false
+        Me.Button29.UseVisualStyleBackColor = False
         '
         'GroupBox7
         '
@@ -3702,7 +3648,7 @@ Partial Class BlocksAndTiles
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(147, 201)
         Me.GroupBox7.TabIndex = 0
-        Me.GroupBox7.TabStop = false
+        Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Tile Set"
         '
         'Button28
@@ -3712,7 +3658,7 @@ Partial Class BlocksAndTiles
         Me.Button28.Size = New System.Drawing.Size(64, 23)
         Me.Button28.TabIndex = 15
         Me.Button28.Text = "Special"
-        Me.Button28.UseVisualStyleBackColor = true
+        Me.Button28.UseVisualStyleBackColor = True
         '
         'Button27
         '
@@ -3721,7 +3667,7 @@ Partial Class BlocksAndTiles
         Me.Button27.Size = New System.Drawing.Size(64, 23)
         Me.Button27.TabIndex = 14
         Me.Button27.Text = "Misc."
-        Me.Button27.UseVisualStyleBackColor = true
+        Me.Button27.UseVisualStyleBackColor = True
         '
         'Button26
         '
@@ -3730,7 +3676,7 @@ Partial Class BlocksAndTiles
         Me.Button26.Size = New System.Drawing.Size(64, 23)
         Me.Button26.TabIndex = 13
         Me.Button26.Text = "Sizable"
-        Me.Button26.UseVisualStyleBackColor = true
+        Me.Button26.UseVisualStyleBackColor = True
         '
         'Button25
         '
@@ -3739,7 +3685,7 @@ Partial Class BlocksAndTiles
         Me.Button25.Size = New System.Drawing.Size(64, 23)
         Me.Button25.TabIndex = 12
         Me.Button25.Text = "Pipes"
-        Me.Button25.UseVisualStyleBackColor = true
+        Me.Button25.UseVisualStyleBackColor = True
         '
         'Button24
         '
@@ -3748,7 +3694,7 @@ Partial Class BlocksAndTiles
         Me.Button24.Size = New System.Drawing.Size(64, 23)
         Me.Button24.TabIndex = 11
         Me.Button24.Text = "Hurts"
-        Me.Button24.UseVisualStyleBackColor = true
+        Me.Button24.UseVisualStyleBackColor = True
         '
         'Button23
         '
@@ -3757,7 +3703,7 @@ Partial Class BlocksAndTiles
         Me.Button23.Size = New System.Drawing.Size(64, 23)
         Me.Button23.TabIndex = 10
         Me.Button23.Text = "Airship"
-        Me.Button23.UseVisualStyleBackColor = true
+        Me.Button23.UseVisualStyleBackColor = True
         '
         'Button22
         '
@@ -3766,7 +3712,7 @@ Partial Class BlocksAndTiles
         Me.Button22.Size = New System.Drawing.Size(64, 23)
         Me.Button22.TabIndex = 9
         Me.Button22.Text = "Snow"
-        Me.Button22.UseVisualStyleBackColor = true
+        Me.Button22.UseVisualStyleBackColor = True
         '
         'Button21
         '
@@ -3775,7 +3721,7 @@ Partial Class BlocksAndTiles
         Me.Button21.Size = New System.Drawing.Size(64, 23)
         Me.Button21.TabIndex = 8
         Me.Button21.Text = "Water"
-        Me.Button21.UseVisualStyleBackColor = true
+        Me.Button21.UseVisualStyleBackColor = True
         '
         'Button20
         '
@@ -3784,7 +3730,7 @@ Partial Class BlocksAndTiles
         Me.Button20.Size = New System.Drawing.Size(64, 23)
         Me.Button20.TabIndex = 7
         Me.Button20.Text = "Dungeon"
-        Me.Button20.UseVisualStyleBackColor = true
+        Me.Button20.UseVisualStyleBackColor = True
         '
         'Button19
         '
@@ -3793,7 +3739,7 @@ Partial Class BlocksAndTiles
         Me.Button19.Size = New System.Drawing.Size(64, 23)
         Me.Button19.TabIndex = 6
         Me.Button19.Text = "House"
-        Me.Button19.UseVisualStyleBackColor = true
+        Me.Button19.UseVisualStyleBackColor = True
         '
         'Button18
         '
@@ -3802,7 +3748,7 @@ Partial Class BlocksAndTiles
         Me.Button18.Size = New System.Drawing.Size(64, 23)
         Me.Button18.TabIndex = 5
         Me.Button18.Text = "Bonus"
-        Me.Button18.UseVisualStyleBackColor = true
+        Me.Button18.UseVisualStyleBackColor = True
         '
         'Button17
         '
@@ -3811,7 +3757,7 @@ Partial Class BlocksAndTiles
         Me.Button17.Size = New System.Drawing.Size(64, 23)
         Me.Button17.TabIndex = 4
         Me.Button17.Text = "Desert"
-        Me.Button17.UseVisualStyleBackColor = true
+        Me.Button17.UseVisualStyleBackColor = True
         '
         'Button16
         '
@@ -3820,7 +3766,7 @@ Partial Class BlocksAndTiles
         Me.Button16.Size = New System.Drawing.Size(64, 23)
         Me.Button16.TabIndex = 3
         Me.Button16.Text = "Cave"
-        Me.Button16.UseVisualStyleBackColor = true
+        Me.Button16.UseVisualStyleBackColor = True
         '
         'Button15
         '
@@ -3829,7 +3775,7 @@ Partial Class BlocksAndTiles
         Me.Button15.Size = New System.Drawing.Size(64, 23)
         Me.Button15.TabIndex = 2
         Me.Button15.Text = "Grass"
-        Me.Button15.UseVisualStyleBackColor = true
+        Me.Button15.UseVisualStyleBackColor = True
         '
         'Button14
         '
@@ -3838,7 +3784,7 @@ Partial Class BlocksAndTiles
         Me.Button14.Size = New System.Drawing.Size(64, 23)
         Me.Button14.TabIndex = 1
         Me.Button14.Text = "Wood"
-        Me.Button14.UseVisualStyleBackColor = true
+        Me.Button14.UseVisualStyleBackColor = True
         '
         'Button39
         '
@@ -9236,21 +9182,11 @@ Partial Class BlocksAndTiles
         Me.Button700.Text = "Redo"
         Me.Button700.UseVisualStyleBackColor = True
         '
-        'Button701
-        '
-        Me.Button701.Location = New System.Drawing.Point(130, 270)
-        Me.Button701.Name = "Button701"
-        Me.Button701.Size = New System.Drawing.Size(74, 23)
-        Me.Button701.TabIndex = 17
-        Me.Button701.Text = "Advanced"
-        Me.Button701.UseVisualStyleBackColor = true
-        '
         'BlocksAndTiles
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(860, 316)
-        Me.Controls.Add(Me.Button701)
         Me.Controls.Add(Me.Button700)
         Me.Controls.Add(Me.Button699)
         Me.Controls.Add(Me.misc_tileset)
@@ -9262,80 +9198,79 @@ Partial Class BlocksAndTiles
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.DoubleBuffered = true
-        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "BlocksAndTiles"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Blocks and Tiles"
-        Me.GroupBox1.ResumeLayout(false)
+        Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.GroupBox2.ResumeLayout(false)
-        Me.GroupBox3.ResumeLayout(false)
-        Me.GroupBox3.PerformLayout
-        Me.GroupBox4.ResumeLayout(false)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout
-        Me.GroupBox5.ResumeLayout(false)
-        Me.smb3_tileset.ResumeLayout(false)
-        Me.smb3_special.ResumeLayout(false)
-        Me.smb3_misc.ResumeLayout(false)
-        Me.smb3_sizable.ResumeLayout(false)
-        Me.smb3_pipes.ResumeLayout(false)
-        Me.smb3_hurts.ResumeLayout(false)
-        Me.smb3_airship.ResumeLayout(false)
-        Me.smb3_snow.ResumeLayout(false)
-        Me.smb3_water.ResumeLayout(false)
-        Me.smb3_dungeon.ResumeLayout(false)
-        Me.smb3_house.ResumeLayout(false)
-        Me.smb3_bonus.ResumeLayout(false)
-        Me.smb3_desert.ResumeLayout(false)
-        Me.smb3_cave.ResumeLayout(false)
-        Me.smb3_grass.ResumeLayout(false)
-        Me.smb3_wood.ResumeLayout(false)
-        Me.GroupBox7.ResumeLayout(false)
-        Me.smb2_tileset.ResumeLayout(false)
-        Me.smb2_castle.ResumeLayout(false)
-        Me.smb2_misc.ResumeLayout(false)
-        Me.smb2_special.ResumeLayout(false)
-        Me.smb2_sizable.ResumeLayout(false)
-        Me.smb2_underground.ResumeLayout(false)
-        Me.smb2_overworld.ResumeLayout(false)
-        Me.GroupBox9.ResumeLayout(false)
-        Me.smb_overworld.ResumeLayout(false)
-        Me.smb_tileset.ResumeLayout(false)
-        Me.smb_clouds.ResumeLayout(false)
-        Me.smb_dungeon.ResumeLayout(false)
-        Me.smb_pipes.ResumeLayout(false)
-        Me.smb_misc.ResumeLayout(false)
-        Me.smb_special.ResumeLayout(false)
-        Me.smb_sizable.ResumeLayout(false)
-        Me.smb_underground.ResumeLayout(false)
-        Me.GroupBox6.ResumeLayout(false)
-        Me.smw_tileset.ResumeLayout(false)
-        Me.smw_hurts.ResumeLayout(false)
-        Me.smw_special.ResumeLayout(false)
-        Me.smw_misc.ResumeLayout(false)
-        Me.smw_sizable.ResumeLayout(false)
-        Me.smw_bonus.ResumeLayout(false)
-        Me.smw_switch.ResumeLayout(false)
-        Me.smw_lava.ResumeLayout(false)
-        Me.smw_castle.ResumeLayout(false)
-        Me.smw_ghost.ResumeLayout(false)
-        Me.smw_pipes.ResumeLayout(false)
-        Me.smw_woods.ResumeLayout(false)
-        Me.smw_cave.ResumeLayout(false)
-        Me.smw_grass.ResumeLayout(false)
-        Me.GroupBox8.ResumeLayout(false)
-        Me.misc_tileset.ResumeLayout(false)
-        Me.misc_players.ResumeLayout(false)
-        Me.misc_metroidB.ResumeLayout(false)
-        Me.misc_metroidA.ResumeLayout(false)
-        Me.misc_zelda.ResumeLayout(false)
-        Me.GroupBox10.ResumeLayout(false)
-        Me.ResumeLayout(false)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.smb3_tileset.ResumeLayout(False)
+        Me.smb3_special.ResumeLayout(False)
+        Me.smb3_misc.ResumeLayout(False)
+        Me.smb3_sizable.ResumeLayout(False)
+        Me.smb3_pipes.ResumeLayout(False)
+        Me.smb3_hurts.ResumeLayout(False)
+        Me.smb3_airship.ResumeLayout(False)
+        Me.smb3_snow.ResumeLayout(False)
+        Me.smb3_water.ResumeLayout(False)
+        Me.smb3_dungeon.ResumeLayout(False)
+        Me.smb3_house.ResumeLayout(False)
+        Me.smb3_bonus.ResumeLayout(False)
+        Me.smb3_desert.ResumeLayout(False)
+        Me.smb3_cave.ResumeLayout(False)
+        Me.smb3_grass.ResumeLayout(False)
+        Me.smb3_wood.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        Me.smb2_tileset.ResumeLayout(False)
+        Me.smb2_castle.ResumeLayout(False)
+        Me.smb2_misc.ResumeLayout(False)
+        Me.smb2_special.ResumeLayout(False)
+        Me.smb2_sizable.ResumeLayout(False)
+        Me.smb2_underground.ResumeLayout(False)
+        Me.smb2_overworld.ResumeLayout(False)
+        Me.GroupBox9.ResumeLayout(False)
+        Me.smb_overworld.ResumeLayout(False)
+        Me.smb_tileset.ResumeLayout(False)
+        Me.smb_clouds.ResumeLayout(False)
+        Me.smb_dungeon.ResumeLayout(False)
+        Me.smb_pipes.ResumeLayout(False)
+        Me.smb_misc.ResumeLayout(False)
+        Me.smb_special.ResumeLayout(False)
+        Me.smb_sizable.ResumeLayout(False)
+        Me.smb_underground.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.smw_tileset.ResumeLayout(False)
+        Me.smw_hurts.ResumeLayout(False)
+        Me.smw_special.ResumeLayout(False)
+        Me.smw_misc.ResumeLayout(False)
+        Me.smw_sizable.ResumeLayout(False)
+        Me.smw_bonus.ResumeLayout(False)
+        Me.smw_switch.ResumeLayout(False)
+        Me.smw_lava.ResumeLayout(False)
+        Me.smw_castle.ResumeLayout(False)
+        Me.smw_ghost.ResumeLayout(False)
+        Me.smw_pipes.ResumeLayout(False)
+        Me.smw_woods.ResumeLayout(False)
+        Me.smw_cave.ResumeLayout(False)
+        Me.smw_grass.ResumeLayout(False)
+        Me.GroupBox8.ResumeLayout(False)
+        Me.misc_tileset.ResumeLayout(False)
+        Me.misc_players.ResumeLayout(False)
+        Me.misc_metroidB.ResumeLayout(False)
+        Me.misc_metroidA.ResumeLayout(False)
+        Me.misc_zelda.ResumeLayout(False)
+        Me.GroupBox10.ResumeLayout(False)
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
@@ -9355,7 +9290,6 @@ End Sub
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
@@ -9580,10 +9514,6 @@ End Sub
     Friend WithEvents Button207 As System.Windows.Forms.Button
     Friend WithEvents Button206 As System.Windows.Forms.Button
     Friend WithEvents Button205 As System.Windows.Forms.Button
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents smb3_misc As System.Windows.Forms.GroupBox
     Friend WithEvents Button234 As System.Windows.Forms.Button
     Friend WithEvents Button233 As System.Windows.Forms.Button
@@ -10109,5 +10039,4 @@ End Sub
     Friend WithEvents Button689 As System.Windows.Forms.Button
     Friend WithEvents Button699 As System.Windows.Forms.Button
     Friend WithEvents Button700 As System.Windows.Forms.Button
-    Friend WithEvents Button701 As System.Windows.Forms.Button
 End Class

@@ -37,15 +37,7 @@ Public Class Grid
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Try
-            GColor = Color.FromArgb(CInt(TextBox1.Text), CInt(TextBox2.Text), CInt(TextBox3.Text))
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
-            TextBox1.Text = "255"
-            TextBox2.Text = "255"
-            TextBox3.Text = "255"
-        End Try
-
+        GColor = Color.FromArgb(numericR.Value, numericG.Value, numericB.Value)
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged

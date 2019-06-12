@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form2
+Partial Class LevelWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,35 +23,28 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LevelWindow))
         Me.Animation = New System.Windows.Forms.Timer(Me.components)
-        Me.Updater = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Animation
         '
         Me.Animation.Enabled = True
-        Me.Animation.Interval = 10
+        Me.Animation.Interval = 60
         '
-        'Updater
-        '
-        Me.Updater.Enabled = True
-        Me.Updater.Interval = 500
-        '
-        'Form2
+        'LevelWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(800, 594)
+        Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form2"
+        Me.Name = "LevelWindow"
         Me.Text = "Level Editor"
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Animation As System.Windows.Forms.Timer
-    Friend WithEvents Updater As Timer
 End Class

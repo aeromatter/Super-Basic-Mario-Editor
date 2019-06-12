@@ -2,16 +2,133 @@
 Imports System.Text
 
 Public Class Main
+    Enum BackgroundStyles
+        Normal
+        RepeatBottom
+    End Enum
 
+    Public Structure LevelBackgroundDisplay
+        Private primaryBackground As String
+        Private secondaryBackground As String
+        Private backgroundStyle As BackgroundStyles
+
+        Public Sub New(primary As String, secondary As String, style As BackgroundStyles)
+            primaryBackground = primary
+            secondaryBackground = secondary
+            backgroundStyle = style
+        End Sub
+
+        Public Function GetPrimary() As String
+            Return primaryBackground
+        End Function
+
+        Public Function GetSecondary() As String
+            Return secondaryBackground
+        End Function
+
+        Public Function GetStyle()
+            Return backgroundStyle
+        End Function
+    End Structure
+
+    Private Sub SetLevelBackground(ByVal background As LevelBackgroundDisplay)
+        Dim fs As FileStream
+
+        Level.BGpath = String.Format("{0}\graphics\background2\background2-{1}", GetGamePath(), background.GetPrimary())
+        Level.BG2path = String.Format("{0}\graphics\background2\background2-{1}", GetGamePath(), background.GetSecondary())
+        Level.BGid = background.GetPrimary()
+        Level.BG2id = background.GetSecondary()
+
+        Try
+            fs = New FileStream(Level.BGpath, FileMode.Open)
+            Level.BG = Image.FromStream(fs)
+            fs.Close()
+            fs.Dispose()
+
+            fs = New FileStream(Level.BG2path, FileMode.Open)
+            Level.BG2 = Image.FromStream(fs)
+            fs.Close()
+            fs.Dispose()
+        Catch ex As Exception
+            LevelWindow.BackColor = Color.Black
+        End Try
+
+        LevelWindow.Refresh()
+        LevelWindow.Update()
+    End Sub
+
+    Public Sub GetBackgroundInfo(ByVal backgroundID As Integer)
+        Dim openBackgroundProperties As StreamReader
+        Dim parseOutput As Dictionary(Of String, String) = New Dictionary(Of String, String)
+        Dim primaryBackgroundName As String = String.Empty
+        Dim secondaryBackgroundName As String = String.Empty
+
+        openBackgroundProperties = New StreamReader(String.Format("{0}\configs\background2\background2-{1}.ini", GetGamePath(), backgroundID), FileMode.Open)
+
+        While Not openBackgroundProperties.EndOfStream
+            Dim parse As String = openBackgroundProperties.ReadLine()
+            Dim readInput() As String
+
+            If parse.Contains("=") Then
+                readInput = parse.Split("=")
+                Dim key As String = readInput(0).Trim(Chr(34), Chr(32))
+                Dim value As String = readInput(1).Trim(Chr(34), Chr(32))
+
+                parseOutput.Add(key, value)
+            End If
+        End While
+
+        openBackgroundProperties.Close()
+        openBackgroundProperties.Dispose()
+
+        For Each kv As KeyValuePair(Of String, String) In parseOutput
+            If kv.Key = "image" Then
+                primaryBackgroundName = kv.Value
+            End If
+
+            If kv.Key = "second-image" Then
+                secondaryBackgroundName = kv.Value
+            End If
+        Next
+
+        'TODO: Match background ID to ini file.
+
+        Level.BGpath = String.Format("{0}\graphics\background2\{1}", GetGamePath(), primaryBackgroundName)
+        Level.BG2path = String.Format("{0}\graphics\background2\{1}", GetGamePath(), secondaryBackgroundName)
+        Level.BGtype = 1
+
+        Dim fs As FileStream
+        Dim fs2 As FileStream
+        Try
+            fs = New FileStream(Level.BGpath, FileMode.Open)
+            Level.BG = Image.FromStream(fs)
+
+            fs.Close()
+            fs.Dispose()
+
+            If Not Level.BG2path = "" Then
+                fs2 = New FileStream(Level.BG2path, FileMode.Open)
+                Level.BG2 = Image.FromStream(fs2)
+
+                fs2.Close()
+                fs2.Dispose()
+            End If
+        Catch ex As Exception
+            LevelWindow.BackColor = Color.Black
+        End Try
+
+        LevelWindow.Refresh()
+        LevelWindow.Update()
+        'SetLevelBackground()
+    End Sub
     Public Shared Sub SetLevelBG(ByVal ID As UInteger, ByVal ID2 As UInteger)
         Dim fs As FileStream
         Dim fs2 As FileStream
 
-        If ID > 0 AndAlso ID2 > 0 Then
-            Level.BGpath = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID)
-            Level.BG2path = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID2)
-        ElseIf ID2 = 0
-            Level.BGpath = String.Format(Form1.FilePath & "\graphics\background2\background2-{0}.png", ID)
+        Level.BGpath = String.Format(GetGamePath() & "\graphics\background2\background2-{0}.png", ID)
+
+        If ID2 > 0 Then
+            Level.BG2path = String.Format(GetGamePath() & "\graphics\background2\background2-{0}.png", ID2)
         End If
 
         'Set Type
@@ -64,7 +181,7 @@ Public Class Main
             fs.Close()
             fs.Dispose()
         Catch ex As Exception
-            Form2.BackColor = Color.Black
+            LevelWindow.BackColor = Color.Black
         End Try
 
         If Not Level.BG2path = "" Then
@@ -75,17 +192,21 @@ Public Class Main
             fs2.Dispose()
         End If
 
-        Form2.Refresh()
-        Form2.Update()
+        LevelWindow.Refresh()
+        LevelWindow.Update()
     End Sub
 
-    Public Shared Function Clamp(input As Double, min As Double, max As Double)
+    Public Shared Function Clamp(ByVal input As Double, ByVal min As Double, ByVal max As Double)
         If input >= max Then
             Return max
-        ElseIf input <= min
+        ElseIf input <= min Then
             Return min
         End If
 
         Return input
+    End Function
+
+    Public Shared Function GetGamePath() As String
+        Return Path.GetDirectoryName(Application.ExecutablePath)
     End Function
 End Class

@@ -18,8 +18,28 @@
     Public Shared HeightInc As Integer = 1
     Public Shared Time As UInteger = 300
     Public Shared TimeLeft As Integer
-    Public Shared LevelPath As String = Form1.FilePath & "\worlds\"
+    Public Shared LevelPath As String = Main.GetGamePath() & "\worlds\"
     Public Shared P1start As Rectangle
     Public Shared P2start As Rectangle
     Public Shared Brightness As Integer = 100
+
+    Public Function PrimaryBGMaxDrawTimesX() As Integer
+        Return (LevelW / BG.Width) * 2
+    End Function
+
+    Public Function SecondaryBGMaxDrawTimesX() As Integer
+        Return (LevelW / BG2.Width) * 2
+    End Function
+
+    Public Function PrimaryBGMaxDrawTimesY() As Integer
+        Return (LevelH / BG.Height) * 2
+    End Function
+
+    Public Function PrimaryBGLocation(ByVal x As Integer) As Rectangle
+        Return New Rectangle(x * BG.Width, LevelH - BG.Height, BG.Width, BG.Height)
+    End Function
+
+    Public Function SecondaryBGLocation(ByVal x As Integer) As Rectangle
+        Return New Rectangle(x * BG2.Width, LevelH - (BG.Height + BG2.Height), BG2.Width, BG2.Height)
+    End Function
 End Class

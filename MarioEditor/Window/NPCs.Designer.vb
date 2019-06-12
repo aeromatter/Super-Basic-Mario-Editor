@@ -24,9 +24,9 @@ Partial Class NPCs
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NPCs))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RightRadio = New System.Windows.Forms.RadioButton()
+        Me.RandomRadio = New System.Windows.Forms.RadioButton()
+        Me.LeftRadio = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -427,9 +427,9 @@ Partial Class NPCs
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.RightRadio)
+        Me.GroupBox1.Controls.Add(Me.RandomRadio)
+        Me.GroupBox1.Controls.Add(Me.LeftRadio)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(207, 46)
@@ -437,37 +437,37 @@ Partial Class NPCs
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Direction"
         '
-        'RadioButton3
+        'RightRadio
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(151, 17)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(50, 17)
-        Me.RadioButton3.TabIndex = 1
-        Me.RadioButton3.Text = "Right"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RightRadio.AutoSize = True
+        Me.RightRadio.Location = New System.Drawing.Point(151, 17)
+        Me.RightRadio.Name = "RightRadio"
+        Me.RightRadio.Size = New System.Drawing.Size(50, 17)
+        Me.RightRadio.TabIndex = 1
+        Me.RightRadio.Text = "Right"
+        Me.RightRadio.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'RandomRadio
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(68, 17)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(65, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.Text = "Random"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RandomRadio.AutoSize = True
+        Me.RandomRadio.Location = New System.Drawing.Point(68, 17)
+        Me.RandomRadio.Name = "RandomRadio"
+        Me.RandomRadio.Size = New System.Drawing.Size(65, 17)
+        Me.RandomRadio.TabIndex = 1
+        Me.RandomRadio.Text = "Random"
+        Me.RandomRadio.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'LeftRadio
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 17)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(43, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Left"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.LeftRadio.AutoSize = True
+        Me.LeftRadio.Checked = True
+        Me.LeftRadio.Location = New System.Drawing.Point(6, 17)
+        Me.LeftRadio.Name = "LeftRadio"
+        Me.LeftRadio.Size = New System.Drawing.Size(43, 17)
+        Me.LeftRadio.TabIndex = 1
+        Me.LeftRadio.TabStop = True
+        Me.LeftRadio.Text = "Left"
+        Me.LeftRadio.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -4111,6 +4111,8 @@ Partial Class NPCs
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "NPCs"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Non-Player Characters"
@@ -4231,9 +4233,9 @@ Partial Class NPCs
     Friend WithEvents Button41 As System.Windows.Forms.Button
     Friend WithEvents Button40 As System.Windows.Forms.Button
     Friend WithEvents Button39 As System.Windows.Forms.Button
-    Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents RightRadio As System.Windows.Forms.RadioButton
+    Friend WithEvents RandomRadio As System.Windows.Forms.RadioButton
+    Friend WithEvents LeftRadio As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox14 As System.Windows.Forms.GroupBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button

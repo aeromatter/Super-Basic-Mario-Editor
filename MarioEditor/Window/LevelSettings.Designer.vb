@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LevelSettings
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LevelSettings
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LevelSettings))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -42,7 +42,7 @@ Partial Class LevelSettings
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.SectionSelectBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -188,12 +188,13 @@ Partial Class LevelSettings
         Me.Button111 = New System.Windows.Forms.Button()
         Me.Button110 = New System.Windows.Forms.Button()
         Me.Button109 = New System.Windows.Forms.Button()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.BrowseMusic = New System.Windows.Forms.OpenFileDialog()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.GameGroupBox = New System.Windows.Forms.GroupBox()
+        Me.GameSelectBox = New System.Windows.Forms.ComboBox()
+        Me.BackgroundsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.BackgroundSelectBox = New System.Windows.Forms.ComboBox()
+        Me.MusicGroupBox = New System.Windows.Forms.GroupBox()
+        Me.MusicSelectBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -221,10 +222,9 @@ Partial Class LevelSettings
         Me.misc_settings.SuspendLayout()
         Me.GroupBox27.SuspendLayout()
         Me.GroupBox26.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.GroupBox12.SuspendLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GameGroupBox.SuspendLayout()
+        Me.BackgroundsGroupBox.SuspendLayout()
+        Me.MusicGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -402,7 +402,7 @@ Partial Class LevelSettings
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.ComboBox1)
+        Me.GroupBox4.Controls.Add(Me.SectionSelectBox)
         Me.GroupBox4.Location = New System.Drawing.Point(118, 62)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(105, 47)
@@ -410,14 +410,14 @@ Partial Class LevelSettings
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Section"
         '
-        'ComboBox1
+        'SectionSelectBox
         '
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 19)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(93, 21)
-        Me.ComboBox1.TabIndex = 17
+        Me.SectionSelectBox.Enabled = False
+        Me.SectionSelectBox.FormattingEnabled = True
+        Me.SectionSelectBox.Location = New System.Drawing.Point(6, 19)
+        Me.SectionSelectBox.Name = "SectionSelectBox"
+        Me.SectionSelectBox.Size = New System.Drawing.Size(93, 21)
+        Me.SectionSelectBox.TabIndex = 17
         '
         'GroupBox5
         '
@@ -503,7 +503,7 @@ Partial Class LevelSettings
         '
         Me.smb3_settings.Controls.Add(Me.GroupBox11)
         Me.smb3_settings.Controls.Add(Me.GroupBox10)
-        Me.smb3_settings.Location = New System.Drawing.Point(339, 62)
+        Me.smb3_settings.Location = New System.Drawing.Point(331, 553)
         Me.smb3_settings.Name = "smb3_settings"
         Me.smb3_settings.Size = New System.Drawing.Size(479, 216)
         Me.smb3_settings.TabIndex = 9
@@ -822,7 +822,7 @@ Partial Class LevelSettings
         '
         Me.smb2_settings.Controls.Add(Me.GroupBox14)
         Me.smb2_settings.Controls.Add(Me.GroupBox13)
-        Me.smb2_settings.Location = New System.Drawing.Point(339, 62)
+        Me.smb2_settings.Location = New System.Drawing.Point(345, 303)
         Me.smb2_settings.Name = "smb2_settings"
         Me.smb2_settings.Size = New System.Drawing.Size(315, 218)
         Me.smb2_settings.TabIndex = 10
@@ -982,7 +982,7 @@ Partial Class LevelSettings
         '
         Me.smb_settings.Controls.Add(Me.GroupBox17)
         Me.smb_settings.Controls.Add(Me.GroupBox16)
-        Me.smb_settings.Location = New System.Drawing.Point(339, 62)
+        Me.smb_settings.Location = New System.Drawing.Point(23, 303)
         Me.smb_settings.Name = "smb_settings"
         Me.smb_settings.Size = New System.Drawing.Size(304, 218)
         Me.smb_settings.TabIndex = 11
@@ -1122,7 +1122,7 @@ Partial Class LevelSettings
         '
         Me.smw_settings.Controls.Add(Me.GroupBox20)
         Me.smw_settings.Controls.Add(Me.GroupBox19)
-        Me.smw_settings.Location = New System.Drawing.Point(339, 62)
+        Me.smw_settings.Location = New System.Drawing.Point(855, 470)
         Me.smw_settings.Name = "smw_settings"
         Me.smw_settings.Size = New System.Drawing.Size(466, 218)
         Me.smw_settings.TabIndex = 12
@@ -1371,7 +1371,7 @@ Partial Class LevelSettings
         'mariorpg_settings
         '
         Me.mariorpg_settings.Controls.Add(Me.GroupBox22)
-        Me.mariorpg_settings.Location = New System.Drawing.Point(339, 62)
+        Me.mariorpg_settings.Location = New System.Drawing.Point(1042, 251)
         Me.mariorpg_settings.Name = "mariorpg_settings"
         Me.mariorpg_settings.Size = New System.Drawing.Size(209, 156)
         Me.mariorpg_settings.TabIndex = 13
@@ -1461,7 +1461,7 @@ Partial Class LevelSettings
         'mario64_settings
         '
         Me.mario64_settings.Controls.Add(Me.GroupBox24)
-        Me.mario64_settings.Location = New System.Drawing.Point(339, 62)
+        Me.mario64_settings.Location = New System.Drawing.Point(855, 245)
         Me.mario64_settings.Name = "mario64_settings"
         Me.mario64_settings.Size = New System.Drawing.Size(181, 219)
         Me.mario64_settings.TabIndex = 14
@@ -1562,7 +1562,7 @@ Partial Class LevelSettings
         '
         Me.misc_settings.Controls.Add(Me.GroupBox27)
         Me.misc_settings.Controls.Add(Me.GroupBox26)
-        Me.misc_settings.Location = New System.Drawing.Point(339, 62)
+        Me.misc_settings.Location = New System.Drawing.Point(855, 20)
         Me.misc_settings.Name = "misc_settings"
         Me.misc_settings.Size = New System.Drawing.Size(552, 219)
         Me.misc_settings.TabIndex = 15
@@ -1866,65 +1866,73 @@ Partial Class LevelSettings
         Me.Button109.Text = "None"
         Me.Button109.UseVisualStyleBackColor = True
         '
-        'GroupBox9
-        '
-        Me.GroupBox9.Controls.Add(Me.NumericUpDown1)
-        Me.GroupBox9.Controls.Add(Me.Button10)
-        Me.GroupBox9.Location = New System.Drawing.Point(118, 115)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(105, 77)
-        Me.GroupBox9.TabIndex = 16
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Gravity"
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(6, 45)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(93, 23)
-        Me.Button10.TabIndex = 17
-        Me.Button10.Text = "Default"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'GroupBox12
-        '
-        Me.GroupBox12.Controls.Add(Me.TrackBar1)
-        Me.GroupBox12.Location = New System.Drawing.Point(118, 198)
-        Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(105, 60)
-        Me.GroupBox12.TabIndex = 17
-        Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "Brightness"
-        '
-        'TrackBar1
-        '
-        Me.TrackBar1.Location = New System.Drawing.Point(6, 19)
-        Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(93, 45)
-        Me.TrackBar1.TabIndex = 19
-        Me.TrackBar1.Value = 10
-        '
         'BrowseMusic
         '
         Me.BrowseMusic.FileName = "OpenFileDialog1"
         '
-        'NumericUpDown1
+        'GameGroupBox
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(6, 19)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(93, 20)
-        Me.NumericUpDown1.TabIndex = 18
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {12, 0, 0, 0})
+        Me.GameGroupBox.Controls.Add(Me.GameSelectBox)
+        Me.GameGroupBox.Location = New System.Drawing.Point(339, 62)
+        Me.GameGroupBox.Name = "GameGroupBox"
+        Me.GameGroupBox.Size = New System.Drawing.Size(143, 45)
+        Me.GameGroupBox.TabIndex = 18
+        Me.GameGroupBox.TabStop = False
+        Me.GameGroupBox.Text = "Game Selection"
+        '
+        'GameSelectBox
+        '
+        Me.GameSelectBox.FormattingEnabled = True
+        Me.GameSelectBox.Items.AddRange(New Object() {"Super Mario Bros.", "Super Mario Bros. 2", "Super Mario Bros. 3", "Super Mario World", "Super Mario RPG", "Super Mario 64", "Misc."})
+        Me.GameSelectBox.Location = New System.Drawing.Point(6, 18)
+        Me.GameSelectBox.Name = "GameSelectBox"
+        Me.GameSelectBox.Size = New System.Drawing.Size(131, 21)
+        Me.GameSelectBox.TabIndex = 0
+        '
+        'BackgroundsGroupBox
+        '
+        Me.BackgroundsGroupBox.Controls.Add(Me.BackgroundSelectBox)
+        Me.BackgroundsGroupBox.Location = New System.Drawing.Point(339, 113)
+        Me.BackgroundsGroupBox.Name = "BackgroundsGroupBox"
+        Me.BackgroundsGroupBox.Size = New System.Drawing.Size(143, 45)
+        Me.BackgroundsGroupBox.TabIndex = 19
+        Me.BackgroundsGroupBox.TabStop = False
+        Me.BackgroundsGroupBox.Text = "Backgrounds"
+        '
+        'BackgroundSelectBox
+        '
+        Me.BackgroundSelectBox.FormattingEnabled = True
+        Me.BackgroundSelectBox.Location = New System.Drawing.Point(6, 19)
+        Me.BackgroundSelectBox.Name = "BackgroundSelectBox"
+        Me.BackgroundSelectBox.Size = New System.Drawing.Size(131, 21)
+        Me.BackgroundSelectBox.TabIndex = 20
+        '
+        'MusicGroupBox
+        '
+        Me.MusicGroupBox.Controls.Add(Me.MusicSelectBox)
+        Me.MusicGroupBox.Location = New System.Drawing.Point(339, 164)
+        Me.MusicGroupBox.Name = "MusicGroupBox"
+        Me.MusicGroupBox.Size = New System.Drawing.Size(143, 45)
+        Me.MusicGroupBox.TabIndex = 20
+        Me.MusicGroupBox.TabStop = False
+        Me.MusicGroupBox.Text = "Music"
+        '
+        'MusicSelectBox
+        '
+        Me.MusicSelectBox.FormattingEnabled = True
+        Me.MusicSelectBox.Location = New System.Drawing.Point(6, 19)
+        Me.MusicSelectBox.Name = "MusicSelectBox"
+        Me.MusicSelectBox.Size = New System.Drawing.Size(131, 21)
+        Me.MusicSelectBox.TabIndex = 21
         '
         'LevelSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(900, 291)
-        Me.Controls.Add(Me.GroupBox12)
-        Me.Controls.Add(Me.GroupBox9)
+        Me.ClientSize = New System.Drawing.Size(829, 284)
+        Me.Controls.Add(Me.MusicGroupBox)
+        Me.Controls.Add(Me.BackgroundsGroupBox)
+        Me.Controls.Add(Me.GameGroupBox)
         Me.Controls.Add(Me.misc_settings)
         Me.Controls.Add(Me.mario64_settings)
         Me.Controls.Add(Me.mariorpg_settings)
@@ -1942,6 +1950,8 @@ Partial Class LevelSettings
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "LevelSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Level Settings"
@@ -1974,11 +1984,9 @@ Partial Class LevelSettings
         Me.GroupBox27.ResumeLayout(False)
         Me.GroupBox27.PerformLayout()
         Me.GroupBox26.ResumeLayout(False)
-        Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox12.PerformLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GameGroupBox.ResumeLayout(False)
+        Me.BackgroundsGroupBox.ResumeLayout(False)
+        Me.MusicGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2145,12 +2153,13 @@ Partial Class LevelSettings
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-    Friend WithEvents TrackBar1 As System.Windows.Forms.TrackBar
+    Friend WithEvents SectionSelectBox As System.Windows.Forms.ComboBox
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents BrowseMusic As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents GameGroupBox As GroupBox
+    Friend WithEvents GameSelectBox As ComboBox
+    Friend WithEvents BackgroundsGroupBox As GroupBox
+    Friend WithEvents BackgroundSelectBox As ComboBox
+    Friend WithEvents MusicGroupBox As GroupBox
+    Friend WithEvents MusicSelectBox As ComboBox
 End Class

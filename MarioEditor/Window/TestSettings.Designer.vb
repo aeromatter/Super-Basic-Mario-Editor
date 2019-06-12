@@ -399,6 +399,8 @@ Partial Class TestSettings
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "TestSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Level Test Settings"

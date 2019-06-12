@@ -33,10 +33,8 @@
     End Sub
 
     Private Sub TestSettings_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        ComboBox1.SelectedIndex = Play.P1
         ComboBox2.SelectedIndex = 0
 
-        ComboBox3.SelectedIndex = Play.P2
         ComboBox4.SelectedIndex = 0
 
         RadioButton1.Checked = True
@@ -278,51 +276,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        If RadioButton1.Checked = True Then
-            Player.PlayerID = 0
-        ElseIf RadioButton2.Checked = True Then
-            Player.PlayerID = 1
-        ElseIf RadioButton3.Checked = True Then
-            Player.PlayerID = 2
-        ElseIf RadioButton4.Checked = True Then
-            Player.PlayerID = 3
-        End If
-
-        Player.PlayerState = (ComboBox1.SelectedIndex + 1)
-
-        'Set Data to Player Class, and apply it to P1
-        Play.CurPlayer = Player.PlayerID
-        Play.CurState = (ComboBox1.SelectedIndex + 1)
-
-        Player.SetPlayer()
-
-        Player.P1.PlayerID = Player.PlayerID
-        Player.P1.PlayerState = Player.PlayerState
-        Player.P1.PlayerW = Player.PlayerW
-        Player.P1.PlayerH = Player.PlayerH
-        Player.P1.Graphic = Player.Graphic
-
-        If RadioButton6.Checked = True Then
-            Player.PlayerID = 0
-        ElseIf RadioButton7.Checked = True Then
-            Player.PlayerID = 1
-        ElseIf RadioButton8.Checked = True Then
-            Player.PlayerID = 2
-        ElseIf RadioButton9.Checked = True Then
-            Player.PlayerID = 3
-        End If
-
-        Player.PlayerState = (ComboBox4.SelectedIndex + 1)
-
-        Player.SetPlayer()
-
-        Player.P2.PlayerID = Player.PlayerID
-        Player.P2.PlayerState = Player.PlayerState
-        Player.P2.PlayerW = Player.PlayerW
-        Player.P2.PlayerH = Player.PlayerH
-        Player.P2.Graphic = Player.Graphic
-
-        Me.Close()
+        Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
