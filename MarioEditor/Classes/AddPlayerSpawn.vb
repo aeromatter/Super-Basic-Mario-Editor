@@ -3,13 +3,13 @@
 
     Public Sub SetPlayer1Spawn()
         If isValidPlacement(PlacementRect) And MouseIsDown Then
-            player1SpawnLocation = PlacementRect
+            Level.P1start = PlacementRect
         End If
     End Sub
 
     Public Sub SetPlayer2Spawn()
         If isValidPlacement(PlacementRect) And MouseIsDown Then
-            player2SpawnLocation = PlacementRect
+            Level.P2start = PlacementRect
         End If
     End Sub
 

@@ -18,7 +18,8 @@ Public Class LevelWindow
 
     Public FPScounter As Integer = 0
 
-    Private LevelData As Level
+    Public Shared LevelData As New Level
+    Private Section As New Level.SectionBackground
 
     Private Sub Form2_Deactivate(sender As Object, e As System.EventArgs) Handles Me.Deactivate
         Focus()
@@ -37,9 +38,7 @@ Public Class LevelWindow
         SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
         ResizeRedraw = True
     End Sub
-    Private Sub SetLevelSize()
-        AutoScrollMinSize = New Size(Level.LevelW, Level.LevelH)
-    End Sub
+
     Private Sub LoadGameFont()
         Try
             PFC = New PrivateFontCollection
@@ -55,8 +54,8 @@ Public Class LevelWindow
         Show()
         Focus()
 
-        SetLevelSize()
-        LevelData = New Level
+        LevelData.LoadSection(0)
+
 
         Dim blocks As New Blocks
         blocks.GetBlockInfo()
@@ -145,22 +144,22 @@ Public Class LevelWindow
         Dim bg As Graphics = Draw
         bg.TranslateTransform(AutoScrollPosition.X, AutoScrollPosition.Y)
 
-        Select Case Level.BGtype
+        Select Case Level.Background.backgroundStyle
             Case 1
                 For x = 0 To LevelData.PrimaryBGMaxDrawTimesX
                     If Draw.IsVisible(LevelData.PrimaryBGLocation(x)) Then
-                        bg.DrawImage(Level.BG, LevelData.PrimaryBGLocation(x), 0, 0, Level.BG.Width, Level.BG.Height, GraphicsUnit.Pixel)
+                        bg.DrawImage(Level.Background.primaryImage, LevelData.PrimaryBGLocation(x), 0, 0, Level.Background.primaryImage.Width, Level.Background.primaryImage.Height, GraphicsUnit.Pixel)
                     End If
                 Next
             Case 2
                 For x = 0 To LevelData.PrimaryBGMaxDrawTimesX
                     If Draw.IsVisible(LevelData.PrimaryBGLocation(x)) Then
-                        bg.DrawImage(Level.BG, LevelData.PrimaryBGLocation(x), 0, 0, Level.BG.Width, Level.BG.Height, GraphicsUnit.Pixel)
+                        bg.DrawImage(Section.primaryImage, LevelData.PrimaryBGLocation(x), 0, 0, Level.Background.primaryImage.Width, Level.Background.primaryImage.Height, GraphicsUnit.Pixel)
                     End If
                 Next
                 For x = 0 To LevelData.SecondaryBGMaxDrawTimesX
                     If Draw.IsVisible(LevelData.SecondaryBGLocation(x)) Then
-                        bg.DrawImage(Level.BG2, LevelData.SecondaryBGLocation(x), 0, 0, Level.BG2.Width, Level.BG2.Height, GraphicsUnit.Pixel)
+                        bg.DrawImage(Section.secondaryImage, LevelData.SecondaryBGLocation(x), 0, 0, Level.Background.secondaryImage.Height, Level.Background.secondaryImage.Height, GraphicsUnit.Pixel)
                     End If
                 Next
         End Select
@@ -193,11 +192,11 @@ Public Class LevelWindow
         Next
 
         If Not ObjectPlacement.player1SpawnLocation.IsEmpty Then
-            graphic.DrawImage(PlayerGraphic, ObjectPlacement.player1SpawnLocation, New Rectangle(500, 0, 24, 54), GraphicsUnit.Pixel)
+            graphic.DrawImage(PlayerGraphic, Level.P1start, New Rectangle(500, 0, 24, 54), GraphicsUnit.Pixel)
         End If
 
         If Not ObjectPlacement.player2SpawnLocation.IsEmpty Then
-            graphic.DrawImage(Player2Graphic, ObjectPlacement.player1SpawnLocation, New Rectangle(500, 0, 24, 56), GraphicsUnit.Pixel)
+            graphic.DrawImage(Player2Graphic, Level.P2start, New Rectangle(500, 0, 24, 56), GraphicsUnit.Pixel)
         End If
 
         For Each i As NPCsets In NPC.NPCsets
@@ -326,10 +325,10 @@ Public Class LevelWindow
     Private Sub Form2_SizeChanged(sender As Object, e As EventArgs) Handles MyBase.SizeChanged
         ObjectPlacement.screen = New Rectangle(0, 0, Width, Height)
 
-        If Width > Level.LevelW + 32 Then
-            Width = Level.LevelW + 32
-        ElseIf Height > Level.LevelH + 32 Then
-            Height = Level.LevelH + 32
+        If Width > LevelData.SectionBounds.Width + 32 Then
+            Width = LevelData.SectionBounds.Width + 32
+        ElseIf Height > LevelData.SectionBounds.Height + 32 Then
+            Height = LevelData.SectionBounds.Height + 32
         End If
     End Sub
 

@@ -49,13 +49,7 @@ Public Class KeyboardInputs
             Backgrounds.bgorects.Clear()
             NPC.NPCsets.Clear()
             NPC.NPCrects.Clear()
-            LevelSettings.BGColor = Color.Black
-            Level.BGtype = 0
-            Level.BG = Nothing
-            Level.BG2 = Nothing
             Level.Music = ""
-            LevelSettings.PlayM.StopPlayback()
-            Level.Song = ""
             Level.P1start = Nothing
             Level.P2start = Nothing
             Blocks.fillq.Clear()

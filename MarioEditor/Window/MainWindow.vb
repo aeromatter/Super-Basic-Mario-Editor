@@ -75,9 +75,9 @@ Public Class MainWindow
 
         'LevelSettings.Location = New Point(0, LevelWindow.Height)
         'LevelSettings.Show()
-        Level_Manager.MdiParent = Me
-        Level_Manager.Location = New Point(0, LevelWindow.Height)
-        Level_Manager.Show()
+        LevelSettings.MdiParent = Me
+        LevelSettings.Location = New Point(0, LevelWindow.Height)
+        LevelSettings.Show()
         BlocksAndTiles.Hide()
         BGOs_Form.Hide()
         NPCs.Hide()
