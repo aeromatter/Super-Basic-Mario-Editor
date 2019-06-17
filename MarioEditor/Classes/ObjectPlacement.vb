@@ -98,12 +98,14 @@ Public Class ObjectPlacement
             Align = New ObjectAlignment(32, 32)
         End If
 
-        Dim Offset = LevelWindow.AutoScrollPosition.X * -1
+        Dim OffsetX = LevelWindow.HorizontalScroll.Value
+        Dim OffsetY = LevelWindow.VerticalScroll.Value
         Dim AlignX = Align.GetXAlignment()
         Dim AlignY = Align.GetYAlignment()
-        Dim MouseLoc = New MouseLocToLevel(Math.Floor((loc.X + Offset) / AlignX), Math.Floor((loc.Y + Offset) / AlignY))
+        Dim MouseLoc = New MouseLocToLevel(Math.Floor((loc.X + OffsetX) / AlignX), Math.Floor((loc.Y + OffsetY) / AlignY))
 
         mouseToLevel = New Point(MouseLoc.GetX, MouseLoc.GetY)
+        mouseToLevel.Offset(New Point((-419998 * 0.5) / 32, (-419998 * 0.5) / 32))
     End Sub
 
     Protected Function isMouseOnscreen()

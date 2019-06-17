@@ -139,10 +139,11 @@ Public Class LevelWindow
     Private Sub Form2_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
         Draw = e.Graphics
         SetDrawingSettings()
-        Draw.Clear(Color.Black)
+        Draw.Clear(Color.Gray)
+
+        Draw.TranslateTransform((419998 * 0.5) - HorizontalScroll.Value, (419998 * 0.5) - VerticalScroll.Value)
 
         Dim bg As Graphics = Draw
-        bg.TranslateTransform(AutoScrollPosition.X, AutoScrollPosition.Y)
 
         Select Case Level.Background.backgroundStyle
             Case 1
@@ -164,7 +165,7 @@ Public Class LevelWindow
                 Next
         End Select
 
-        bg.ResetTransform()
+        'bg.ResetTransform()
 
         If Grid.GridOn Then
             For X = 0 To Math.Ceiling(Width / 32)
@@ -176,7 +177,7 @@ Public Class LevelWindow
         End If
 
         Dim graphic As Graphics = Draw
-        graphic.TranslateTransform(AutoScrollPosition.X, AutoScrollPosition.Y, Drawing2D.MatrixOrder.Prepend)
+        'graphic.TranslateTransform(-AutoScrollPosition.X, -AutoScrollPosition.Y)
 
         'BG BGOs
         For Each i As BGO In Backgrounds.BGOs.ToList
@@ -232,7 +233,7 @@ Public Class LevelWindow
         If ObjectPlacement.MouseIsMoving Then
             Select Case ObjectPlacement.EditMode
                 Case 0
-                    graphic.DrawImage(ObjectPlacement.TB.Image, ObjectPlacement.PlacementRect, BlockSourceRect(), GraphicsUnit.Pixel)
+                    Draw.DrawImage(ObjectPlacement.TB.Image, ObjectPlacement.PlacementRect, BlockSourceRect(), GraphicsUnit.Pixel)
                 Case 2
                     graphic.DrawImage(ObjectPlacement.TB.Image, ObjectPlacement.PlacementRect, BGOSourceRect(), GraphicsUnit.Pixel)
                 Case 3
@@ -265,7 +266,7 @@ Public Class LevelWindow
             End Select
         End If
 
-        graphic.ResetTransform()
+        Draw.ResetTransform()
 
         If ObjectPlacement.EditMode <> 1 Then
             Draw.DrawImage(My.Resources.Pointer, ObjectPlacement.PointRec)
@@ -273,7 +274,8 @@ Public Class LevelWindow
             Draw.DrawImage(My.Resources.Eraser, ObjectPlacement.EraseRec)
         End If
 
-        Draw.ResetTransform()
+        'graphic.ResetTransform()
+        'Draw.ResetTransform()
         FPScounter += 1
     End Sub
 

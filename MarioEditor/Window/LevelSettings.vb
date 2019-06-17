@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+
 Public Class LevelSettings
 
     Private Sub Level_Manager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -11,7 +12,7 @@ Public Class LevelSettings
             MusicComboBox.Items.Add(Path.GetFileName(file))
         Next
 
-        For sections = 0 To 21
+        For sections = 1 To 21
             SectionsComboBox.Items.Add(String.Format("Section {0}", sections))
         Next
 
@@ -95,5 +96,60 @@ Public Class LevelSettings
 
     Private Sub SectionsComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SectionsComboBox.SelectedIndexChanged
         LevelWindow.LevelData.LoadSection(SectionsComboBox.SelectedIndex)
+
+        Select Case SectionsComboBox.SelectedIndex + 1
+            Case 1
+                ScrollToSection(New Point(-200000, -200000))
+            Case 2
+                ScrollToSection(New Point(-180000, -180000))
+            Case 3
+                ScrollToSection(New Point(-160000, -160000))
+            Case 4
+                ScrollToSection(New Point(-140000, -140000))
+            Case 5
+                ScrollToSection(New Point(-120000, -120000))
+            Case 6
+                ScrollToSection(New Point(-100000, -100000))
+            Case 7
+                ScrollToSection(New Point(-80000, -80000))
+            Case 8
+                ScrollToSection(New Point(-60000, -60000))
+            Case 9
+                ScrollToSection(New Point(-40000, -40000))
+            Case 10
+                ScrollToSection(New Point(-20000, -20000))
+            Case 11
+                ScrollToSection(New Point(0, 0))
+            Case 12
+                ScrollToSection(New Point(20000, 20000))
+            Case 13
+                ScrollToSection(New Point(40000, 40000))
+            Case 14
+                ScrollToSection(New Point(60000, 60000))
+            Case 15
+                ScrollToSection(New Point(80000, 80000))
+            Case 16
+                ScrollToSection(New Point(100000, 100000))
+            Case 17
+                ScrollToSection(New Point(120000, 120000))
+            Case 18
+                ScrollToSection(New Point(140000, 140000))
+            Case 19
+                ScrollToSection(New Point(160000, 160000))
+            Case 20
+                ScrollToSection(New Point(180000, 180000))
+            Case 21
+                ScrollToSection(New Point(200000, 200000))
+        End Select
+    End Sub
+
+    Private Sub ScrollToSection(location As Point)
+        LevelWindow.HorizontalScroll.Maximum = LevelWindow.AutoScrollMinSize.Width
+        LevelWindow.VerticalScroll.Maximum = LevelWindow.AutoScrollMinSize.Height
+
+        location.Offset(419998 * 0.5, 419998 * 0.5)
+        LevelWindow.HorizontalScroll.Value = location.X
+        LevelWindow.VerticalScroll.Value = location.Y
+        LevelWindow.PerformLayout()
     End Sub
 End Class

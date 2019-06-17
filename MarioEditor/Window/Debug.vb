@@ -11,8 +11,8 @@ Public Class Debug
     Public CPU As New PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, True)
 
     Public Shared Sub MouseLoc(X As Integer, Y As Integer)
-        Debug.cursorXLabel.Text = $"X: {X}"
-        Debug.cursorYLabel.Text = $"X: {Y}"
+        Debug.cursorXLabel.Text = $"X: {X * 32} | {LevelWindow.AutoScrollPosition.X}"
+        Debug.cursorYLabel.Text = $"Y: {Y * 32} | {LevelWindow.AutoScrollPosition.Y}"
     End Sub
 
     Private Sub Timer1_Tick(sender As System.Object, e As System.EventArgs) Handles Timer1.Tick
@@ -56,5 +56,9 @@ Public Class Debug
         blockCountLabel.Text = "Blocks: " & TotalBlocks
         bgoCountLabel.Text = "BGOs: " & TotalBGOs
         npcCountLabel.Text = "NPCs: " & TotalNPCs
+    End Sub
+
+    Private Sub Debug_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

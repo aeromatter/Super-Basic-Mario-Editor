@@ -36,7 +36,7 @@ Public Class Level
     Private Sections(21) As Section
     Public Shared LastSectionSelected As Integer
     Private Settings As SectionSettings
-    Public SectionBounds As New Rectangle(0, 0, 25 * 32, 18 * 32)
+    Public SectionBounds As New Rectangle(0, 0, 25 * 32, 19 * 32)
     Public Shared Background As New SectionBackground
     Private parseOutput As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private primaryBackgroundName As String = String.Empty
@@ -104,12 +104,13 @@ Public Class Level
             bounds.Width = (25 * 32)
         End If
 
-        If bounds.Height < (18 * 32) Then
-            bounds.Height = (18 * 32)
+        If bounds.Height < (19 * 32) Then
+            bounds.Height = (19 * 32)
         End If
         SectionBounds = bounds
 
-        LevelWindow.AutoScrollMinSize = New Size(bounds.Width, bounds.Height)
+        LevelWindow.AutoScrollMinSize = New Size(419998, 419998)
+
     End Sub
 
     Public Sub ReadBackgroundConfigs(ByVal backgroundID As Integer)
