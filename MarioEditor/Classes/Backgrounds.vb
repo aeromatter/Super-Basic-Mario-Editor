@@ -3,6 +3,7 @@ Imports System.Xml
 Public Structure BGO
     Dim ID As Integer
     Dim PositionRect As Rectangle
+    Dim Layer As String
     Dim BGOSize As Size
     Dim BGOGraphicsSize As Size
     <Serialization.XmlIgnore()>

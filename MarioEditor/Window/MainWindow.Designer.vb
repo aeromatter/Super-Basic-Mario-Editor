@@ -570,7 +570,6 @@ Partial Class MainWindow
         Me.Controls.Add(Me.MainMenuStrip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MainMenuStrip
         Me.Name = "MainWindow"
         Me.Text = "Super Mario Basics  - Level Editor - Beta 1.0 - www.SuperMarioBrothersX.org"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

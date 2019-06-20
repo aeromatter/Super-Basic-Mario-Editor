@@ -37,6 +37,7 @@
         BlockSets.PositionRect = PlacementRect
         BlockSets.ID = SelectedBlock
 
+        BlockSets.Layer = SelectedLayer
         BlockSets.IMG = TB.Image
         BlockSets.PhysicalSize = Blocks.BlockSize
         BlockSets.GraphicSize = Blocks.GraphicsSize

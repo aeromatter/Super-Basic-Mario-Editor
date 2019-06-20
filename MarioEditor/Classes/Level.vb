@@ -14,9 +14,6 @@ Public Class Level
         Public background As SectionBackground
         Public music As String
         Public bounds As Rectangle
-        Public blocks As List(Of Block)
-        Public bgos As List(Of BGO)
-        Public npcs As List(Of NPCsets)
     End Structure
 
     Public Structure SectionBackground
@@ -33,7 +30,7 @@ Public Class Level
     Public Shared P1start As Rectangle
     Public Shared P2start As Rectangle
 
-    Private Sections(21) As Section
+    Public Shared Sections(21) As Section
     Public Shared LastSectionSelected As Integer
     Private Settings As SectionSettings
     Public SectionBounds As New Rectangle(0, 0, 25 * 32, 19 * 32)
@@ -50,36 +47,14 @@ Public Class Level
 
     Public Sub SetSection(index)
         Dim sect As New Section
-        sect.blocks = Blocks.Tiles
-        sect.bgos = Backgrounds.BGOs
-        sect.npcs = NPC.NPCsets
         sect.settings = Settings
         sect.music = Music
         sect.background = Background
-        sect.bounds = SectionBounds
-
+        sect.bounds = GetDefaultSectionLocations(index)
         Sections(index) = sect
     End Sub
 
     Public Sub GetSection(index As Integer)
-        If Sections(index).blocks IsNot Nothing Then
-            Blocks.Tiles = Sections(index).blocks
-        Else
-            Blocks.Tiles = New List(Of Block)
-        End If
-
-        If Sections(index).bgos IsNot Nothing Then
-            Backgrounds.BGOs = Sections(index).bgos
-        Else
-            Backgrounds.BGOs = New List(Of BGO)
-        End If
-
-        If Sections(index).npcs IsNot Nothing Then
-            NPC.NPCsets = Sections(index).npcs
-        Else
-            NPC.NPCsets = New List(Of NPCsets)
-        End If
-
         Settings = Sections(index).settings
         Music = Sections(index).music
         Background = Sections(index).background
@@ -94,6 +69,60 @@ Public Class Level
         ToggleSettings(Settings)
         LevelWindow.Refresh()
     End Sub
+
+    Public Sub SetDefaultSections()
+        For i = 1 To 21
+            SetSection(i)
+        Next
+    End Sub
+
+    Private Function GetDefaultSectionLocations(index As Integer) As Rectangle
+        Select Case index
+            Case 1
+                Return New Rectangle(-200000, -200000, 800, 600)
+            Case 2
+                Return New Rectangle(-180000, -180000, 800, 600)
+            Case 3
+                Return New Rectangle(-160000, -160000, 800, 600)
+            Case 4
+                Return New Rectangle(-140000, -140000, 800, 600)
+            Case 5
+                Return New Rectangle(-120000, -120000, 800, 600)
+            Case 6
+                Return New Rectangle(-100000, -100000, 800, 600)
+            Case 7
+                Return New Rectangle(-80000, -80000, 800, 600)
+            Case 8
+                Return New Rectangle(-60000, -60000, 800, 600)
+            Case 9
+                Return New Rectangle(-40000, -40000, 800, 600)
+            Case 10
+                Return New Rectangle(-20000, -20000, 800, 600)
+            Case 11
+                Return New Rectangle(0, 0, 800, 600)
+            Case 12
+                Return New Rectangle(20000, 20000, 800, 600)
+            Case 13
+                Return New Rectangle(40000, 40000, 800, 600)
+            Case 14
+                Return New Rectangle(60000, 60000, 800, 600)
+            Case 15
+                Return New Rectangle(80000, 80000, 800, 600)
+            Case 16
+                Return New Rectangle(100000, 100000, 800, 600)
+            Case 17
+                Return New Rectangle(120000, 120000, 800, 600)
+            Case 18
+                Return New Rectangle(140000, 140000, 800, 600)
+            Case 19
+                Return New Rectangle(160000, 160000, 800, 600)
+            Case 20
+                Return New Rectangle(180000, 180000, 800, 600)
+            Case 21
+                Return New Rectangle(200000, 200000, 800, 600)
+        End Select
+
+    End Function
 
     Public Sub ToggleSettings(input As SectionSettings)
         Settings = input

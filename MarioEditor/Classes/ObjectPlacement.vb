@@ -14,14 +14,15 @@ Public Class ObjectPlacement
     'Mouse Location Variables
     Public Shared mouselocX As Integer
     Public Shared mouselocY As Integer
-    Public Shared mouseToScreen As Point 'TODO: Implement
-    Public Shared mouseToLevel As Point 'TODO: Implement
+    Public Shared mouseToScreen As Point
+    Public Shared mouseToLevel As Point
 
     'Placement IDs | Defaults Set
     Public Shared SelectedBlock As Integer = 1
     Public Shared SelectedBGO As Integer = 1
     Public Shared SelectedNPC As Integer = 1
     Public Shared LastBlock As Integer = 1
+    Public Shared SelectedLayer As String = "Default"
 
     'Detect Mouse Inputs
     Public Shared MouseIsDown As Boolean = False

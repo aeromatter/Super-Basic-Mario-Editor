@@ -54,7 +54,8 @@ Public Class LevelWindow
         Show()
         Focus()
 
-        LevelData.LoadSection(0)
+        LevelData.SetDefaultSections()
+        'LevelData.LoadSection(0)
 
 
         Dim blocks As New Blocks
@@ -144,6 +145,12 @@ Public Class LevelWindow
         Draw.TranslateTransform((419998 * 0.5) - HorizontalScroll.Value, (419998 * 0.5) - VerticalScroll.Value)
 
         Dim bg As Graphics = Draw
+
+        For i = 1 To 21
+            If Draw.IsVisible(LevelData.Sections(i).bounds) Then
+                Draw.FillRectangle(New SolidBrush(Color.Black), LevelData.Sections(i).bounds)
+            End If
+        Next
 
         Select Case Level.Background.backgroundStyle
             Case 1

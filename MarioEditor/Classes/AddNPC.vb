@@ -5,6 +5,7 @@
         NPCSets.PositionRect = PlacementRect
 
         NPCSets.IMG = TB.Image
+        NPCSets.Layer = SelectedLayer
         NPCSets.NPCSize = NPC.NPCSize
         NPCSets.ID = SelectedNPC
         NPCSets.NPCGraphicsSize = NPC.NPCGraphicsSize

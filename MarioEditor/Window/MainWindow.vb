@@ -169,4 +169,10 @@ Public Class MainWindow
             ObjectPlacement.AlignFactor = 1
         End If
     End Sub
+
+    Private Sub LayersCtrlLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LayersCtrlLToolStripMenuItem.Click
+        Layers.MdiParent = Me
+        Layers.Location = New Point(LevelWindow.Width, 0)
+        Layers.Show()
+    End Sub
 End Class

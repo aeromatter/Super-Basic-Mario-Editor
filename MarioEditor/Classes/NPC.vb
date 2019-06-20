@@ -3,6 +3,7 @@ Imports System.Xml
 Public Structure NPCsets
     Dim ID As Integer
     Dim PositionRect As Rectangle
+    Dim Layer As String
     Dim NPCSize As Size
     <Serialization.XmlIgnore()>
     Dim IMG As Image
