@@ -32,7 +32,7 @@ Partial Class Layers
         '
         Me.layerNameBox.Location = New System.Drawing.Point(12, 12)
         Me.layerNameBox.Name = "layerNameBox"
-        Me.layerNameBox.Size = New System.Drawing.Size(260, 20)
+        Me.layerNameBox.Size = New System.Drawing.Size(181, 20)
         Me.layerNameBox.TabIndex = 0
         '
         'LayersCheckedList
@@ -40,23 +40,23 @@ Partial Class Layers
         Me.LayersCheckedList.FormattingEnabled = True
         Me.LayersCheckedList.Location = New System.Drawing.Point(12, 38)
         Me.LayersCheckedList.Name = "LayersCheckedList"
-        Me.LayersCheckedList.Size = New System.Drawing.Size(260, 184)
+        Me.LayersCheckedList.Size = New System.Drawing.Size(181, 184)
         Me.LayersCheckedList.TabIndex = 1
         '
         'AddLayerButton
         '
         Me.AddLayerButton.Location = New System.Drawing.Point(12, 226)
         Me.AddLayerButton.Name = "AddLayerButton"
-        Me.AddLayerButton.Size = New System.Drawing.Size(75, 23)
+        Me.AddLayerButton.Size = New System.Drawing.Size(63, 23)
         Me.AddLayerButton.TabIndex = 2
         Me.AddLayerButton.Text = "Add"
         Me.AddLayerButton.UseVisualStyleBackColor = True
         '
         'RemoveLayerButton
         '
-        Me.RemoveLayerButton.Location = New System.Drawing.Point(197, 226)
+        Me.RemoveLayerButton.Location = New System.Drawing.Point(130, 226)
         Me.RemoveLayerButton.Name = "RemoveLayerButton"
-        Me.RemoveLayerButton.Size = New System.Drawing.Size(75, 23)
+        Me.RemoveLayerButton.Size = New System.Drawing.Size(63, 23)
         Me.RemoveLayerButton.TabIndex = 3
         Me.RemoveLayerButton.Text = "Remove"
         Me.RemoveLayerButton.UseVisualStyleBackColor = True
@@ -65,7 +65,7 @@ Partial Class Layers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(205, 261)
         Me.Controls.Add(Me.RemoveLayerButton)
         Me.Controls.Add(Me.AddLayerButton)
         Me.Controls.Add(Me.LayersCheckedList)

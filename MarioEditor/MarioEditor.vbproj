@@ -112,6 +112,7 @@
     <Compile Include="Classes\AddPlayerSpawn.vb" />
     <Compile Include="Classes\Audio.vb" />
     <Compile Include="Classes\Eraser.vb" />
+    <Compile Include="Classes\Events.vb" />
     <Compile Include="Classes\ItemCounters.vb" />
     <Compile Include="Classes\ItemSettings.vb" />
     <Compile Include="Classes\Layer.vb" />
@@ -147,6 +148,12 @@
       <DependentUpon>Debug.vb</DependentUpon>
     </Compile>
     <Compile Include="Window\Debug.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\EventsWindow.Designer.vb">
+      <DependentUpon>EventsWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EventsWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Window\Layers.Designer.vb">
@@ -221,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Debug.resx">
       <DependentUpon>Debug.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\EventsWindow.resx">
+      <DependentUpon>EventsWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Layers.resx">
       <DependentUpon>Layers.vb</DependentUpon>

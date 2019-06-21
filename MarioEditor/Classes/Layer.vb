@@ -5,7 +5,8 @@ Public Class Layer
 
     Public Sub CreateDefaultLayers()
         LayerInfo.Add("Default", True)
-        LayerInfo.Add("Destroyed", False)
+        LayerInfo.Add("Destroyed Blocks", False)
+        LayerInfo.Add("Spawned NPCs", True)
     End Sub
 
     Public Sub AddNewLayer(entryName As String, isVisible As Boolean)
