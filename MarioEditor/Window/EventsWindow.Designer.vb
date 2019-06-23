@@ -45,15 +45,15 @@ Partial Class EventsWindow
         Me.NoSmokeCheck = New System.Windows.Forms.CheckBox()
         Me.LayerMovementBox = New System.Windows.Forms.GroupBox()
         Me.VSpeedBox = New System.Windows.Forms.GroupBox()
-        Me.VerticalSpeedText = New System.Windows.Forms.TextBox()
+        Me.VerticalSpeedSpin = New System.Windows.Forms.NumericUpDown()
         Me.HSpeedBox = New System.Windows.Forms.GroupBox()
-        Me.HorizontalSpeedText = New System.Windows.Forms.TextBox()
+        Me.HorizontalSpeedSpin = New System.Windows.Forms.NumericUpDown()
         Me.LayersComboBox = New System.Windows.Forms.ComboBox()
         Me.AutoscrollBox = New System.Windows.Forms.GroupBox()
         Me.AVSpeedBox = New System.Windows.Forms.GroupBox()
-        Me.AVSpeedText = New System.Windows.Forms.TextBox()
+        Me.AVerticalSpeedSpin = New System.Windows.Forms.NumericUpDown()
         Me.AHSpeedBox = New System.Windows.Forms.GroupBox()
-        Me.AHSpeedText = New System.Windows.Forms.TextBox()
+        Me.AHorizontalSpeedSpin = New System.Windows.Forms.NumericUpDown()
         Me.SectionBox = New System.Windows.Forms.GroupBox()
         Me.SectionLabel = New System.Windows.Forms.Label()
         Me.SectionScrollBar = New System.Windows.Forms.HScrollBar()
@@ -100,10 +100,14 @@ Partial Class EventsWindow
         Me.ToggleGroupBox.SuspendLayout()
         Me.LayerMovementBox.SuspendLayout()
         Me.VSpeedBox.SuspendLayout()
+        CType(Me.VerticalSpeedSpin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HSpeedBox.SuspendLayout()
+        CType(Me.HorizontalSpeedSpin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AutoscrollBox.SuspendLayout()
         Me.AVSpeedBox.SuspendLayout()
+        CType(Me.AVerticalSpeedSpin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AHSpeedBox.SuspendLayout()
+        CType(Me.AHorizontalSpeedSpin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SectionBox.SuspendLayout()
         Me.MessageBox.SuspendLayout()
         Me.PlaysoundBox.SuspendLayout()
@@ -333,7 +337,7 @@ Partial Class EventsWindow
         '
         'VSpeedBox
         '
-        Me.VSpeedBox.Controls.Add(Me.VerticalSpeedText)
+        Me.VSpeedBox.Controls.Add(Me.VerticalSpeedSpin)
         Me.VSpeedBox.Location = New System.Drawing.Point(6, 96)
         Me.VSpeedBox.Name = "VSpeedBox"
         Me.VSpeedBox.Size = New System.Drawing.Size(135, 44)
@@ -341,16 +345,16 @@ Partial Class EventsWindow
         Me.VSpeedBox.TabStop = False
         Me.VSpeedBox.Text = "Vertical Speed"
         '
-        'VerticalSpeedText
+        'VerticalSpeedSpin
         '
-        Me.VerticalSpeedText.Location = New System.Drawing.Point(6, 18)
-        Me.VerticalSpeedText.Name = "VerticalSpeedText"
-        Me.VerticalSpeedText.Size = New System.Drawing.Size(123, 20)
-        Me.VerticalSpeedText.TabIndex = 0
+        Me.VerticalSpeedSpin.Location = New System.Drawing.Point(6, 18)
+        Me.VerticalSpeedSpin.Name = "VerticalSpeedSpin"
+        Me.VerticalSpeedSpin.Size = New System.Drawing.Size(123, 20)
+        Me.VerticalSpeedSpin.TabIndex = 1
         '
         'HSpeedBox
         '
-        Me.HSpeedBox.Controls.Add(Me.HorizontalSpeedText)
+        Me.HSpeedBox.Controls.Add(Me.HorizontalSpeedSpin)
         Me.HSpeedBox.Location = New System.Drawing.Point(6, 46)
         Me.HSpeedBox.Name = "HSpeedBox"
         Me.HSpeedBox.Size = New System.Drawing.Size(135, 44)
@@ -358,12 +362,12 @@ Partial Class EventsWindow
         Me.HSpeedBox.TabStop = False
         Me.HSpeedBox.Text = "Horizontal Speed"
         '
-        'HorizontalSpeedText
+        'HorizontalSpeedSpin
         '
-        Me.HorizontalSpeedText.Location = New System.Drawing.Point(6, 18)
-        Me.HorizontalSpeedText.Name = "HorizontalSpeedText"
-        Me.HorizontalSpeedText.Size = New System.Drawing.Size(123, 20)
-        Me.HorizontalSpeedText.TabIndex = 0
+        Me.HorizontalSpeedSpin.Location = New System.Drawing.Point(6, 18)
+        Me.HorizontalSpeedSpin.Name = "HorizontalSpeedSpin"
+        Me.HorizontalSpeedSpin.Size = New System.Drawing.Size(123, 20)
+        Me.HorizontalSpeedSpin.TabIndex = 0
         '
         'LayersComboBox
         '
@@ -387,7 +391,7 @@ Partial Class EventsWindow
         '
         'AVSpeedBox
         '
-        Me.AVSpeedBox.Controls.Add(Me.AVSpeedText)
+        Me.AVSpeedBox.Controls.Add(Me.AVerticalSpeedSpin)
         Me.AVSpeedBox.Location = New System.Drawing.Point(6, 133)
         Me.AVSpeedBox.Name = "AVSpeedBox"
         Me.AVSpeedBox.Size = New System.Drawing.Size(135, 44)
@@ -395,16 +399,16 @@ Partial Class EventsWindow
         Me.AVSpeedBox.TabStop = False
         Me.AVSpeedBox.Text = "Vertical Speed"
         '
-        'AVSpeedText
+        'AVerticalSpeedSpin
         '
-        Me.AVSpeedText.Location = New System.Drawing.Point(6, 18)
-        Me.AVSpeedText.Name = "AVSpeedText"
-        Me.AVSpeedText.Size = New System.Drawing.Size(123, 20)
-        Me.AVSpeedText.TabIndex = 0
+        Me.AVerticalSpeedSpin.Location = New System.Drawing.Point(6, 18)
+        Me.AVerticalSpeedSpin.Name = "AVerticalSpeedSpin"
+        Me.AVerticalSpeedSpin.Size = New System.Drawing.Size(123, 20)
+        Me.AVerticalSpeedSpin.TabIndex = 1
         '
         'AHSpeedBox
         '
-        Me.AHSpeedBox.Controls.Add(Me.AHSpeedText)
+        Me.AHSpeedBox.Controls.Add(Me.AHorizontalSpeedSpin)
         Me.AHSpeedBox.Location = New System.Drawing.Point(6, 83)
         Me.AHSpeedBox.Name = "AHSpeedBox"
         Me.AHSpeedBox.Size = New System.Drawing.Size(135, 44)
@@ -412,12 +416,12 @@ Partial Class EventsWindow
         Me.AHSpeedBox.TabStop = False
         Me.AHSpeedBox.Text = "Horizontal Speed"
         '
-        'AHSpeedText
+        'AHorizontalSpeedSpin
         '
-        Me.AHSpeedText.Location = New System.Drawing.Point(6, 18)
-        Me.AHSpeedText.Name = "AHSpeedText"
-        Me.AHSpeedText.Size = New System.Drawing.Size(123, 20)
-        Me.AHSpeedText.TabIndex = 0
+        Me.AHorizontalSpeedSpin.Location = New System.Drawing.Point(6, 18)
+        Me.AHorizontalSpeedSpin.Name = "AHorizontalSpeedSpin"
+        Me.AHorizontalSpeedSpin.Size = New System.Drawing.Size(123, 20)
+        Me.AHorizontalSpeedSpin.TabIndex = 1
         '
         'SectionBox
         '
@@ -796,7 +800,7 @@ Partial Class EventsWindow
         'UpCheck
         '
         Me.UpCheck.AutoSize = True
-        Me.UpCheck.Location = New System.Drawing.Point(6, 19)
+        Me.UpCheck.Location = New System.Drawing.Point(6, 16)
         Me.UpCheck.Name = "UpCheck"
         Me.UpCheck.Size = New System.Drawing.Size(40, 17)
         Me.UpCheck.TabIndex = 5
@@ -833,14 +837,14 @@ Partial Class EventsWindow
         Me.ToggleGroupBox.ResumeLayout(False)
         Me.LayerMovementBox.ResumeLayout(False)
         Me.VSpeedBox.ResumeLayout(False)
-        Me.VSpeedBox.PerformLayout()
+        CType(Me.VerticalSpeedSpin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HSpeedBox.ResumeLayout(False)
-        Me.HSpeedBox.PerformLayout()
+        CType(Me.HorizontalSpeedSpin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AutoscrollBox.ResumeLayout(False)
         Me.AVSpeedBox.ResumeLayout(False)
-        Me.AVSpeedBox.PerformLayout()
+        CType(Me.AVerticalSpeedSpin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AHSpeedBox.ResumeLayout(False)
-        Me.AHSpeedBox.PerformLayout()
+        CType(Me.AHorizontalSpeedSpin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SectionBox.ResumeLayout(False)
         Me.SectionBox.PerformLayout()
         Me.MessageBox.ResumeLayout(False)
@@ -884,15 +888,11 @@ Partial Class EventsWindow
     Friend WithEvents NoSmokeCheck As CheckBox
     Friend WithEvents LayerMovementBox As GroupBox
     Friend WithEvents VSpeedBox As GroupBox
-    Friend WithEvents VerticalSpeedText As TextBox
     Friend WithEvents HSpeedBox As GroupBox
-    Friend WithEvents HorizontalSpeedText As TextBox
     Friend WithEvents LayersComboBox As ComboBox
     Friend WithEvents AutoscrollBox As GroupBox
     Friend WithEvents AVSpeedBox As GroupBox
-    Friend WithEvents AVSpeedText As TextBox
     Friend WithEvents AHSpeedBox As GroupBox
-    Friend WithEvents AHSpeedText As TextBox
     Friend WithEvents SectionBox As GroupBox
     Friend WithEvents SectionLabel As Label
     Friend WithEvents SectionScrollBar As HScrollBar
@@ -932,4 +932,8 @@ Partial Class EventsWindow
     Friend WithEvents LeftCheck As CheckBox
     Friend WithEvents DownCheck As CheckBox
     Friend WithEvents UpCheck As CheckBox
+    Friend WithEvents VerticalSpeedSpin As NumericUpDown
+    Friend WithEvents HorizontalSpeedSpin As NumericUpDown
+    Friend WithEvents AVerticalSpeedSpin As NumericUpDown
+    Friend WithEvents AHorizontalSpeedSpin As NumericUpDown
 End Class

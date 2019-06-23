@@ -7,6 +7,9 @@ Public Class MainWindow
 
         LevelWindow.MdiParent = Me
         LevelWindow.Show()
+
+        Layers.CreateDefaultLayers()
+        EventsWindow.CreateDefaultEvents()
     End Sub
 
     Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles BlocksButton.Click
@@ -174,5 +177,11 @@ Public Class MainWindow
         Layers.MdiParent = Me
         Layers.Location = New Point(LevelWindow.Width, 0)
         Layers.Show()
+    End Sub
+
+    Private Sub EventsCtrlEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EventsCtrlEToolStripMenuItem.Click
+        EventsWindow.MdiParent = Me
+        EventsWindow.Location = New Point(LevelWindow.Width, 0)
+        EventsWindow.Show()
     End Sub
 End Class

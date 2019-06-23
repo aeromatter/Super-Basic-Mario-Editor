@@ -17,6 +17,7 @@ Public Class Level
     End Structure
 
     Public Structure SectionBackground
+        Public ID As Integer
         Public primaryBackground As String
         Public secondaryBackground As String
         Public backgroundStyle As Integer
