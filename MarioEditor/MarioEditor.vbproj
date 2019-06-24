@@ -110,11 +110,11 @@
     <Compile Include="Classes\AddBlock.vb" />
     <Compile Include="Classes\AddNPC.vb" />
     <Compile Include="Classes\AddPlayerSpawn.vb" />
+    <Compile Include="Classes\AddWarp.vb" />
     <Compile Include="Classes\Audio.vb" />
     <Compile Include="Classes\Eraser.vb" />
     <Compile Include="Classes\ItemCounters.vb" />
     <Compile Include="Classes\ItemSettings.vb" />
-    <Compile Include="Classes\Layer.vb" />
     <Compile Include="Classes\LevelFile.vb" />
     <Compile Include="Classes\KeyboardInputs.vb" />
     <Compile Include="Classes\libZPlay.vb" />
@@ -214,6 +214,12 @@
     <Compile Include="Window\TestSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Window\WarpsWindow.Designer.vb">
+      <DependentUpon>WarpsWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\WarpsWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Window\BGOs.resx">
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\TestSettings.resx">
       <DependentUpon>TestSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\WarpsWindow.resx">
+      <DependentUpon>WarpsWindow.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

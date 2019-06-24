@@ -448,7 +448,6 @@ Partial Class MainWindow
         '
         'warpsButton
         '
-        Me.warpsButton.Enabled = False
         Me.warpsButton.Location = New System.Drawing.Point(672, 3)
         Me.warpsButton.Name = "warpsButton"
         Me.warpsButton.Size = New System.Drawing.Size(104, 33)

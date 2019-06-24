@@ -237,6 +237,12 @@ Public Class LevelWindow
             End If
         Next
 
+        For Each w As WarpSettings In Warps.LevelWarps.ToList
+            If graphic.IsVisible(w.location) Then
+                graphic.DrawRectangle(New Pen(Color.Magenta, 3), w.location)
+            End If
+        Next
+
         If ObjectPlacement.MouseIsMoving Then
             Select Case ObjectPlacement.EditMode
                 Case 0
@@ -270,6 +276,8 @@ Public Class LevelWindow
                                 graphic.DrawImage(ObjectPlacement.TB.Image, ObjectPlacement.PlacementRect, New Rectangle(0, NPC.NPCGraphicsSize.Height / 3, NPC.NPCGraphicsSize.Width, NPC.NPCSize.Height), GraphicsUnit.Pixel)
                             End If
                     End Select
+                Case 7
+                    graphic.DrawRectangle(New Pen(Color.Magenta, 3), ObjectPlacement.PlacementRect)
             End Select
         End If
 

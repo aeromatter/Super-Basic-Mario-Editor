@@ -1,12 +1,12 @@
 ﻿Public Enum EditorMode
-    Block
-    Eraser
-    BGO
-    Player1
-    Player2
-    NPC
-    Warp
-    Selection
+    Block = 0
+    Eraser = 1
+    BGO = 2
+    Player1 = 3
+    Player2 = 4
+    NPC = 5
+    Selection = 6
+    Warp = 7
 End Enum
 Public Class ObjectPlacement
     Public Shared EditMode As Integer = 0
@@ -33,6 +33,7 @@ Public Class ObjectPlacement
     Public BlockSets As Block
     Public NPCSets As NPCsets
     Public BGOSets As BGO
+    Public WarpSets As WarpSettings
 
     Public Shared TB As TextureBrush
 
@@ -153,6 +154,10 @@ Public Class ObjectPlacement
                 Dim SelectObject As New SelectObject
                 PlacementRect = New Rectangle(mouseToLevel.X * 32, mouseToLevel.Y * 32, 32, 32)
                 SelectObject.GetSelection()
+            Case EditorMode.Warp
+                Dim AddWarp As New AddWarp
+                PlacementRect = New Rectangle(mouseToLevel.X * 32, mouseToLevel.Y * 32, 32, 32)
+                AddWarp.SetWarp()
         End Select
 
         PointRec = New Rectangle(mouselocX, mouselocY, My.Resources.Pointer.Width, My.Resources.Pointer.Height)

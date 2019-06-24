@@ -128,8 +128,6 @@ Public Class MainWindow
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles SelectionButton.Click
-        ObjectPlacement.EditMode = 6
-
         LevelSettings.Hide()
         BlocksAndTiles.Hide()
         BGOs_Form.Hide()
@@ -183,5 +181,13 @@ Public Class MainWindow
         EventsWindow.MdiParent = Me
         EventsWindow.Location = New Point(LevelWindow.Width, 0)
         EventsWindow.Show()
+    End Sub
+
+    Private Sub WarpsButton_Click(sender As Object, e As EventArgs) Handles warpsButton.Click
+        WarpsWindow.MdiParent = Me
+        WarpsWindow.Location = New Point(0, LevelWindow.Height)
+        WarpsWindow.Show()
+
+        ObjectPlacement.EditMode = 7
     End Sub
 End Class

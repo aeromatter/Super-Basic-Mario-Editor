@@ -33,6 +33,8 @@ Public Class Debug
                     modeLabel.Text = "Select Mode: NPC"
                 Case 6
                     modeLabel.Text = "Select Mode: Selection"
+                Case 7
+                    modeLabel.Text = "Select Mode: Warps"
             End Select
 
             blockIDLabel.Text = "Block ID: " & ObjectPlacement.SelectedBlock
