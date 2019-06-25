@@ -4,7 +4,7 @@
     Public Sub SetWarp()
         WarpSets.entranceDir = Warps.warpEntranceDir
         WarpSets.exitDir = Warps.warpExitDir
-        WarpSets.location = PlacementRect
+        WarpSets.entranceLocation = PlacementRect
         WarpSets.passage = Warps.passageType
         WarpSets.placement = Warps.placementType
         WarpSets.starsNeeded = Warps.stars

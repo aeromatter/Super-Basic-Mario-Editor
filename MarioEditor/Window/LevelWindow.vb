@@ -237,9 +237,15 @@ Public Class LevelWindow
             End If
         Next
 
-        For Each w As WarpSettings In Warps.LevelWarps.ToList
-            If graphic.IsVisible(w.location) Then
-                graphic.DrawRectangle(New Pen(Color.Magenta, 3), w.location)
+        For Each i As Liquid In Liquids.LiquidInfo.ToList
+            If graphic.IsVisible(i.LiquidArea) Then
+                graphic.DrawRectangle(New Pen(Color.Green, 3), i.LiquidArea)
+            End If
+        Next
+
+        For Each i As WarpSettings In Warps.LevelWarps.ToList
+            If graphic.IsVisible(i.entranceLocation) Then
+                graphic.DrawRectangle(New Pen(Color.Magenta, 3), i.entranceLocation)
             End If
         Next
 
@@ -278,6 +284,8 @@ Public Class LevelWindow
                     End Select
                 Case 7
                     graphic.DrawRectangle(New Pen(Color.Magenta, 3), ObjectPlacement.PlacementRect)
+                Case 8
+                    graphic.DrawRectangle(New Pen(Color.Green, 3), ObjectPlacement.PlacementRect)
             End Select
         End If
 

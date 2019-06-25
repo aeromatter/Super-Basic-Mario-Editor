@@ -5,7 +5,10 @@ Imports System.Xml
 Public Structure Block
     Dim ID As Integer
     Dim PositionRect As Rectangle
-    Dim Layer As String
+    Dim LayerName As String
+    Dim DestroyEvent As String
+    Dim HitEvent As String
+    Dim NoMoreObjectsInLayer As String
     <Serialization.XmlIgnore()>
     Dim IMG As Image
     Dim PhysicalSize As Size

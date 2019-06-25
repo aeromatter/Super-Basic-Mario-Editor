@@ -3,7 +3,7 @@
 
     Public Sub SetBGO()
         BGOSets.PositionRect = PlacementRect
-        BGOSets.Layer = SelectedLayer
+        BGOSets.LayerName = SelectedLayer
         BGOSets.IMG = TB.Image
         BGOSets.BGOSize = Backgrounds.BGOSize
         BGOSets.ID = SelectedBGO

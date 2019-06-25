@@ -429,7 +429,6 @@ Partial Class MainWindow
         '
         'waterButton
         '
-        Me.waterButton.Enabled = False
         Me.waterButton.Location = New System.Drawing.Point(782, 3)
         Me.waterButton.Name = "waterButton"
         Me.waterButton.Size = New System.Drawing.Size(104, 33)

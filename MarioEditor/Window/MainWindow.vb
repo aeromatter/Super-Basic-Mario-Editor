@@ -190,4 +190,12 @@ Public Class MainWindow
 
         ObjectPlacement.EditMode = 7
     End Sub
+
+    Private Sub WaterButton_Click(sender As Object, e As EventArgs) Handles waterButton.Click
+        LiquidsWindow.MdiParent = Me
+        LiquidsWindow.Location = New Point(0, LevelWindow.Height)
+        LiquidsWindow.Show()
+
+        ObjectPlacement.EditMode = 8
+    End Sub
 End Class

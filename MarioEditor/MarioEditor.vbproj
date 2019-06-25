@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Classes\AddBGO.vb" />
     <Compile Include="Classes\AddBlock.vb" />
+    <Compile Include="Classes\AddLiquid.vb" />
     <Compile Include="Classes\AddNPC.vb" />
     <Compile Include="Classes\AddPlayerSpawn.vb" />
     <Compile Include="Classes\AddWarp.vb" />
@@ -165,6 +166,12 @@
       <DependentUpon>LevelSettings.vb</DependentUpon>
     </Compile>
     <Compile Include="Window\LevelSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\LiquidsWindow.Designer.vb">
+      <DependentUpon>LiquidsWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\LiquidsWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Window\MainWindow.vb">
@@ -242,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\LevelSettings.resx">
       <DependentUpon>LevelSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\LiquidsWindow.resx">
+      <DependentUpon>LiquidsWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainWindow.resx">
       <DependentUpon>MainWindow.vb</DependentUpon>

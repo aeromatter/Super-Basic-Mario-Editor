@@ -71,12 +71,14 @@ Public Class LevelFile
         writer.WriteLine("next")
         WriteSMBX64BackgroundObjects()
         writer.WriteLine("next")
-        'WriteSMBX64Warps()
-        'next
-        'WriteSMBX64Liquids()
-        'next
-        'WriteSMBX64Layers()
-        'next
+        WriteSMBX64NPCs()
+        writer.WriteLine("next")
+        WriteSMBX64Warps()
+        writer.WriteLine("next")
+        WriteSMBX64Liquids()
+        writer.WriteLine("next")
+        WriteSMBX64Layers()
+        writer.WriteLine("next")
         'WriteSMBX64Events()
         'EOF
     End Sub
@@ -126,10 +128,10 @@ Public Class LevelFile
             writer.WriteLine(Blocks.Tiles(i).ContainItem)
             writer.WriteLine(Blocks.Tiles(i).Invisible)
             writer.WriteLine(Blocks.Tiles(i).Slip)
-            'Write layer name
-            'Write destroy event
-            'Write hit event
-            'Write no more objects in layer event
+            writer.WriteLine(Blocks.Tiles(i).LayerName)
+            writer.WriteLine(Blocks.Tiles(i).DestroyEvent)
+            writer.WriteLine(Blocks.Tiles(i).HitEvent)
+            writer.WriteLine(Blocks.Tiles(i).NoMoreObjectsInLayer)
         Next
     End Sub
 
@@ -138,7 +140,7 @@ Public Class LevelFile
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.X)
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.Y)
             writer.WriteLine(Backgrounds.BGOs(i).ID)
-            'Write layer name
+            writer.WriteLine(Backgrounds.BGOs(i).LayerName)
         Next
     End Sub
 
@@ -164,6 +166,47 @@ Public Class LevelFile
             'Write Talk event
             'Write no more obj event
             'Write attack to layer
+        Next
+    End Sub
+
+    Private Sub WriteSMBX64Warps()
+        For i = 0 To Warps.LevelWarps.Count
+            writer.WriteLine(Warps.LevelWarps(i).entranceLocation.X)
+            writer.WriteLine(Warps.LevelWarps(i).entranceLocation.Y)
+            writer.WriteLine(Warps.LevelWarps(i).exitLocation.X)
+            writer.WriteLine(Warps.LevelWarps(i).exitLocation.Y)
+            writer.WriteLine(Warps.LevelWarps(i).entranceDir)
+            writer.WriteLine(Warps.LevelWarps(i).exitDir)
+            writer.WriteLine(Warps.LevelWarps(i).warp)
+            'Write warp to level
+            'Write normal entrance
+            'Write level entrance
+            'Write level exit
+            'Write map warp X or -1 for empty
+            'Write map warp Y or -1 for empty
+            'Write stars needed
+            'Write layer name
+            writer.WriteLine("#FALSE#") 'Unused value
+            writer.WriteLine(Warps.LevelWarps(i).passage) 'TODO: Write values for Yoshi, NPCs, and Locked
+        Next
+    End Sub
+
+    Private Sub WriteSMBX64Liquids()
+        For i = 0 To Liquids.LiquidInfo.Count
+            writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.X)
+            writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Y)
+            writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Width)
+            writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Height)
+            writer.WriteLine("0") 'Unused value
+            writer.WriteLine(Liquids.LiquidInfo(i).isQuicksand)
+            'Layer name
+        Next
+    End Sub
+
+    Private Sub WriteSMBX64Layers()
+        For i = 0 To Layers.LayerInfo.Count
+            writer.WriteLine(Layers.LayerInfo.Keys(i))
+            writer.WriteLine(Layers.LayerInfo.Values(i))
         Next
     End Sub
 End Class

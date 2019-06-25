@@ -7,6 +7,7 @@
     NPC = 5
     Selection = 6
     Warp = 7
+    Liquid = 8
 End Enum
 Public Class ObjectPlacement
     Public Shared EditMode As Integer = 0
@@ -34,6 +35,7 @@ Public Class ObjectPlacement
     Public NPCSets As NPCsets
     Public BGOSets As BGO
     Public WarpSets As WarpSettings
+    Public LiquidSets As Liquid
 
     Public Shared TB As TextureBrush
 
@@ -158,6 +160,10 @@ Public Class ObjectPlacement
                 Dim AddWarp As New AddWarp
                 PlacementRect = New Rectangle(mouseToLevel.X * 32, mouseToLevel.Y * 32, 32, 32)
                 AddWarp.SetWarp()
+            Case EditorMode.Liquid
+                Dim AddLiquid As New AddLiquid
+                PlacementRect = New Rectangle(mouseToLevel.X * 32, mouseToLevel.Y * 32, Liquids.LiquidArea.Width, Liquids.LiquidArea.Height)
+                AddLiquid.SetLiquid()
         End Select
 
         PointRec = New Rectangle(mouselocX, mouselocY, My.Resources.Pointer.Width, My.Resources.Pointer.Height)
