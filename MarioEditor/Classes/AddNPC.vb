@@ -5,7 +5,7 @@
         NPCSets.PositionRect = PlacementRect
 
         NPCSets.IMG = TB.Image
-        NPCSets.Layer = SelectedLayer
+        NPCSets.LayerName = SelectedLayer
         NPCSets.NPCSize = NPC.NPCSize
         NPCSets.ID = SelectedNPC
         NPCSets.NPCGraphicsSize = NPC.NPCGraphicsSize
@@ -13,7 +13,7 @@
         NPCSets.AI = NPC.AI
         NPCSets.Direction = NPC.Direction
         NPCSets.HasGravity = NPC.HasGravity
-        NPCSets.MSG = NPC.Message
+        NPCSets.message = NPC.Message
         NPCSets.MoveSpeed = NPC.MoveSpeed
         NPCSets.MetroidGlass = NPC.MetroidGlass
         NPCSets.NPCcollide = NPC.NPCcollide

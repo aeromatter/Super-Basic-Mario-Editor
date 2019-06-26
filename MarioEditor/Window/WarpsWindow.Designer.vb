@@ -43,20 +43,20 @@ Partial Class WarpsWindow
         Me.PipeWarpRadio = New System.Windows.Forms.RadioButton()
         Me.LevelExitGroup = New System.Windows.Forms.GroupBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.MapYSpin = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.MapXSpin = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ExitLevelCheck = New System.Windows.Forms.CheckBox()
         Me.WarpToLevelGroup = New System.Windows.Forms.GroupBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.LevelEntranceCheck = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.WarpValueScrollbar = New System.Windows.Forms.HScrollBar()
+        Me.WarpLevelNameText = New System.Windows.Forms.TextBox()
         Me.SettingsGroup = New System.Windows.Forms.GroupBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.LockedCheck = New System.Windows.Forms.CheckBox()
+        Me.NPCCheck = New System.Windows.Forms.CheckBox()
+        Me.YoshiCheck = New System.Windows.Forms.CheckBox()
         Me.EntranceDirGroup.SuspendLayout()
         Me.ExitDirGroup.SuspendLayout()
         Me.WarpPlacementGroup.SuspendLayout()
@@ -65,8 +65,8 @@ Partial Class WarpsWindow
         Me.WarpEffectGroup.SuspendLayout()
         Me.LevelExitGroup.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MapYSpin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MapXSpin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WarpToLevelGroup.SuspendLayout()
         Me.SettingsGroup.SuspendLayout()
         Me.SuspendLayout()
@@ -242,7 +242,7 @@ Partial Class WarpsWindow
         Me.WarpEffectGroup.Controls.Add(Me.PipeWarpRadio)
         Me.WarpEffectGroup.Location = New System.Drawing.Point(394, 12)
         Me.WarpEffectGroup.Name = "WarpEffectGroup"
-        Me.WarpEffectGroup.Size = New System.Drawing.Size(95, 111)
+        Me.WarpEffectGroup.Size = New System.Drawing.Size(99, 111)
         Me.WarpEffectGroup.TabIndex = 4
         Me.WarpEffectGroup.TabStop = False
         Me.WarpEffectGroup.Text = "Warp Effect"
@@ -293,9 +293,9 @@ Partial Class WarpsWindow
         '
         'GroupBox7
         '
-        Me.GroupBox7.Controls.Add(Me.NumericUpDown3)
+        Me.GroupBox7.Controls.Add(Me.MapYSpin)
         Me.GroupBox7.Controls.Add(Me.Label2)
-        Me.GroupBox7.Controls.Add(Me.NumericUpDown2)
+        Me.GroupBox7.Controls.Add(Me.MapXSpin)
         Me.GroupBox7.Controls.Add(Me.Label1)
         Me.GroupBox7.Location = New System.Drawing.Point(6, 42)
         Me.GroupBox7.Name = "GroupBox7"
@@ -304,12 +304,12 @@ Partial Class WarpsWindow
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Warp To Map Location"
         '
-        'NumericUpDown3
+        'MapYSpin
         '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(128, 19)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(54, 20)
-        Me.NumericUpDown3.TabIndex = 7
+        Me.MapYSpin.Location = New System.Drawing.Point(128, 19)
+        Me.MapYSpin.Name = "MapYSpin"
+        Me.MapYSpin.Size = New System.Drawing.Size(54, 20)
+        Me.MapYSpin.TabIndex = 7
         '
         'Label2
         '
@@ -320,12 +320,12 @@ Partial Class WarpsWindow
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Y:"
         '
-        'NumericUpDown2
+        'MapXSpin
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(29, 19)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(54, 20)
-        Me.NumericUpDown2.TabIndex = 6
+        Me.MapXSpin.Location = New System.Drawing.Point(29, 19)
+        Me.MapXSpin.Name = "MapXSpin"
+        Me.MapXSpin.Size = New System.Drawing.Size(54, 20)
+        Me.MapXSpin.TabIndex = 6
         '
         'Label1
         '
@@ -348,10 +348,10 @@ Partial Class WarpsWindow
         '
         'WarpToLevelGroup
         '
-        Me.WarpToLevelGroup.Controls.Add(Me.CheckBox2)
+        Me.WarpToLevelGroup.Controls.Add(Me.LevelEntranceCheck)
         Me.WarpToLevelGroup.Controls.Add(Me.Label3)
-        Me.WarpToLevelGroup.Controls.Add(Me.HScrollBar1)
-        Me.WarpToLevelGroup.Controls.Add(Me.TextBox1)
+        Me.WarpToLevelGroup.Controls.Add(Me.WarpValueScrollbar)
+        Me.WarpToLevelGroup.Controls.Add(Me.WarpLevelNameText)
         Me.WarpToLevelGroup.Location = New System.Drawing.Point(218, 129)
         Me.WarpToLevelGroup.Name = "WarpToLevelGroup"
         Me.WarpToLevelGroup.Size = New System.Drawing.Size(196, 100)
@@ -359,15 +359,15 @@ Partial Class WarpsWindow
         Me.WarpToLevelGroup.TabStop = False
         Me.WarpToLevelGroup.Text = "Warp To Level"
         '
-        'CheckBox2
+        'LevelEntranceCheck
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(6, 77)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(97, 17)
-        Me.CheckBox2.TabIndex = 3
-        Me.CheckBox2.Text = "Level entrance"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.LevelEntranceCheck.AutoSize = True
+        Me.LevelEntranceCheck.Location = New System.Drawing.Point(6, 77)
+        Me.LevelEntranceCheck.Name = "LevelEntranceCheck"
+        Me.LevelEntranceCheck.Size = New System.Drawing.Size(97, 17)
+        Me.LevelEntranceCheck.TabIndex = 3
+        Me.LevelEntranceCheck.Text = "Level entrance"
+        Me.LevelEntranceCheck.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -378,67 +378,67 @@ Partial Class WarpsWindow
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Normal entrance"
         '
-        'HScrollBar1
+        'WarpValueScrollbar
         '
-        Me.HScrollBar1.Location = New System.Drawing.Point(6, 42)
-        Me.HScrollBar1.Name = "HScrollBar1"
-        Me.HScrollBar1.Size = New System.Drawing.Size(80, 17)
-        Me.HScrollBar1.TabIndex = 1
+        Me.WarpValueScrollbar.Location = New System.Drawing.Point(6, 42)
+        Me.WarpValueScrollbar.Name = "WarpValueScrollbar"
+        Me.WarpValueScrollbar.Size = New System.Drawing.Size(80, 17)
+        Me.WarpValueScrollbar.TabIndex = 1
         '
-        'TextBox1
+        'WarpLevelNameText
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(184, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.WarpLevelNameText.Location = New System.Drawing.Point(6, 19)
+        Me.WarpLevelNameText.Name = "WarpLevelNameText"
+        Me.WarpLevelNameText.Size = New System.Drawing.Size(184, 20)
+        Me.WarpLevelNameText.TabIndex = 0
         '
         'SettingsGroup
         '
-        Me.SettingsGroup.Controls.Add(Me.CheckBox5)
-        Me.SettingsGroup.Controls.Add(Me.CheckBox4)
-        Me.SettingsGroup.Controls.Add(Me.CheckBox3)
+        Me.SettingsGroup.Controls.Add(Me.LockedCheck)
+        Me.SettingsGroup.Controls.Add(Me.NPCCheck)
+        Me.SettingsGroup.Controls.Add(Me.YoshiCheck)
         Me.SettingsGroup.Location = New System.Drawing.Point(420, 129)
         Me.SettingsGroup.Name = "SettingsGroup"
-        Me.SettingsGroup.Size = New System.Drawing.Size(69, 100)
+        Me.SettingsGroup.Size = New System.Drawing.Size(73, 100)
         Me.SettingsGroup.TabIndex = 7
         Me.SettingsGroup.TabStop = False
         Me.SettingsGroup.Text = "Settings"
         '
-        'CheckBox5
+        'LockedCheck
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(6, 68)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(62, 17)
-        Me.CheckBox5.TabIndex = 2
-        Me.CheckBox5.Text = "Locked"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.LockedCheck.AutoSize = True
+        Me.LockedCheck.Location = New System.Drawing.Point(6, 68)
+        Me.LockedCheck.Name = "LockedCheck"
+        Me.LockedCheck.Size = New System.Drawing.Size(62, 17)
+        Me.LockedCheck.TabIndex = 2
+        Me.LockedCheck.Text = "Locked"
+        Me.LockedCheck.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'NPCCheck
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(6, 45)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(48, 17)
-        Me.CheckBox4.TabIndex = 1
-        Me.CheckBox4.Text = "NPC"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.NPCCheck.AutoSize = True
+        Me.NPCCheck.Location = New System.Drawing.Point(6, 45)
+        Me.NPCCheck.Name = "NPCCheck"
+        Me.NPCCheck.Size = New System.Drawing.Size(48, 17)
+        Me.NPCCheck.TabIndex = 1
+        Me.NPCCheck.Text = "NPC"
+        Me.NPCCheck.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'YoshiCheck
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 22)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(52, 17)
-        Me.CheckBox3.TabIndex = 0
-        Me.CheckBox3.Text = "Yoshi"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.YoshiCheck.AutoSize = True
+        Me.YoshiCheck.Location = New System.Drawing.Point(6, 22)
+        Me.YoshiCheck.Name = "YoshiCheck"
+        Me.YoshiCheck.Size = New System.Drawing.Size(52, 17)
+        Me.YoshiCheck.TabIndex = 0
+        Me.YoshiCheck.Text = "Yoshi"
+        Me.YoshiCheck.UseVisualStyleBackColor = True
         '
         'WarpsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(501, 241)
+        Me.ClientSize = New System.Drawing.Size(505, 241)
         Me.Controls.Add(Me.SettingsGroup)
         Me.Controls.Add(Me.WarpToLevelGroup)
         Me.Controls.Add(Me.LevelExitGroup)
@@ -464,8 +464,8 @@ Partial Class WarpsWindow
         Me.LevelExitGroup.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MapYSpin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MapXSpin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WarpToLevelGroup.ResumeLayout(False)
         Me.WarpToLevelGroup.PerformLayout()
         Me.SettingsGroup.ResumeLayout(False)
@@ -495,18 +495,18 @@ Partial Class WarpsWindow
     Friend WithEvents PipeWarpRadio As RadioButton
     Friend WithEvents LevelExitGroup As GroupBox
     Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents NumericUpDown3 As NumericUpDown
+    Friend WithEvents MapYSpin As NumericUpDown
     Friend WithEvents Label2 As Label
-    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents MapXSpin As NumericUpDown
     Friend WithEvents Label1 As Label
     Friend WithEvents ExitLevelCheck As CheckBox
     Friend WithEvents WarpToLevelGroup As GroupBox
-    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents LevelEntranceCheck As CheckBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents HScrollBar1 As HScrollBar
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents WarpValueScrollbar As HScrollBar
+    Friend WithEvents WarpLevelNameText As TextBox
     Friend WithEvents SettingsGroup As GroupBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents LockedCheck As CheckBox
+    Friend WithEvents NPCCheck As CheckBox
+    Friend WithEvents YoshiCheck As CheckBox
 End Class

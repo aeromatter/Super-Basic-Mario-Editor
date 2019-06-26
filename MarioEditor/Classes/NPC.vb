@@ -3,7 +3,12 @@ Imports System.Xml
 Public Structure NPCsets
     Dim ID As Integer
     Dim PositionRect As Rectangle
-    Dim Layer As String
+    Dim LayerName As String
+    Dim ActivateEvent As String
+    Dim DeathEvent As String
+    Dim TalkEvent As String
+    Dim NoMoreObjectsInLayerEvent As String
+    Dim AttachToLayer As String
     Dim NPCSize As Size
     <Serialization.XmlIgnore()>
     Dim IMG As Image
@@ -11,7 +16,9 @@ Public Structure NPCsets
     Dim NPCGraphicsSize As Size
     Dim AI As Integer
     Dim Direction As Integer
-    Dim MSG As String
+    Dim isLegacyBoss As Boolean
+    Dim dontMove As Boolean
+    Dim message As String
     Dim HasGravity As Boolean
     Dim MoveSpeed As Double
     Dim CurFrame As Integer
@@ -37,6 +44,14 @@ Public Structure NPCsets
     Dim NoFireball As Boolean
     Dim NoGravity As Boolean
     Dim NoIceBall As Boolean
+
+
+    Public specialSettingA As Integer
+    Public specialSettingB As Integer
+    Public isGenerator As Boolean
+    Public specialGeneratorDir As Integer
+    Public specialGeneratorType As Integer
+    Public specialGeneratorDelay As UInteger
 End Structure
 
 Public Structure NPCFrames

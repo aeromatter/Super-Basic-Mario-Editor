@@ -170,4 +170,14 @@ Public Class LevelEvent
     Public position As Point
     Public music As Integer
     Public background As Integer
+    Public playerUp As Boolean
+    Public playerDown As Boolean
+    Public playerLeft As Boolean
+    Public playerRight As Boolean
+    Public playerRun As Boolean
+    Public playerJump As Boolean
+    Public playerAltRun As Boolean
+    Public playerAltJump As Boolean
+    Public playerDrop As Boolean
+    Public playerStart As Boolean
 End Class

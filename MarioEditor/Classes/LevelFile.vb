@@ -79,8 +79,7 @@ Public Class LevelFile
         writer.WriteLine("next")
         WriteSMBX64Layers()
         writer.WriteLine("next")
-        'WriteSMBX64Events()
-        'EOF
+        WriteSMBX64Events()
     End Sub
 
     Private Sub WriteSMBX64Header()
@@ -150,22 +149,22 @@ Public Class LevelFile
             writer.WriteLine(NPC.NPCsets(i).PositionRect.Y)
             writer.WriteLine(NPC.NPCsets(i).Direction)
             writer.WriteLine(NPC.NPCsets(i).ID)
-            'Write special option 1
-            'Write special option 2
-            'Write generator bool
-            'Write generator direction
-            'Write generator type
-            'Write generator period
-            writer.WriteLine(NPC.NPCsets(i).MSG)
+            writer.WriteLine(NPC.NPCsets(i).specialSettingA)
+            writer.WriteLine(NPC.NPCsets(i).specialSettingB)
+            writer.WriteLine(NPC.NPCsets(i).isGenerator)
+            writer.WriteLine(NPC.NPCsets(i).specialGeneratorDir)
+            writer.WriteLine(NPC.NPCsets(i).specialGeneratorType)
+            writer.WriteLine(NPC.NPCsets(i).specialGeneratorDelay)
+            writer.WriteLine(NPC.NPCsets(i).message)
             writer.WriteLine(NPC.NPCsets(i).Friendly)
-            'Write dont move bool
-            'Write legacy boss bool
-            'Write layer name
-            'Write Activate event
-            'Write Death event
-            'Write Talk event
-            'Write no more obj event
-            'Write attack to layer
+            writer.WriteLine(NPC.NPCsets(i).dontMove)
+            writer.WriteLine(NPC.NPCsets(i).isLegacyBoss)
+            writer.WriteLine(NPC.NPCsets(i).LayerName)
+            writer.WriteLine(NPC.NPCsets(i).ActivateEvent)
+            writer.WriteLine(NPC.NPCsets(i).DeathEvent)
+            writer.WriteLine(NPC.NPCsets(i).TalkEvent)
+            writer.WriteLine(NPC.NPCsets(i).NoMoreObjectsInLayerEvent)
+            writer.WriteLine(NPC.NPCsets(i).AttachToLayer)
         Next
     End Sub
 
@@ -178,16 +177,18 @@ Public Class LevelFile
             writer.WriteLine(Warps.LevelWarps(i).entranceDir)
             writer.WriteLine(Warps.LevelWarps(i).exitDir)
             writer.WriteLine(Warps.LevelWarps(i).warp)
-            'Write warp to level
-            'Write normal entrance
-            'Write level entrance
-            'Write level exit
-            'Write map warp X or -1 for empty
-            'Write map warp Y or -1 for empty
-            'Write stars needed
-            'Write layer name
+            writer.WriteLine(Warps.LevelWarps(i).levelName)
+            writer.WriteLine(Warps.LevelWarps(i).levelEntrance)
+            writer.WriteLine(Warps.LevelWarps(i).isLevelEntrance)
+            writer.WriteLine(Warps.LevelWarps(i).canExitLevel)
+            writer.WriteLine(Warps.LevelWarps(i).mapWarpX) 'or -1 for empty
+            writer.WriteLine(Warps.LevelWarps(i).mapWarpY) 'or -1 for empty
+            writer.WriteLine(Warps.LevelWarps(i).starsNeeded)
+            writer.WriteLine(Warps.LevelWarps(i).layerName)
             writer.WriteLine("#FALSE#") 'Unused value
-            writer.WriteLine(Warps.LevelWarps(i).passage) 'TODO: Write values for Yoshi, NPCs, and Locked
+            writer.WriteLine(Warps.LevelWarps(i).noYoshi)
+            writer.WriteLine(Warps.LevelWarps(i).allowNPC)
+            writer.WriteLine(Warps.LevelWarps(i).isLocked)
         Next
     End Sub
 
@@ -199,7 +200,7 @@ Public Class LevelFile
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Height)
             writer.WriteLine("0") 'Unused value
             writer.WriteLine(Liquids.LiquidInfo(i).isQuicksand)
-            'Layer name
+            writer.WriteLine(Liquids.LiquidInfo(i).layerName)
         Next
     End Sub
 
@@ -207,6 +208,39 @@ Public Class LevelFile
         For i = 0 To Layers.LayerInfo.Count
             writer.WriteLine(Layers.LayerInfo.Keys(i))
             writer.WriteLine(Layers.LayerInfo.Values(i))
+        Next
+    End Sub
+
+    Private Sub WriteSMBX64Events()
+        For i = 0 To EventsWindow.eventInfo.Count
+            writer.WriteLine(EventsWindow.eventInfo(i).name)
+            writer.WriteLine(EventsWindow.eventInfo(i).message)
+            writer.WriteLine(EventsWindow.eventInfo(i).playSound)
+            writer.WriteLine(EventsWindow.eventInfo(i).endGame)
+            'loop through show/hide/toggle layers lists
+            writer.WriteLine("") 'Empty
+            writer.WriteLine("") 'Empty
+            writer.WriteLine("") 'Empty
+            'loop through each section set bg/music/position
+            writer.WriteLine(EventsWindow.eventInfo(i).triggerEvent)
+            writer.WriteLine(EventsWindow.eventInfo(i).triggerEventDelay)
+            writer.WriteLine(EventsWindow.eventInfo(i).smokeEnabled)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerAltJump)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerAltRun)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerDown)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerDrop)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerJump)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerLeft)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerRight)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerRun)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerStart)
+            writer.WriteLine(EventsWindow.eventInfo(i).playerUp)
+            writer.WriteLine(EventsWindow.eventInfo(i).layerMovement)
+            writer.WriteLine(EventsWindow.eventInfo(i).layerHorizontalSpeed)
+            writer.WriteLine(EventsWindow.eventInfo(i).layerVerticalSpeed)
+            writer.WriteLine(EventsWindow.eventInfo(i).autoscrollHorizontalSpeed)
+            writer.WriteLine(EventsWindow.eventInfo(i).autoscrollVerticalSpeed)
+            writer.WriteLine(EventsWindow.eventInfo(i).autoscrollSection)
         Next
     End Sub
 End Class

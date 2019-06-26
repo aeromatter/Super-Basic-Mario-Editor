@@ -5,7 +5,7 @@
         WarpSets.entranceDir = Warps.warpEntranceDir
         WarpSets.exitDir = Warps.warpExitDir
         WarpSets.entranceLocation = PlacementRect
-        WarpSets.passage = Warps.passageType
+        'WarpSets.passage = Warps.passageType
         WarpSets.placement = Warps.placementType
         WarpSets.starsNeeded = Warps.stars
         WarpSets.warp = Warps.warpType

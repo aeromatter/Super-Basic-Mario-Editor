@@ -19,6 +19,7 @@ End Class
 Public Structure Liquid
     Public LiquidArea As Rectangle
     Public isQuicksand As Boolean
+    Public layerName As String
 End Structure
 
 Public Class Liquids

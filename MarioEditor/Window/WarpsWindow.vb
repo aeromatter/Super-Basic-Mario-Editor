@@ -11,12 +11,6 @@ Public Enum WarpEffect
     Instant
 End Enum
 
-Public Enum WarpPassage
-    allowYoshi
-    allowNPC
-    isLocked
-End Enum
-
 Public Enum WarpPlacement
     isEntrance
     isExit
@@ -35,9 +29,18 @@ Public Structure WarpSettings
     Public entranceLocation As Rectangle
     Public exitLocation As Rectangle
     Public warp As WarpEffect
-    Public passage As WarpPassage
     Public placement As WarpPlacement
     Public starsNeeded As UInteger
+    Public layerName As String
+    Public levelName As String
+    Public levelEntrance As UInteger
+    Public isLevelEntrance As Boolean
+    Public canExitLevel As Boolean
+    Public mapWarpX As Integer
+    Public mapWarpY As Integer
+    Public noYoshi As Boolean
+    Public allowNPC As Boolean
+    Public isLocked As Boolean
 End Structure
 
 Public Class Warps
@@ -47,7 +50,6 @@ Public Class Warps
     Public Shared entranceLocation As Rectangle
     Public Shared exitLocation As Rectangle
     Public Shared warpType As WarpEffect
-    Public Shared passageType As WarpPassage
     Public Shared placementType As WarpPlacement
     Public Shared stars As UInteger
 End Class
