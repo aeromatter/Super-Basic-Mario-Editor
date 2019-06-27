@@ -61,9 +61,9 @@ Public Class LevelFile
         reader.Close()
     End Sub
 
-    Public Sub SaveAsSMBX64()
+    Public Sub SaveAsSMBX64(path As String)
 
-        writer = New StreamWriter(MainWindow.SaveLevelFileDialog.FileName, False)
+        writer = New StreamWriter(path, False)
         WriteSMBX64Header()
         WriteSMBX64Sections()
         WriteSMBX64PlayerLocations()
@@ -80,6 +80,9 @@ Public Class LevelFile
         WriteSMBX64Layers()
         writer.WriteLine("next")
         WriteSMBX64Events()
+
+        writer.Close()
+        writer.Dispose()
     End Sub
 
     Private Sub WriteSMBX64Header()
@@ -96,11 +99,11 @@ Public Class LevelFile
             writer.WriteLine(Level.Sections(i).bounds.Right)
             writer.WriteLine("0") 'Music ID
             writer.WriteLine("0") 'Background color for old versions
-            'Write level wrap bool
-            'Write offscreen exit bool
-            writer.WriteLine("0") 'Background ID
-            'Write noturnback bool
-            'Write underwater bool
+            writer.WriteLine(Level.Sections(i).levelWrap)
+            writer.WriteLine(Level.Sections(i).offscreenExit)
+            writer.WriteLine(Level.Sections(i).background.ID)
+            writer.WriteLine(Level.Sections(i).noTurnBack)
+            writer.WriteLine(Level.Sections(i).underWater)
             writer.WriteLine(Level.Music)
         Next
     End Sub
@@ -118,7 +121,7 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64Blocks()
-        For i = 0 To Blocks.Tiles.Count
+        For i = 0 To Blocks.Tiles.Count - 1
             writer.WriteLine(Blocks.Tiles(i).PositionRect.X)
             writer.WriteLine(Blocks.Tiles(i).PositionRect.Y)
             writer.WriteLine(Blocks.Tiles(i).PositionRect.Height)
@@ -135,7 +138,7 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64BackgroundObjects()
-        For i = 0 To Backgrounds.BGOs.Count
+        For i = 0 To Backgrounds.BGOs.Count - 1
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.X)
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.Y)
             writer.WriteLine(Backgrounds.BGOs(i).ID)
@@ -144,7 +147,7 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64NPCs()
-        For i = 0 To NPC.NPCsets.Count
+        For i = 0 To NPC.NPCsets.Count - 1
             writer.WriteLine(NPC.NPCsets(i).PositionRect.X)
             writer.WriteLine(NPC.NPCsets(i).PositionRect.Y)
             writer.WriteLine(NPC.NPCsets(i).Direction)
@@ -169,7 +172,7 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64Warps()
-        For i = 0 To Warps.LevelWarps.Count
+        For i = 0 To Warps.LevelWarps.Count - 1
             writer.WriteLine(Warps.LevelWarps(i).entranceLocation.X)
             writer.WriteLine(Warps.LevelWarps(i).entranceLocation.Y)
             writer.WriteLine(Warps.LevelWarps(i).exitLocation.X)
@@ -193,7 +196,7 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64Liquids()
-        For i = 0 To Liquids.LiquidInfo.Count
+        For i = 0 To Liquids.LiquidInfo.Count - 1
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.X)
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Y)
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Width)
@@ -205,23 +208,45 @@ Public Class LevelFile
     End Sub
 
     Private Sub WriteSMBX64Layers()
-        For i = 0 To Layers.LayerInfo.Count
+        For i = 0 To Layers.LayerInfo.Count - 1
             writer.WriteLine(Layers.LayerInfo.Keys(i))
             writer.WriteLine(Layers.LayerInfo.Values(i))
         Next
     End Sub
 
     Private Sub WriteSMBX64Events()
-        For i = 0 To EventsWindow.eventInfo.Count
+        For i = 0 To EventsWindow.eventInfo.Count - 1
             writer.WriteLine(EventsWindow.eventInfo(i).name)
             writer.WriteLine(EventsWindow.eventInfo(i).message)
             writer.WriteLine(EventsWindow.eventInfo(i).playSound)
             writer.WriteLine(EventsWindow.eventInfo(i).endGame)
-            'loop through show/hide/toggle layers lists
+            For j = 0 To 20
+                If j < EventsWindow.eventInfo(i).showLayers.Count Then
+                    writer.WriteLine(EventsWindow.eventInfo(i).showLayers(j))
+                Else
+                    writer.WriteLine("")
+                End If
+
+                If j < EventsWindow.eventInfo(i).hideLayers.Count Then
+                    writer.WriteLine(EventsWindow.eventInfo(i).hideLayers(j))
+                Else
+                    writer.WriteLine("")
+                End If
+
+                If j < EventsWindow.eventInfo(i).toggleLayers.Count Then
+                    writer.WriteLine(EventsWindow.eventInfo(i).toggleLayers(j))
+                Else
+                    writer.WriteLine("")
+                End If
+            Next
             writer.WriteLine("") 'Empty
             writer.WriteLine("") 'Empty
             writer.WriteLine("") 'Empty
-            'loop through each section set bg/music/position
+            For sectionSettings = 1 To 21
+                writer.WriteLine(EventsWindow.eventInfo(i).music)
+                writer.WriteLine(EventsWindow.eventInfo(i).background)
+                writer.WriteLine(EventsWindow.eventInfo(i).position)
+            Next
             writer.WriteLine(EventsWindow.eventInfo(i).triggerEvent)
             writer.WriteLine(EventsWindow.eventInfo(i).triggerEventDelay)
             writer.WriteLine(EventsWindow.eventInfo(i).smokeEnabled)

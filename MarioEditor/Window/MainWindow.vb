@@ -35,14 +35,14 @@ Public Class MainWindow
         ''Dim sf As New SaveFiles
         ''sf.VSMBXSave()
         Dim saveLevel As New LevelFile
-        saveLevel.SaveLevelAsXML()
+        saveLevel.SaveAsSMBX64(SaveLevelFileDialog.FileName)
 
         Dim Audio = New Audio
         Audio.PlaySound("has-item")
     End Sub
 
     Private Sub OpenToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles OpenToolStripMenuItem3.Click
-        OpenLevelFileDialog.Filter = "Level Files|*.xml"
+        OpenLevelFileDialog.Filter = "Level Files|*.lvl"
         OpenLevelFileDialog.InitialDirectory = Main.GetGamePath() & "\worlds\"
         OpenLevelFileDialog.Title = "Open Level"
 
@@ -52,7 +52,7 @@ Public Class MainWindow
     End Sub
 
     Private Sub SaveToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles SaveToolStripMenuItem3.Click
-        SaveLevelFileDialog.Filter = "Level Files|*.xml"
+        SaveLevelFileDialog.Filter = "Level Files|*.lvl"
         SaveLevelFileDialog.InitialDirectory = Main.GetGamePath() & "\worlds\"
         SaveLevelFileDialog.Title = "Save Level"
 

@@ -1,6 +1,11 @@
 ﻿Public Class EventsWindow
     Public eventInfo As New List(Of LevelEvent)
     Private eventIndex As Integer = 0
+
+    Private toggleLayers As List(Of String)
+    Private hideLayers As List(Of String)
+    Private showLayers As List(Of String)
+
     Private Sub EventsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateLayersList()
         UpdateEventsList()
@@ -15,6 +20,10 @@
 
         Dim PSwitchEnd As New LevelEvent
         PSwitchEnd.name = "PSwitch - End"
+
+        toggleLayers = New List(Of String)
+        hideLayers = New List(Of String)
+        showLayers = New List(Of String)
 
         AddNewEvent(LevelStart)
         AddNewEvent(PSwitchStart)
@@ -63,7 +72,9 @@
         setNewEvent.endGame = EndGameComboBox.Text
         setNewEvent.triggerEvent = TriggerEventComboBox.Text
         setNewEvent.triggerEventDelay = DelayScrollBar.Value
-
+        setNewEvent.toggleLayers = toggleLayers
+        setNewEvent.hideLayers = hideLayers
+        setNewEvent.showLayers = showLayers
         AddNewEvent(setNewEvent)
     End Sub
 
@@ -88,6 +99,11 @@
         EndGameComboBox.Text = eventInfo(eventIndex).endGame
         TriggerEventComboBox.Text = eventInfo(eventIndex).triggerEvent
         DelayScrollBar.Value = eventInfo(eventIndex).triggerEventDelay
+        For i = 0 To 20
+            ToggleList.Items.Add(eventInfo(eventIndex).toggleLayers(i))
+            HideList.Items.Add(eventInfo(eventIndex).hideLayers(i))
+            ShowList.Items.Add(eventInfo(eventIndex).showLayers(i))
+        Next
     End Sub
 
     Private Sub LayersComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LayersComboBox.SelectedIndexChanged
@@ -101,31 +117,61 @@
     Private Sub AddToggleButton_Click(sender As Object, e As EventArgs) Handles AddToggleButton.Click
         ToggleList.Items.Add(LayersList.SelectedItem)
         LayersList.Items.Remove(LayersList.SelectedItem)
+
+        toggleLayers.Clear()
+        For i = 0 To 20
+            toggleLayers.Add(ToggleList.Items(i))
+        Next
     End Sub
 
     Private Sub AddHideButton_Click(sender As Object, e As EventArgs) Handles AddHideButton.Click
         HideList.Items.Add(LayersList.SelectedItem)
         LayersList.Items.Remove(LayersList.SelectedItem)
+
+        hideLayers.Clear()
+        For i = 0 To 20
+            hideLayers.Add(HideList.Items(i))
+        Next
     End Sub
 
     Private Sub AddShowButton_Click(sender As Object, e As EventArgs) Handles AddShowButton.Click
         ShowList.Items.Add(LayersList.SelectedItem)
         LayersList.Items.Remove(LayersList.SelectedItem)
+
+        showLayers.Clear()
+        For i = 0 To 20
+            showLayers.Add(ShowList.Items(i))
+        Next
     End Sub
 
     Private Sub RemoveToggleButton_Click(sender As Object, e As EventArgs) Handles RemoveToggleButton.Click
         LayersList.Items.Add(ToggleList.SelectedItem)
         ToggleList.Items.Remove(ToggleList.SelectedItem)
+
+        toggleLayers.Clear()
+        For i = 0 To 20
+            toggleLayers.Add(ToggleList.Items(i))
+        Next
     End Sub
 
     Private Sub RemoveHideButton_Click(sender As Object, e As EventArgs) Handles RemoveHideButton.Click
         LayersList.Items.Add(HideList.SelectedItem)
         HideList.Items.Remove(HideList.SelectedItem)
+
+        hideLayers.Clear()
+        For i = 0 To 20
+            hideLayers.Add(HideList.Items(i))
+        Next
     End Sub
 
     Private Sub RemoveShowButton_Click(sender As Object, e As EventArgs) Handles RemoveShowButton.Click
         LayersList.Items.Add(ShowList.SelectedItem)
         ShowList.Items.Remove(ShowList.SelectedItem)
+
+        showLayers.Clear()
+        For i = 0 To 20
+            showLayers.Add(ShowList.Items(i))
+        Next
     End Sub
 
     Private Sub HorizontalSpeedSpin_ValueChanged(sender As Object, e As EventArgs) Handles HorizontalSpeedSpin.ValueChanged
@@ -152,9 +198,9 @@ End Class
 Public Class LevelEvent
     Public name As String
     Public smokeEnabled As Boolean
-    Public toggleLayers As List(Of String)
-    Public hideLayers As List(Of String)
-    Public showLayers As List(Of String)
+    Public toggleLayers As New List(Of String)
+    Public hideLayers As New List(Of String)
+    Public showLayers As New List(Of String)
     Public layerMovement As String
     Public layerHorizontalSpeed As Double
     Public layerVerticalSpeed As Double
@@ -167,7 +213,7 @@ Public Class LevelEvent
     Public endGame As String
     Public triggerEvent As String
     Public triggerEventDelay As Double
-    Public position As Point
+    Public position As Rectangle
     Public music As Integer
     Public background As Integer
     Public playerUp As Boolean

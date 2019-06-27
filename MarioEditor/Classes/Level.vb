@@ -11,6 +11,10 @@ Public Class Level
 
     Public Structure Section
         Public settings As SectionSettings
+        Public levelWrap As Boolean
+        Public offscreenExit As Boolean
+        Public noTurnBack As Boolean
+        Public underWater As Boolean
         Public background As SectionBackground
         Public music As String
         Public bounds As Rectangle
@@ -34,6 +38,10 @@ Public Class Level
     Public Shared Sections(21) As Section
     Public Shared LastSectionSelected As Integer
     Private Settings As SectionSettings
+    Public Shared levelWrap As Boolean
+    Public Shared offscreenExit As Boolean
+    Public Shared noTurnBack As Boolean
+    Public Shared underWater As Boolean
     Public SectionBounds As New Rectangle(0, 0, 25 * 32, 19 * 32)
     Public Shared Background As New SectionBackground
     Private parseOutput As Dictionary(Of String, String) = New Dictionary(Of String, String)
@@ -49,6 +57,10 @@ Public Class Level
     Public Sub SetSection(index)
         Dim sect As New Section
         sect.settings = Settings
+        sect.levelWrap = levelWrap
+        sect.offscreenExit = offscreenExit
+        sect.noTurnBack = noTurnBack
+        sect.underWater = underWater
         sect.music = Music
         sect.background = Background
         sect.bounds = GetDefaultSectionLocations(index)
@@ -57,6 +69,10 @@ Public Class Level
 
     Public Sub GetSection(index As Integer)
         Settings = Sections(index).settings
+        levelWrap = Sections(index).levelWrap
+        offscreenExit = Sections(index).offscreenExit
+        noTurnBack = Sections(index).noTurnBack
+        underWater = Sections(index).underWater
         Music = Sections(index).music
         Background = Sections(index).background
         SectionBounds = Sections(index).bounds
