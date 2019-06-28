@@ -6,6 +6,8 @@ Public Class LevelFile
     Private reader As StreamReader
     Private serializer As Serialization.XmlSerializer
     Private Const LVL_STANDARD As Integer = 64
+    Private Const LVL_TRUE As String = "#TRUE#"
+    Private Const LVL_FALSE As String = "#FALSE#"
 
     Public Sub SaveLevelAsXML()
         SaveBlocks()
@@ -61,6 +63,18 @@ Public Class LevelFile
         reader.Close()
     End Sub
 
+    Private Function FormatStringLVL(input As String) As String
+        Return Chr(34) + input + Chr(34)
+    End Function
+
+    Private Function FormatBoolLVL(input As Boolean) As String
+        If input Then
+            Return LVL_TRUE
+        Else
+            Return LVL_FALSE
+        End If
+    End Function
+
     Public Sub SaveAsSMBX64(path As String)
 
         writer = New StreamWriter(path, False)
@@ -68,17 +82,17 @@ Public Class LevelFile
         WriteSMBX64Sections()
         WriteSMBX64PlayerLocations()
         WriteSMBX64Blocks()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64BackgroundObjects()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64NPCs()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64Warps()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64Liquids()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64Layers()
-        writer.WriteLine("next")
+        writer.WriteLine(FormatStringLVL("next"))
         WriteSMBX64Events()
 
         writer.Close()
@@ -87,8 +101,8 @@ Public Class LevelFile
 
     Private Sub WriteSMBX64Header()
         writer.WriteLine(LVL_STANDARD)
-        writer.WriteLine("0" + vbCrLf) 'Number of stars
-        writer.WriteLine("level name")
+        writer.WriteLine("0") 'Number of stars
+        writer.WriteLine(FormatStringLVL(""))
     End Sub
 
     Private Sub WriteSMBX64Sections()
@@ -98,13 +112,13 @@ Public Class LevelFile
             writer.WriteLine(Level.Sections(i).bounds.Bottom)
             writer.WriteLine(Level.Sections(i).bounds.Right)
             writer.WriteLine("0") 'Music ID
-            writer.WriteLine("0") 'Background color for old versions
-            writer.WriteLine(Level.Sections(i).levelWrap)
-            writer.WriteLine(Level.Sections(i).offscreenExit)
+            writer.WriteLine("16291944") 'Background color for old versions
+            writer.WriteLine(FormatBoolLVL(Level.Sections(i).levelWrap))
+            writer.WriteLine(FormatBoolLVL(Level.Sections(i).offscreenExit))
             writer.WriteLine(Level.Sections(i).background.ID)
-            writer.WriteLine(Level.Sections(i).noTurnBack)
-            writer.WriteLine(Level.Sections(i).underWater)
-            writer.WriteLine(Level.Music)
+            writer.WriteLine(FormatBoolLVL(Level.Sections(i).noTurnBack))
+            writer.WriteLine(FormatBoolLVL(Level.Sections(i).underWater))
+            writer.WriteLine(FormatStringLVL(Level.Music))
         Next
     End Sub
 
@@ -128,12 +142,12 @@ Public Class LevelFile
             writer.WriteLine(Blocks.Tiles(i).PositionRect.Width)
             writer.WriteLine(Blocks.Tiles(i).ID)
             writer.WriteLine(Blocks.Tiles(i).ContainItem)
-            writer.WriteLine(Blocks.Tiles(i).Invisible)
-            writer.WriteLine(Blocks.Tiles(i).Slip)
-            writer.WriteLine(Blocks.Tiles(i).LayerName)
-            writer.WriteLine(Blocks.Tiles(i).DestroyEvent)
-            writer.WriteLine(Blocks.Tiles(i).HitEvent)
-            writer.WriteLine(Blocks.Tiles(i).NoMoreObjectsInLayer)
+            writer.WriteLine(FormatBoolLVL(Blocks.Tiles(i).Invisible))
+            writer.WriteLine(FormatBoolLVL(Blocks.Tiles(i).Slip))
+            writer.WriteLine(FormatStringLVL(Blocks.Tiles(i).LayerName))
+            writer.WriteLine(FormatStringLVL(Blocks.Tiles(i).DestroyEvent))
+            writer.WriteLine(FormatStringLVL(Blocks.Tiles(i).HitEvent))
+            writer.WriteLine(FormatStringLVL(Blocks.Tiles(i).NoMoreObjectsInLayer))
         Next
     End Sub
 
@@ -142,7 +156,7 @@ Public Class LevelFile
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.X)
             writer.WriteLine(Backgrounds.BGOs(i).PositionRect.Y)
             writer.WriteLine(Backgrounds.BGOs(i).ID)
-            writer.WriteLine(Backgrounds.BGOs(i).LayerName)
+            writer.WriteLine(FormatStringLVL(Backgrounds.BGOs(i).LayerName))
         Next
     End Sub
 
@@ -154,20 +168,21 @@ Public Class LevelFile
             writer.WriteLine(NPC.NPCsets(i).ID)
             writer.WriteLine(NPC.NPCsets(i).specialSettingA)
             writer.WriteLine(NPC.NPCsets(i).specialSettingB)
-            writer.WriteLine(NPC.NPCsets(i).isGenerator)
+            writer.WriteLine(FormatBoolLVL(NPC.NPCsets(i).isGenerator))
             writer.WriteLine(NPC.NPCsets(i).specialGeneratorDir)
             writer.WriteLine(NPC.NPCsets(i).specialGeneratorType)
             writer.WriteLine(NPC.NPCsets(i).specialGeneratorDelay)
-            writer.WriteLine(NPC.NPCsets(i).message)
-            writer.WriteLine(NPC.NPCsets(i).Friendly)
-            writer.WriteLine(NPC.NPCsets(i).dontMove)
-            writer.WriteLine(NPC.NPCsets(i).isLegacyBoss)
-            writer.WriteLine(NPC.NPCsets(i).LayerName)
-            writer.WriteLine(NPC.NPCsets(i).ActivateEvent)
-            writer.WriteLine(NPC.NPCsets(i).DeathEvent)
-            writer.WriteLine(NPC.NPCsets(i).TalkEvent)
-            writer.WriteLine(NPC.NPCsets(i).NoMoreObjectsInLayerEvent)
-            writer.WriteLine(NPC.NPCsets(i).AttachToLayer)
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).message))
+            writer.WriteLine(FormatBoolLVL(NPC.NPCsets(i).Friendly))
+            writer.WriteLine(FormatBoolLVL(NPC.NPCsets(i).dontMove))
+            writer.WriteLine(FormatBoolLVL(NPC.NPCsets(i).isLegacyBoss))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).message))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).LayerName))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).ActivateEvent))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).DeathEvent))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).TalkEvent))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).NoMoreObjectsInLayerEvent))
+            writer.WriteLine(FormatStringLVL(NPC.NPCsets(i).AttachToLayer))
         Next
     End Sub
 
@@ -180,18 +195,18 @@ Public Class LevelFile
             writer.WriteLine(Warps.LevelWarps(i).entranceDir)
             writer.WriteLine(Warps.LevelWarps(i).exitDir)
             writer.WriteLine(Warps.LevelWarps(i).warp)
-            writer.WriteLine(Warps.LevelWarps(i).levelName)
+            writer.WriteLine(FormatStringLVL(Warps.LevelWarps(i).levelName))
             writer.WriteLine(Warps.LevelWarps(i).levelEntrance)
             writer.WriteLine(Warps.LevelWarps(i).isLevelEntrance)
-            writer.WriteLine(Warps.LevelWarps(i).canExitLevel)
+            writer.WriteLine(FormatBoolLVL(Warps.LevelWarps(i).canExitLevel))
             writer.WriteLine(Warps.LevelWarps(i).mapWarpX) 'or -1 for empty
             writer.WriteLine(Warps.LevelWarps(i).mapWarpY) 'or -1 for empty
             writer.WriteLine(Warps.LevelWarps(i).starsNeeded)
-            writer.WriteLine(Warps.LevelWarps(i).layerName)
+            writer.WriteLine(FormatStringLVL(Warps.LevelWarps(i).layerName))
             writer.WriteLine("#FALSE#") 'Unused value
-            writer.WriteLine(Warps.LevelWarps(i).noYoshi)
-            writer.WriteLine(Warps.LevelWarps(i).allowNPC)
-            writer.WriteLine(Warps.LevelWarps(i).isLocked)
+            writer.WriteLine(FormatBoolLVL(Warps.LevelWarps(i).noYoshi))
+            writer.WriteLine(FormatBoolLVL(Warps.LevelWarps(i).allowNPC))
+            writer.WriteLine(FormatBoolLVL(Warps.LevelWarps(i).isLocked))
         Next
     End Sub
 
@@ -202,65 +217,69 @@ Public Class LevelFile
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Width)
             writer.WriteLine(Liquids.LiquidInfo(i).LiquidArea.Height)
             writer.WriteLine("0") 'Unused value
-            writer.WriteLine(Liquids.LiquidInfo(i).isQuicksand)
-            writer.WriteLine(Liquids.LiquidInfo(i).layerName)
+            writer.WriteLine(FormatBoolLVL(Liquids.LiquidInfo(i).isQuicksand))
+            writer.WriteLine(FormatStringLVL(Liquids.LiquidInfo(i).layerName))
         Next
     End Sub
 
     Private Sub WriteSMBX64Layers()
         For i = 0 To Layers.LayerInfo.Count - 1
-            writer.WriteLine(Layers.LayerInfo.Keys(i))
-            writer.WriteLine(Layers.LayerInfo.Values(i))
+            writer.WriteLine(FormatStringLVL(Layers.LayerInfo.Keys(i)))
+            writer.WriteLine(FormatBoolLVL(Layers.LayerInfo.Values(i)))
         Next
     End Sub
 
     Private Sub WriteSMBX64Events()
         For i = 0 To EventsWindow.eventInfo.Count - 1
-            writer.WriteLine(EventsWindow.eventInfo(i).name)
-            writer.WriteLine(EventsWindow.eventInfo(i).message)
+            writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).name))
+            writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).message))
             writer.WriteLine(EventsWindow.eventInfo(i).playSound)
             writer.WriteLine(EventsWindow.eventInfo(i).endGame)
-            For j = 0 To 20
+            For j = 0 To 19
                 If j < EventsWindow.eventInfo(i).showLayers.Count Then
-                    writer.WriteLine(EventsWindow.eventInfo(i).showLayers(j))
+                    writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).showLayers(j)))
                 Else
-                    writer.WriteLine("")
+                    writer.WriteLine(FormatStringLVL(""))
                 End If
 
                 If j < EventsWindow.eventInfo(i).hideLayers.Count Then
-                    writer.WriteLine(EventsWindow.eventInfo(i).hideLayers(j))
+                    writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).hideLayers(j)))
                 Else
-                    writer.WriteLine("")
+                    writer.WriteLine(FormatStringLVL(""))
                 End If
 
                 If j < EventsWindow.eventInfo(i).toggleLayers.Count Then
-                    writer.WriteLine(EventsWindow.eventInfo(i).toggleLayers(j))
+                    writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).toggleLayers(j)))
                 Else
-                    writer.WriteLine("")
+                    writer.WriteLine(FormatStringLVL(""))
                 End If
             Next
-            writer.WriteLine("") 'Empty
-            writer.WriteLine("") 'Empty
-            writer.WriteLine("") 'Empty
+            writer.WriteLine(FormatStringLVL("")) 'Empty
+            writer.WriteLine(FormatStringLVL("")) 'Empty
+            writer.WriteLine(FormatStringLVL("")) 'Empty
             For sectionSettings = 1 To 21
-                writer.WriteLine(EventsWindow.eventInfo(i).music)
-                writer.WriteLine(EventsWindow.eventInfo(i).background)
-                writer.WriteLine(EventsWindow.eventInfo(i).position)
+                writer.WriteLine("-1")
+                writer.WriteLine("-1")
+                writer.WriteLine("-1")
+                writer.WriteLine("0")
+                writer.WriteLine("0")
+                writer.WriteLine("0")
             Next
-            writer.WriteLine(EventsWindow.eventInfo(i).triggerEvent)
+            writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).triggerEvent))
             writer.WriteLine(EventsWindow.eventInfo(i).triggerEventDelay)
-            writer.WriteLine(EventsWindow.eventInfo(i).smokeEnabled)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerAltJump)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerAltRun)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerDown)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerDrop)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerJump)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerLeft)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerRight)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerRun)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerStart)
-            writer.WriteLine(EventsWindow.eventInfo(i).playerUp)
-            writer.WriteLine(EventsWindow.eventInfo(i).layerMovement)
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).smokeEnabled))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerAltJump))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerAltRun))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerDown))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerDrop))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerJump))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerLeft))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerRight))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerRun))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerStart))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).playerUp))
+            writer.WriteLine(FormatBoolLVL(EventsWindow.eventInfo(i).autoStart))
+            writer.WriteLine(FormatStringLVL(EventsWindow.eventInfo(i).layerMovement))
             writer.WriteLine(EventsWindow.eventInfo(i).layerHorizontalSpeed)
             writer.WriteLine(EventsWindow.eventInfo(i).layerVerticalSpeed)
             writer.WriteLine(EventsWindow.eventInfo(i).autoscrollHorizontalSpeed)

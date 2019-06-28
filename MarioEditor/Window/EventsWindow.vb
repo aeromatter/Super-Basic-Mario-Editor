@@ -16,10 +16,10 @@
         LevelStart.name = "Level - Start"
 
         Dim PSwitchStart As New LevelEvent
-        PSwitchStart.name = "PSwitch - Start"
+        PSwitchStart.name = "P Switch - Start"
 
         Dim PSwitchEnd As New LevelEvent
-        PSwitchEnd.name = "PSwitch - End"
+        PSwitchEnd.name = "P Switch - End"
 
         toggleLayers = New List(Of String)
         hideLayers = New List(Of String)
@@ -209,8 +209,8 @@ Public Class LevelEvent
     Public autoscrollVerticalSpeed As Double
     Public message As String
     Public autoStart As Boolean
-    Public playSound As String
-    Public endGame As String
+    Public playSound As UInteger
+    Public endGame As UInteger
     Public triggerEvent As String
     Public triggerEventDelay As Double
     Public position As Rectangle
